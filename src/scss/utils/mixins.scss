@@ -1,0 +1,27 @@
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin h1Like {
+  font-family: $firstLvlHeadingFont;
+  color: $mainColor;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@mixin h2Like {
+  font-family: $secondLvlHeadingFont;
+  color: $mainColor;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+@mixin h3Like {
+  font-family: $thirdLvlHeadingFont;
+  text-transform: uppercase;
+  color: $mainColor;
+  font-size: 12px;
+  line-height: 15px;
+}
