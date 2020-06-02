@@ -1,0 +1,8 @@
+//-
+  options.name - имя цвета
+  options.hash - hash цвета
+
+mixin color(options)
+  li.colors__color(class = attributes.class)
+    span.colors__color-name= options.name
+    span.colors__color-hash= options.hash

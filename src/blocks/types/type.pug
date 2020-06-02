@@ -1,0 +1,8 @@
+//-
+  options.text - текст внутри элемента
+  options.marker - маркер справа от элемента
+mixin type(options)
+  - const modifierClass = `types__type--${options.marker}`;
+  li.types__type(class = modifierClass)
+    span.types__type-marker= options.marker
+    span.types__type-text= options.text
