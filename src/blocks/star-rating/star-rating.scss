@@ -1,0 +1,23 @@
+.star-rating {
+  @include reset-list;
+  display: flex;
+  flex-direction: row;
+}
+
+.star-rating__star {
+  .star-rating__star-svg--filled {
+    display: none;
+  }
+  .star-rating__star-svg--stroked {
+    display: block;
+  }
+  &--active {  
+    .star-rating__star-svg--stroked {
+        display: none;
+    }
+    .star-rating__star-svg--filled {
+      display: block;
+    }
+  }
+}
+

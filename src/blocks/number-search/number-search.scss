@@ -1,0 +1,24 @@
+.number-search {
+  @include cardShadow;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  max-width: 380px;
+  padding: 40px 0 30px 0;
+  border-radius: 4px;
+}
+
+.number-search__content {
+  width: 320px;
+  margin: 0 auto;
+}
+.number-search__title {
+  @include h1Like;
+  margin-bottom: 20px;
+}
+
+.number-search__dropdown {
+  margin-bottom: 20px;
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+}

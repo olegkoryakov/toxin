@@ -1,0 +1,14 @@
+//-
+  options.name - input name
+  options.label - label text
+  options.id - input and label id
+  options.checked - true/false
+  options.about - text
+
+mixin checkbox(options)
+  - const classMod = options.about ? 'checkbox--rich' : '';
+  .checkbox(class = attributes.class, class = classMod)
+    input.visually-hidden.checkbox__input(type="checkbox", name = options.name, id = options.id, checked = options.checked)
+    label.checkbox__label(for = options.id).checkbox__label= options.label
+    if options.about 
+      span.checkbox__about= options.about

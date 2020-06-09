@@ -1,0 +1,51 @@
+include ../input/input
+include ../input-box/input-box
+include ../radio-button/radio-button
+include ../button/button
+include ../toggle-button/toggle-button
+
+
+mixin registration()
+  article.registration
+    .registration__content
+      h1.registration__title Регистрация аккаунта
+      form.registration__form(action="#")
+        fieldset(name = 'user-data').registration__fieldset
+          legend.registration__fieldset-legend.visually-hidden Данные пользователя 
+          +input({ placeholder: 'Имя'}).registration__input
+          +input({ placeholder: 'Фамилия'}).registration__input
+          ul.registration__rario-button-list
+            li.registration__rario-button-item
+              +radio-button({
+                name: 'gender',
+                value: 'male',
+                id: 'male',
+                label: 'Мужчина',
+                checked: true
+              }).registration__rario-button
+            li.registration__rario-button-item
+              +radio-button({
+                name: 'gender',
+                value: 'female',
+                id: 'female',
+                label: 'Женщина',
+                checked: false,
+              }).registration__rario-button
+          +input-box({
+            title: 'Дата рождения',
+            placeholder: 'ДД.ММ.ГГ',
+          }).registration__input-box
+        fieldset(name = 'login-data').registration__fieldset
+          legend.registration__fieldset-legend Данные для входа в сервис
+          +input({ placeholder: 'Email' }).registration__input
+          +input({ placeholder: 'Пароль'}).registration__input
+          +toggle-button({
+            name: 'special',
+            id: 'special',
+            label: 'Получать спецпредложения',
+            checked: false,
+          }).registration__toggle-button
+        +button({ type: 'filled-wide', text: 'перейти к оплате'}).registration__submit-button
+        .registration__sign-in
+          span.registration__sign-in-text Уже есть аккаунт на Toxin?
+          +button({ type: 'stroked', text: 'Войти'}).registration__sign-in-button

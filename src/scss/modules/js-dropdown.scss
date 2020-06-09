@@ -1,0 +1,31 @@
+// .js-dropdown
+// .js-dropdown__popup
+// .js-dropdown__button
+
+.js-dropdown {
+  &--close {
+    .js-dropdown__popup {
+      display: none;
+      
+    }
+  }
+  &--open {
+    .js-dropdown__popup {
+      display: block; 
+    }
+    &:not(.calndar) {
+      .input {
+        border-color: rgba($mainColor, 0.5);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .checkboxes__button {
+      &::before {
+        transform: rotate(225deg);
+        right: 15px;
+      }
+    }
+  }
+}

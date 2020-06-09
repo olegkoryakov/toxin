@@ -1,0 +1,46 @@
+.checkboxes{
+  position: relative;
+  width: 266px;
+  padding-top: 14px;
+}
+
+.checkboxes__title {
+  @include h3Like;
+  padding-bottom: 15px;
+}
+
+.checkboxes__button {
+  position: absolute;
+  @include button-reset;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  &::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    box-sizing: border-box;
+    border: 2px solid rgba($mainColor, 0.5);
+    width: 9px;
+    height: 9px;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) translateX(-50%);
+  }
+}
+
+.checkboxes__list {
+  @include reset-list;
+}
+
+.checkboxes__list-item {
+  padding: 5px 0;
+  &:first-of-type {
+    padding-top: 0;
+  }
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+}

@@ -1,13 +1,19 @@
 // colors
   $mainColor: #1F2041;
   $greenColor: #6FCF97;
+  $purpleColor: #BC9CFF;
+  $purpleGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  $greenGradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  $blackGradient: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 //fonts
   //heading fonts
   $firstLvlHeadingFont: "OpenSans-Bold";
   $secondLvlHeadingFont: "OpenSans-Bold";
   $thirdLvlHeadingFont: "Montserrat-Bold";
+  $fourthLvlHeadingFont: "Montserrat-Bold";
 //main font
   $bodyFont: "Montserrat-Regular";
 // other fonts
+  $decorativeFont: "Montserrat-Bold";
   $likeHeadingFont: "OpenSans-Bold";
   $colorHashFont: "OpenSans-Regular";

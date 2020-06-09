@@ -1,0 +1,36 @@
+.pagination {
+  width: 241px;
+}
+
+.pagination__title {
+  @include h3Like;
+  margin-bottom: 16px;
+}
+
+.pagination__pages {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pagination__page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 15px;
+  text-decoration: none;
+  color: rgba($mainColor, 0.5);
+  &--current {
+    color: #fff;
+    font-family: $decorativeFont;
+    background-image: $purpleGradient;
+  }
+  &--next {
+    background-image: $greenGradient;
+  }
+}

@@ -1,0 +1,11 @@
+//-
+  options.name - name
+  options.id - id
+  options.label - label text
+  options.checked - true/false
+
+
+mixin toggle-button(options)
+  div.toggle-button(class = attributes.class)
+    input.toggle-button__input.visually-hidden(type = 'checkbox', name = options.name, id = options.id, checked = options.checked)
+    label.toggle-button__label(for = options.id)= options.label

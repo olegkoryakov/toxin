@@ -1,0 +1,59 @@
+include ../dropdown/dropdown
+include ../button/button
+
+mixin about-room(options)
+  article.about-room(class = attributes.class)
+    .about-room__content
+      .about-room__header
+        span.about-room__number.about-room__number--luxe № 888
+        .about-room__price-details
+          span.about-room__price 9 990₽
+          span.about-room__price-postfix В сутки
+      form.about-room__form(id = 'about-room' action="#")
+        +dropdown(
+          {
+            placeholder: 'ДД.ММ.ГГ',
+            title: 'Прибытие',
+            secondInputTitle: 'Выезд',
+            type: 'dates',
+            opened: false,
+            applyButton: true,
+            resetButton: true,
+          }
+        ).about-room__dropdown
+        +dropdown(
+          {
+            placeholder: 'Сколько гостей',
+            title: 'Гости',
+            type: 'guests',
+            applyButton: true,
+            resetButton: true,
+          }
+        ).about-room__dropdown
+      .about-room__table-wrapper
+        table.about-room__table
+          tr.about-room__tr
+            td.about-room__td 9 990₽ х 4 суток
+            td.about-room__td
+            td.about-room__td 39 960₽
+          tr.about-room__tr
+            td.about-room__td Сбор за услуги: скидка 2 179₽
+            td.about-room__td
+              button(type = 'button').about-room__info i
+            td.about-room__td 0₽
+          tr.about-room__tr
+            td.about-room__td Сбор за дополнительные услуги
+            td.about-room__td
+              button(type = 'button').about-room__info i
+            td.about-room__td 300₽
+          tr.about-room__tr
+            th.about-room__th Итого
+            th.about-room__th(colspan = 2) 38 081₽
+      +button(
+        {
+          type: 'filled-wide',
+          text: 'Забронировать',
+          formId: 'about-room',
+        }
+      ).about-room__submit-button
+

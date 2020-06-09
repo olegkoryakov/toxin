@@ -1,0 +1,14 @@
+//- 
+  options.title - title
+  options.subtitle - subtitle
+
+mixin range-slider(options)
+  .range-slider(class = attributes.class)
+    h3.range-slider__title= options.title
+    span.range-slider__price 5 000₽ - 10 000₽
+    .range-slider__line
+      .range-slider__range-line
+        .range-slider__thumb.range-slider__thumb--from
+        .range-slider__thumb.range-slider__thumb--to
+    if options.subtitle
+      span.range-slider__subtitle= options.subtitle

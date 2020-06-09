@@ -1,0 +1,9 @@
+//- 
+  options.names - array of list items names
+  options.title - title
+mixin bullet-list(options)
+  article.bullet-list
+    h3.bullet-list__title= options.title
+    ul.bullet-list__list
+      each name in names
+        li.bullet-list__item= name

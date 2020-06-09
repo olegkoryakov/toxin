@@ -1,0 +1,37 @@
+.like-button {
+  @include button-reset;
+  width: 40px;
+  height: 20px;
+  border: 1px solid rgba($mainColor, 0.25);
+  border-radius: 10px;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.like-button__img {
+  width: 20px;
+  & > svg {
+    stroke: rgba($mainColor, 0.25);
+    fill: none;
+  }
+}
+
+.like-button__count {
+  width: 20px;
+  text-align: left;
+  color: rgba($mainColor, 0.25);
+}
+
+.like-button--liked {
+  border-color: $purpleColor;
+  .like-button__img > svg path{
+    stroke: $purpleColor;
+    fill: $purpleColor ;
+  }
+
+  .like-button__count {
+    color: $purpleColor;
+  }
+}

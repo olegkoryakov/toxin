@@ -1,0 +1,76 @@
+include ../button/button
+
+mixin calendar
+  article.calendar(class = attributes.class)
+    .calendar__content
+      span.calendar__month Август 2019
+      button.calendar__button.calendar__button--next
+        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z"/>
+        </svg>
+      button.calendar__button.calendar__button--prev
+        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z"/>
+        </svg>
+      table.calendar__table
+        tr.calendar__tr.calendar__tr--heading
+          th.calendar__th Пн
+          th.calendar__th Вт
+          th.calendar__th Ср
+          th.calendar__th Чт
+          th.calendar__th Пт
+          th.calendar__th Сб
+          th.calendar__th Вс
+        tr.calendar__tr
+          td.calendar__td.calendar__td--other-month 29
+          td.calendar__td.calendar__td--other-month 30
+          td.calendar__td.calendar__td--other-month 31
+          td.calendar__td 1
+          td.calendar__td 2
+          td.calendar__td 3
+          td.calendar__td 4
+        tr.calendar__tr
+          td.calendar__td 5
+          td.calendar__td 6
+          td.calendar__td 7
+          td.calendar__td.calendar__td--current-day 8
+          td.calendar__td 9
+          td.calendar__td 10
+          td.calendar__td 11
+        tr.calendar__tr
+          td.calendar__td 12
+          td.calendar__td 13
+          td.calendar__td 14
+          td.calendar__td 15
+          td.calendar__td 16
+          td.calendar__td 17
+          td.calendar__td 18
+        tr.calendar__tr
+          td.calendar__td.calendar__td--selected.calendar__td--selected-first 19
+          td.calendar__td.calendar__td--interval 20
+          td.calendar__td.calendar__td--interval 21
+          td.calendar__td.calendar__td--interval 22
+          td.calendar__td.calendar__td--selected.calendar__td--selected-last 23
+          td.calendar__td 24
+          td.calendar__td 25
+        tr.calendar__tr
+          td.calendar__td 26
+          td.calendar__td 27
+          td.calendar__td 28
+          td.calendar__td 29
+          td.calendar__td 30
+          td.calendar__td 31
+          td.calendar__td.calendar__td--other-month 1
+      .calendar__controls
+        +button(
+          {
+            type: 'reset',
+            text: 'Отчистить',
+          }
+        ).calendar__controls-button
+        +button(
+          {
+            type: 'apply',
+            text: 'Применить'
+          }
+        ).calendar__controls-button

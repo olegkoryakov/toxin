@@ -1,0 +1,16 @@
+include ../input/input
+//- 
+  options.title - title
+  options.placeholder - placeholder
+  options.status - text in top right сorner
+  options.value - input value
+  options.autofocus - boolean
+  options.masked - true/false
+
+mixin input-box(options)
+  .input-box(class = attributes.class)
+    if options.title
+      h3.input-box__title= options.title
+    if options.status
+      span.input-box__status= options.status
+    +input(options).input-box__input

@@ -1,0 +1,16 @@
+.subscription-form {
+  position: relative;
+  width: 260px;
+}
+
+.subscription-form__submit-button {
+  @include button-reset;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 22px;
+  right: 0;
+  background-image: url('../../img/arrow_forward.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}

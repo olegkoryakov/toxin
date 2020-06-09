@@ -1,0 +1,37 @@
+.comment {
+  max-width: 711px;
+}
+
+.comment__content {
+  display: flex;
+  &:first-of-type {
+    margin-bottom: 10px;
+  }
+}
+
+.comment__img {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 10px 20px rgba($mainColor, 0.1);
+}
+
+.comment__about {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment__author {
+  font-style: normal;
+  @include h4Like;
+}
+
+.comment__like-button {
+  margin-right: 14px;
+}
+
+.comment__comment {
+  margin: 0;
+}

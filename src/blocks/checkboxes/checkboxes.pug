@@ -1,0 +1,23 @@
+include ../checkbox/checkbox
+//-
+  options.title - title
+  options.list - array of 
+  { 
+    label: 'myAwesomeLabel',
+    name: 'myAwesomeName',
+    id: 'myAwesomeId'
+    checked: true/false
+    options.about - text
+  } 
+  options.opened = true/false
+
+mixin checkboxes(options)
+  - const jsClassMod = options.opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
+  .checkboxes.js-dropdown(class = attributes.class, class= jsClassMod)
+    h3.checkboxes__title= options.title
+    button(type='button').checkboxes__button.js-dropdown__button
+    if options.list
+      ul.checkboxes__list.js-dropdown__popup
+        each obj in options.list
+          li.checkboxes__list-item
+            +checkbox(obj)

@@ -1,0 +1,13 @@
+//-
+  options.placeholder - placeholder
+  oprions.value - value
+  options.autofocus - boolean
+  options.masked - true/false
+
+mixin input(options)
+  - 
+    let mask;
+    if (options.masked) {
+      mask = '\\d{2}\\.\\d{2}\\.\\d{4}';
+    }
+  input(type="text", placeholder = options.placeholder, autofocus = options.autofocus, value = options.value pattern= mask, class = attributes.class).input

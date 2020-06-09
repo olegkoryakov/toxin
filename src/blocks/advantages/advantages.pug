@@ -1,0 +1,20 @@
+//-
+  options.title - section title
+  option.list - array of {
+    url - url to img
+    alt - alt to img
+    text - advantage text
+    title - advantage title
+  }
+
+mixin advantages(options)
+  section.advantages
+    if options.title
+      h2.advantages__title= options.title
+    ul.advantages__list
+      each item in options.list
+        li.advantages__item
+          img(src= item.url, alt= item.alt).advantages__item-img
+          .advantages__item-about
+            h4.advantages__item-title= item.title
+            p.advantages__item-text= item.text

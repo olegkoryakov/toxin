@@ -1,0 +1,33 @@
+include ../star-rating/star-rating
+
+//-
+  options.number - number of number))
+  options.rating - number from 0 to 5
+  options.price - price
+  options.reviewsCount - reviews count
+  options.url - preview img url
+  options.luxe - true/false
+
+mixin room(options)
+  - const luxeClassMod = options.luxe ? 'room--luxe' : '';  
+  article.room(class = attributes.class, class = luxeClassMod)
+    .room__preview
+      img(src = options.url).room__preview-img
+      button.room__preview-button.room__preview-button--next
+      button.room__preview-button.room__preview-button--prev
+      ul.room__preview-list
+        li.room__preview-item.room__preview-item--current
+        li.room__preview-item
+        li.room__preview-item
+        li.room__preview-item
+    .room__content
+      .room__about
+        span.room__number= `№ ${options.number}`
+        span.room__price
+          span.room__price-current= `${options.price}₽`
+          span.room__price-text В сутки
+      .room__rating
+        +star-rating({ stars: options.rating}).room__star-rating
+        span.room__reviews
+          span.room__reviews-count= options.reviewsCount
+          span.room__reviews-text Отзывов

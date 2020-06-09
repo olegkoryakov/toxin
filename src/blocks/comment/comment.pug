@@ -1,0 +1,21 @@
+include ../like-button/like-button
+//- 
+  optins.url - img url
+  options.text - comment text
+  options.name - author name
+  options.date - when it was posted
+  options.like = {
+    liked - true/false,
+    count - likes count
+  }
+
+mixin comment(options)
+  .comment(class = attributes.class)
+    .comment__content
+      img.comment__img(src = options.url, alt = options.name)
+      p.comment__about
+        cite.comment__author= options.name
+        span.comment__date= options.date
+    .comment__content
+      +like-button(options.like).comment__like-button
+      blockquote.comment__comment= options.text

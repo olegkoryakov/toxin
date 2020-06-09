@@ -1,0 +1,92 @@
+include ../input-box/input-box
+
+//- 
+  applyButton - true/false
+  resetButton - true/false
+mixin controls(applyButton, resetButton)
+  if applyButton || resetButton
+      .dropdown__controls
+        if applyButton && resetButton
+          button.dropdown__controls-button.dropdown__controls-button--reset Отчистить
+          button.dropdown__controls-button.dropdown__controls-button--apply Применить
+        else if applyButton
+          button.dropdown__controls-button.dropdown__controls-button--apply Применить
+        else if resetButton
+          button.dropdown__controls-button.dropdown__controls-button--reset Отчистить
+
+//-
+  options.title - title
+  options.secondInputTitle - title for 2nd input-box
+  options.placeholder - placeholder
+  options.status - text in top right сorner
+  options.value - input value
+  options.autofocus - boolean
+  options.masked - true/false
+  options.type - guests/goods/dates/date-filter
+  options.applyButton - true/false
+  options.resetButton - true/false 
+  options.opened
+
+mixin dropdown(options)
+  - 
+    const jsClassMod = options.opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
+    let propsList;
+    let classMod;
+    switch(options.type) {
+      case 'guests':
+        propsList = ['Взрослые','Дети','Младенцы'];
+        classMod = 'dropdown--guests';
+        break;
+      case 'goods':
+        propsList = ['Спальни', 'Кровати', 'Ванные комнаты'];
+        classMod = 'dropdown--goods';
+        break;
+      case 'dates': 
+        classMod = 'dropdown--dates';
+        break;
+      case 'date-filter':
+        classMod = 'dropdown--date-filter'
+        break;
+      default:
+        break;
+    }
+
+  .dropdown.js-dropdown(class = attributes.class, class= `${classMod} ${jsClassMod}`)
+    if options.type !== 'dates' && options.type !== 'date-filter'
+      .dropdown__content
+        .dropdown__content-wrapper
+          +input-box(options).dropdown__input-box
+          button.dropdown__button.js-dropdown__button
+    else if options.type === 'dates'
+      .dropdown__content
+        .dropdown__content-wrapper
+          +input-box({
+            title: options.title,
+            placeholder: options.placeholder,
+            }).dropdown__input-box
+          button.dropdown__button.js-dropdown__button
+        .dropdown__content-wrapper
+          +input-box({
+            title: options.secondInputTitle,
+            placeholder: options.placeholder,
+            }).dropdown__input-box
+          button.dropdown__button.js-dropdown__button
+    else if options.type === 'date-filter'
+      .dropdown__content
+        .dropdown__content-wrapper
+          +input-box(options).dropdown__input-box
+          button.dropdown__button.js-dropdown__button
+    if options.type === 'guests' || options.type === 'goods'
+      .dropdown__popup.js-dropdown__popup
+        ul.dropdown__list
+          each item in propsList
+            li.dropdown__item
+              span.dropdown__item-name= item
+              button.dropdown__item-button.dropdown__item-button--minus -
+              span.dropdown__item-count 0
+              button.dropdown__item-button.dropdown__item-button--plus +
+        +controls(options.applyButton, options.resetButton)
+    else if options.type === 'dates' || options.type === 'date-filter'
+      .dropdown__popup.js-dropdown__popup
+        div CALENDAR
+        +controls(options.applyButton, options.resetButton)

@@ -1,0 +1,9 @@
+include ../input-box/input-box
+
+mixin subscription-form()
+  form.subscription-form
+    +input-box({
+      placeholder: 'Email',
+      title: 'subscription text field',
+    }).subscription-form__input-box
+    button(type="submit").subscription-form__submit-button

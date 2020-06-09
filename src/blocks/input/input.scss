@@ -1,0 +1,16 @@
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 11px 0 7px 14px;
+  border-radius: 4px;
+  border:1px solid rgba($mainColor, 0.25);
+  font: inherit;
+  &::placeholder {
+    font: inherit;
+    color: rgba($mainColor, 0.25);
+  }
+  &:focus, &:hover{
+    border: 1px solid rgba($mainColor, 0.5);
+    outline: none;
+  }
+}
