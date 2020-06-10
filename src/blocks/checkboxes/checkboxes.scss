@@ -9,26 +9,9 @@
   padding-bottom: 15px;
 }
 
-.checkboxes__button {
-  position: absolute;
-  @include button-reset;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
+.checkboxes__expand-button {
   top: 0;
   right: 0;
-  &::before {
-    position: absolute;
-    content: '';
-    z-index: -1;
-    box-sizing: border-box;
-    border: 2px solid rgba($mainColor, 0.5);
-    width: 9px;
-    height: 9px;
-    border-top: none;
-    border-left: none;
-    transform: rotate(45deg) translateX(-50%);
-  }
 }
 
 .checkboxes__list {

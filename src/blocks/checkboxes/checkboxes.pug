@@ -1,4 +1,5 @@
 include ../checkbox/checkbox
+include ../expand-button/expand-button
 //-
   options.title - title
   options.list - array of 
@@ -8,16 +9,23 @@ include ../checkbox/checkbox
     id: 'myAwesomeId'
     checked: true/false
     options.about - text
-  } 
-  options.opened = true/false
+  }
+  options.expandable - true/false
+  options.opened - true/false
 
 mixin checkboxes(options)
-  - const jsClassMod = options.opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
-  .checkboxes.js-dropdown(class = attributes.class, class= jsClassMod)
-    h3.checkboxes__title= options.title
-    button(type='button').checkboxes__button.js-dropdown__button
+  - 
+    let dropdownModifierClass = '';
+    if (options.expandable === true) dropdownModifierClass = options.opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
+    const dropdownClass = options.expandable === true ? 'js-dropdown' : '';
+    const popupClass = options.expandable === true ? 'js-dropdown__popup' : '';
+  .checkboxes(class = attributes.class, class= `${dropdownClass} ${dropdownModifierClass}`)
+    if options.title
+      h3.checkboxes__title= options.title
+    if options.expandable
+      +expand-button().checkboxes__expand-button.js-dropdown__button
     if options.list
-      ul.checkboxes__list.js-dropdown__popup
+      ul(class = popupClass).checkboxes__list
         each obj in options.list
           li.checkboxes__list-item
             +checkbox(obj)

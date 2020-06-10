@@ -1,4 +1,5 @@
 include ../input/input
+include ../expand-button/expand-button
 //- 
   options.title - title
   options.placeholder - placeholder
@@ -6,6 +7,7 @@ include ../input/input
   options.value - input value
   options.autofocus - boolean
   options.masked - true/false
+  options.expandButton - true/false
 
 mixin input-box(options)
   .input-box(class = attributes.class)
@@ -14,3 +16,5 @@ mixin input-box(options)
     if options.status
       span.input-box__status= options.status
     +input(options).input-box__input
+    if options.expandButton
+      +expand-button.input-box__expand-button.js-dropdown__button

@@ -6,7 +6,7 @@
 
 mixin button(options)
   - const classMod = `button--${options.type}`;
-  button.button(type = 'button', class = attributes.class, class = classMod, form = options.formId)= options.text
+  button.button(type = 'button', class = classMod, class = attributes.class, form = options.formId)= options.text
     if options.type === 'filled-wide'
       .button__arrow
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
