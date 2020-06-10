@@ -1,0 +1,54 @@
+.goods__list {
+  @include reset-list;
+}
+
+.goods__good {
+  display: flex;
+  align-items: center;
+  margin: 3.5px 0;
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.goods__good-name {
+  @include h3Like;
+  margin-right: auto;
+}
+
+.goods__good-button {
+  @include button-reset;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba($mainColor, 0.5);
+  color: rgba($mainColor, 0.5);
+  text-align: center;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.goods__good-count {
+  @include h3Like;
+  margin: 0 12px;
+}
+
+.goods__controls {
+  display: flex;
+  margin-top: 19px;
+  margin-bottom: 6px;
+}
+
+.goods__controls-button {
+  &--apply {
+    margin-left: auto;
+  }
+  &--reset {
+    margin-right: auto;
+  }
+}

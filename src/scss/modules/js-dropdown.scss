@@ -21,10 +21,9 @@
       }
     }
 
-    .checkboxes__button {
-      &::before {
-        transform: rotate(225deg);
-        right: 15px;
+    .checkboxes__expand-button {
+      &:before {
+        transform: rotate(-135deg) translateX(60%) translateY(-10%);
       }
     }
   }
