@@ -46,6 +46,7 @@ mixin dropdown(options)
             title: options.title,
             placeholder: options.placeholder,
             expandButton: true,
+            status: options.status,
           }
         ).dropdown__input-box
     else if options.type === 'dates'
@@ -54,14 +55,16 @@ mixin dropdown(options)
           {
             title: options.title,
             placeholder: options.placeholder,
-            expandButton: true
+            expandButton: true,
+            status: options.status,
           }
         ).dropdown__input-box
         +input-box(
           {
             title: options.secondTitle,
             placeholder: options.placeholder,
-            expandButton: true
+            expandButton: true,
+            status: options.status,
           }
         ).dropdown__input-box
     else if options.type === 'date-filter'
@@ -70,7 +73,8 @@ mixin dropdown(options)
           {
             title: options.title,
             placeholder: options.placeholder,
-            expandButton: true
+            expandButton: true,
+            status: options.status,
           }
         ).dropdown__input-box
     if options.type === 'guests' || options.type === 'goods'
@@ -78,4 +82,4 @@ mixin dropdown(options)
         +goods({ type: options.type, applyButton: options.applyButton, resetButton: options.resetButton}).dropdown__goods
     else if options.type === 'dates' || options.type === 'date-filter'
       .dropdown__popup.js-dropdown__popup
-        +calendar()
+        +calendar().dropdown__calendar

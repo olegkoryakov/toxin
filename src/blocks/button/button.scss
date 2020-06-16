@@ -6,8 +6,7 @@
     color: #fff;
     background-image: $purpleGradient;
     border-radius: 22px;
-    width: 99px;
-    height: 44px;
+    padding: 14px 20px 15px;
   }
 
   &--filled-wide {
@@ -36,8 +35,8 @@
     color: $purpleColor;
     background-color: #fff;
     border-radius: 20px;
-    width: 97px;
-    height: 42px;
+    margin: 2px;
+    padding: 12px 18px 13px;
     &:before {
       position: absolute;
       content: '';
@@ -59,14 +58,14 @@
     color: rgba($mainColor, 0.5);
   }
 
-  &--filled {
-    &:focus, &:hover {
+  &--filled, &--filled {
+    &:focus, &:hover, &.hover {
       opacity: 0.5;
     }
   }
 
   &--stroked{
-    &:focus, &:hover {
+    &:focus, &:hover, &.hover {
       &:before {
         opacity: 0.5;
       }

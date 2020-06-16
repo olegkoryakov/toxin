@@ -8,7 +8,7 @@
   }
 
 mixin advantages(options)
-  section.advantages
+  article.advantages(class = attributes.class)
     if options.title
       h2.advantages__title= options.title
     ul.advantages__list

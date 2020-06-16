@@ -2,7 +2,7 @@ include ../button/button
 include ../input/input
 
 mixin sign-in()
-  article.sign-in
+  article.sign-in(class = attributes.class)
     .sign-in__content
       h1.sign-in__title Войти
       +input({ placeholder: 'Email' }).sign-in__input

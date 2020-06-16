@@ -1,6 +1,7 @@
 .room {
   @include cardShadow;
   box-sizing: border-box;
+  background-color: #fff;
   max-width: 270px;
   border-radius: 4px;
   &--luxe {

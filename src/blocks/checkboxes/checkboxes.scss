@@ -1,7 +1,6 @@
 .checkboxes{
   position: relative;
   width: 266px;
-  padding-top: 14px;
 }
 
 .checkboxes__title {
@@ -10,7 +9,7 @@
 }
 
 .checkboxes__expand-button {
-  top: 0;
+  top: -15px;
   right: 0;
 }
 

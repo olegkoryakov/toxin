@@ -15,6 +15,7 @@
     border-left: none;
     left: 50%;
     top: 50%;
-    transform: rotate(45deg) translateX(-70%) translateY(-5%);
+    transform-origin: center;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
   }
 }

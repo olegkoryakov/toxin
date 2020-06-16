@@ -6,7 +6,7 @@ include ../toggle-button/toggle-button
 
 
 mixin registration()
-  article.registration
+  article.registration(class = attributes.class)
     .registration__content
       h1.registration__title Регистрация аккаунта
       form.registration__form(action="#")

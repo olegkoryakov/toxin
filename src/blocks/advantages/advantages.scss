@@ -1,11 +1,11 @@
 .advantages {
   box-sizing: border-box;
   width: 291px;
-  padding: 0 11px;
 }
 
 .advantages__title {
-  @include h3Like;
+  @include h2Like;
+  margin-bottom: 20px;
 }
 
 .advantages__list {
@@ -19,8 +19,10 @@
   flex-direction: row;
   align-items: center;
   border-bottom: 1px solid rgba($mainColor, 0.1);
-  padding-top: 23px;
   padding-bottom: 16px;
+  &:not(:first-of-type) {
+    padding-top: 23px;
+  }
 }
 
 .advantages__item-img {

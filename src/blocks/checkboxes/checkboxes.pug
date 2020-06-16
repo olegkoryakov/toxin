@@ -19,7 +19,7 @@ mixin checkboxes(options)
     if (options.expandable === true) dropdownModifierClass = options.opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
     const dropdownClass = options.expandable === true ? 'js-dropdown' : '';
     const popupClass = options.expandable === true ? 'js-dropdown__popup' : '';
-  .checkboxes(class = attributes.class, class= `${dropdownClass} ${dropdownModifierClass}`)
+  article.checkboxes(class = attributes.class, class= `${dropdownClass} ${dropdownModifierClass}`)
     if options.title
       h3.checkboxes__title= options.title
     if options.expandable

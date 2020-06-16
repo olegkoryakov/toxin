@@ -2,6 +2,7 @@
   box-sizing: border-box;
   @include cardShadow;
   border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #fff;
   width: 320px;
   padding: 19px;
   border-radius: 4px;

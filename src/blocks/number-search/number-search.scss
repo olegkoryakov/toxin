@@ -1,6 +1,7 @@
 .number-search {
   @include cardShadow;
   border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #fff;
   box-sizing: border-box;
   max-width: 380px;
   padding: 40px 0 30px 0;

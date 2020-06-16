@@ -2,7 +2,7 @@
   options.title - title
   
 mixin pagination(options)
-  article.pagination
+  article.pagination(class = attributes.class)
     if options.title
       h3.pagination__title= options.title
     ul.pagination__pages

@@ -13,6 +13,7 @@
 .like-button__img {
   width: 20px;
   & > svg {
+    margin: 0 auto;
     stroke: rgba($mainColor, 0.25);
     fill: none;
   }

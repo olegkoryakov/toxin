@@ -2,8 +2,9 @@
   options.names - array of list items names
   options.title - title
 mixin bullet-list(options)
-  article.bullet-list
-    h3.bullet-list__title= options.title
+  article.bullet-list(class = attributes.class)
+    if options.title
+      h2.bullet-list__title= options.title
     ul.bullet-list__list
-      each name in names
+      each name in options.names
         li.bullet-list__item= name

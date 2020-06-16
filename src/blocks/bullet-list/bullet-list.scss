@@ -14,14 +14,18 @@
 .bullet-list__item {
   box-sizing: border-box;
   position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 20px;
   width: 260px;
+
   &:before {
     content: '';
     position: absolute;
     width: 10px;
     height: 10px;
-    top: 7px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     background-color: rgba($mainColor, 0.25);
     border-radius: 50%;
