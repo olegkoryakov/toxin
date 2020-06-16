@@ -1,0 +1,53 @@
+include ../button/button
+
+mixin buttons-card
+  article.buttons-card(class = attributes.class)
+    h3.buttons-card__title Buttons
+    - 
+      const text = 'click me'
+      const buttonsProps = [
+        {
+          type: 'filled',
+          text: text,
+        },
+        {
+          type: 'filled',
+          text: text,
+        },
+        {
+          type: 'stroked',
+          text: text,
+        },
+        {
+          type: 'stroked',
+          text: text,
+        }
+      ];
+      const controlButtonsProps = [
+          {
+            type: 'apply',
+            text: text,
+          },
+          {
+            type: 'reset',
+            text: text,
+          }
+      ];
+    ul.buttons-card__list
+      each obj in buttonsProps
+        li.buttons-card__item
+          +button(obj).buttons-card__button
+    ul.buttons-card__list.buttons-card__list--controls
+      each obj in controlButtonsProps
+        li.buttons-card__item
+          +button(obj).buttons-card__button
+    +button(
+      {
+        type: 'filled-wide',
+        text: 'перейти к оплате',
+      }
+    ).buttons-card__button
+    script.
+      const buttonsCard = document.querySelector('.buttons-card');
+      buttonsCard.querySelectorAll('.button--filled')[1].classList.add('hover');
+      buttonsCard.querySelectorAll('.button--stroked')[1].classList.add('hover');

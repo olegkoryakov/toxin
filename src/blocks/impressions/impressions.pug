@@ -1,0 +1,14 @@
+include ../bullet-list/bullet-list
+
+mixin impressions()
+  section.impressions(class = attributes.class)
+    h2.impressions__title Впечатления о номере
+    .impressions__content
+      .impressions__count
+        span.impressions__count-number 260
+        span.impressions__count-text голосов
+      ul.impressions__list
+        li.impressions__item.impressions__item--super Великолепно
+        li.impressions__item.impressions__item--good Хорошо
+        li.impressions__item.impressions__item--soso Удовлетворительно
+        li.impressions__item.impressions__item--bad Разочарован

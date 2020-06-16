@@ -1,0 +1,30 @@
+.room-comments {
+  max-width: 711px;
+}
+
+.room-comments__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.room-comments__title {
+  @include h2Like;
+}
+
+.room-comments__count {
+  font-size: 14px;
+  line-height: 14px;
+  color: rgba($mainColor, 0.5);
+}
+
+.room-comments__list {
+  @include reset-list;
+}
+
+.room-comments__item {
+  &:not(:last-of-type) {
+    margin-bottom: 22px;
+  }
+}

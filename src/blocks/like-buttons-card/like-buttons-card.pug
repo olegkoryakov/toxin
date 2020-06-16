@@ -1,0 +1,20 @@
+include ../like-button/like-button
+
+mixin like-buttons-card
+  article.like-buttons-card(class = attributes.class)
+    h3.like-buttons-card__title Like button
+    - 
+      const likeButtonsProps = [
+        {
+          liked: false,
+          count: 2 
+        },
+        {
+          liked: true,
+          count: 12,
+        }
+      ];
+    ul.like-buttons-card__list
+      each obj in likeButtonsProps
+        li.like-buttons-card__item
+          +like-button(obj)

@@ -1,0 +1,25 @@
+include ../radio-button/radio-button
+
+mixin radio-buttons-card
+  article.radio-buttons-card(class = attributes.class)
+    h3.radio-buttons-card__title Radio Buttons
+    -
+      const radioProps = [
+        {
+          name: 'gender',
+          value: 'male',
+          id: 'male',
+          label: 'Мужчина',
+          checked: true
+        },
+        {
+          name: 'gender',
+          value: 'female',
+          id: 'female',
+          label: 'Женщина',
+        }
+      ];
+    ul.radio-buttons-card__list
+      each obj in radioProps
+        li.radio-buttons-card__item
+          +radio-button(obj).radio-buttons-card__radio-button

@@ -1,0 +1,24 @@
+include ../toggle-button/toggle-button
+
+mixin toggle-buttons-card
+  article.toggle-buttons-card(class = attributes.class)
+    h3.toggle-buttons-card__title Toggle
+    -
+      const toggleProps = [
+        {
+          name: 'subscribe',
+          id: 'subscribe',
+          label: 'Получать спецпредложения',
+          checked: true,
+        },
+        {
+          name: 'subscribe1',
+          id: 'subscribe1',
+          label: 'Получать спецпредложения',
+          checked: false,
+        }
+      ];
+    ul.toggle-buttons-card__list
+      each obj in toggleProps
+        li.toggle-buttons-card__item
+          +toggle-button(obj).toggle-buttons-card__toggle-button

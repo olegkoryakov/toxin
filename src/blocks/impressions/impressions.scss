@@ -1,0 +1,83 @@
+.impressions {
+  width: 311px;
+}
+
+.impressions__title {
+  @include h2Like;
+  margin-bottom: 22px;
+}
+
+.impressions__content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.impressions__count {
+  box-sizing: border-box;
+  text-align: center;
+  background-image: url('../../img/Pie.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.impressions__count-number {
+  @include h1Like;
+  color: $purpleColor;
+}
+
+.impressions__count-text {
+  @include h3Like;
+  color: $purpleColor;
+}
+
+
+.impressions__list {
+  @include reset-list;
+  width: 161px;
+}
+
+.impressions__item {
+  position: relative;
+  padding-left: 15px;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  &--super {
+    &:before {
+      background-image: $yellowGradient;
+    }
+  }
+
+  &--good {
+    &:before {
+      background-image: $greenGradient;
+    }
+  }
+
+  &--soso {
+    &:before {
+      background-image: $purpleGradient;      
+    }
+  }
+
+  &--bad {
+    &:before {
+      background-image: $blackGradient;
+    }
+  }
+}

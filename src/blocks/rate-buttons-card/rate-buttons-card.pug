@@ -1,0 +1,18 @@
+include ../star-rating/star-rating
+
+mixin rate-buttons-card
+  article.rate-buttons-card(class = attributes.class)
+    h3.rate-buttons-card__title Rate buttons
+      -
+        const starRatingProps = [
+          {
+            stars: 4,
+          },
+          {
+            stars: 5,
+          }
+        ];
+      ul.rate-buttons-card__list
+        each obj in starRatingProps
+          li.rate-buttons-card__item
+            +star-rating(obj).rate-buttons-card__star-rating
