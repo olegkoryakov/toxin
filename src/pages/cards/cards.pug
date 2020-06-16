@@ -1,0 +1,40 @@
+extends ../../layouts/UIKitLayout
+include ../../blocks/number-search/number-search
+include ../../blocks/registration/registration
+include ../../blocks/sign-in/sign-in
+include ../../blocks/room/room
+include ../../blocks/calendar/calendar
+include ../../blocks/about-room/about-room
+include ../../blocks/goods/goods
+
+block title
+  title Cards
+block content
+  section.cards
+    .cards__content.content-wrapper
+      .cards__column
+        +number-search().cards__number-search
+        +registration().cards__registration
+      .cards__column
+        +about-room().cards__about-room
+        +sign-in().cards__sign-in
+      .cards__column
+        +calendar().cards__calendar
+        +room(
+          {
+            url: '../../img/room888.png',
+            number: 888,
+            luxe: true,
+            reviewsCount: 145,
+            rating: 5,
+            price: '9 990'
+          }).cards__room
+        +room(
+          {
+            url: '../../img/room840.png',
+            number: 840,
+            luxe: false,
+            reviewsCount: 65,
+            rating: 4,
+            price: '9 900'
+          }).cards__room

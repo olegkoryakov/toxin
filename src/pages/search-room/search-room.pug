@@ -1,0 +1,238 @@
+extends ../../layouts/pageLayout
+include ../../blocks/room/room
+include ../../blocks/pagination/pagination
+include ../../blocks/dropdown/dropdown
+include ../../blocks/range-slider/range-slider
+include ../../blocks/checkboxes/checkboxes
+
+block variables
+  - const title = 'Search room/filter';
+block content
+  .search-room.content-wrapper
+    section.search-room__search-room
+      h1.search-room__search-room-title Номера, которые мы для вас подобрали
+      ul.search-room__search-room-list
+        - 
+          const roomsProps = [
+            {
+              number: 888,
+              rating: 5,
+              price: '9 990',
+              url: '../../img/room888.png',
+              luxe: true,
+              reviewsCount: 145,
+            },
+            {
+              number: 840,
+              rating: 4,
+              price: '9 900',
+              url: '../../img/room840.png',
+              reviewsCount: 65,
+            },
+            {
+              number: 980,
+              rating: 3,
+              price: '8 500',
+              url: '../../img/room980.png',
+              luxe: true,
+              reviewsCount: 35,
+            },
+            {
+              number: 856,
+              rating: 5,
+              price: '7 300',
+              url: '../../img/room856.png',
+              reviewsCount: 19,
+            },
+            {
+              number: 740,
+              rating: 4,
+              price: '6 000',
+              url: '../../img/room740.png',
+              reviewsCount: 44,
+            },
+            {
+              number: 982,
+              rating: 3,
+              price: '5 800',
+              url: '../../img/room982.png',
+              reviewsCount: 56,
+            },
+            {
+              number: 678,
+              rating: 5,
+              price: '5 500',
+              url: '../../img/room678.png',
+              reviewsCount: 45,
+            },
+            {
+              number: 450,
+              rating: 4,
+              price: '5 500',
+              url: '../../img/room450.png',
+              reviewsCount: 39,
+            },
+            {
+              number: 350,
+              rating: 3,
+              price: '5 500',
+              url: '../../img/room350.png',
+              reviewsCount: 77,
+            },
+            {
+              number: 666,
+              rating: 5,
+              price: '5 000',
+              url: '../../img/room666.png',
+              reviewsCount: 25,
+            },
+            {
+              number: 444,
+              rating: 3,
+              price: '5 000',
+              url: '../../img/room444.png',
+              reviewsCount: 15,
+            },
+            {
+              number: 352,
+              rating: 3,
+              price: '5 000',
+              url: '../../img/room450.png',
+              reviewsCount: 55,
+            },
+          ];
+        each roomProps in roomsProps
+          li.search-room__search-room-item
+            +room(roomProps).search-room__room
+      +pagination({ title: '' }).search-room__search-room-pagination
+    section.search-room__filter
+      +dropdown({
+          placeholder: 'ДД.ММ.ГГ - ДД.ММ.ГГ',
+          title: 'Даты пребывания в отеле',
+          type: 'date-filter'
+        }
+      ).search-room__filter-dropdown
+      +dropdown(
+        {
+          placeholder: 'Сколько гостей',
+          title: 'Гости',
+          type: 'guests',
+        }
+      ).search-room__filter-dropdown
+      +range-slider(
+        {
+          title: 'Диапазон цены',
+          subtitle: 'Стоимость за сутки пребывания в номере'
+        }
+      ).search-room__filter-range-slider
+      - 
+        const checkboxesProps = [
+          {
+            name: 'smoke',
+            id: 'smoke',
+            label: 'Можно курить',
+            checked: false,
+          },
+          {
+            name: 'pets',
+            id: 'pets',
+            label: 'Можно с питомцами',
+            checked: true,
+          },
+          {
+            name: 'guests',
+            id: 'guests',
+            label: 'Можно пригласить гостей (до 10 человек)',
+            checked: true,
+          }
+        ];
+      +checkboxes(
+        {
+          title: 'Checkbox Buttons',
+          list: checkboxesProps,
+        }
+      ).search-room__filter-checkboxes
+      - 
+        const richCheckboxesProps = [
+          {
+            label: 'Широкий коридор',
+            name: 'wide-corridor',
+            id: 'wide-corridor',
+            about: 'Ширина коридоров в номере не менее 91 см.',
+          },
+          {
+            label: 'Помощник для инвалидов',
+            name: 'disabled-assistant',
+            id: 'disabled-assistant',
+            about: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+          }
+        ];
+      +checkboxes(
+        {
+          title: 'Доступность',
+          list: richCheckboxesProps,
+        }
+      ).search-room__filter-checkboxes
+      +dropdown({
+          placeholder: 'Удобства номера',
+          title: 'Удобства номера',
+          type: 'goods',
+        }).search-room__filter-dropdown
+      -
+        const expandableCheckboxesProps = [
+          {
+            label: 'Завтрак',
+            name: 'breakfast',
+            id: 'breakfast',
+            checked: false,
+          },
+          {
+            label: 'Письменный стол',
+            name: 'desk',
+            id: 'desk',
+            checked: true,
+          },
+          {
+            label: 'Стул для кормления',
+            name: 'feeding-chair',
+            id: 'feeding-chair',
+            checked: true,
+          },
+          {
+            label: 'Кроватка',
+            name: 'cot',
+            id: 'cot',
+            checked: true,
+          },
+          {
+            label: 'Телевизор',
+            name: 'tv1',
+            id: 'tv1',
+            checked: false,
+          },
+          {
+            label: 'Шампунь',
+            name: 'shampoo1',
+            id: 'shampoo1',
+            checked: false,
+          },
+          {
+            label: 'Телевизор',
+            name: 'tv2',
+            id: 'tv2',
+            checked: false,
+          },
+          {
+            label: 'Шампунь',
+            name: 'shampoo2',
+            id: 'shampoo2',
+            checked: false,
+          }
+        ];
+      +checkboxes(
+        {
+          title: 'Дополнительные удобства',
+          expandable: true,
+          opened: false
+        }
+      ).search-room__filter-checkboxes

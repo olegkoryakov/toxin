@@ -1,0 +1,11 @@
+extends ../../layouts/pageLayout
+include ../../blocks/number-search/number-search
+
+block variables
+  - const title = 'Landing page';
+block content
+  .index
+    .index__content.content-wrapper
+      +number-search().index__number-search
+      p.index__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
+

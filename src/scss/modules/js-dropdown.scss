@@ -23,7 +23,7 @@
 
     .checkboxes__expand-button {
       &:before {
-        transform: rotate(-135deg) translateX(60%) translateY(-10%);
+        transform: translateX(-50%) translateY(-50%) rotate(-135deg);
       }
     }
   }

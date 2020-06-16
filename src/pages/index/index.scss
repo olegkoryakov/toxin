@@ -1,0 +1,24 @@
+.index {
+  background-image: url('../../img/index-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.index__content {
+  padding-top: 70px;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.index__number-search {
+  margin-left: 0;
+  margin-bottom: 320px;
+}
+
+.index__slogan {
+  margin: 0;
+  max-width: 297px;
+  margin-left: auto;
+}

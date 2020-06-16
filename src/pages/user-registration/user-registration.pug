@@ -1,0 +1,8 @@
+extends ../../layouts/pageLayout
+include ../../blocks/registration/registration
+
+block variables
+  - const title = 'Registration';
+block content
+  .user-registration
+    +registration().user-registration__registration
