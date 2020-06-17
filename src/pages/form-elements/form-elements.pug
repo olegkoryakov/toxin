@@ -242,13 +242,13 @@ block content
         - 
           const advantagesProps = [
             {
-              url: '../../img/comfort.svg',
+              url: require('../../img/comfort.svg').default,
               alt: 'Комфорт номера',
               title: 'Комфорт',
               text: 'Шумопоглощающие стены'
             },
             {
-              url: '../../img/good.svg',
+              url: require('../../img/good.svg').default,
               alt: 'Удобство номера',
               title: 'Удобство',
               text: 'Окно в каждой из спален'
@@ -258,7 +258,7 @@ block content
       .form-elements__column.form-elements__column--second
         +comment(
           {
-            url: '../../img/murad-saraphanov.png',
+            url: require('../../img/murad-saraphanov.png').default,
             name: 'Мурад Сарафанов',
             text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
             date: '5 дней назад',
