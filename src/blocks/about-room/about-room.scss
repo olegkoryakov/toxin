@@ -3,6 +3,7 @@
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   max-width: 380px;
+  border-radius: 4px;
   padding-top: 40px;
   padding-bottom: 30px;
 }
@@ -19,10 +20,12 @@
   margin-bottom: 20px;
 }
 
-.about-room__number {
+.about-room__number-details {
+  width: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: $likeHeadingFont; 
-  font-size: 24px;
-  line-height: 30px;
   color: $mainColor;
   &--luxe {
     position: relative;
@@ -41,7 +44,18 @@
   }
 }
 
+.about-room__number-prefix {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.about-room__number {
+  font-size: 24px;
+  line-height: 30px;
+}
+
 .about-room__price-details {
+  width: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,11 +66,11 @@
 .about-room__price {
   font-family: $decorativeFont;
   font-size: 14px;
-  margin-right: 5px;
 }
 
 .about-room__price-postfix {
-  font-style: 12px;
+  font-size: 12px;
+  text-transform: lowercase;
 }
 
 .about-room__form {
@@ -85,33 +99,29 @@
 
 .about-room__table {
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   width: 100%;
 }
 
 .about-room__td {
   padding: 0;
+  line-height: 18px;
+  border-bottom: 15px solid transparent;
   &:first-of-type {
     width: 214px;
   }
   &:nth-of-type(3) {
+    vertical-align: top;
     text-align: right;
   }
   &:nth-of-type(2) {
+    vertical-align: top;
     text-align: center;
   }
 }
 
-.about-room__tr {
-  &:not(:last-of-type) {
-    border-bottom: 10px solid transparent;
-  }
-  &:last-of-type {
-    border-top: 30px solid transparent;
-  }
-}
-
 .about-room__th {
+  border-top: 30px solid transparent;
   padding: 0;
   font-family: $likeHeadingFont;
   color: $mainColor;

@@ -6,8 +6,8 @@
 .footer__content {
   max-width: 1160px;
   margin: 0 auto;
-  padding-top: 103px;
-  padding-bottom: 80px;
+  padding-top: 100px;
+  padding-bottom: 85px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -54,7 +54,8 @@
 
 .footer__navigation-title {
   @include h3Like;
-  margin-bottom: 10px;
+  padding-top: 4px;
+  margin-bottom: 20px;
 }
 
 .footer__navigation-list {
@@ -63,10 +64,8 @@
 }
 
 .footer__navigation-item {
-  padding: 10px 0;
-  &:last-of-type {
-    padding-bottom: 0;
-  }
+  margin-bottom: 20px;
+  line-height: 17px;
 }
 
 .footer__navigation-link {
@@ -81,6 +80,7 @@
 }
 
 .footer__subscription-title {
+  padding-top: 4px;
   @include h3Like;
   margin-bottom: 20px;
 }
@@ -104,7 +104,8 @@
 
 .footer__social-list {
   @include reset-list;
-  padding: 23px 0;
+  padding-top: 23px;
+  padding-bottom: 24px;
   display: flex;
   align-items: center;
 }

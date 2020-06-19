@@ -33,7 +33,7 @@ mixin buttons-card
             text: text,
           }
       ];
-    ul.buttons-card__list
+    ul.buttons-card__list.buttons-card__list--main
       each obj in buttonsProps
         li.buttons-card__item
           +button(obj).buttons-card__button

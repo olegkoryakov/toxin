@@ -1,14 +1,11 @@
 .types {
+  max-width: 406px;
   @include reset-list;
 }
 
 .types__type {
   display: flex;
-  margin: 25px 0;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
+  margin-bottom: 50px;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -40,7 +37,7 @@
 }
 
 .types__type-marker {
-  width: 40px;
+  width: 37px;
   text-align: right;
   margin-right: 30px;
   text-transform: capitalize;

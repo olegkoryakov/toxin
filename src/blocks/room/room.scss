@@ -5,13 +5,13 @@
   max-width: 270px;
   border-radius: 4px;
   &--luxe {
-    .room__number {
+    .room__number-details {
       position: relative;
      &::after {
       position: absolute;
       content: 'Люкс';
       right: -5px;
-      bottom: 1px;
+      bottom: 3px;
       transform: translateX(100%);
       text-transform: uppercase;
       font-family: $decorativeFont;
@@ -24,7 +24,7 @@
 }
 
 .room__content {
-  padding: 20px 17px 20px 20px ;
+  padding: 21px 20px 20px 20px ;
   margin: 0 auto;
 }
 
@@ -75,7 +75,7 @@
   bottom: 15px;
   right: 15px;
   @include reset-list;
-  width: 52px;
+  width: 41px;
   display: flex;
   justify-content: space-between;
 }
@@ -95,7 +95,7 @@
 
 .room__about {
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 11px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -110,13 +110,27 @@
   }
 }
 
-.room__number {
+.room__number-details {
+  width: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: $likeHeadingFont;
-  line-height: 18px;
   color: $mainColor;
 }
 
+.room__number {
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.room__number-prefix {
+  font-size: 14px;
+  line-height: 17px;
+}
+
 .room__rating {
+  padding: 0 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -135,7 +149,11 @@
   text-transform: uppercase;
 }
 
-.room__price-text, .room__reviews-text {
+.room__price-text {
   font-size: 12px;
   text-transform: lowercase;
+}
+
+.room__reviews-text {
+  line-height: 18px;  
 }

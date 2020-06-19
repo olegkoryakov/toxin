@@ -1,9 +1,6 @@
 .form-elements {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding-top: 74px;
-  padding-bottom: 132px;
+  padding-top: 140px;
+  padding-bottom: 131px;
 }
 
 .form-elements__row {
@@ -22,18 +19,19 @@
 }
 
 .form-elements__column {
-  min-width: 320px;
+  width: 320px;
 }
 
 .form-elements__row {
   &--first {
-    margin-bottom: 67px;
+    margin-bottom: 100px;
     .form-elements__column {
       &--first {
         .form-elements__input-box {
-          &:not(:last-of-type) {
-            margin-bottom: 20px;
+          &:nth-of-type(4) {
+            margin-bottom: 40px;
           }
+          margin-bottom: 20px;
         }
         .form-elements__dropdown {
           margin-bottom: 40px;
@@ -42,6 +40,7 @@
       }
 
       &--second {
+        width: 260px;
         article:not(:last-of-type) {
           margin-bottom: 40px;
         }
@@ -56,8 +55,10 @@
   }
 
   &--second {
+    margin-bottom: 55px;
     .form-elements__column {
       &--first {
+        max-width: 266px;
         .form-elements__dropdown {
           &:not(:last-of-type) {
             margin-bottom: 20px;
@@ -68,11 +69,20 @@
   }
 
   &--third {
+    margin-bottom: 100px;
     .form-elements__column {
       &--first {
         .form-elements__checkboxes:not(:last-of-type) {
           margin-bottom: 50px;
         }
+      }
+    }
+  }
+
+  &--fourth {
+    .form-elements__column {
+      &--second {
+        width: 711px;
       }
     }
   }

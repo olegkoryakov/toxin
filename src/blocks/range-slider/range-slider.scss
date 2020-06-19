@@ -10,12 +10,15 @@
 }
 
 .range-slider__price {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-style: 12px;
+  font-size: 12px;
   line-height: 15px;
   color: rgba($mainColor, 0.5);
+}
+
+.range-slider__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 23px;
 }
 
 .range-slider__line {
@@ -24,8 +27,6 @@
   box-sizing: border-box;
   width: 100%;
   height: 6px;
-  margin-top: 15px;
-  margin-bottom: 14px;
   border: 1px solid rgba($mainColor, 0.25);
   border-radius: 3px;
 }
@@ -36,8 +37,8 @@
   background-image: $greenGradient;
   top: 0;
   bottom: 0;
-  width: 88px;
-  left: 80px;
+  width: 99px;
+  left: 75px;
 }
 
 .range-slider__thumb {
@@ -62,6 +63,7 @@
 }
 
 .range-slider__subtitle {
+  margin-top: 13px;
   font-size: 12px;
   line-height: 24px;
   color: rgba($mainColor, 0.5);

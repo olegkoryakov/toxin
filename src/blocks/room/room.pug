@@ -22,7 +22,9 @@ mixin room(options)
         li.room__preview-item
     .room__content
       .room__about
-        span.room__number= `№ ${options.number}`
+        span.room__number-details
+          span.room__number-prefix №
+          span.room__number= options.number
         span.room__price
           span.room__price-current= `${options.price}₽`
           span.room__price-text В сутки

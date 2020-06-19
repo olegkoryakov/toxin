@@ -11,7 +11,7 @@
   padding-left: 15px;
   padding-right: 7px;
   padding-bottom: 7px;
-  padding-top: 7px;
+  padding-top: 6px;
 }
 
 .dropdown {
@@ -22,12 +22,6 @@
     .dropdown__content {
       display: flex;
       justify-content: space-between;
-    }
-  }
-
-  &--date-filter {
-    .dropdown__content-wrapper {
-      width: 260px;
     }
   }
 }

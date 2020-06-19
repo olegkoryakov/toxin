@@ -5,7 +5,7 @@
 
 .checkboxes__title {
   @include h3Like;
-  padding-bottom: 15px;
+  margin-bottom: 17px;
 }
 
 .checkboxes__expand-button {
@@ -18,11 +18,8 @@
 }
 
 .checkboxes__list-item {
-  padding: 5px 0;
-  &:first-of-type {
-    padding-top: 0;
-  }
+  margin-bottom: 12px;
   &:last-of-type {
-    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }

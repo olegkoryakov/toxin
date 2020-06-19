@@ -13,12 +13,18 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 238px;
-  &--controls {
-    width: 142px;
+  width: 218px;
+  &--main {
+    margin-bottom: 25px;
+    .buttons-card__item {
+      margin-bottom: 30px;
+      &:nth-last-of-type(1), &:nth-last-of-type(2) {
+        margin-bottom: 0;
+      }
+    }
   }
-}
-
-.buttons-card__item {
-  margin-bottom: 30px;
+  &--controls {
+    width: 143px;
+    margin-bottom: 26px;
+  }
 }

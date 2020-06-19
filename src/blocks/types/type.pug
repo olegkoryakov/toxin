@@ -3,6 +3,6 @@
   options.marker - маркер справа от элемента
 mixin type(options)
   - const modifierClass = `types__type--${options.marker}`;
-  li.types__type(class = modifierClass)
+  li.types__type(class = modifierClass, class = attributes.class)
     span.types__type-marker= options.marker
     span.types__type-text= options.text

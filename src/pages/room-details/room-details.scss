@@ -1,5 +1,6 @@
 .room-details {
-  padding-bottom: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba($mainColor, 0.25);
 }
 
 .room-details__preview {
@@ -48,6 +49,9 @@
   flex-grow: 1;
   &--main {
     max-width: 711px;
+    & > .room-details__content-row:first-of-type {
+      max-width: 672px;
+    }
   }
   &--side {
     max-width: 380px;
