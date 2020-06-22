@@ -13,14 +13,15 @@
     .js-dropdown__popup {
       display: block; 
     }
-    &:not(.calndar) {
+    &:not(.dropdown--dates):not(.dropdown--filter-date) {
       .input {
         border-color: rgba($mainColor, 0.5);
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
       }
     }
-
+    
+    
     .checkboxes__expand-button {
       &:before {
         transform: translateX(-50%) translateY(-50%) rotate(-135deg);

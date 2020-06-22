@@ -6,8 +6,8 @@
 @import './modules/content-wrapper.scss';
 @import './modules/visually-hidden.scss';
 @import './modules/ui-kit.scss';
-@import './modules/js-dropdown.scss';
 //blocks import
+@import '../blocks/js-dropdown/js-dropdown.scss';
 @import '../blocks/colors/colors.scss';
 @import '../blocks/types/types.scss';
 @import '../blocks/input/input.scss';
