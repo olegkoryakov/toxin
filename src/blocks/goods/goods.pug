@@ -8,7 +8,7 @@ mixin goods(options)
   -
     const goodsList = ['Спальни', 'Кровати', 'Ванные комнаты'];
     const guestsList = ['Взрослые', 'Дети', 'Младенцы'];
-    const classMod = `goods-list--${options.type}`;
+    const classMod = `goods--${options.type}`;
     let currentList;
     if (options.type === 'guests') currentList = [...guestsList];
     else if (options.type === 'goods') currentList = [...goodsList];
