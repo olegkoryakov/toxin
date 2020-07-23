@@ -17,9 +17,9 @@ mixin goods(options)
       each item in currentList
         li.goods__good
           span.goods__good-name= item
-          button.goods__good-button.goods__good-button--minus -
+          button(type = 'button').goods__good-button.goods__good-button--minus -
           span.goods__good-count 0
-          button.goods__good-button.goods__good-button--plus +
+          button(type = 'button').goods__good-button.goods__good-button--plus +
     if options.applyButton || options.resetButton
       .goods__controls
         if options.applyButton && options.resetButton

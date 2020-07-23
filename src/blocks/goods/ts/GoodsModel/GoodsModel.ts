@@ -1,26 +1,17 @@
 export default class GoodsModel implements IGoodsModel {
-  constructor(goodsProps: TGoodsProps) {
-    this.goods = {};
-
+  constructor(goodsProps: TGoodsProps, type: string) {
+    this.goods = [];
     this.goodsProps = goodsProps;
+    this.type = type;
 
     this.setGoods(this.goodsProps);
   }
 
+  private type: string;
+
   private goodsProps: TGoodsProps;
 
-  private goods: IGoods;
-
-  // eslint-disable-next-line class-methods-use-this
-  private wordDeclension(goodForms: TSimpleGoodsNamesForms, count: number) {
-    const n = Math.abs(count) % 100;
-    const n1 = n % 10;
-    let [, , decWord] = goodForms;
-    if (n > 10 && n < 20) [, , decWord] = goodForms;
-    else if (n1 > 1 && n1 < 5) [, decWord] = goodForms;
-    else if (n1 === 1) [decWord] = goodForms;
-    return decWord;
-  }
+  private goods: TGoodsArray;
 
   private getNameForm(nameForms: TComplexGoodsNamesForms, count: number) {
     const name = nameForms
@@ -38,6 +29,22 @@ export default class GoodsModel implements IGoodsModel {
         count,
       };
     });
+  }
+
+  getType(): string {
+    return this.type;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  wordDeclension(goodForms: TSimpleGoodsNamesForms, count: number) {
+    const n = Math.abs(count) % 100;
+    const n1 = n % 10;
+    let [, , decWord] = goodForms;
+    if (n > 10 && n < 20) [, , decWord] = goodForms;
+    else if (n1 > 1 && n1 < 5) [, decWord] = goodForms;
+    else if (n1 === 1) [decWord] = goodForms;
+
+    return decWord;
   }
 
   increaseGood(index: number) {
