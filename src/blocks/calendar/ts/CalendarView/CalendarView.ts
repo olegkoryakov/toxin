@@ -7,16 +7,10 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
     this.calendarWidget = calendarWidget;
     this.nextMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button--next');
     this.prevMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button--prev');
-    this.applyButton = calendarWidget.querySelector('.calendar__controls-apply-button');
-    this.resetButton = calendarWidget.querySelector('.calendar__controls-reset-button');
     this.addHandlers();
   }
 
   private calendarWidget: HTMLElement;
-
-  private applyButton: HTMLElement | null;
-
-  private resetButton: HTMLElement | null;
 
   private nextMonthButton: HTMLElement | null;
 
@@ -28,52 +22,6 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
 
   private onPrevMonthButtonClick() {
     this.emit('render-prev-month', null);
-  }
-
-  private onResetButtonClick() {
-    this.emit('reset', null);
-  }
-
-  private onApplyButtonClick() {
-    this.emit('apply', null);
-  }
-
-  setInputsValue(dateFrom: ICalendarState, dateTo: ICalendarState) {
-    const parseDateKey = (dateKey: number): string => {
-      let value = dateKey.toString();
-      switch (value.length) {
-        case 1:
-          value = `0${value}`;
-          break;
-        case 4:
-          value = value.slice(2);
-          break;
-        default:
-          break;
-      }
-      return value;
-    };
-
-    const dateObjToString = (date: ICalendarState): string => `${parseDateKey(date.day)}.${parseDateKey(date.month)}.${parseDateKey(date.year)}`;
-    const dateFromString = dateObjToString(dateFrom);
-    const dateToString = dateObjToString(dateTo);
-
-    const inputs = this.calendarWidget.querySelectorAll('.input');
-
-    if (inputs.length === 2) {
-      (inputs[0] as HTMLInputElement).value = dateFromString;
-      (inputs[1] as HTMLInputElement).value = dateToString;
-    } else {
-      (inputs[0] as HTMLInputElement).value = `${dateFromString} - ${dateToString}`;
-    }
-  }
-
-  resetInputsValues() {
-    const inputs = this.calendarWidget.querySelectorAll('.input');
-    inputs.forEach((input) => {
-      // eslint-disable-next-line no-param-reassign
-      (input as HTMLInputElement).value = '';
-    });
   }
 
   private onCalendarTableClick(clickE: MouseEvent) {
@@ -88,10 +36,6 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
 
     if (calendarTable) {
       (calendarTable as HTMLElement).addEventListener('click', this.onCalendarTableClick.bind(this));
-    }
-    if (this.applyButton && this.resetButton) {
-      this.applyButton.addEventListener('click', this.onApplyButtonClick.bind(this));
-      this.resetButton.addEventListener('click', this.onResetButtonClick.bind(this));
     }
     if (this.nextMonthButton && this.prevMonthButton) {
       this.nextMonthButton.addEventListener('click', this.onNextMonthButtonClick.bind(this));

@@ -1,5 +1,5 @@
 export default class CalendarModel implements ICalendarModel {
-  constructor() {
+  constructor(selectedDates: ISelectedDates) {
     this.date = new Date();
     this.dateState = {
       day: this.date.getDate(),
@@ -7,10 +7,7 @@ export default class CalendarModel implements ICalendarModel {
       year: this.date.getFullYear(),
     };
     this.userDateState = { ...this.dateState };
-    this.selectedDates = {
-      from: undefined,
-      to: undefined,
-    };
+    this.selectedDates = selectedDates;
 
     this.dateProps = {
       maxMonth: 11,
@@ -34,12 +31,6 @@ export default class CalendarModel implements ICalendarModel {
 
   getDateProps() {
     return this.dateProps;
-  }
-
-  refreshUserDateState() {
-    this.userDateState = { ...this.dateState };
-    this.selectedDates.from = undefined;
-    this.selectedDates.to = undefined;
   }
 
   incrementUserDateState() {

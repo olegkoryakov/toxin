@@ -33,7 +33,6 @@ interface ICalendarModel {
   getUserDateState(): ICalendarState,
   getDateProps(): IDateProps,
   parseData(data: TDate): ICalendarState,
-  refreshUserDateState(): void,
   incrementUserDateState(): void,
   decrementUserDateState(): void,
   setTdData(tdData: ITdData): void,
@@ -50,8 +49,6 @@ interface ICalendarView extends IEventEmitter {
     selectedElementFirst: Element | null,
     selectedElementLast: Element | null,
   ): ISelectedDatesIndex;
-  setInputsValue(dateFrom: ICalendarState, dateTo: ICalendarState): void,
-  resetInputsValues(): void,
   renderInterval(indexFrom: number, indexTo: number): void,
   removeInterval(): void,
   setSelectedClass(td: HTMLTableDataCellElement, modifierPostfix: TModifierPostfix): void,
@@ -64,4 +61,5 @@ interface ICalendarPresenter extends IEventEmitter {
 }
 
 interface ICalendar {
+  getSelectedDates(): ISelectedDates;
 }

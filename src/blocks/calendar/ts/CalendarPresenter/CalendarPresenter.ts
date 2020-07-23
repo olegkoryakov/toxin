@@ -11,8 +11,6 @@ export default class CalendarPresenter extends EventEmitter implements ICalendar
     this.calendarView.on('select-date', this.selectDate.bind(this));
     this.calendarView.on('render-next-month', this.renderNextMonth.bind(this));
     this.calendarView.on('render-prev-month', this.renderPrevMonth.bind(this));
-    this.calendarView.on('apply', this.apply.bind(this));
-    this.calendarView.on('reset', this.reset.bind(this));
   }
 
   private calendarModel: ICalendarModel;
@@ -36,23 +34,6 @@ export default class CalendarPresenter extends EventEmitter implements ICalendar
 
     const selectedDates = this.calendarModel.getSelectedDates();
     this.renderSelectedDatesAndInterval(selectedDates);
-  }
-
-  private apply() {
-    const { to, from } = this.calendarModel.getSelectedDates();
-    if (to && from) {
-      const dateTo = this.calendarModel.parseData(to);
-      const dateFrom = this.calendarModel.parseData(from);
-      this.calendarView.setInputsValue(dateFrom, dateTo);
-    }
-  }
-
-  private reset() {
-    this.calendarModel.refreshUserDateState();
-
-    const { month, year } = this.calendarModel.getUserDateState();
-    this.calendarView.resetInputsValues();
-    this.calendarView.renderMonth(year, month);
   }
 
   renderSelectedDatesAndInterval(selectedDates: ISelectedDates) {
@@ -122,5 +103,8 @@ export default class CalendarPresenter extends EventEmitter implements ICalendar
   init() {
     const { year, month } = this.calendarModel.getUserDateState();
     this.calendarView.renderMonth(year, month);
+
+    const selectedDates = this.calendarModel.getSelectedDates();
+    this.renderSelectedDatesAndInterval(selectedDates);
   }
 }
