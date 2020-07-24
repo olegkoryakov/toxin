@@ -78,7 +78,9 @@
 }
 
 .about-room__dropdown {
+  z-index: 1;
   &:not(:last-of-type) {
+    z-index: 2;
     margin-bottom: 20px;
   }
 }
