@@ -30,7 +30,7 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
     if (goodItem === null) return;
     const goodIndex = this.getGoodIndex(goodItem);
     this.emit('increase-good', goodIndex);
-    if (!this.applyButton && !this.resetButton) {
+    if (!this.applyButton) {
       this.emit('set-input-value', null);
     }
   }
@@ -40,7 +40,7 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
     if (goodItem === null) return;
     const goodIndex = this.getGoodIndex(goodItem);
     this.emit('decrease-good', goodIndex);
-    if (!this.applyButton && !this.resetButton) {
+    if (!this.applyButton) {
       this.emit('set-input-value', null);
     }
   }
@@ -56,9 +56,9 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
       (minusButton as HTMLElement).addEventListener('click', this.onMinusButtonClick.bind(this));
     });
 
-    if (this.applyButton && this.resetButton) {
-      this.applyButton.addEventListener('click', this.onApplyButtonClick.bind(this));
-      this.resetButton.addEventListener('click', this.onResetButtonClick.bind(this));
+    if (this.applyButton || this.resetButton) {
+      if (this.applyButton) this.applyButton.addEventListener('click', this.onApplyButtonClick.bind(this));
+      if (this.resetButton) this.resetButton.addEventListener('click', this.onResetButtonClick.bind(this));
     }
   }
 
