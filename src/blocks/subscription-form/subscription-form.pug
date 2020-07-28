@@ -1,4 +1,5 @@
 include ../input-box/input-box
+include ../arrow/arrow
 //- 
   options.placeholder - placeholder
   options.title - title
@@ -11,3 +12,4 @@ mixin subscription-form(options)
       title: title,
     }).subscription-form__input-box
     button(type="submit").subscription-form__submit-button
+      +arrow().subscription-form__submit-button-svg

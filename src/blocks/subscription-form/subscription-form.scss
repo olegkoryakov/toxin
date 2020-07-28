@@ -10,7 +10,11 @@
   height: 40px;
   bottom: 0;
   right: 0;
-  background-image: url('../../img/arrow-forward.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscription-form__submit-button-svg {
+  fill: $purpleColor;
 }
