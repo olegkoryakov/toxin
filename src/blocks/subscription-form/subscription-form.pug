@@ -3,10 +3,11 @@ include ../input-box/input-box
   options.placeholder - placeholder
   options.title - title
 
-mixin subscription-form(options) 
+mixin subscription-form(options)
+  - const { placeholder, title } = options;
   form.subscription-form(class = attributes.class)
     +input-box({
-      placeholder: options.placeholder,
-      title: options.title,
+      placeholder: placeholder,
+      title: title,
     }).subscription-form__input-box
     button(type="submit").subscription-form__submit-button

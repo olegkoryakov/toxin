@@ -2,9 +2,10 @@
   options.title - title
   
 mixin pagination(options)
+  const { title } = options;
   article.pagination(class = attributes.class)
-    if options.title
-      h3.pagination__title= options.title
+    if title
+      h3.pagination__title= title
     ul.pagination__pages
       li.pagination__page 
         a.pagination__page-link.pagination__page-link--current(href="#") 1

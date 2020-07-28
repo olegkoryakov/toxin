@@ -10,11 +10,21 @@ include ../expand-button/expand-button
   options.expandButton - true/false
 
 mixin input-box(options)
+  - 
+    const {
+      title,
+      placeholder,
+      status,
+      value,
+      autofocus,
+      masked,
+      expandButton
+    } = options;
   .input-box(class = attributes.class)
-    if options.title
-      h3.input-box__title= options.title
+    if title
+      h3.input-box__title= title
     if options.status
-      span.input-box__status= options.status
-    +input(options).input-box__input
-    if options.expandButton
+      span.input-box__status= status
+    +input({ placeholder, masked, autofocus, value }).input-box__input
+    if expandButton
       +expand-button.input-box__expand-button.js-dropdown__button

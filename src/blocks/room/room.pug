@@ -9,10 +9,19 @@ include ../star-rating/star-rating
   options.luxe - true/false
 
 mixin room(options)
-  - const luxeClassMod = options.luxe ? 'room--luxe' : '';  
+  - 
+    const {
+      number,
+      rating,
+      price,
+      reviewsCount,
+      url,
+      luxe
+    } = options;
+    const luxeClassMod = luxe ? 'room--luxe' : '';  
   article.room(class = attributes.class, class = luxeClassMod)
     .room__preview
-      img(src = options.url).room__preview-img
+      img(src = url).room__preview-img
       button.room__preview-button.room__preview-button--next
       button.room__preview-button.room__preview-button--prev
       ul.room__preview-list
@@ -24,12 +33,12 @@ mixin room(options)
       .room__about
         span.room__number-details
           span.room__number-prefix №
-          span.room__number= options.number
+          span.room__number= number
         span.room__price
-          span.room__price-current= `${options.price}₽`
+          span.room__price-current= `${price}₽`
           span.room__price-text В сутки
       .room__rating
-        +star-rating({ stars: options.rating}).room__star-rating
+        +star-rating({ stars: rating}).room__star-rating
         span.room__reviews
-          span.room__reviews-count= options.reviewsCount
+          span.room__reviews-count= reviewsCount
           span.room__reviews-text Отзывов

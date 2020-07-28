@@ -16,10 +16,23 @@ include ../calendar/calendar
 
 mixin dropdown(options)
   - 
-    const jsClassMod = options.opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
+    const { 
+      title,
+      secondTitle,
+      placeholder,
+      status,
+      value,
+      autofocus,
+      masked,
+      applyButton,
+      resetButton,
+      opened,
+      type,
+    } = options;
+    const jsClassMod = opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
     let propsList;
     let classMod;
-    switch(options.type) {
+    switch(type) {
       case 'guests':
         propsList = ['Взрослые','Дети','Младенцы'];
         classMod = 'dropdown--guests';
@@ -39,47 +52,47 @@ mixin dropdown(options)
     }
 
   .dropdown.js-dropdown(class = attributes.class, class= `${classMod} ${jsClassMod}`)
-    if options.type !== 'dates' && options.type !== 'date-filter'
+    if type !== 'dates' && type !== 'date-filter'
       .dropdown__content
         +input-box(
           {
-            title: options.title,
-            placeholder: options.placeholder,
+            title: title,
+            placeholder: placeholder,
             expandButton: true,
-            status: options.status,
+            status: status,
           }
         ).dropdown__input-box
-    else if options.type === 'dates'
+    else if type === 'dates'
       .dropdown__content
         +input-box(
           {
-            title: options.title,
-            placeholder: options.placeholder,
+            title: title,
+            placeholder: placeholder,
             expandButton: true,
-            status: options.status,
+            status: status,
           }
         ).dropdown__input-box.dropdown__input-box--date-from
         +input-box(
           {
-            title: options.secondTitle,
-            placeholder: options.placeholder,
+            title: secondTitle,
+            placeholder: placeholder,
             expandButton: true,
-            status: options.status,
+            status: status,
           }
         ).dropdown__input-box.dropdown__input-box--date-to
-    else if options.type === 'date-filter'
+    else if type === 'date-filter'
       .dropdown__content
         +input-box(
           {
-            title: options.title,
-            placeholder: options.placeholder,
+            title: title,
+            placeholder: placeholder,
             expandButton: true,
-            status: options.status,
+            status: status,
           }
         ).dropdown__input-box.dropdown__input-box--date
-    if options.type === 'guests' || options.type === 'goods'
+    if type === 'guests' || type === 'goods'
       .dropdown__popup.js-dropdown__popup
-        +goods({ type: options.type, applyButton: options.applyButton, resetButton: options.resetButton}).dropdown__goods
-    else if options.type === 'dates' || options.type === 'date-filter'
+        +goods({ type: type, applyButton: applyButton, resetButton: resetButton}).dropdown__goods
+    else if type === 'dates' || type === 'date-filter'
       .dropdown__popup.js-dropdown__popup
         +calendar().dropdown__calendar

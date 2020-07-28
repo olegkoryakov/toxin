@@ -6,8 +6,9 @@
 
 mixin input(options)
   - 
-    let mask;
-    if (options.masked) {
+    const { placeholder, value, autofocus, masked } = options
+    let mask = '';
+    if (masked) {
       mask = '\\d{2}\\.\\d{2}\\.\\d{4}';
     }
-  input(type="text", placeholder = options.placeholder, autofocus = options.autofocus, value = options.value pattern= mask, class = attributes.class).input
+  input(type="text", placeholder = placeholder, autofocus = autofocus, value = value, pattern= mask, class = attributes.class).input

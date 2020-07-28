@@ -2,9 +2,10 @@
   options.names - array of list items names
   options.title - title
 mixin bullet-list(options)
+  - const { names, title } = options;
   article.bullet-list(class = attributes.class)
-    if options.title
+    if title
       h2.bullet-list__title= options.title
     ul.bullet-list__list
-      each name in options.names
+      each name in names
         li.bullet-list__item= name

@@ -3,13 +3,14 @@
   options.subtitle - subtitle
 
 mixin range-slider(options)
+  - const { title, subtitle } = options;
   article.range-slider(class = attributes.class)
     .range-slider__header
-      h3.range-slider__title= options.title
+      h3.range-slider__title= title
       span.range-slider__price 5 000₽ - 10 000₽
     .range-slider__line
       .range-slider__range-line
       .range-slider__thumb.range-slider__thumb--from
       .range-slider__thumb.range-slider__thumb--to
     if options.subtitle
-      span.range-slider__subtitle= options.subtitle
+      span.range-slider__subtitle= subtitle

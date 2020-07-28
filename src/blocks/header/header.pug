@@ -8,18 +8,19 @@ include ../toxin-logo/toxin-logo
 
 mixin header(options)
   -
+    const { lang, currentPage, userName } = options; 
     const enLinksText = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation'];
     const ruLinksText = ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'];
 
     let linksText;
-    if (options.lang === 'ru') linksText = [...ruLinksText];
-    else if (options.lang === 'en') linksText = [...enLinksText];
+    if (lang === 'ru') linksText = [...ruLinksText];
+    else if (lang === 'en') linksText = [...enLinksText];
 
     const isExpandableItem = (linkText) => {
       return linkText === 'Services' || linkText === 'Услуги' || linkText === 'Соглашения';
     };
 
-    const isCurrentPage = (index) => index + 1 === options.currentPage;
+    const isCurrentPage = (index) => index + 1 === currentPage;
   header.header(class = attributes.class)
     .header__content
       .header__logo
@@ -35,14 +36,14 @@ mixin header(options)
                 +expand-button().header__nav-expand-button
               a.header__nav-link(href="#" class = currentPageClassModifier)= linkText
       nav.header__user-nav
-        if options.userName
-          span.header__user-name= options.userName
+        if userName
+          span.header__user-name= userName
         else
           ul.header__nav-list
             -
               let buttonsText;
-              if (options.lang === 'ru') buttonsText = ['Войти', 'Зарегистрироваться'];
-              else if (options.lang === 'en') buttonsText = ['Login', 'Registr'];
+              if (lang === 'ru') buttonsText = ['Войти', 'Зарегистрироваться'];
+              else if (lang === 'en') buttonsText = ['Login', 'Registr'];
             li.header__nav-item  
                 +button({ type: 'stroked', text: buttonsText[0] }).header__nav-button.header__nav-button--login
             li.header__nav-item  

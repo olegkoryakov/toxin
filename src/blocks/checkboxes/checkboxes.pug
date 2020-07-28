@@ -15,17 +15,19 @@ include ../expand-button/expand-button
 
 mixin checkboxes(options)
   - 
+    const { title, list, expandable, opened } = options;
     let dropdownModifierClass = '';
-    if (options.expandable === true) dropdownModifierClass = options.opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
-    const dropdownClass = options.expandable === true ? 'js-dropdown' : '';
-    const popupClass = options.expandable === true ? 'js-dropdown__popup' : '';
+    if (expandable === true) dropdownModifierClass = opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
+    const dropdownClass = expandable === true ? 'js-dropdown' : '';
+    const popupClass = expandable === true ? 'js-dropdown__popup' : '';
+
   article.checkboxes(class = attributes.class, class= `${dropdownClass} ${dropdownModifierClass}`)
-    if options.title
-      h3.checkboxes__title= options.title
-    if options.expandable
+    if title
+      h3.checkboxes__title= title
+    if expandable
       +expand-button().checkboxes__expand-button.js-dropdown__button
-    if options.list
+    if list
       ul(class = popupClass).checkboxes__list
-        each obj in options.list
+        each obj in list
           li.checkboxes__list-item
             +checkbox(obj)

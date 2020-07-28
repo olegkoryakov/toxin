@@ -3,6 +3,7 @@
   options.hash - hash цвета
 
 mixin color(options)
+  - const { name, hash } = options;
   li.colors__color(class = attributes.class)
-    span.colors__color-name= options.name
-    span.colors__color-hash= options.hash
+    span.colors__color-name= name
+    span.colors__color-hash= hash

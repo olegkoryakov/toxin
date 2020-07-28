@@ -8,11 +8,12 @@
   }
 
 mixin advantages(options)
+  - const { list, title } = options;
   article.advantages(class = attributes.class)
-    if options.title
-      h2.advantages__title= options.title
+    if title
+      h2.advantages__title= title
     ul.advantages__list
-      each item in options.list
+      each item in list
         li.advantages__item
           img(src= item.url, alt= item.alt).advantages__item-img
           .advantages__item-about
