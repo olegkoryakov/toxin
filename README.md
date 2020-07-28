@@ -3,6 +3,8 @@
 ## Развертывание проекта
 * <code>npm run dev</code> Для запуска дев сервера
 * <code>npm run prod</code> Для компиляции в проекта в ./dist
+* <code>npm run lint</code> Для запуска eslint
+* <code>npm run lintFix</code> Для автоматического исправления проблем
 ## Pages
 ### UI-Kit
 * [cards](https://olegkoryakov.github.io/toxin/dist/cards)

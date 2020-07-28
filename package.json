@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./webpack/webpack.dev.js",
-    "prod": "webpack --config ./webpack/webpack.prod.js"
+    "prod": "webpack --config ./webpack/webpack.prod.js",
+    "lint": "eslint ./src/*.ts",
+    "lintFix": "eslint --fix ./src/*.ts"
   },
   "author": "",
   "license": "ISC",
