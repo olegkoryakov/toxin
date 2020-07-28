@@ -2,7 +2,7 @@
   options.title - title
   
 mixin pagination(options)
-  const { title } = options;
+  - const { title } = options;
   article.pagination(class = attributes.class)
     if title
       h3.pagination__title= title
