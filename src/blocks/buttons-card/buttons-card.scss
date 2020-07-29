@@ -1,30 +1,33 @@
 .buttons-card {
   width: 320px;
-}
+  
+  &__title {
+    @include h3Like;
+    margin-bottom: 16px;
+  }
 
-.buttons-card__title {
-  @include h3Like;
-  margin-bottom: 16px;
-}
+  &__list {
+    @include reset-list;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 218px;
+    
+    &_main {
+      margin-bottom: 25px;
+    }
 
-.buttons-card__list {
-  @include reset-list;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 218px;
-  &--main {
-    margin-bottom: 25px;
-    .buttons-card__item {
+    &_main > .buttons-card__item {
       margin-bottom: 30px;
       &:nth-last-of-type(1), &:nth-last-of-type(2) {
         margin-bottom: 0;
       }
     }
-  }
-  &--controls {
-    width: 143px;
-    margin-bottom: 26px;
+
+    &_controls {
+      width: 143px;
+      margin-bottom: 26px;
+    }
   }
 }

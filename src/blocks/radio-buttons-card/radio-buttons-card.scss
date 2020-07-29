@@ -1,15 +1,15 @@
 .radio-buttons-card {
   width: 220px;
-}
 
-.radio-buttons-card__title {
-  @include h3Like;
-  margin-bottom: 15px;
-}
+  &__title {
+    @include h3Like;
+    margin-bottom: 15px;
+  }
 
-.radio-buttons-card__list {
-  @include reset-list;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

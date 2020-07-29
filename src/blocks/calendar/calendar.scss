@@ -6,125 +6,125 @@
   width: 320px;
   padding: 19px;
   border-radius: 4px;
-}
 
-.calendar__content {
-  position: relative;
-}
-
-.calendar__month {
-  display: block;
-  font-family: $likeHeadingFont;
-  color: $mainColor;
-  text-align: center;
-  font-size: 19px;
-  margin-bottom: 30px;
-}
-
-.calendar__button {
-  @include button-reset;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  width: 24px;
-  height: 24px;
-  &--next {
-    right: 0;
-  }
-  &--prev {
-    left: 0;
-    transform: scale(-1,1);
-  }
-}
-
-.calendar__button-svg {
-  fill: $purpleColor;
-}
-
-.calendar__table {
-  text-align: center;
-  font-size: 12px;
-  line-height: 15px;
-  border-collapse: collapse;
-  table-layout: fixed;
-  margin-bottom: 18px;
-}
-
-.calendar__th {
-  font-family: $decorativeFont;
-  color: $purpleColor;
-  width: 40px;
-  height: 40px;
-}
-
-.calendar__td {
-  cursor: pointer;
-  box-sizing: border-box;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  color: rgba($mainColor, 0.5);
-  &--current-day {
-    font-family: $decorativeFont;
-    background-image: $greenGradient;
-    border-radius: 50%;
-    color: #fff;
-  }
-  &--other-month {
-    color: rgba($mainColor, 0.25);
-  }
-  &--selected {
-    background-image: $purpleGradient;
-    color: #fff;
-    font-family: $decorativeFont;
-    border-radius: 50%;
-  }
-
-  &--selected-first, &--selected-last {
+  &__content {
     position: relative;
-    transform-style: preserve-3d;
-    &:after {
-      position: absolute;
-      transform: translateZ(-1px);
-      content: '';
-      width: 50%;
-      height: 100%;
-      background-color: rgba($purpleColor, 0.5);
-      top: 0;
-    }
   }
 
-  &--selected-first {
-    &:after {
-      left: 50%;
-    }
-  }
-  &--selected-last {
-    &:after {
-      right: 50%;
-    }
+  &__month {
+    display: block;
+    font-family: $likeHeadingFont;
+    color: $mainColor;
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 30px;
   }
 
-  &--interval {
-    position: relative;
-    transform-style: preserve-3d;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+  &__button {
+    @include button-reset;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    &_next {
       right: 0;
-      bottom: 0;
-      transform: translateZ(-1px);
-      background-color: rgba($purpleColor, 0.5);
+    }
+    &_prev {
+      left: 0;
+      transform: scale(-1,1);
     }
   }
-}
 
-.calendar__controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__button-svg {
+    fill: $purpleColor;
+  }
+
+  &__table {
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 18px;
+  }
+
+  &__th {
+    font-family: $decorativeFont;
+    color: $purpleColor;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__td {
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    color: rgba($mainColor, 0.5);
+    &_current-day {
+      font-family: $decorativeFont;
+      background-image: $greenGradient;
+      border-radius: 50%;
+      color: #fff;
+    }
+    &_other-month {
+      color: rgba($mainColor, 0.25);
+    }
+    &_selected {
+      background-image: $purpleGradient;
+      color: #fff;
+      font-family: $decorativeFont;
+      border-radius: 50%;
+    }
+  
+    &_selected-first, &_selected-last {
+      position: relative;
+      transform-style: preserve-3d;
+      &:after {
+        position: absolute;
+        transform: translateZ(-1px);
+        content: '';
+        width: 50%;
+        height: 100%;
+        background-color: rgba($purpleColor, 0.5);
+        top: 0;
+      }
+    }
+  
+    &_selected-first {
+      &:after {
+        left: 50%;
+      }
+    }
+    &_selected-last {
+      &:after {
+        right: 50%;
+      }
+    }
+  
+    &_interval {
+      position: relative;
+      transform-style: preserve-3d;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateZ(-1px);
+        background-color: rgba($purpleColor, 0.5);
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

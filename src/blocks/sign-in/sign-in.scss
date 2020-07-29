@@ -6,36 +6,36 @@
   max-width: 380px;
   padding: 40px 0 30px 0;
   border-radius: 4px;
-}
 
-.sign-in__content {
-  width: 320px;
-  margin: 0 auto;
-}
-
-.sign-in__title {
-  @include h1Like;
-  margin-bottom: 20px;
-}
-
-.sign-in__input {
-  margin-bottom: 10px;
-  &:last-of-type {
-    margin-bottom: 19px;
+  &__content {
+    width: 320px;
+    margin: 0 auto;
   }
-}
 
-.sign-in__submit-button {
-  margin-bottom: 31px;
-}
+  &__title {
+    @include h1Like;
+    margin-bottom: 20px;
+  }
 
-.sign-in__registration {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__input {
+    margin-bottom: 10px;
+    &:last-of-type {
+      margin-bottom: 19px;
+    }
+  }
 
-.sign-in__registration-text {
-  line-height: 18px;
-  color: #000;
+  &__submit-button {
+    margin-bottom: 31px;
+  }
+
+  &__registration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__registration-text {
+    line-height: 18px;
+    color: #000;
+  }
 }

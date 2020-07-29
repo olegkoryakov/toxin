@@ -1,32 +1,32 @@
 .bullet-list {
   width: 292px;
-}
 
-.bullet-list__title {
-  @include h3Like;
-  margin-bottom: 10px;
-}
+  &__title {
+    @include h3Like;
+    margin-bottom: 10px;
+  }
 
-.bullet-list__list {
-  @include reset-list;
-}
+  &__list {
+    @include reset-list;
+  }
 
-.bullet-list__item {
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  width: 260px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: 10px;
-    left: 0;
-    background-color: rgba($mainColor, 0.25);
-    border-radius: 50%;
+  &__item {
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    width: 260px;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 10px;
+      left: 0;
+      background-color: rgba($mainColor, 0.25);
+      border-radius: 50%;
+    }
   }
 }

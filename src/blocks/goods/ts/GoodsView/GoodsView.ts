@@ -4,8 +4,8 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
   constructor(goodsWidget: HTMLElement, inputElement: HTMLInputElement) {
     super();
     this.goodsWidget = goodsWidget;
-    this.applyButton = goodsWidget.querySelector('.goods__controls-button--apply');
-    this.resetButton = goodsWidget.querySelector('.goods__controls-button--reset');
+    this.applyButton = goodsWidget.querySelector('.goods__controls-button_apply');
+    this.resetButton = goodsWidget.querySelector('.goods__controls-button_reset');
     this.inputElement = inputElement;
 
     this.addHandlers();
@@ -46,8 +46,8 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
   }
 
   private addHandlers() {
-    const plusButtons = this.goodsWidget.querySelectorAll('.goods__good-button--plus');
-    const minusButtons = this.goodsWidget.querySelectorAll('.goods__good-button--minus');
+    const plusButtons = this.goodsWidget.querySelectorAll('.goods__good-button_plus');
+    const minusButtons = this.goodsWidget.querySelectorAll('.goods__good-button_minus');
 
     plusButtons.forEach((plusButton) => {
       (plusButton as HTMLElement).addEventListener('click', this.onPlusButtonClick.bind(this));

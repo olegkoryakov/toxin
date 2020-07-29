@@ -26,6 +26,7 @@ export default class RangeSliderPresenter {
     const width = this.rangeSliderView.getSliderLineWidth();
     const valuesRange = this.rangeSliderModel.getValuesRange();
     const coord = width * (value / (valuesRange.max - valuesRange.min));
+    console.log(width, valuesRange, coord);
 
     return coord;
   }

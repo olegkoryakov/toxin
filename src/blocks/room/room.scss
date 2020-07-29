@@ -4,156 +4,155 @@
   background-color: #fff;
   max-width: 270px;
   border-radius: 4px;
-  &--luxe {
-    .room__number-details {
-      position: relative;
-     &::after {
+  
+  &_luxe > &__number-details {
+    position: relative;
+   &::after {
+    position: absolute;
+    content: 'Люкс';
+    right: -5px;
+    bottom: 3px;
+    transform: translateX(100%);
+    text-transform: uppercase;
+    font-family: $decorativeFont;
+    color: $purpleColor;
+    font-size: 12px;
+    line-height: 15px;
+   }
+  }
+
+  &__content {
+    padding: 21px 20px 20px 20px ;
+    margin: 0 auto;
+  }
+
+  &__preview {
+    position: relative;
+    &:hover, &:focus {
+      .room__preview-button {
+        display: block;
+      }
+    }
+  }
+
+  &__preview-button {
+    display: none;
+    @include button-reset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 100%;
+    background-image: $shadowGradient;
+    &::before {
       position: absolute;
-      content: 'Люкс';
-      right: -5px;
-      bottom: 3px;
-      transform: translateX(100%);
-      text-transform: uppercase;
-      font-family: $decorativeFont;
-      color: $purpleColor;
-      font-size: 12px;
-      line-height: 15px;
-     }
+      content: '';
+      width: 10px;
+      height: 10px;
+      border: 2px solid white;
+      border-top: none;
+      border-right:  none;
+      left: 13px;
+      top: 50%;
+      transform: rotate(45deg) translateY(-50%);
+    }
+  
+    &_next {
+      right: 0;
+      left: auto;
+      transform: scale(-1, 1);
     }
   }
-}
 
-.room__content {
-  padding: 21px 20px 20px 20px ;
-  margin: 0 auto;
-}
+  &__preview-img {
+    width: 100%;
+  }
 
-.room__preview {
-  position: relative;
-  &:hover, &:focus {
-    .room__preview-button {
-      display: block;
+  &__preview-list {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    @include reset-list;
+    width: 41px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__preview-item {
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: transparent;
+    &_current {
+      background-color: #fff;
     }
   }
-}
 
-
-.room__preview-button {
-  display: none;
-  @include button-reset;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 100%;
-  background-image: $shadowGradient;
-  &::before {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    border: 2px solid white;
-    border-top: none;
-    border-right:  none;
-    left: 13px;
-    top: 50%;
-    transform: rotate(45deg) translateY(-50%);
+  &__about {
+    position: relative;
+    padding-bottom: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background-color: rgba($mainColor, 0.1);
+      bottom: 0;
+      left: 1.5px;
+      right: 1.5px;
+    }
   }
 
-  &--next {
-    right: 0;
-    left: auto;
-    transform: scale(-1, 1);
+  &__number-details {
+    width: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $likeHeadingFont;
+    color: $mainColor;
   }
-}
-.room__preview-img {
-  width: 100%;
-}
 
-.room__preview-list {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  @include reset-list;
-  width: 41px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.room__preview-item {
-  cursor: pointer;
-  box-sizing: border-box;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1px solid #fff;
-  background-color: transparent;
-  &--current {
-    background-color: #fff;
+  &__number {
+    font-size: 19px;
+    line-height: 24px;
   }
-}
 
-.room__about {
-  position: relative;
-  padding-bottom: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  &:after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    background-color: rgba($mainColor, 0.1);
-    bottom: 0;
-    left: 1.5px;
-    right: 1.5px;
+  &__number-prefix {
+    font-size: 14px;
+    line-height: 17px;
   }
-}
 
-.room__number-details {
-  width: 55px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: $likeHeadingFont;
-  color: $mainColor;
-}
+  &__rating {
+    padding: 0 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
 
-.room__number {
-  font-size: 19px;
-  line-height: 24px;
-}
+  &__price, &__reviews {
+    line-height: 18px;
+    color: rgba($mainColor, 0.5);
+    display: flex;
+  }
 
-.room__number-prefix {
-  font-size: 14px;
-  line-height: 17px;
-}
+  &__price-current, &__reviews-count {
+    margin-right: 5px;
+    font-family: $decorativeFont;
+    text-transform: uppercase;
+  }
 
-.room__rating {
-  padding: 0 3px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.room__price, .room__reviews {
-  line-height: 18px;
-  color: rgba($mainColor, 0.5);
-  display: flex;
-}
-
-.room__price-current, .room__reviews-count {
-  margin-right: 5px;
-  font-family: $decorativeFont;
-  text-transform: uppercase;
-}
-
-.room__price-text {
-  font-size: 12px;
-  text-transform: lowercase;
-}
-
-.room__reviews-text {
-  line-height: 18px;  
+  &__price-text {
+    font-size: 12px;
+    text-transform: lowercase;
+  }
+  
+  &__reviews-text {
+    line-height: 18px;  
+  }
 }

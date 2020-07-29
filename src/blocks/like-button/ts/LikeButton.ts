@@ -15,7 +15,7 @@ export default class LikeButton {
 
   init(likeButtonElement: HTMLElement) {
     const likesCountElement = likeButtonElement.querySelector('.like-button__count');
-    const isLiked = likeButtonElement.classList.contains('like-button--liked');
+    const isLiked = likeButtonElement.classList.contains('like-button_liked');
     if (likesCountElement) {
       const likesCount = likesCountElement.textContent
         ? parseInt(likesCountElement.textContent, 10) : 0;

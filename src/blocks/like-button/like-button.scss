@@ -8,31 +8,32 @@
   line-height: 12px;
   display: flex;
   align-items: center;
-}
 
-.like-button__img {
-  width: 20px;
-  & > svg {
-    margin: 0 auto;
-    stroke: rgba($mainColor, 0.25);
-    fill: none;
+  &__img {
+    width: 20px;
+    & > svg {
+      margin: 0 auto;
+      stroke: rgba($mainColor, 0.25);
+      fill: none;
+    }
   }
-}
 
-.like-button__count {
-  width: 20px;
-  text-align: left;
-  color: rgba($mainColor, 0.25);
-}
+  &__count {
+    width: 20px;
+    text-align: left;
+    color: rgba($mainColor, 0.25);
+  }
 
-.like-button--liked {
-  border-color: $purpleColor;
-  .like-button__img > svg path{
+  &_liked {
+    border-color: $purpleColor;
+  }
+
+  &_liked > &__img > svg path{
     stroke: $purpleColor;
     fill: $purpleColor ;
   }
 
-  .like-button__count {
+  &_liked > &__count {
     color: $purpleColor;
   }
 }

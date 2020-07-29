@@ -1,20 +1,20 @@
 .subscription-form {
   position: relative;
   max-width: 266px;
-}
 
-.subscription-form__submit-button {
-  @include button-reset;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.subscription-form__submit-button-svg {
-  fill: $purpleColor;
+  &__submit-button {
+    @include button-reset;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__submit-button-svg {
+    fill: $purpleColor;
+  }
 }

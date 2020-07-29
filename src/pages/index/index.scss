@@ -3,23 +3,23 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
 
-.index__content {
-  padding-top: 70px;
-  padding-bottom: 18px;
-  display: flex;
-  flex-direction: column;
-}
+  &__content {
+    padding-top: 70px;
+    padding-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+  }
 
-.index__number-search {
-  margin-left: 0;
-  margin-bottom: 320px;
-}
+  &__number-search {
+    margin-left: 0;
+    margin-bottom: 320px;
+  }
 
-.index__slogan {
-  margin: 0;
-  max-width: 297px;
-  text-align: right;
-  margin-left: auto;
+  &__slogan {
+    margin: 0;
+    max-width: 297px;
+    text-align: right;
+    margin-left: auto;
+  }
 }

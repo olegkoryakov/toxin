@@ -11,13 +11,13 @@ block variables
 block content
   .room-details
     section.room-details__preview
-      .room-details__preview-column.room-details__preview-gallery--main
+      .room-details__preview-column.room-details__preview-gallery_main
         img(src = require('../../img/preview-room888-1.jpg').default).room-details__preview-img
-      .room-details__preview-column.room-details__preview-gallery--other
+      .room-details__preview-column.room-details__preview-gallery_other
         img(src = require('../../img/preview-room888-2.jpg').default).room-details__preview-img
         img(src = require('../../img/preview-room888-3.jpg').default).room-details__preview-img
     .room-details__content.content-wrapper
-      .room-details__content-column.room-details__content-column--main
+      .room-details__content-column.room-details__content-column_main
         .room-details__content-row
           - 
             const advantagesProps = [
@@ -52,5 +52,5 @@ block content
         .room-details__content-row
           +rules().room-details__rules
           +reset().room-details__reset
-      .room-details__content-column.room-details__content-column--side
+      .room-details__content-column.room-details__content-column_side
         +about-room().room-details__about-room

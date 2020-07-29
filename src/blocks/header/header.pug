@@ -29,8 +29,8 @@ mixin header(options)
         ul.header__nav-list
           each linkText, index in linksText
             - 
-              const itemClassModifier = isExpandableItem(linkText) ? 'header__nav-item--expandable' : '';
-              const currentPageClassModifier = isCurrentPage(index) ? 'header__nav-link--current' : '';
+              const itemClassModifier = isExpandableItem(linkText) ? 'header__nav-item_expandable' : '';
+              const currentPageClassModifier = isCurrentPage(index) ? 'header__nav-link_current' : '';
             li.header__nav-item(class = itemClassModifier)
               if itemClassModifier
                 +expand-button().header__nav-expand-button
@@ -45,6 +45,6 @@ mixin header(options)
               if (lang === 'ru') buttonsText = ['Войти', 'Зарегистрироваться'];
               else if (lang === 'en') buttonsText = ['Login', 'Registr'];
             li.header__nav-item  
-                +button({ type: 'stroked', text: buttonsText[0] }).header__nav-button.header__nav-button--login
+                +button({ type: 'stroked', text: buttonsText[0] }).header__nav-button.header__nav-button_login
             li.header__nav-item  
-                +button({ type: 'filled', text: buttonsText[1] }).header__nav-button.header__nav-button--registr
+                +button({ type: 'filled', text: buttonsText[1] }).header__nav-button.header__nav-button_registr

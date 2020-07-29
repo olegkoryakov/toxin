@@ -1,14 +1,13 @@
 .like-buttons-card {
   width: 90px;
-}
+  &__title {
+    @include h3Like;
+    margin-bottom: 16px;
+  }
 
-.like-buttons-card__title {
-  @include h3Like;
-  margin-bottom: 16px;
-}
-
-.like-buttons-card__list {
-  @include reset-list;
-  display: flex;
-  justify-content: space-between;
+  &__list {
+    @include reset-list;
+    display: flex;
+    justify-content: space-between;
+  }  
 }

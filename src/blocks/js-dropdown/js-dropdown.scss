@@ -3,22 +3,23 @@
 // .js-dropdown__button
 
 .js-dropdown {
-  &--close {
+  &_close {
     .js-dropdown__popup {
       display: none;
       
     }
   }
-  &--open {
+
+  &_open {
+
     .js-dropdown__popup {
       display: block; 
     }
-    &:not(.dropdown--dates):not(.dropdown--filter-date) {
-      .input {
-        border-color: rgba($mainColor, 0.5);
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-      }
+
+    &.dropdown_goods .input, &.dropdown_guests .input {
+      border-color: rgba($mainColor, 0.5);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
     
     

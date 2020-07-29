@@ -6,8 +6,8 @@ export default class RangeSliderView extends EventEmitter {
     this.priceElement = (rangeSliderElement.querySelector('.range-slider__price') as HTMLElement);
     this.line = (rangeSliderElement.querySelector('.range-slider__line') as HTMLElement);
     this.rangeLine = (this.line.querySelector('.range-slider__range-line') as HTMLElement);
-    this.thumbFrom = (this.line.querySelector('.range-slider__thumb--from') as HTMLElement);
-    this.thumbTo = (this.line.querySelector('.range-slider__thumb--to') as HTMLElement);
+    this.thumbFrom = (this.line.querySelector('.range-slider__thumb_from') as HTMLElement);
+    this.thumbTo = (this.line.querySelector('.range-slider__thumb_to') as HTMLElement);
 
     this.addHandlers();
   }
@@ -33,8 +33,8 @@ export default class RangeSliderView extends EventEmitter {
   private getThumbModifier(thumb: HTMLElement) {
     const classArray = Array.from(thumb.classList);
     const classModIndex = classArray
-      .findIndex((className) => className.startsWith('range-slider__thumb--'));
-    const modifier = classArray[classModIndex].split('--')[1];
+      .findIndex((className) => className.startsWith('range-slider__thumb_'));
+    const modifier = classArray[classModIndex].split('range-slider__thumb_')[1];
     return modifier;
   }
 

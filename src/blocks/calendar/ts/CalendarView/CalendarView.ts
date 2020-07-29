@@ -5,8 +5,8 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
   constructor(calendarWidget: HTMLElement) {
     super();
     this.calendarWidget = calendarWidget;
-    this.nextMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button--next');
-    this.prevMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button--prev');
+    this.nextMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button_next');
+    this.prevMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button_prev');
     this.addHandlers();
   }
 
@@ -64,18 +64,18 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
 
   // eslint-disable-next-line class-methods-use-this
   setCurrentDayClass(td: HTMLTableDataCellElement) {
-    td.classList.add('calendar__td--current-day');
+    td.classList.add('calendar__td_current-day');
   }
 
   // eslint-disable-next-line class-methods-use-this
   setSelectedClass(td: HTMLTableDataCellElement, modifierPostfix: TModifierPostfix) {
-    td.classList.add('calendar__td', 'calendar__td--selected', `calendar__td--selected-${modifierPostfix}`);
+    td.classList.add('calendar__td', 'calendar__td_selected', `calendar__td_selected-${modifierPostfix}`);
   }
 
   removeSelectedDates() {
-    const selectedDates = this.calendarWidget.querySelectorAll('.calendar__td--selected');
+    const selectedDates = this.calendarWidget.querySelectorAll('.calendar__td_selected');
     selectedDates.forEach((selectedDate) => {
-      selectedDate.classList.remove('calendar__td--selected', 'calendar__td--selected-first', 'calendar__td--selected-last');
+      selectedDate.classList.remove('calendar__td_selected', 'calendar__td_selected-first', 'calendar__td_selected-last');
     });
   }
 
@@ -83,16 +83,16 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
     let indexFromValue = indexFrom;
     let indexToValue = indexTo;
     const tds = this.calendarWidget.querySelectorAll('.calendar__td');
-    if (tds[indexFromValue].classList.contains('calendar__td--selected-first')) indexFromValue += 1;
-    if (!(tds[indexToValue].classList.contains('calendar__td--selected-last'))) indexToValue += 1;
+    if (tds[indexFromValue].classList.contains('calendar__td_selected-first')) indexFromValue += 1;
+    if (!(tds[indexToValue].classList.contains('calendar__td_selected-last'))) indexToValue += 1;
     for (let i = indexFromValue; i < indexToValue; i += 1) {
-      tds[i].classList.add('calendar__td--interval');
+      tds[i].classList.add('calendar__td_interval');
     }
   }
 
   removeInterval() {
-    const intervalTds = this.calendarWidget.querySelectorAll('.calendar__td--interval');
-    intervalTds.forEach((td) => td.classList.remove('calendar__td--interval'));
+    const intervalTds = this.calendarWidget.querySelectorAll('.calendar__td_interval');
+    intervalTds.forEach((td) => td.classList.remove('calendar__td_interval'));
   }
 
   getTdByData(data: TDate) {

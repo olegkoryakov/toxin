@@ -1,25 +1,25 @@
 .checkboxes{
   position: relative;
   width: 266px;
-}
 
-.checkboxes__title {
-  @include h3Like;
-  margin-bottom: 17px;
-}
+  &__title {
+    @include h3Like;
+    margin-bottom: 17px;
+  }
 
-.checkboxes__expand-button {
-  top: -15px;
-  right: 0;
-}
+  &__expand-button {
+    top: -15px;
+    right: 0;
+  }
 
-.checkboxes__list {
-  @include reset-list;
-}
+  &__list {
+    @include reset-list;
+  }
 
-.checkboxes__list-item {
-  margin-bottom: 12px;
-  &:last-of-type {
-    margin-bottom: 0;
+  &__list-item {
+    margin-bottom: 12px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }

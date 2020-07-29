@@ -8,65 +8,65 @@
     flex-direction: column;
     align-items: center;
   }
-}
 
-.search-room__search-room {
-  order: 1;
-  max-width: 834px;
-}
-
-.search-room__search-room-title {
-  @include h1Like;
-  margin-bottom: 20px;
-  @media screen and (max-width: 805px) {
-    text-align: center;
+  &__search-room {
+    order: 1;
+    max-width: 834px;
   }
-}
 
-.search-room__search-room-list {
-  @include reset-list;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  
-  @media screen and (max-width: 805px) {
-    justify-content: space-around;
+  &__search-room-title {
+    @include h1Like;
+    margin-bottom: 20px;
+    @media screen and (max-width: 805px) {
+      text-align: center;
+    }
   }
-  
-  @media screen and (max-width: 540px) {
-    flex-direction: column;
-    align-items: center;
+
+  &__search-room-list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    @media screen and (max-width: 805px) {
+      justify-content: space-around;
+    }
+    
+    @media screen and (max-width: 540px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
-}
 
-.search-room__search-room-item {
-  margin-bottom: 20px;
-}
-
-.search-room__search-room-pagination {
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.search-room__filter {
-  max-width: 320px;
-  padding-right: 10px;
-}
-
-.search-room__filter-dropdown {
-  z-index: 2;
-  margin-bottom: 30px;
-  &:first-of-type {
-    z-index: 3;
+  &__search-room-item {
     margin-bottom: 20px;
   }
-}
 
-.search-room__filter-range-slider {
-  z-index: 1;
-  margin-bottom: 30px;
-}
+  &__search-room-pagination {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 
-.search-room__filter-checkboxes {
-  margin-bottom: 30px;
+  &__filter {
+    max-width: 320px;
+    padding-right: 10px;
+  }
+
+  &__filter-dropdown {
+    z-index: 2;
+    margin-bottom: 30px;
+    &:first-of-type {
+      z-index: 3;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__filter-range-slider {
+    z-index: 1;
+    margin-bottom: 30px;
+  }
+
+  &__filter-checkboxes {
+    margin-bottom: 30px;
+  }
 }

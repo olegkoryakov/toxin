@@ -52,8 +52,8 @@ export default class DropdownGoods {
   private getGoodsType(goodsWidget: HTMLElement) {
     const classArray = Array.from(goodsWidget.classList);
     const classModIndex = classArray
-      .findIndex((className) => className.startsWith('goods--'));
-    const type = classArray[classModIndex].split('--')[1];
+      .findIndex((className) => className.startsWith('goods_'));
+    const type = classArray[classModIndex].split('_')[1];
     return type;
   }
 

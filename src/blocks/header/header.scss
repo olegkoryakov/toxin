@@ -1,112 +1,115 @@
 .header {
   @include cardShadow;
   background-color: #fff;
-}
 
-.header__content {
-  max-width: 1160px;
-  padding: 15px 0;
-  margin: 0 auto;
+  &__content {
+    max-width: 1160px;
+    padding: 15px 0;
+    margin: 0 auto;
+  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
+  &__site-nav {
+    margin-left: auto;
+  }
 
-.header__site-nav {
-  margin-left: auto;
-}
+  &__user-nav {
+    margin-left: 30px;
+  }
 
-.header__user-nav {
-  margin-left: 30px;
-}
+  &__nav-list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
 
-.header__nav-list {
-  @include reset-list;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
+  &__nav-item {
+    &:not(:last-of-type) {
+      margin-right: 30px;
+      &_expandable {
+        margin-right: 20px;
+      }
+    }
+    &_expandable {
+      position: relative;
+      padding-right: 20px;
+    }
+  }
 
-.header__nav-item {
-  &:not(:last-of-type) {
-    margin-right: 30px;
-    &--expandable {
+  &__nav-expand-button {
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__user-nav {
+    & > &__nav-item:not(:last-of-type) {
       margin-right: 20px;
     }
   }
-  &--expandable {
+
+  &__nav-link {
+    text-decoration: none;
+    color: rgba($mainColor, 0.5);
+    line-height: 17px;
+    &_current {
+      font-family: $decorativeFont;
+      color: rgba($mainColor, 0.75);
+    }
+  }
+
+  &__nav-button {
+    &_login {
+      padding: 7px 20px 8px;
+    }
+  
+    &_registr {
+      padding: 9px 20px 10px;
+    }
+  }
+
+  &__user-name {
     position: relative;
-    padding-right: 20px;
-    .header__nav-expand-button {
-      top: 0;
-      right: 0;
-      width: 20px;
-      height: 20px;
+    display: block;
+    padding-left: 30px;
+    line-height: 17px;
+    color: rgba($mainColor, 0.5);
+    border-left: 1px solid rgba($mainColor, 0.1);
+    &:before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      left: 0;
+      top: -6.5px;
+      bottom: -6.5px;
+  
+    }
+  }
+
+  @media screen and (max-width: 844px) {
+    &__content {
+      flex-direction: column;
+    }
+  
+    &__logo {
+      margin-bottom: 20px;
+    }
+  
+    &__site-nav {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  
+    &__user-nav {
+      margin-left: 0;
     }
   }
 }
 
-.header__user-nav {
-  .header__nav-item:not(:last-of-type) {
-    margin-right: 20px;
-  }
-}
-.header__nav-link {
-  text-decoration: none;
-  color: rgba($mainColor, 0.5);
-  line-height: 17px;
-  &--current {
-    font-family: $decorativeFont;
-    color: rgba($mainColor, 0.75);
-  }
-}
-
-.header__nav-button {
-  &--login {
-    padding: 7px 20px 8px;
-  }
-
-  &--registr {
-    padding: 9px 20px 10px;
-  }
-}
-
-.header__user-name {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  line-height: 17px;
-  color: rgba($mainColor, 0.5);
-  border-left: 1px solid rgba($mainColor, 0.1);
-  &:before {
-    position: absolute;
-    content: '';
-    width: 1px;
-    left: 0;
-    top: -6.5px;
-    bottom: -6.5px;
-
-  }
-}
-
-@media screen and (max-width: 844px) {
-  .header__content {
-    flex-direction: column;
-  }
-
-  .header__logo {
-    margin-bottom: 20px;
-  }
-
-  .header__site-nav {
-    margin: 0;
-    margin-bottom: 20px;
-  }
-
-  .header__user-nav {
-    margin-left: 0;
-  }
-}

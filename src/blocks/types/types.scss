@@ -1,49 +1,49 @@
 .types {
   max-width: 406px;
   @include reset-list;
-}
 
-.types__type {
-  display: flex;
-  margin-bottom: 50px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  &--h1 {
-    font-size: 24px;
-    line-height: 30px;
-    .types__type-text{
-    @include h1Like;
-  }
-  }
-
-  &--h2 {
-    font-size: 19px;
-    line-height: 24px;
-    .types__type-text{
-      @include h2Like;
+  &__type {
+    display: flex;
+    margin-bottom: 50px;
+  
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  
+    &_h1 {
+      font-size: 24px;
+      line-height: 30px;
+      .types__type-text{
+      @include h1Like;
+    }
+    }
+  
+    &_h2 {
+      font-size: 19px;
+      line-height: 24px;
+      .types__type-text{
+        @include h2Like;
+      }
+    }
+  
+    &_h3 {
+      font-size: 12px;
+      line-height: 15px;
+      .types__type-text{
+        @include h3Like;
+      }
     }
   }
-
-  &--h3 {
-    font-size: 12px;
-    line-height: 15px;
-    .types__type-text{
-      @include h3Like;
-    }
+ 
+  &__type-marker {
+    width: 37px;
+    text-align: right;
+    margin-right: 30px;
+    text-transform: capitalize;
+    color: rgba($mainColor, 0.25);
   }
-}
-
-.types__type-marker {
-  width: 37px;
-  text-align: right;
-  margin-right: 30px;
-  text-transform: capitalize;
-  color: rgba($mainColor, 0.25);
-}
-
-.types__type-text {
-  max-width: 336px;
+  
+  &__type-text {
+    max-width: 336px;
+  }
 }

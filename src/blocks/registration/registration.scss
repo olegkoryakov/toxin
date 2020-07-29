@@ -6,61 +6,61 @@
   max-width: 380px;
   padding: 40px 0 30px 0;
   border-radius: 4px;
-}
 
-.registration__content {
-  width: 320px;
-  margin: 0 auto;
-}
-
-.registration__title {
-  @include h1Like;
-  margin-bottom: 20px;
-}
-
-.registration__fieldset {
-  padding: 0;
-  margin: 0;
-  border: none;
-  margin-bottom: 20px;
-}
-
-.registration__fieldset-legend {
-  @include h3Like;
-  margin-bottom: 5px;
-}
-
-.registration__input {
-  &:not(:last-of-type) {
-    margin-bottom: 10px;
+  &__content {
+    width: 320px;
+    margin: 0 auto;
   }
-}
 
-.registration__rario-button-list {
-  @include reset-list;
-  width: 220px;
-  justify-content: space-between;
-  display: flex;  
-  flex-direction: row;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
+  &__title {
+    @include h1Like;
+    margin-bottom: 20px;
+  }
 
-.registration__toggle-button {
-  margin-top: 8px;
-}
+  &__fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+    margin-bottom: 20px;
+  }
 
-.registration__submit-button {
-  margin-bottom: 30px;
-}
+  &__fieldset-legend {
+    @include h3Like;
+    margin-bottom: 5px;
+  }
 
-.registration__sign-in {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__input {
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
 
-.registration__sign-in-text {
-  line-height: 18px;
-  color: #000;
+  &__rario-button-list {
+    @include reset-list;
+    width: 220px;
+    justify-content: space-between;
+    display: flex;  
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__toggle-button {
+    margin-top: 8px;
+  }
+
+  &__submit-button {
+    margin-bottom: 30px;
+  }
+
+  &__sign-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__sign-in-text {
+    line-height: 18px;
+    color: #000;
+  }
 }

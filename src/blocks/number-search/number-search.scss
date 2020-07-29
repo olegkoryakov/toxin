@@ -6,23 +6,24 @@
   max-width: 380px;
   padding: 40px 0 29px 0;
   border-radius: 4px;
-}
 
-.number-search__content {
-  width: 320px;
-  margin: 0 auto;
-}
-.number-search__title {
-  @include h1Like;
-  margin-bottom: 20px;
-}
+  &__content {
+    width: 320px;
+    margin: 0 auto;
+  }
 
-.number-search__dropdown {
-  position: relative;
-  margin-bottom: 22px;
-  z-index: 2;
-  &:last-of-type {
-    z-index: 1;
-    margin-bottom: 30px;
+  &__title {
+    @include h1Like;
+    margin-bottom: 20px;
+  }
+
+  &__dropdown {
+    position: relative;
+    margin-bottom: 22px;
+    z-index: 2;
+    &:last-of-type {
+      z-index: 1;
+      margin-bottom: 30px;
+    }
   }
 }

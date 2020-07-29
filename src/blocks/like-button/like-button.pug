@@ -5,7 +5,7 @@
 mixin like-button(options)
   - 
     const { liked, count } = options;
-    const classMod = liked === true ? 'like-button--liked' : '';
+    const classMod = liked === true ? 'like-button_liked' : '';
   button.like-button(type='button' class = attributes.class, class= classMod)
     div.like-button__img
       <svg width="8" height="8" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">

@@ -8,7 +8,7 @@ include ../arrow/arrow
 mixin button(options)
   - 
     const { type, focused, text, formId } = options;
-    const classMod = `button--${type}`;
+    const classMod = `button_${type}`;
   button.button(type = 'button', class = classMod, class = attributes.class, form = formId)= text
     if type === 'filled-wide'
       +arrow().button__arrow-svg

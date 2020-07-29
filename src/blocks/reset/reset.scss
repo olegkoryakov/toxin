@@ -1,12 +1,12 @@
 .reset {
   max-width: 341px;
-}
 
-.reset__title {
-  @include h2Like;
-  margin-bottom: 20px;
-}
+  &__title {
+    @include h2Like;
+    margin-bottom: 20px;
+  }
 
-.reset__text {
-  margin: 0;
+  &__text {
+    margin: 0;
+  }
 }

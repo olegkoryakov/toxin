@@ -18,14 +18,14 @@ mixin room(options)
       url,
       luxe
     } = options;
-    const luxeClassMod = luxe ? 'room--luxe' : '';  
+    const luxeClassMod = luxe ? 'room_luxe' : '';  
   article.room(class = attributes.class, class = luxeClassMod)
     .room__preview
       img(src = url).room__preview-img
-      button.room__preview-button.room__preview-button--next
-      button.room__preview-button.room__preview-button--prev
+      button.room__preview-button.room__preview-button_next
+      button.room__preview-button.room__preview-button_prev
       ul.room__preview-list
-        li.room__preview-item.room__preview-item--current
+        li.room__preview-item.room__preview-item_current
         li.room__preview-item
         li.room__preview-item
         li.room__preview-item

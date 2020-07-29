@@ -24,19 +24,19 @@ block title
   title Form elements
 block content
   section.form-elements.content-wrapper
-    .form-elements__row.form-elements__row--first
-      .form-elements__column.form-elements__column--first
+    .form-elements__row.form-elements__row_first
+      .form-elements__column.form-elements__column_first
         +input-box({ 
         placeholder: 'Email',
         title: 'Text field',
         status: 'Default',
-        }).form-elements__input-box
+        }).form-elements__element
         +input-box({
           value: 'This is pretty awesome',
           title: 'Text field',
           status: 'hover/focus',
           autofocus: true 
-        }).form-elements__input-box
+        }).form-elements__element
         +input-box(
           {
             title: 'Dropdown',
@@ -44,13 +44,13 @@ block content
             status: 'Default',
             placeholder: 'Сколько гостей',
           }
-        ).form-elements__input-box
+        ).form-elements__element
         +input-box({
           title: 'Masked text field',
           status: 'Default',
           placeholder: 'ДД.ММ.ГГ',
           masked: true,
-        }).form-elements__input-box
+        }).form-elements__element.form-elements__element_dropdown
         +dropdown({
           title: 'Date Dropdown',
           secondTitle: 'Date Dropdown',
@@ -58,16 +58,16 @@ block content
           placeholder: 'ДД.ММ.ГГ',
           applyButton: false,
           resetButton: false
-        }).form-elements__dropdown
+        }).form-elements__element.form-elements__element_dropdown
         +dropdown({
           placeholder: 'ДД.ММ.ГГ - ДД.ММ.ГГ',
           title: 'Filter Date Dropdown',
           type: 'date-filter',
           applyButton: false,
           resetButton: false
-        }).form-elements__dropdown
-        +subscription-form({ placeholder: 'Email', title: 'subscription text field' }).form-elements__subscription-form
-      .form-elements__column.form-elements__column--second   
+        }).form-elements__element.form-elements__element_dropdown
+        +subscription-form({ placeholder: 'Email', title: 'subscription text field' }).form-elements__element
+      .form-elements__column.form-elements__column_second   
         - 
           const checkboxesProps = [
             {
@@ -94,17 +94,17 @@ block content
             title: 'Checkbox Buttons',
             list: checkboxesProps,
           }
-        ).form-elements__checkboxes
-        +radio-buttons-card().form-elemens__radio-buttons-card
-        +toggle-buttons-card().form-elements__toggle-buttons-card
-        +like-buttons-card().form-elements__like-buttons-card
-        +rate-buttons-card().form-elements__rate-buttons-card
-      .form-elements__column.form-elements__column--third
-        +range-slider({ title: 'Range slider' }).form-elements__range-slider
-        +buttons-card().form-elements__buttons-card
-        +pagination({ title: 'Pagination '}).form-elements__pagination
-    .form-elements__row.form-elements__row--second
-      .form-elements__column.form-elements__column--first
+        ).form-elements__element
+        +radio-buttons-card().form-elements__element
+        +toggle-buttons-card().form-elements__element
+        +like-buttons-card().form-elements__element
+        +rate-buttons-card().form-elements__element
+      .form-elements__column.form-elements__column_third
+        +range-slider({ title: 'Range slider' }).form-elements__element
+        +buttons-card().form-elements__element
+        +pagination({ title: 'Pagination '}).form-elements__element
+    .form-elements__row.form-elements__row_second
+      .form-elements__column.form-elements__column_first
         +dropdown({
           placeholder: 'Удобства номера',
           title: 'Dropdown',
@@ -112,7 +112,7 @@ block content
           status: 'Default',
           applyButton: false,
           resetButton: false
-        }).form-elements__dropdown
+        }).form-elements__element.form-elements__element_dropdown
         +dropdown({
           placeholder: 'Удобства номера',
           title: 'Dropdown',
@@ -121,8 +121,8 @@ block content
           opened: true,
           applyButton: false,
           resetButton: false
-        }).form-elements__dropdown
-      .form-elements__column.form-elements__column--second
+        }).form-elements__element.form-elements__element_dropdown
+      .form-elements__column.form-elements__column_second
         +dropdown(
           {
             placeholder: 'Сколько гостей',
@@ -131,8 +131,8 @@ block content
             opened: true,
             applyButton: true,
           }
-        ).form-elements__dropdown
-      .form-elements__column.form-elements__column--third
+        ).form-elements__element.form-elements__element_dropdown
+      .form-elements__column.form-elements__column_third
         +dropdown(
           {
             placeholder: 'Сколько гостей',
@@ -142,9 +142,9 @@ block content
             applyButton: true,
             resetButton: true,
           }
-        ).form-elements__dropdown
-    .form-elements__row.form-elements__row--third
-      .form-elements__column.form-elements__column--first
+        ).form-elements__element.form-elements__element_dropdown
+    .form-elements__row.form-elements__row_third
+      .form-elements__column.form-elements__column_first
         -
           const expandableCheckboxesProps = [
             {
@@ -202,7 +202,7 @@ block content
             expandable: true,
             opened: false
           }
-        ).form-elements__checkboxes
+        ).form-elements__element
         +checkboxes(
           {
             title: 'Expandable checkbox list',
@@ -210,8 +210,8 @@ block content
             expandable: true,
             opened: true
           }
-        ).form-elements__checkboxes
-      .form-elements__column.form-elements__column--second
+        ).form-elements__element
+      .form-elements__column.form-elements__column_second
         - 
           const richCheckboxesProps = [
             {
@@ -233,12 +233,12 @@ block content
             list: richCheckboxesProps,
           }
         ).form-elements__checkboxes
-      .form-elements__column.form-elements__column--third
+      .form-elements__column.form-elements__column_third
         -
           const names = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']; 
         +bullet-list({ title: 'Bullet-list', names }).form-elements__bullet-list
-    .form-elements__row.form-elements__row--fourth
-      .form-elements__column.form-elements__column--first
+    .form-elements__row.form-elements__row_fourth
+      .form-elements__column.form-elements__column_first
         - 
           const advantagesProps = [
             {
@@ -255,7 +255,7 @@ block content
             }
           ];
         +advantages({ list: advantagesProps }).form-elements__advantages
-      .form-elements__column.form-elements__column--second
+      .form-elements__column.form-elements__column_second
         +comment(
           {
             url: require('../../img/murad-saraphanov.png').default,

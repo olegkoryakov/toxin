@@ -23,8 +23,8 @@ jsDropdowns.forEach((element) => {
   }
 });
 
-const calendarWidgetsDates = Array.from(document.querySelectorAll('.dropdown--dates'));
-const calendarWidgetsFilterDate = Array.from(document.querySelectorAll('.dropdown--date-filter'));
+const calendarWidgetsDates = Array.from(document.querySelectorAll('.dropdown_dates'));
+const calendarWidgetsFilterDate = Array.from(document.querySelectorAll('.dropdown_date-filter'));
 const calendarWidgets = [...calendarWidgetsDates, ...calendarWidgetsFilterDate];
 const calendarsList = [];
 calendarWidgets.forEach((calendarWidget) => {
@@ -35,7 +35,7 @@ calendarWidgets.forEach((calendarWidget) => {
 
 const dropdownGoodsElements = Array
   .from(document.querySelectorAll('.dropdown'))
-  .filter((dropdown) => dropdown.classList.contains('dropdown--goods') || dropdown.classList.contains('dropdown--guests'));
+  .filter((dropdown) => dropdown.classList.contains('dropdown_goods') || dropdown.classList.contains('dropdown_guests'));
 const dropdownGoodsList = [];
 dropdownGoodsElements.forEach((dropdownGoodsElement) => {
   dropdownGoodsList.push(new DropdownGoods((dropdownGoodsElement as HTMLElement)));

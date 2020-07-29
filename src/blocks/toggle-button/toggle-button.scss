@@ -1,43 +1,43 @@
 .toggle-button {
   user-select: none;
-}
 
-.toggle-button__input + .toggle-button__label {
-  position: relative;
-  display: block;
-  padding-left: 50px;
-  color: rgba($mainColor, 0.75);
-  &:before {
-    position: absolute;
-    content: '';
-    box-sizing: border-box;
-    width: 40px;
-    height: 20px;
-    border: 1px solid rgba($mainColor, 0.25);
-    top: 2px;
-    left: 0;
-    border-radius: 10px;
+  &__input + &__label {
+    position: relative;
+    display: block;
+    padding-left: 50px;
+    color: rgba($mainColor, 0.75);
+    &:before {
+      position: absolute;
+      content: '';
+      box-sizing: border-box;
+      width: 40px;
+      height: 20px;
+      border: 1px solid rgba($mainColor, 0.25);
+      top: 2px;
+      left: 0;
+      border-radius: 10px;
+    }
+  
+    &:after {
+      position: absolute;
+      content: '';
+      box-sizing: border-box;
+      width: 12px;
+      height: 12px;
+      background-color: rgba($mainColor, 0.25);
+      border-radius: 50%;
+      top: 6px;
+      left: 4px;
+    }
   }
 
-  &:after {
-    position: absolute;
-    content: '';
-    box-sizing: border-box;
-    width: 12px;
-    height: 12px;
-    background-color: rgba($mainColor, 0.25);
-    border-radius: 50%;
-    top: 6px;
-    left: 4px;
-  }
-}
-
-.toggle-button__input:checked + .toggle-button__label {
-  &:before {
-    border-color: $purpleColor;
-  }
-  &:after {
-    background-image: $purpleGradient;
-    left: 24px;
+  &__input:checked + &__label {
+    &:before {
+      border-color: $purpleColor;
+    }
+    &:after {
+      background-image: $purpleGradient;
+      left: 24px;
+    }
   }
 }

@@ -6,87 +6,86 @@
   border-radius: 4px;
   padding-top: 40px;
   padding-bottom: 30px;
-}
 
-.about-room__content {
-  margin: 0 auto;
-  width: 320px;
-}
-
-.about-room__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 20px;
-}
-
-.about-room__number-details {
-  width: 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: $likeHeadingFont; 
-  color: $mainColor;
-  &--luxe {
-    position: relative;
-    &:before {
-      content: 'Люкс';
-      position: absolute;
-      text-transform: uppercase;
-      font-family: $decorativeFont;
-      color: $purpleColor;
-      font-size: 12px;
-      line-height: 15px;
-      right: -5px;
-      transform: translateX(100%);
-      bottom: 3px;
-    }
+  &__content {
+    margin: 0 auto;
+    width: 320px;
   }
-}
 
-.about-room__number-prefix {
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.about-room__number {
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.about-room__price-details {
-  width: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  line-height: 18px;
-  color: rgba($mainColor, 0.5);
-}
-
-.about-room__price {
-  font-family: $decorativeFont;
-  font-size: 14px;
-}
-
-.about-room__price-postfix {
-  font-size: 12px;
-  text-transform: lowercase;
-}
-
-.about-room__form {
-  margin-bottom: 20px;
-}
-
-.about-room__dropdown {
-  z-index: 1;
-  &:not(:last-of-type) {
-    z-index: 2;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: 20px;
   }
-}
 
-.about-room__table-wrapper {
-  position: relative;
+  &__number-details {  
+    width: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $likeHeadingFont; 
+    color: $mainColor;
+    &_luxe {
+      position: relative;
+      &:before {
+        content: 'Люкс';
+        position: absolute;
+        text-transform: uppercase;
+        font-family: $decorativeFont;
+        color: $purpleColor;
+        font-size: 12px;
+        line-height: 15px;
+        right: -5px;
+        transform: translateX(100%);
+        bottom: 3px;
+      }
+    }
+  }
+
+  &__number-prefix {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__number {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__price-details {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+    color: rgba($mainColor, 0.5);
+  }
+
+  &__price {
+    font-family: $decorativeFont;
+    font-size: 14px;
+  }
+
+  &__price-postfix {
+    font-size: 12px;
+    text-transform: lowercase;
+  }
+
+  &__form {
+    margin-bottom: 20px;
+  }
+
+  &__dropdown {
+    z-index: 1;
+    &:not(:last-of-type) {
+      z-index: 2;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__table-wrapper {
+    position: relative;
     &::before {
       position: absolute;
       content: '';
@@ -97,55 +96,54 @@
       left: 50%;
       transform: translateX(-53%);
     }
-}
-
-.about-room__table {
-  border-collapse: collapse;
-  margin-bottom: 21px;
-  width: 100%;
-}
-
-.about-room__td {
-  padding: 0;
-  line-height: 18px;
-  border-bottom: 15px solid transparent;
-  &:first-of-type {
-    width: 214px;
-  }
-  &:nth-of-type(3) {
-    vertical-align: top;
-    text-align: right;
-  }
-  &:nth-of-type(2) {
-    vertical-align: top;
-    text-align: center;
-  }
-}
-
-.about-room__th {
-  border-top: 30px solid transparent;
-  padding: 0;
-  font-family: $likeHeadingFont;
-  color: $mainColor;
-  font-size: 19px;
-  line-height: 24px;
-  &:first-of-type {
-    text-align: left;
-  }
-  &:last-of-type {
-    text-align: right;
   }
 
-}
+  &__table {
+    border-collapse: collapse;
+    margin-bottom: 21px;
+    width: 100%;
+  }
 
-.about-room__info {
-  box-sizing: border-box;
-  @include button-reset;
-  font-family: $decorativeFont;
-  color: rgba($mainColor, 0.25);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid rgba($mainColor, 0.25);
+  &__td {
+    padding: 0;
+    line-height: 18px;
+    border-bottom: 15px solid transparent;
+    &:first-of-type {
+      width: 214px;
+    }
+    &:nth-of-type(3) {
+      vertical-align: top;
+      text-align: right;
+    }
+    &:nth-of-type(2) {
+      vertical-align: top;
+      text-align: center;
+    }
+  }
 
+  &__th {
+    border-top: 30px solid transparent;
+    padding: 0;
+    font-family: $likeHeadingFont;
+    color: $mainColor;
+    font-size: 19px;
+    line-height: 24px;
+    &:first-of-type {
+      text-align: left;
+    }
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+
+  &__info {
+    box-sizing: border-box;
+    @include button-reset;
+    font-family: $decorativeFont;
+    color: rgba($mainColor, 0.25);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba($mainColor, 0.25);
+  }
 }

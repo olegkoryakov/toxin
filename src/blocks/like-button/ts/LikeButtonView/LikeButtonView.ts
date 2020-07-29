@@ -15,14 +15,14 @@ export default class LikeButtonView extends EventEmitter implements ILikeButtonV
   }
 
   setLikedState() {
-    if (!(this.likeButtonElement.classList.contains('like-button--liked'))) {
-      this.likeButtonElement.classList.add('like-button--liked');
+    if (!(this.likeButtonElement.classList.contains('like-button_liked'))) {
+      this.likeButtonElement.classList.add('like-button_liked');
     }
   }
 
   setUnlikedState() {
-    if (this.likeButtonElement.classList.contains('like-button--liked')) {
-      this.likeButtonElement.classList.remove('like-button--liked');
+    if (this.likeButtonElement.classList.contains('like-button_liked')) {
+      this.likeButtonElement.classList.remove('like-button_liked');
     }
   }
 

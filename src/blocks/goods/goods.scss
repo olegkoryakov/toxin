@@ -1,51 +1,54 @@
-.goods__list {
-  @include reset-list;
-}
+.goods {
 
-.goods__good {
-  display: flex;
-  align-items: center;
-  margin-bottom: 6px;
-
-  &:last-of-type {
-    margin-bottom: 0;
+  &__list {
+    @include reset-list;
   }
-}
-
-.goods__good-name {
-  @include h3Like;
-  margin-right: auto;
-}
-
-.goods__good-button {
-  @include button-reset;
-  box-sizing: border-box;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba($mainColor, 0.5);
-  color: rgba($mainColor, 0.5);
-  text-align: center;
-  border-radius: 50%;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-.goods__good-count {
-  @include h3Like;
-  margin: 0 12px;
-}
-
-.goods__controls {
-  display: flex;
-  margin-top: 19px;
-  margin-bottom: 6px;
-}
-
-.goods__controls-button {
-  &--apply {
-    margin-left: auto;
+  
+  &__good {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
-  &--reset {
+
+  &__good-name {
+    @include h3Like;
     margin-right: auto;
+  }
+
+  &__good-button {
+    @include button-reset;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba($mainColor, 0.5);
+    color: rgba($mainColor, 0.5);
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &__good-count {
+    @include h3Like;
+    margin: 0 12px;
+  }
+
+  &__controls {
+    display: flex;
+    margin-top: 19px;
+    margin-bottom: 6px;
+  }
+
+  &__controls-button {
+    &_apply {
+      margin-left: auto;
+    }
+    &_reset {
+      margin-right: auto;
+    }
   }
 }

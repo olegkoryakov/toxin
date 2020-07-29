@@ -17,7 +17,7 @@ mixin checkboxes(options)
   - 
     const { title, list, expandable, opened } = options;
     let dropdownModifierClass = '';
-    if (expandable === true) dropdownModifierClass = opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
+    if (expandable === true) dropdownModifierClass = opened === true ? 'js-dropdown_open' : 'js-dropdown_close';
     const dropdownClass = expandable === true ? 'js-dropdown' : '';
     const popupClass = expandable === true ? 'js-dropdown__popup' : '';
 

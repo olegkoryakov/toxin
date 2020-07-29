@@ -10,12 +10,12 @@ export default class JsDropdown implements IJsDropdown {
   jsDropdownButton: HTMLElement[];
 
   toggleState() {
-    if (this.jsDropdownElement.classList.contains('js-dropdown--open')) {
-      this.jsDropdownElement.classList.add('js-dropdown--close');
-      this.jsDropdownElement.classList.remove('js-dropdown--open');
-    } else if (this.jsDropdownElement.classList.contains('js-dropdown--close')) {
-      this.jsDropdownElement.classList.remove('js-dropdown--close');
-      this.jsDropdownElement.classList.add('js-dropdown--open');
+    if (this.jsDropdownElement.classList.contains('js-dropdown_open')) {
+      this.jsDropdownElement.classList.add('js-dropdown_close');
+      this.jsDropdownElement.classList.remove('js-dropdown_open');
+    } else if (this.jsDropdownElement.classList.contains('js-dropdown_close')) {
+      this.jsDropdownElement.classList.remove('js-dropdown_close');
+      this.jsDropdownElement.classList.add('js-dropdown_open');
     }
   }
 

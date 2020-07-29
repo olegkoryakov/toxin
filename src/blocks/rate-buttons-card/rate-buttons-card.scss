@@ -1,15 +1,15 @@
 .rate-buttons-card {
   width: 258px;
-}
 
-.rate-buttons-card__title {
-  @include h3Like;
-  margin-bottom: 16px;
-}
+  &__title {
+    @include h3Like;
+    margin-bottom: 16px;
+  }
 
-.rate-buttons-card__list {
-  @include reset-list;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2px;
+  &__list {
+    @include reset-list;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px;
+  }
 }

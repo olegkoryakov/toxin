@@ -33,11 +33,11 @@ mixin buttons-card
             text: text,
           }
       ];
-    ul.buttons-card__list.buttons-card__list--main
+    ul.buttons-card__list.buttons-card__list_main
       each obj in buttonsProps
         li.buttons-card__item
           +button(obj).buttons-card__button
-    ul.buttons-card__list.buttons-card__list--controls
+    ul.buttons-card__list.buttons-card__list_controls
       each obj in controlButtonsProps
         li.buttons-card__item
           +button(obj).buttons-card__button
@@ -49,5 +49,5 @@ mixin buttons-card
     ).buttons-card__button
     script.
       const buttonsCard = document.querySelector('.buttons-card');
-      buttonsCard.querySelectorAll('.button--filled')[1].classList.add('hover');
-      buttonsCard.querySelectorAll('.button--stroked')[1].classList.add('hover');
+      buttonsCard.querySelectorAll('.button_filled')[1].classList.add('hover');
+      buttonsCard.querySelectorAll('.button_stroked')[1].classList.add('hover');

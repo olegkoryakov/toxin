@@ -9,7 +9,7 @@ mixin goods(options)
     const { type, applyButton, resetButton } = options;
     const goodsList = ['Спальни', 'Кровати', 'Ванные комнаты'];
     const guestsList = ['Взрослые', 'Дети', 'Младенцы'];
-    const classMod = `goods--${type}`;
+    const classMod = `goods_${type}`;
     let currentList;
     if (type === 'guests') currentList = [...guestsList];
     else if (type === 'goods') currentList = [...goodsList];
@@ -18,9 +18,9 @@ mixin goods(options)
       each item in currentList
         li.goods__good
           span.goods__good-name= item
-          button(type = 'button').goods__good-button.goods__good-button--minus -
+          button(type = 'button').goods__good-button.goods__good-button_minus -
           span.goods__good-count 0
-          button(type = 'button').goods__good-button.goods__good-button--plus +
+          button(type = 'button').goods__good-button.goods__good-button_plus +
     if applyButton || resetButton
       .goods__controls
         if applyButton && resetButton
@@ -29,27 +29,27 @@ mixin goods(options)
               text: 'Отчистить',
               type : 'reset',
             }
-          ).goods__controls-button.goods__controls-button--reset
+          ).goods__controls-button.goods__controls-button_reset
           +button(
             {
               text: 'Применить',
               type: 'apply',
             }
-          ).goods__controls-button.goods__controls-button--apply
+          ).goods__controls-button.goods__controls-button_apply
         else if resetButton
           +button(
             {
               text: 'Отчистить',
               type : 'reset',
             }
-          ).goods__controls-button.goods__controls-button--reset
+          ).goods__controls-button.goods__controls-button_reset
         else if applyButton
           +button(
             {
               text: 'Применить',
               type : 'apply',
             }
-          ).goods__controls-button.goods__controls-button--apply
+          ).goods__controls-button.goods__controls-button_apply
           
 
    

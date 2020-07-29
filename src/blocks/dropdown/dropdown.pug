@@ -29,23 +29,23 @@ mixin dropdown(options)
       opened,
       type,
     } = options;
-    const jsClassMod = opened === true ? 'js-dropdown--open' : 'js-dropdown--close';
+    const jsClassMod = opened === true ? 'js-dropdown_open' : 'js-dropdown_close';
     let propsList;
     let classMod;
     switch(type) {
       case 'guests':
         propsList = ['Взрослые','Дети','Младенцы'];
-        classMod = 'dropdown--guests';
+        classMod = 'dropdown_guests';
         break;
       case 'goods':
         propsList = ['Спальни', 'Кровати', 'Ванные комнаты'];
-        classMod = 'dropdown--goods';
+        classMod = 'dropdown_goods';
         break;
       case 'dates': 
-        classMod = 'dropdown--dates';
+        classMod = 'dropdown_dates';
         break;
       case 'date-filter':
-        classMod = 'dropdown--date-filter'
+        classMod = 'dropdown_date-filter'
         break;
       default:
         break;
@@ -71,7 +71,7 @@ mixin dropdown(options)
             expandButton: true,
             status: status,
           }
-        ).dropdown__input-box.dropdown__input-box--date-from
+        ).dropdown__input-box.dropdown__input-box_date-from
         +input-box(
           {
             title: secondTitle,
@@ -79,7 +79,7 @@ mixin dropdown(options)
             expandButton: true,
             status: status,
           }
-        ).dropdown__input-box.dropdown__input-box--date-to
+        ).dropdown__input-box.dropdown__input-box_date-to
     else if type === 'date-filter'
       .dropdown__content
         +input-box(
@@ -89,7 +89,7 @@ mixin dropdown(options)
             expandButton: true,
             status: status,
           }
-        ).dropdown__input-box.dropdown__input-box--date
+        ).dropdown__input-box.dropdown__input-box_date
     if type === 'guests' || type === 'goods'
       .dropdown__popup.js-dropdown__popup
         +goods({ type: type, applyButton: applyButton, resetButton: resetButton}).dropdown__goods
