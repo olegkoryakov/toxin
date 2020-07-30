@@ -1,6 +1,4 @@
 .rate-buttons-card {
-  width: 258px;
-
   &__title {
     @include h3Like;
     margin-bottom: 16px;
@@ -11,5 +9,9 @@
     display: flex;
     justify-content: space-between;
     padding: 0 2px;
+  }
+
+  &__item {
+    width: 115px;
   }
 }

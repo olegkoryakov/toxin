@@ -1,6 +1,4 @@
-.buttons-card {
-  width: 320px;
-  
+.buttons-card {  
   &__title {
     @include h3Like;
     margin-bottom: 16px;

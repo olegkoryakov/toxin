@@ -2,6 +2,36 @@
   padding-top: 140px;
   padding-bottom: 131px;
 
+  &__element {
+    &_pagination {
+      width: 240px;
+    }
+    
+    &_like-buttons {
+      width: 90px;
+    }
+
+    &_radio-buttons {
+      width: 220px;
+    }
+
+    &_toggle-buttons {
+      width: 260px;
+    }
+
+    &_rate-buttons {
+      width: 258px;    
+    }
+
+    &_subscription-form {
+      max-width: 266px;
+    }
+
+    &_range-slider {
+      width: 266px;
+    }
+  }
+
   &__row {
     display: flex;
     flex-wrap: wrap;
@@ -33,11 +63,18 @@
   }
 
   &__row_first &__column_first &__element_dropdown {
+    &:last-of-type {
+      max-width: 266px;
+    }
     margin-bottom: 40px;
   }
 
   &__row_first &__column_second {
     width: 260px;
+  }
+
+  &__row_first &__column_second &__element_checkboxes {
+    width: 222px;
   }
 
   &__row_first &__column_second &__element {
@@ -77,7 +114,12 @@
   &__row_third &__column_first &__element:not(:last-of-type) {
     margin-bottom: 50px;
   }
+
   // fourth
+  &__row_fourth &__column_first {
+    width: 280px;
+  }
+
   &__row_fourth &__column_second {
     width: 711px;
   }

@@ -1,7 +1,6 @@
 .input-box {
   position: relative;
   width: 100%;
-  max-width: 320px;
 
   &__title {
     @include h3Like();

@@ -1,6 +1,5 @@
 .checkbox {
   user-select: none;
-  max-width: 222px;
 
   &__input + &__label {
     display: block;
@@ -39,10 +38,6 @@
     }
   }
   
-  &_rich {
-    min-width: 266px;
-  }
-
   &_rich > &__label {
     @include h4Like;
   }

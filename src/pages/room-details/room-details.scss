@@ -35,10 +35,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 30px;
-    @media screen and (max-width: 602px) {
-      flex-direction: column;
-      align-items: center;
-    }
   }
 
   &__content-column {
@@ -52,16 +48,36 @@
     &_side {
       max-width: 380px;
     }
-    @media screen and (max-width: 1033px) {
-      margin: 0 auto;
-    }
   }
 
   &__content-column_main &__content-row:first-of-type {
     max-width: 672px;
   }
 
+  &__impressions {
+    width: 311px;
+  }
+
+  &__advantages {
+    width: 280px;
+  }
+
+  &__reset {
+    max-width: 341px;
+  }
+  
+  @media screen and (max-width: 1033px) {
+    &__content-column {
+      margin: 0 auto;
+    }
+  }
+
   @media screen and (max-width: 602px) {
+    &__content-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
     &__advantages {
       margin-bottom: 20px;
     }

@@ -60,7 +60,10 @@ block content
           applyButton: false,
           resetButton: false
         }).form-elements__element.form-elements__element_dropdown
-        +subscription-form({ placeholder: 'Email', title: 'subscription text field' }).form-elements__element
+        +subscription-form({
+          placeholder: 'Email',
+          title: 'subscription text field'
+        }).form-elements__element.form-elements__element_subscription-form
       .form-elements__column.form-elements__column_second   
         - 
           const checkboxesProps = [
@@ -88,15 +91,15 @@ block content
             title: 'Checkbox Buttons',
             list: checkboxesProps,
           }
-        ).form-elements__element
-        +radio-buttons-card().form-elements__element
-        +toggle-buttons-card().form-elements__element
-        +like-buttons-card().form-elements__element
-        +rate-buttons-card().form-elements__element
+        ).form-elements__element.form-elements__element_checkboxes
+        +radio-buttons-card().form-elements__element.form-elements__element_radio-buttons
+        +toggle-buttons-card().form-elements__element.form-elements__element_toggle-buttons
+        +like-buttons-card().form-elements__element.form-elements__element_like-buttons
+        +rate-buttons-card().form-elements__element.form-elements__element_rate-buttons
       .form-elements__column.form-elements__column_third
-        +range-slider({ title: 'Range slider' }).form-elements__element
+        +range-slider({ title: 'Range slider' }).form-elements__element.form-elements__element_range-slider
         +buttons-card().form-elements__element
-        +pagination({ title: 'Pagination '}).form-elements__element
+        +pagination({ title: 'Pagination '}).form-elements__element.form-elements__element_pagination
     .form-elements__row.form-elements__row_second
       .form-elements__column.form-elements__column_first
         +dropdown({
@@ -196,7 +199,7 @@ block content
             expandable: true,
             opened: false
           }
-        ).form-elements__element
+        ).form-elements__element.form-elements__element_checkboxes
         +checkboxes(
           {
             title: 'Expandable checkbox list',
@@ -204,7 +207,7 @@ block content
             expandable: true,
             opened: true
           }
-        ).form-elements__element
+        ).form-elements__element.form-elements__element_checkboxes
       .form-elements__column.form-elements__column_second
         - 
           const richCheckboxesProps = [
@@ -226,7 +229,7 @@ block content
             title: 'Rich checkbox buttons',
             list: richCheckboxesProps,
           }
-        ).form-elements__checkboxes
+        ).form-elements__checkboxes.form-elements__element_checkboxes
       .form-elements__column.form-elements__column_third
         -
           const names = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']; 

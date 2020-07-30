@@ -2,7 +2,6 @@
   @include cardShadow;
   box-sizing: border-box;
   background-color: #fff;
-  max-width: 270px;
   border-radius: 4px;
   
   &_luxe > &__number-details {
@@ -133,6 +132,10 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+  }
+
+  &__star-rating {
+    width: 115px;
   }
 
   &__price, &__reviews {

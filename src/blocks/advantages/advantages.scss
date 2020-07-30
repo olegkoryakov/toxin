@@ -1,7 +1,6 @@
 .advantages {
   box-sizing: border-box;
-  width: 280px;
-
+  
   &__title {
     @include h2Like;
     margin-bottom: 20px;

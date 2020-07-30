@@ -1,6 +1,5 @@
 .checkboxes{
   position: relative;
-  width: 266px;
 
   &__title {
     @include h3Like;
@@ -13,6 +12,7 @@
   }
 
   &__list {
+    max-width: 266px;
     @include reset-list;
   }
 
