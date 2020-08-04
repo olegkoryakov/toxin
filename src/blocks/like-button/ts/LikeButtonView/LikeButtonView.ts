@@ -4,10 +4,19 @@ export default class LikeButtonView extends EventEmitter implements ILikeButtonV
   constructor(likeButtonElement: HTMLElement) {
     super();
     this.likeButtonElement = likeButtonElement;
+
+    this.addLikeButtonHandler();
+  }
+
+  private likeButtonElement: HTMLElement;
+
+  private addLikeButtonHandler() {
     this.likeButtonElement.addEventListener('click', this.onLikeButtonClick.bind(this));
   }
 
-  likeButtonElement: HTMLElement;
+  private onLikeButtonClick() {
+    this.emit('change-like-state', undefined);
+  }
 
   setLikesCount(likesCount: number) {
     const likesCountElement = this.likeButtonElement.querySelector('.like-button__count');
@@ -24,9 +33,5 @@ export default class LikeButtonView extends EventEmitter implements ILikeButtonV
     if (this.likeButtonElement.classList.contains('like-button_liked')) {
       this.likeButtonElement.classList.remove('like-button_liked');
     }
-  }
-
-  onLikeButtonClick() {
-    this.emit('change-like-state', undefined);
   }
 }

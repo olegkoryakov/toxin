@@ -10,17 +10,21 @@ export default class Calendar implements ICalendar {
       to: undefined,
     },
   ) {
+    this.initCalendarApp(calendarWidget, selectedDates);
+  }
+
+  private calendarPresenter!: ICalendarPresenter;
+
+  private calendarModel!: ICalendarModel;
+
+  private calendarView!: ICalendarView;
+
+  private initCalendarApp(calendarWidget: HTMLElement, selectedDates: ISelectedDates) {
     this.calendarModel = new CalendarModel(selectedDates);
     this.calendarView = new CalendarView(calendarWidget);
     this.calendarPresenter = new CalendarPresenter(this.calendarModel, this.calendarView);
     this.calendarPresenter.init();
   }
-
-  private calendarPresenter: ICalendarPresenter;
-
-  private calendarModel: ICalendarModel;
-
-  private calendarView: ICalendarView;
 
   getSelectedDates() {
     return this.calendarModel.getSelectedDates();

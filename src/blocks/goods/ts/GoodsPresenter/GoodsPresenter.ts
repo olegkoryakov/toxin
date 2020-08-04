@@ -3,9 +3,7 @@ export default class GoodsPresenter implements IGoodsPresenter {
     this.goodsModel = goodsModel;
     this.goodsView = goodsView;
 
-    this.goodsView.on('decrease-good', this.decreaseGood.bind(this));
-    this.goodsView.on('increase-good', this.increaseGood.bind(this));
-    this.goodsView.on('set-input-value', this.setInputValue.bind(this));
+    this.addViewHandlers();
   }
 
   private goodsModel: IGoodsModel;
@@ -50,6 +48,12 @@ export default class GoodsPresenter implements IGoodsPresenter {
   private setInputValue() {
     const message = this.getMessage();
     this.goodsView.setInputValue(message);
+  }
+
+  private addViewHandlers() {
+    this.goodsView.on('decrease-good', this.decreaseGood.bind(this));
+    this.goodsView.on('increase-good', this.increaseGood.bind(this));
+    this.goodsView.on('set-input-value', this.setInputValue.bind(this));
   }
 
   init() {

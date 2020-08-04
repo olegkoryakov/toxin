@@ -56,7 +56,7 @@ interface ICalendarView extends IEventEmitter {
   renderMonth(year: number, month: number): void,
 }
 
-interface ICalendarPresenter extends IEventEmitter {
+interface ICalendarPresenter {
   init(): void,
 }
 

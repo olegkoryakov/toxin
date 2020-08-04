@@ -1,16 +1,9 @@
-import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
-
-export default class CalendarPresenter extends EventEmitter implements ICalendarPresenter {
+export default class CalendarPresenter implements ICalendarPresenter {
   constructor(calendarModel: ICalendarModel, calendarView: ICalendarView) {
-    super();
     this.calendarModel = calendarModel;
     this.calendarView = calendarView;
 
-    this.calendarView.on('set-data', this.setData.bind(this));
-    this.calendarView.on('check-current-day', this.checkCurrentDay.bind(this));
-    this.calendarView.on('select-date', this.selectDate.bind(this));
-    this.calendarView.on('render-next-month', this.renderNextMonth.bind(this));
-    this.calendarView.on('render-prev-month', this.renderPrevMonth.bind(this));
+    this.addViewHandlers();
   }
 
   private calendarModel: ICalendarModel;
@@ -34,6 +27,14 @@ export default class CalendarPresenter extends EventEmitter implements ICalendar
 
     const selectedDates = this.calendarModel.getSelectedDates();
     this.renderSelectedDatesAndInterval(selectedDates);
+  }
+
+  private addViewHandlers() {
+    this.calendarView.on('set-data', this.setData.bind(this));
+    this.calendarView.on('check-current-day', this.checkCurrentDay.bind(this));
+    this.calendarView.on('select-date', this.selectDate.bind(this));
+    this.calendarView.on('render-next-month', this.renderNextMonth.bind(this));
+    this.calendarView.on('render-prev-month', this.renderPrevMonth.bind(this));
   }
 
   renderSelectedDatesAndInterval(selectedDates: ISelectedDates) {

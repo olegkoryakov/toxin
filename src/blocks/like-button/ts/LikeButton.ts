@@ -7,13 +7,13 @@ export default class LikeButton {
     this.init(likeButtonElement);
   }
 
-  likeButtonModel!: ILikeButtonModel;
+  private likeButtonModel!: ILikeButtonModel;
 
-  likeButtonView!: ILikeButtonView;
+  private likeButtonView!: ILikeButtonView;
 
-  likeButtonPresenter!: ILikeButtonPresenter;
+  private likeButtonPresenter!: ILikeButtonPresenter;
 
-  init(likeButtonElement: HTMLElement) {
+  private init(likeButtonElement: HTMLElement) {
     const likesCountElement = likeButtonElement.querySelector('.like-button__count');
     const isLiked = likeButtonElement.classList.contains('like-button_liked');
     if (likesCountElement) {

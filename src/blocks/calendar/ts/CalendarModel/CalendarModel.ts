@@ -1,5 +1,19 @@
 export default class CalendarModel implements ICalendarModel {
   constructor(selectedDates: ISelectedDates) {
+    this.initFields(selectedDates);
+  }
+
+  private date!: Date;
+
+  private dateState!: ICalendarState;
+
+  private dateProps!: IDateProps;
+
+  private userDateState!: ICalendarState;
+
+  private selectedDates!: ISelectedDates;
+
+  private initFields(selectedDates: ISelectedDates) {
     this.date = new Date();
     this.dateState = {
       day: this.date.getDate(),
@@ -15,16 +29,6 @@ export default class CalendarModel implements ICalendarModel {
     };
   }
 
-  private date: Date;
-
-  private dateState: ICalendarState;
-
-  private dateProps: IDateProps;
-
-  private userDateState: ICalendarState;
-
-  private selectedDates: ISelectedDates;
-
   getUserDateState() {
     return this.userDateState;
   }
@@ -36,8 +40,8 @@ export default class CalendarModel implements ICalendarModel {
   incrementUserDateState() {
     this.userDateState.month += 1;
 
-    const MAX_MONTH = 11;
-    if (this.userDateState.month > MAX_MONTH) {
+    const { maxMonth } = this.dateProps;
+    if (this.userDateState.month > maxMonth) {
       this.userDateState.month = 0;
       this.userDateState.year += 1;
     }
@@ -46,8 +50,8 @@ export default class CalendarModel implements ICalendarModel {
   decrementUserDateState() {
     this.userDateState.month -= 1;
 
-    const MIN_MONTH = 0;
-    if (this.userDateState.month < MIN_MONTH) {
+    const { minMonth } = this.dateProps;
+    if (this.userDateState.month < minMonth) {
       this.userDateState.month = 11;
       this.userDateState.year -= 1;
     }

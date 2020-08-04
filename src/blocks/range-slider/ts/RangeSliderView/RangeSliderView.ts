@@ -3,24 +3,28 @@ import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
 export default class RangeSliderView extends EventEmitter {
   constructor(rangeSliderElement: HTMLElement) {
     super();
+
+    this.initFields(rangeSliderElement);
+    this.addHandlers();
+  }
+
+  private priceElement!: HTMLElement;
+
+  private rangeLine!: HTMLElement;
+
+  private line!: HTMLElement;
+
+  private thumbFrom!: HTMLElement;
+
+  private thumbTo!: HTMLElement;
+
+  private initFields(rangeSliderElement: HTMLElement) {
     this.priceElement = (rangeSliderElement.querySelector('.range-slider__price') as HTMLElement);
     this.line = (rangeSliderElement.querySelector('.range-slider__line') as HTMLElement);
     this.rangeLine = (this.line.querySelector('.range-slider__range-line') as HTMLElement);
     this.thumbFrom = (this.line.querySelector('.range-slider__thumb_from') as HTMLElement);
     this.thumbTo = (this.line.querySelector('.range-slider__thumb_to') as HTMLElement);
-
-    this.addHandlers();
   }
-
-  private priceElement: HTMLElement;
-
-  private rangeLine: HTMLElement;
-
-  private line: HTMLElement;
-
-  private thumbFrom: HTMLElement;
-
-  private thumbTo: HTMLElement;
 
   private addHandlers() {
     const thumbs = [this.thumbFrom, this.thumbTo];
@@ -41,11 +45,11 @@ export default class RangeSliderView extends EventEmitter {
   private onThumbMouseDown(downE: MouseEvent) {
     const thumb = (downE.currentTarget as HTMLElement);
     const modifier = this.getThumbModifier(thumb);
-    const zIndex = parseInt((thumb.getAttribute('z-index') as string), 10);
+    const zIndex = parseInt(getComputedStyle(thumb).getPropertyValue('z-index'), 10);
+
     const width = this.getSliderLineWidth();
 
-    thumb.setAttribute('user-select', 'none');
-    thumb.setAttribute('z-index', (zIndex + 1).toString());
+    thumb.style.zIndex = (zIndex + 1).toString();
     let startCoord = downE.clientX;
 
     const onMouseMove = (moveE: MouseEvent) => {
@@ -64,8 +68,7 @@ export default class RangeSliderView extends EventEmitter {
     const bindedOnMouseMove = onMouseMove.bind(this);
 
     const onMouseUp = () => {
-      thumb.setAttribute('z-index', zIndex.toString());
-      thumb.setAttribute('user-select', '');
+      thumb.style.zIndex = zIndex.toString();
 
       document.removeEventListener('mousemove', bindedOnMouseMove);
       document.removeEventListener('mouseup', onMouseUp);

@@ -1,15 +1,20 @@
 export default class JsDropdown implements IJsDropdown {
-  constructor(jsDropdownElement: HTMLElement, ...jsDropdownButton: HTMLElement[]) {
+  constructor(jsDropdownElement: HTMLElement, ...jsDropdownButtons: HTMLElement[]) {
     this.jsDropdownElement = jsDropdownElement;
-    this.jsDropdownButton = jsDropdownButton;
-    this.jsDropdownButton.forEach((button) => button.addEventListener('click', this.onJsDropdownButtonClick.bind(this)));
+    this.jsDropdownButtons = jsDropdownButtons;
+
+    this.addButtonsHandlers();
   }
 
-  jsDropdownElement: HTMLElement;
+  private jsDropdownElement: HTMLElement;
 
-  jsDropdownButton: HTMLElement[];
+  private jsDropdownButtons: HTMLElement[];
 
-  toggleState() {
+  private addButtonsHandlers() {
+    this.jsDropdownButtons.forEach((button) => button.addEventListener('click', this.onJsDropdownButtonClick.bind(this)));
+  }
+
+  private toggleState() {
     if (this.jsDropdownElement.classList.contains('js-dropdown_open')) {
       this.jsDropdownElement.classList.add('js-dropdown_close');
       this.jsDropdownElement.classList.remove('js-dropdown_open');
@@ -19,7 +24,7 @@ export default class JsDropdown implements IJsDropdown {
     }
   }
 
-  onJsDropdownButtonClick() {
+  private onJsDropdownButtonClick() {
     this.toggleState();
   }
 }

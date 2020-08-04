@@ -1,12 +1,9 @@
-import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
-
-export default class LikeButtonModel extends EventEmitter {
+export default class LikeButtonModel {
   constructor(state: ILikeButtonState) {
-    super();
     this.state = state;
   }
 
-  state: ILikeButtonState;
+  private state: ILikeButtonState;
 
   setState(state: ILikeButtonState) {
     this.state = state;

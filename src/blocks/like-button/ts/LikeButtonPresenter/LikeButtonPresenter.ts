@@ -1,18 +1,20 @@
-import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
-
-export default class LikeButtonPresenter extends EventEmitter implements ILikeButtonPresenter {
+export default class LikeButtonPresenter implements ILikeButtonPresenter {
   constructor(likeButtonModel: ILikeButtonModel, likeButtonView: ILikeButtonView) {
-    super();
     this.likeButtonModel = likeButtonModel;
     this.likeButtonView = likeButtonView;
-    this.likeButtonView.on('change-like-state', this.changeLikeState.bind(this));
+
+    this.addViewHandler();
   }
 
   likeButtonModel: ILikeButtonModel;
 
   likeButtonView: ILikeButtonView;
 
-  changeLikeState() {
+  private addViewHandler() {
+    this.likeButtonView.on('change-like-state', this.changeLikeState.bind(this));
+  }
+
+  private changeLikeState() {
     let likeCount = this.likeButtonModel.getLikesCount();
     const isLiked = this.likeButtonModel.getIsLikedState();
 

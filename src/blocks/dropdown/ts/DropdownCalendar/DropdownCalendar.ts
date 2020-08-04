@@ -9,13 +9,12 @@ export default class DropdownCalendar implements IDropdownCalendar {
     },
   ) {
     this.dropdownCalendarElement = dropdownCalendarElement;
-    this.inputs = dropdownCalendarElement.querySelectorAll('.input');
     this.init(selectedDates);
   }
 
   private dropdownCalendarElement: HTMLElement;
 
-  private inputs: NodeListOf<Element>;
+  private inputs!: NodeListOf<Element>;
 
   private calendar!: ICalendar;
 
@@ -70,6 +69,7 @@ export default class DropdownCalendar implements IDropdownCalendar {
   }
 
   private init(selectedDates: ISelectedDates) {
+    this.inputs = this.dropdownCalendarElement.querySelectorAll('.input');
     const calendarWidget = this.dropdownCalendarElement.querySelector('.calendar');
     this.calendar = new Calendar((calendarWidget as HTMLElement), selectedDates);
 

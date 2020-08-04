@@ -6,7 +6,7 @@ const createTr = () => {
 
 const createTd = (dayNumberInMonth: number, isThisMonthDay: boolean = true) => {
   const td = document.createElement('td');
-  const classModifier = isThisMonthDay ? '' : 'calendar__td--other-month';
+  const classModifier = isThisMonthDay ? '' : 'calendar__td_other-month';
   td.textContent = dayNumberInMonth.toString();
   td.classList.add('calendar__td');
   if (classModifier !== '') td.classList.add(classModifier);
@@ -25,7 +25,7 @@ const createHeadingTr = () => {
   ];
 
   const tr = createTr();
-  tr.classList.add('calendar__tr--heading');
+  tr.classList.add('calendar__tr_heading');
 
   WEEK_DAYS_NAMES.forEach((name) => {
     const th = document.createElement('th');

@@ -4,10 +4,9 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
   constructor(goodsWidget: HTMLElement, inputElement: HTMLInputElement) {
     super();
     this.goodsWidget = goodsWidget;
-    this.applyButton = goodsWidget.querySelector('.goods__controls-button_apply');
-    this.resetButton = goodsWidget.querySelector('.goods__controls-button_reset');
     this.inputElement = inputElement;
 
+    this.initControlButtons();
     this.addHandlers();
   }
 
@@ -15,9 +14,9 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
 
   private goodsWidget: HTMLElement;
 
-  private applyButton: HTMLElement | null;
+  private applyButton!: HTMLElement | null;
 
-  private resetButton: HTMLElement | null;
+  private resetButton!: HTMLElement | null;
 
   private getGoodIndex(goodItemArg: HTMLElement) {
     const goodsItems = Array.from(this.goodsWidget.querySelectorAll('.goods__good'));
@@ -68,6 +67,11 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
 
   private onApplyButtonClick() {
     this.emit('set-input-value', null);
+  }
+
+  private initControlButtons() {
+    this.applyButton = this.goodsWidget.querySelector('.goods__controls-button_apply');
+    this.resetButton = this.goodsWidget.querySelector('.goods__controls-button_reset');
   }
 
   setInputValue(value: string) {

@@ -6,12 +6,16 @@ export default class RangeSliderPresenter {
     this.rangeSliderView = rangeSliderView;
     this.rangeSliderModel = rangeSliderModel;
 
-    this.rangeSliderView.on('change-current-value', this.changeCurrentValue.bind(this));
+    this.addViewHandler();
   }
 
   private rangeSliderView: IRangeSliderView;
 
   private rangeSliderModel: IRangeSliderModel;
+
+  private addViewHandler() {
+    this.rangeSliderView.on('change-current-value', this.changeCurrentValue.bind(this));
+  }
 
   private parseCoordToValue(coord: number) {
     const width = this.rangeSliderView.getSliderLineWidth();

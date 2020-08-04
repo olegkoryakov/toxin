@@ -5,16 +5,21 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
   constructor(calendarWidget: HTMLElement) {
     super();
     this.calendarWidget = calendarWidget;
-    this.nextMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button_next');
-    this.prevMonthButton = calendarWidget.querySelector('.calendar__button.calendar__button_prev');
+
+    this.initButtonElements();
     this.addHandlers();
   }
 
   private calendarWidget: HTMLElement;
 
-  private nextMonthButton: HTMLElement | null;
+  private nextMonthButton!: HTMLElement | null;
 
-  private prevMonthButton: HTMLElement | null;
+  private prevMonthButton!: HTMLElement | null;
+
+  private initButtonElements() {
+    this.nextMonthButton = this.calendarWidget.querySelector('.calendar__button.calendar__button_next');
+    this.prevMonthButton = this.calendarWidget.querySelector('.calendar__button.calendar__button_prev');
+  }
 
   private onNextMonthButtonClick() {
     this.emit('render-next-month', null);

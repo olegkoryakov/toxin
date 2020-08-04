@@ -10,7 +10,7 @@ export default class RangeSlider implements IRangeSlider {
 
   private rangeSliderElement: HTMLElement;
 
-  init() {
+  private init() {
     const valuesRange = {
       min: 0,
       max: 15000,
