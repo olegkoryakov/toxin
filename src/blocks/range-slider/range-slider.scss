@@ -40,9 +40,10 @@
   }
   
   &__thumb {
+    position: absolute;
+    z-index: 3;
     user-select: none;
     cursor: pointer;
-    position: absolute;
     box-sizing: border-box;
     width: 14px;
     height: 14px;
