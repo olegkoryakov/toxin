@@ -1,7 +1,7 @@
 include ../star-rating/star-rating
 
 mixin rate-buttons-card
-  article.rate-buttons-card(class = attributes.class)
+  article.rate-buttons-card
     h3.rate-buttons-card__title Rate button
     -
       const starRatingProps = [
@@ -15,4 +15,5 @@ mixin rate-buttons-card
     ul.rate-buttons-card__list
       each obj in starRatingProps
         li.rate-buttons-card__item
-          +star-rating(obj).rate-buttons-card__star-rating
+          .rate-buttons-card__star-rating
+            +star-rating(obj)

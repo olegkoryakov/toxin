@@ -70,8 +70,8 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
   }
 
   private initControlButtons() {
-    this.applyButton = this.goodsWidget.querySelector('.goods__controls-button_apply');
-    this.resetButton = this.goodsWidget.querySelector('.goods__controls-button_reset');
+    this.applyButton = this.goodsWidget.querySelector('.button_apply');
+    this.resetButton = this.goodsWidget.querySelector('.button_reset');
   }
 
   setInputValue(value: string) {

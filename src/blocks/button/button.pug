@@ -1,14 +1,10 @@
 include ../arrow/arrow
-//- 
-  options.type - 'filled-wide', 'filled', 'stroked', 'apply', 'reset'
-  options.focused - true/false
-  options.text - button text
-  options.formId - form id
 
 mixin button(options)
   - 
     const { type, focused, text, formId } = options;
     const classMod = `button_${type}`;
-  button.button(type = 'button', class = classMod, class = attributes.class, form = formId)= text
-    if type === 'filled-wide'
-      +arrow().button__arrow-svg
+  button.button(type = 'button', class = classMod, form = formId)= text
+    if type === 'submit'
+      .button__arrow
+        +arrow({ type: 'send' })

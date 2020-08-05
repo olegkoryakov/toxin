@@ -1,15 +1,8 @@
-//-
-  options.name - input name
-  options.label - label text
-  options.id - input and label id
-  options.checked - true/false
-  options.about - text
-
 mixin checkbox(options)
   - 
     const { name, label, id, checked, about } = options;
     const classMod = about ? 'checkbox_rich' : '';
-  .checkbox(class = attributes.class, class = classMod)
+  .checkbox(class = classMod)
     input.visually-hidden.checkbox__input(type="checkbox", name = name, id = id, checked = checked)
     label.checkbox__label(for = id).checkbox__label= label
     if about 

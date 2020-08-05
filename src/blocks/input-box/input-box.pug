@@ -1,13 +1,5 @@
 include ../input/input
 include ../expand-button/expand-button
-//- 
-  options.title - title
-  options.placeholder - placeholder
-  options.status - text in top right сorner
-  options.value - input value
-  options.autofocus - boolean
-  options.masked - true/false
-  options.expandButton - true/false
 
 mixin input-box(options)
   - 
@@ -25,6 +17,8 @@ mixin input-box(options)
       h3.input-box__title= title
     if options.status
       span.input-box__status= status
-    +input({ placeholder, masked, autofocus, value }).input-box__input
+    .input-box__input
+      +input({ placeholder, masked, autofocus, value })
     if expandButton
-      +expand-button.input-box__expand-button.js-dropdown__button
+      .input-box__expand-button
+        +expand-button()

@@ -19,6 +19,9 @@
   }
 
   &__expand-button {
+    position: absolute;
+    width: 44px;
+    height: 44px;
     bottom: 0;
     right: 0;
   }

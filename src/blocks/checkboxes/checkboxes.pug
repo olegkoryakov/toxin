@@ -1,17 +1,5 @@
 include ../checkbox/checkbox
 include ../expand-button/expand-button
-//-
-  options.title - title
-  options.list - array of 
-  { 
-    label: 'myAwesomeLabel',
-    name: 'myAwesomeName',
-    id: 'myAwesomeId'
-    checked: true/false
-    options.about - text
-  }
-  options.expandable - true/false
-  options.opened - true/false
 
 mixin checkboxes(options)
   - 
@@ -21,11 +9,12 @@ mixin checkboxes(options)
     const dropdownClass = expandable === true ? 'js-dropdown' : '';
     const popupClass = expandable === true ? 'js-dropdown__popup' : '';
 
-  article.checkboxes(class = attributes.class, class= `${dropdownClass} ${dropdownModifierClass}`)
+  article.checkboxes(class= `${dropdownClass} ${dropdownModifierClass}`)
     if title
       h3.checkboxes__title= title
     if expandable
-      +expand-button().checkboxes__expand-button.js-dropdown__button
+      .checkboxes__expand-button
+        +expand-button()
     if list
       ul(class = popupClass).checkboxes__list
         each obj in list

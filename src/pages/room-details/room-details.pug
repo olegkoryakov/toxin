@@ -19,38 +19,44 @@ block content
     .room-details__content.content-wrapper
       .room-details__content-column.room-details__content-column_main
         .room-details__content-row
-          - 
-            const advantagesProps = [
+          .room-details__advantages
+            - 
+              const advantagesProps = [
+                {
+                  title: 'Комфорт',
+                  url: require('../../img/comfort.svg').default,
+                  alt: 'Комфорт',
+                  text: 'Шумопоглощающие стены',
+                },
+                {
+                  title: 'Удобство',
+                  url: require('../../img/good.svg').default,
+                  alt: 'Удобство',
+                  text: 'Окно в каждой из спален',
+                },
+                {
+                  title: 'Уют',
+                  url: require('../../img/cosiness.svg').default,
+                  alt: 'Уют',
+                  text: 'Номер оснащён камином',
+                }
+              ];
+            +advantages(
               {
-                title: 'Комфорт',
-                url: require('../../img/comfort.svg').default,
-                alt: 'Комфорт',
-                text: 'Шумопоглощающие стены',
-              },
-              {
-                title: 'Удобство',
-                url: require('../../img/good.svg').default,
-                alt: 'Удобство',
-                text: 'Окно в каждой из спален',
-              },
-              {
-                title: 'Уют',
-                url: require('../../img/cosiness.svg').default,
-                alt: 'Уют',
-                text: 'Номер оснащён камином',
+                title: 'Сведения о номере',
+                list: advantagesProps
               }
-            ];
-          +advantages(
-            {
-              title: 'Сведения о номере',
-              list: advantagesProps
-            }
-          ).room-details__advantages
-          +impressions().room-details__impressions
+            )
+          .room-details__impressions
+            +impressions()
         .room-details__content-row
-          +room-comments().room-details__room-comments
+          .room-details__room-comments
+            +room-comments()
         .room-details__content-row
-          +rules().room-details__rules
-          +reset().room-details__reset
+          .room-details__rules
+            +rules()
+          .room-details__reset
+            +reset()
       .room-details__content-column.room-details__content-column_side
-        +about-room().room-details__about-room
+        .room-details__about-room
+          +about-room()

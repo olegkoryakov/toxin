@@ -9,43 +9,53 @@ mixin registration()
   article.registration(class = attributes.class)
     .registration__content
       h1.registration__title Регистрация аккаунта
-      form.registration__form(action="#")
+      form.registration__form(action="mock")
         fieldset(name = 'user-data').registration__fieldset
           legend.registration__fieldset-legend.visually-hidden Данные пользователя 
-          +input({ placeholder: 'Имя'}).registration__input
-          +input({ placeholder: 'Фамилия'}).registration__input
+          .registration__input
+            +input({ placeholder: 'Имя'})
+          .registration__input
+            +input({ placeholder: 'Фамилия'})
           ul.registration__rario-button-list
             li.registration__rario-button-item
-              +radio-button({
-                name: 'gender',
-                value: 'male',
-                id: 'male',
-                label: 'Мужчина',
-                checked: true
-              }).registration__rario-button
+              .registration__rario-button
+                +radio-button({
+                  name: 'gender',
+                  value: 'male',
+                  id: 'male',
+                  label: 'Мужчина',
+                  checked: true
+                })
             li.registration__rario-button-item
-              +radio-button({
-                name: 'gender',
-                value: 'female',
-                id: 'female',
-                label: 'Женщина',
-                checked: false,
-              }).registration__rario-button
-          +input-box({
-            title: 'Дата рождения',
-            placeholder: 'ДД.ММ.ГГ',
-          }).registration__input-box
+              .registration__rario-button
+                +radio-button({
+                  name: 'gender',
+                  value: 'female',
+                  id: 'female',
+                  label: 'Женщина',
+                  checked: false,
+                })
+          .registration__input-box
+            +input-box({
+              title: 'Дата рождения',
+              placeholder: 'ДД.ММ.ГГ',
+            })
         fieldset(name = 'login-data').registration__fieldset
           legend.registration__fieldset-legend Данные для входа в сервис
-          +input({ placeholder: 'Email' }).registration__input
-          +input({ placeholder: 'Пароль'}).registration__input
-          +toggle-button({
-            name: 'special',
-            id: 'special',
-            label: 'Получать спецпредложения',
-            checked: false,
-          }).registration__toggle-button
-        +button({ type: 'filled-wide', text: 'перейти к оплате'}).registration__submit-button
+          .registration__input
+            +input({ placeholder: 'Email' })
+          .registration__input
+            +input({ placeholder: 'Пароль'})
+          .registration__toggle-button
+            +toggle-button({
+              name: 'special',
+              id: 'special',
+              label: 'Получать спецпредложения',
+              checked: false,
+            })
+        .registration__submit-button
+          +button({ type: 'filled-wide', text: 'перейти к оплате'})
         .registration__sign-in
           span.registration__sign-in-text Уже есть аккаунт на Toxin?
-          +button({ type: 'stroked', text: 'Войти'}).registration__sign-in-button
+          .registration__sign-in-button
+            +button({ type: 'stroked', text: 'Войти'})

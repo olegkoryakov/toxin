@@ -2,27 +2,30 @@ include ../button/button
 include ../dropdown/dropdown
 
 mixin number-search()
-  article.number-search(class = attributes.class)
+  article.number-search
     .number-search__content
       h1.number-search__title Найдем номера под ваши пожелания
-      +dropdown(
-        {
-          placeholder: 'ДД.ММ.ГГ',
-          title: 'Прибытие',
-          secondTitle: 'Выезд',
-          type: 'dates',
-          opened: false,
-          applyButton: true,
-          resetButton: true,
-        }
-      ).number-search__dropdown
-      +dropdown(
-        {
-          placeholder: 'Сколько гостей',
-          title: 'Гости',
-          type: 'guests',
-          applyButton: true,
-          resetButton: true,
-        }
-      ).number-search__dropdown
-      +button({ text: 'Подобрать номер', type: 'filled-wide'}).number-search__submit-button
+      .number-search__dropdown  
+        +dropdown(
+          {
+            placeholder: 'ДД.ММ.ГГ',
+            title: 'Прибытие',
+            secondTitle: 'Выезд',
+            type: 'dates',
+            opened: false,
+            applyButton: true,
+            resetButton: true,
+          }
+        )
+      .number-search__dropdown
+        +dropdown(
+          {
+            placeholder: 'Сколько гостей',
+            title: 'Гости',
+            type: 'guests',
+            applyButton: true,
+            resetButton: true,
+          }
+        )
+      .number-search__submit-button
+        +button({ text: 'Подобрать номер', type: 'submit'})

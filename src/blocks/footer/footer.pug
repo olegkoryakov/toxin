@@ -7,14 +7,17 @@ include ../toxin-logo/toxin-logo
 mixin social()
   ul.footer__social-list
     li.footer__social-item
-      a.footer__social-link(href = '#')
-        +twitter-logo().footer__social-svg
+      a.footer__social-link(href = 'mock')
+        .footer__social-img
+          +twitter-logo()
     li.footer__social-item
-      a.footer__social-link(href = '#')
-        +facebook-logo().footer__social-svg
+      a.footer__social-link(href = 'mock')
+        .footer__social-img
+          +facebook-logo()
     li.footer__social-item
-      a.footer__social-link(href = '#')
-        +instagram-logo().footer__social-svg
+      a.footer__social-link(href = 'mock')
+        .footer__social-img
+          +instagram-logo()
 
 
 
@@ -30,9 +33,9 @@ mixin copyright(lang)
 mixin navigation(lang)
   -
     const linksHrefs = [
-      ['#', '#', '#', '#'],
-      ['#', '#', '#', '#'],
-      ['#', '#', '#']
+      ['mock', 'mock', 'mock', 'mock'],
+      ['mock', 'mock', 'mock', 'mock'],
+      ['mock', 'mock', 'mock']
     ];
     let lists;
     if (lang === 'ru') {
@@ -87,7 +90,7 @@ mixin about(lang)
     }
   .footer__about
     .footer__logo
-      +toxin-logo.footer__logo-svg
+        +toxin-logo
     .footer__about-text= text
 
 mixin subscription(lang)
@@ -107,7 +110,9 @@ mixin subscription(lang)
   .footer__subscription
     h3.footer__subscription-title= title
     p.footer__subscription-text= text
-    +subscription-form({ placeholder: placeholder }).footer__subscription-form
+    .footer__subscription-form
+      +subscription-form({ placeholder: placeholder })
+
 mixin footer(options)
   footer.footer(class = attributes.class)
     if options.type === 'maxi'

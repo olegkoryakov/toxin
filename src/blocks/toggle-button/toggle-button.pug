@@ -1,12 +1,5 @@
-//-
-  options.name - name
-  options.id - id
-  options.label - label text
-  options.checked - true/false
-
-
 mixin toggle-button(options)
   - const { name, id, label, checked } = options;
-  div.toggle-button(class = attributes.class)
+  div.toggle-button
     input.toggle-button__input.visually-hidden(type = 'checkbox', name = name, id = id, checked = checked)
     label.toggle-button__label(for = id)= label

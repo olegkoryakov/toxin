@@ -1,12 +1,5 @@
-//- 
-  options.name - name
-  options.id - id
-  options.value - value
-  options.label - label text
-  options.checked - true/false
-
 mixin radio-button(options)
   - const { name, id, value, label, checked } = options;
-  .radio-button(class = attributes.class)
+  .radio-button
     input.radio-button__input.visually-hidden(type = "radio", checked = checked, value = value, name = name, id = id)
     label.radio-button__label(for = id)= label

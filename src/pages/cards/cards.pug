@@ -13,28 +13,35 @@ block content
   section.cards
     .cards__content.content-wrapper
       .cards__column
-        +number-search().cards__number-search
-        +registration().cards__registration
+        .cards__number-search
+          +number-search()
+        .cards__registration  
+          +registration()
       .cards__column
-        +about-room().cards__about-room
-        +sign-in().cards__sign-in
+        .cards__about-room
+          +about-room()
+        .cards__sign-in  
+          +sign-in()
       .cards__column
-        +calendar().cards__calendar
-        +room(
-          {
-            url: require('../../img/room888.png').default,
-            number: 888,
-            luxe: true,
-            reviewsCount: 145,
-            rating: 5,
-            price: '9 990'
-          }).cards__room
-        +room(
-          {
-            url: require('../../img/room840.png').default,
-            number: 840,
-            luxe: false,
-            reviewsCount: 65,
-            rating: 4,
-            price: '9 900'
-          }).cards__room
+        .cards__calendar
+          +calendar()
+        .cards__room
+          +room(
+            {
+              url: require('../../img/room888.png').default,
+              number: 888,
+              luxe: true,
+              reviewsCount: 145,
+              rating: 5,
+              price: '9 990'
+            })
+        .cards__room    
+          +room(
+            {
+              url: require('../../img/room840.png').default,
+              number: 840,
+              luxe: false,
+              reviewsCount: 65,
+              rating: 4,
+              price: '9 900'
+            })

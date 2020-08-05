@@ -1,7 +1,7 @@
 include ../toggle-button/toggle-button
 
 mixin toggle-buttons-card
-  article.toggle-buttons-card(class = attributes.class)
+  article.toggle-buttons-card
     h3.toggle-buttons-card__title Toggle
     -
       const toggleProps = [
@@ -21,4 +21,5 @@ mixin toggle-buttons-card
     ul.toggle-buttons-card__list
       each obj in toggleProps
         li.toggle-buttons-card__item
-          +toggle-button(obj).toggle-buttons-card__toggle-button
+          .toggle-buttons-card__toggle-button
+            +toggle-button(obj)

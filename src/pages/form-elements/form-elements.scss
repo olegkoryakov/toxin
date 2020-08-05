@@ -90,20 +90,24 @@
   }
 
   &__row_second &__column_first {
+    position: relative;
     z-index: 3;
     max-width: 266px;
   }
 
   &__row_second &__column_first &__element_dropdown:first-of-type {
+    position: relative;
     z-index: 2;
     margin-bottom: 20px;
   }
 
   &__row_second &__column_second {
+    position: relative;
     z-index: 2;
   }
 
   &__row_second &__column_third {
+    position: relative;
     z-index: 1;
   }
   // third

@@ -1,17 +1,8 @@
 include ../like-button/like-button
-//- 
-  optins.url - img url
-  options.text - comment text
-  options.name - author name
-  options.date - when it was posted
-  options.like = {
-    liked - true/false,
-    count - likes count
-  }
 
 mixin comment(options)
   - const { url, text, name, date, like } = options;
-  .comment(class = attributes.class)
+  .comment
     .comment__content
       img.comment__img(src = url, alt = name)
       p.comment__about

@@ -1,7 +1,7 @@
 include ../comment/comment
 
 mixin room-comments()
-  section.room-comments(class = attributes.class)
+  section.room-comments
     .room-comments__header
       h2.room-comments__title Отзывы поситителей номера
       span.room-comments__count 2 отзыва
@@ -31,4 +31,5 @@ mixin room-comments()
         ];
       each commentProps in commentsProps
         li.room-comments__item
-          +comment(commentProps).room-comments__comment
+          .room-comments__comment
+            +comment(commentProps)

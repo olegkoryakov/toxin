@@ -1,9 +1,3 @@
-//-
-  options.placeholder - placeholder
-  oprions.value - value
-  options.autofocus - boolean
-  options.masked - true/false
-
 mixin input(options)
   - 
     const { placeholder, value, autofocus, masked } = options
@@ -11,4 +5,4 @@ mixin input(options)
     if (masked) {
       mask = '\\d{2}\\.\\d{2}\\.\\d{4}';
     }
-  input(type="text", placeholder = placeholder, autofocus = autofocus, value = value, pattern= mask, class = attributes.class).input
+  input(type="text", placeholder = placeholder, autofocus = autofocus, value = value, pattern= mask).input

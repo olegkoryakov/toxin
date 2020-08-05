@@ -43,6 +43,7 @@
   }
 
   &__nav-expand-button {
+    position: absolute;
     top: 0;
     right: 0;
     width: 20px;
@@ -65,15 +66,6 @@
     }
   }
 
-  &__nav-button {
-    &_login {
-      padding: 7px 20px 8px;
-    }
-  
-    &_registr {
-      padding: 9px 20px 10px;
-    }
-  }
 
   &__user-name {
     position: relative;

@@ -1,8 +1,9 @@
 include ./type
+
 mixin types()
-  ul.types(class = attributes.class) 
-    +type({ text: "This one is the sub-section or widget title", marker: "h1" }).types__item
-    +type({ text: "Next one is the item title inside widgets", marker: "h2" }).types__item
-    +type({ text: "This is a label or CTA text", marker: "h3" }).types__item
-    +type({ text: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", marker: "body" }).types__item
+  ul.types
+    +type({ text: "This one is the sub-section or widget title", marker: "h1" })
+    +type({ text: "Next one is the item title inside widgets", marker: "h2" })
+    +type({ text: "This is a label or CTA text", marker: "h3" })
+    +type({ text: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", marker: "body" })
       

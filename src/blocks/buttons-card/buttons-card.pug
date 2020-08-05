@@ -1,7 +1,7 @@
 include ../button/button
 
 mixin buttons-card
-  article.buttons-card(class = attributes.class)
+  article.buttons-card
     h3.buttons-card__title Buttons
     - 
       const text = 'click me'
@@ -36,17 +36,20 @@ mixin buttons-card
     ul.buttons-card__list.buttons-card__list_main
       each obj in buttonsProps
         li.buttons-card__item
-          +button(obj).buttons-card__button
+          .buttons-card__button
+            +button(obj)
     ul.buttons-card__list.buttons-card__list_controls
       each obj in controlButtonsProps
         li.buttons-card__item
-          +button(obj).buttons-card__button
-    +button(
-      {
-        type: 'filled-wide',
-        text: 'перейти к оплате',
-      }
-    ).buttons-card__button
+          .buttons-card__button
+            +button(obj)
+    .buttons-card__button
+      +button(
+        {
+          type: 'submit',
+          text: 'перейти к оплате',
+        }
+      )
     script.
       const buttonsCard = document.querySelector('.buttons-card');
       buttonsCard.querySelectorAll('.button_filled')[1].classList.add('hover');

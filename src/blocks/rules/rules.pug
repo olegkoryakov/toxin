@@ -1,14 +1,15 @@
 include ../bullet-list/bullet-list
 
 mixin rules()
-  section.rules(class = attributes.class)
+  section.rules
     h2.rules__title Правила
-    +bullet-list(
-      {
-        names: [
-          'Нельзя с питомцами',
-          'Без вечеринок и мероприятий',
-          'Время прибытия — после 13:00, а выезд до 12:00'
-        ],
-      }
-    ).rules__bullet-list
+    .rules__bullet-list
+      +bullet-list(
+        {
+          names: [
+            'Нельзя с питомцами',
+            'Без вечеринок и мероприятий',
+            'Время прибытия — после 13:00, а выезд до 12:00'
+          ],
+        }
+      )

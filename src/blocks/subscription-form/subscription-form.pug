@@ -1,15 +1,14 @@
 include ../input-box/input-box
 include ../arrow/arrow
-//- 
-  options.placeholder - placeholder
-  options.title - title
 
 mixin subscription-form(options)
   - const { placeholder, title } = options;
-  form.subscription-form(class = attributes.class)
-    +input-box({
-      placeholder: placeholder,
-      title: title,
-    }).subscription-form__input-box
+  form.subscription-form
+    .subscription-form__input-box
+      +input-box({
+        placeholder: placeholder,
+        title: title,
+      })
     button(type="submit").subscription-form__submit-button
-      +arrow().subscription-form__submit-button-svg
+      .subscription-form__submit-button-img
+        +arrow({ type: 'subscription' })

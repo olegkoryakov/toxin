@@ -73,8 +73,8 @@ export default class DropdownCalendar implements IDropdownCalendar {
     const calendarWidget = this.dropdownCalendarElement.querySelector('.calendar');
     this.calendar = new Calendar((calendarWidget as HTMLElement), selectedDates);
 
-    const applyButton = this.dropdownCalendarElement.querySelector('.calendar__controls-apply-button');
-    const resetButton = this.dropdownCalendarElement.querySelector('.calendar__controls-reset-button');
+    const applyButton = this.dropdownCalendarElement.querySelector('.button_apply');
+    const resetButton = this.dropdownCalendarElement.querySelector('.button_reset');
     if (applyButton && resetButton) {
       applyButton.addEventListener('click', this.onApplyButtonClick.bind(this));
       resetButton.addEventListener('click', this.onResetButtonClick.bind(this));

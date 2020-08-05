@@ -1,9 +1,5 @@
-//-
-  options.name - имя цвета
-  options.hash - hash цвета
-
 mixin color(options)
-  - const { name, hash } = options;
-  li.colors__color(class = attributes.class)
-    span.colors__color-name= name
+  - const { text, hash, modifier } = options;
+  li.colors__color(class = `colors__color_${modifier}`)
+    span.colors__color-name= text
     span.colors__color-hash= hash

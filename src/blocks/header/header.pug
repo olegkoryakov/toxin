@@ -1,10 +1,6 @@
 include ../expand-button/expand-button
 include ../button/button
 include ../toxin-logo/toxin-logo
-//- 
-  options.lang - 'ru'/'en'
-  options.currentPage - 1-6
-  options.userName - 'Your AwesomeName'
 
 mixin header(options)
   -
@@ -21,7 +17,7 @@ mixin header(options)
     };
 
     const isCurrentPage = (index) => index + 1 === currentPage;
-  header.header(class = attributes.class)
+  header.header
     .header__content
       .header__logo
         +toxin-logo().header__logo-svg
@@ -33,8 +29,9 @@ mixin header(options)
               const currentPageClassModifier = isCurrentPage(index) ? 'header__nav-link_current' : '';
             li.header__nav-item(class = itemClassModifier)
               if itemClassModifier
-                +expand-button().header__nav-expand-button
-              a.header__nav-link(href="#" class = currentPageClassModifier)= linkText
+                .header__nav-expand-button
+                  +expand-button()
+              a.header__nav-link(href="mock" class = currentPageClassModifier)= linkText
       nav.header__user-nav
         if userName
           span.header__user-name= userName
@@ -44,7 +41,9 @@ mixin header(options)
               let buttonsText;
               if (lang === 'ru') buttonsText = ['Войти', 'Зарегистрироваться'];
               else if (lang === 'en') buttonsText = ['Login', 'Registr'];
+            li.header__nav-item
+              .header__nav-button.header__nav-button_login
+                +button({ type: 'stroked', text: buttonsText[0] })
             li.header__nav-item  
-                +button({ type: 'stroked', text: buttonsText[0] }).header__nav-button.header__nav-button_login
-            li.header__nav-item  
-                +button({ type: 'filled', text: buttonsText[1] }).header__nav-button.header__nav-button_registr
+              .header__nav-button.header__nav-button_registr
+                +button({ type: 'filled', text: buttonsText[1] })

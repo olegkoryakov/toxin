@@ -55,6 +55,7 @@
   }
 
   &__filter-dropdown {
+    position: relative;
     z-index: 2;
     margin-bottom: 30px;
     &:first-of-type {
@@ -64,6 +65,7 @@
   }
 
   &__filter-range-slider {
+    position: relative;
     z-index: 1;
     margin-bottom: 30px;
   }

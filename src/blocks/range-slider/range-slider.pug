@@ -1,10 +1,6 @@
-//- 
-  options.title - title
-  options.subtitle - subtitle
-
 mixin range-slider(options)
   - const { title, subtitle } = options;
-  article.range-slider(class = attributes.class)
+  article.range-slider
     .range-slider__header
       h3.range-slider__title= title
       span.range-slider__price 5 000₽ - 10 000₽

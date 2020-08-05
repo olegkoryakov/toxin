@@ -24,32 +24,36 @@ mixin goods(options)
     if applyButton || resetButton
       .goods__controls
         if applyButton && resetButton
-          +button(
-            {
-              text: 'Отчистить',
-              type : 'reset',
-            }
-          ).goods__controls-button.goods__controls-button_reset
-          +button(
-            {
-              text: 'Применить',
-              type: 'apply',
-            }
-          ).goods__controls-button.goods__controls-button_apply
+          .goods__controls-button.goods__controls-button_reset
+            +button(
+              {
+                text: 'Отчистить',
+                type : 'reset',
+              }
+            )
+          .goods__controls-button.goods__controls-button_apply
+            +button(
+              {
+                text: 'Применить',
+                type: 'apply',
+              }
+            )
         else if resetButton
-          +button(
-            {
-              text: 'Отчистить',
-              type : 'reset',
-            }
-          ).goods__controls-button.goods__controls-button_reset
+          .goods__controls-button.goods__controls-button_reset
+            +button(
+              {
+                text: 'Отчистить',
+                type : 'reset',
+              }
+            )
         else if applyButton
-          +button(
-            {
-              text: 'Применить',
-              type : 'apply',
-            }
-          ).goods__controls-button.goods__controls-button_apply
+          .goods__controls-button.goods__controls-button_apply
+            +button(
+              {
+                text: 'Применить',
+                type : 'apply',
+              }
+            )
           
 
    

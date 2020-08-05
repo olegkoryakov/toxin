@@ -2,13 +2,17 @@ include ../button/button
 include ../input/input
 
 mixin sign-in()
-  article.sign-in(class = attributes.class)
+  article.sign-in
     .sign-in__content
       h1.sign-in__title Войти
-      +input({ placeholder: 'Email' }).sign-in__input
-      +input({ placeholder: 'Пароль' }).sign-in__input
-      +button({ text: 'Войти', type: 'filled-wide'}).sign-in__submit-button
+      .sign-in__input
+        +input({ placeholder: 'Email' })
+      .sign-in__input
+        +input({ placeholder: 'Пароль' })
+      .sign-in__submit-button
+        +button({ text: 'Войти', type: 'submit'})
       .sign-in__registration
         span.sign-in__registration-text Нет аккаунта на Toxin?
-        +button({ text: 'Создать', type: 'stroked' }).sign-in__registration-button
+        .sign-in__registration-button
+          +button({ text: 'Создать', type: 'stroked' })
       

@@ -1,18 +1,6 @@
 include ../input-box/input-box
 include ../goods/goods
 include ../calendar/calendar
-//-
-  options.title - title
-  options.secondTitle - title for 2nd input-box
-  options.placeholder - placeholder
-  options.status - text in top right сorner
-  options.value - input value
-  options.autofocus - boolean
-  options.masked - true/false
-  options.type - guests/goods/dates/date-filter
-  options.applyButton - true/false
-  options.resetButton - true/false 
-  options.opened
 
 mixin dropdown(options)
   - 
@@ -51,48 +39,54 @@ mixin dropdown(options)
         break;
     }
 
-  .dropdown.js-dropdown(class = attributes.class, class= `${classMod} ${jsClassMod}`)
+  .dropdown.js-dropdown(class= `${classMod} ${jsClassMod}`)
     if type !== 'dates' && type !== 'date-filter'
       .dropdown__content
-        +input-box(
-          {
-            title: title,
-            placeholder: placeholder,
-            expandButton: true,
-            status: status,
-          }
-        ).dropdown__input-box
+        .dropdown__input-box
+          +input-box(
+            {
+              title: title,
+              placeholder: placeholder,
+              expandButton: true,
+              status: status,
+            }
+          )
     else if type === 'dates'
       .dropdown__content
-        +input-box(
-          {
-            title: title,
-            placeholder: placeholder,
-            expandButton: true,
-            status: status,
-          }
-        ).dropdown__input-box.dropdown__input-box_date-from
-        +input-box(
-          {
-            title: secondTitle,
-            placeholder: placeholder,
-            expandButton: true,
-            status: status,
-          }
-        ).dropdown__input-box.dropdown__input-box_date-to
+        .dropdown__input-box.dropdown__input-box_date-from
+          +input-box(
+            {
+              title: title,
+              placeholder: placeholder,
+              expandButton: true,
+              status: status,
+            }
+          )
+        .dropdown__input-box.dropdown__input-box_date-to
+          +input-box(
+            {
+              title: secondTitle,
+              placeholder: placeholder,
+              expandButton: true,
+              status: status,
+            }
+          )
     else if type === 'date-filter'
       .dropdown__content
-        +input-box(
-          {
-            title: title,
-            placeholder: placeholder,
-            expandButton: true,
-            status: status,
-          }
-        ).dropdown__input-box.dropdown__input-box_date
+        .dropdown__input-box.dropdown__input-box_date
+          +input-box(
+            {
+              title: title,
+              placeholder: placeholder,
+              expandButton: true,
+              status: status,
+            }
+          )
     if type === 'guests' || type === 'goods'
       .dropdown__popup.js-dropdown__popup
-        +goods({ type: type, applyButton: applyButton, resetButton: resetButton}).dropdown__goods
+        .dropdown__goods
+          +goods({ type: type, applyButton: applyButton, resetButton: resetButton})
     else if type === 'dates' || type === 'date-filter'
       .dropdown__popup.js-dropdown__popup
-        +calendar().dropdown__calendar
+        .dropdown__calendar
+          +calendar()

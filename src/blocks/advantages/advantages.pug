@@ -1,15 +1,6 @@
-//-
-  options.title - section title
-  option.list - array of {
-    url - url to img
-    alt - alt to img
-    text - advantage text
-    title - advantage title
-  }
-
 mixin advantages(options)
   - const { list, title } = options;
-  article.advantages(class = attributes.class)
+  article.advantages
     if title
       h2.advantages__title= title
     ul.advantages__list

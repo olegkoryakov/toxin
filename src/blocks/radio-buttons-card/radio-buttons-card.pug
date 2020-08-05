@@ -1,7 +1,7 @@
 include ../radio-button/radio-button
 
 mixin radio-buttons-card
-  article.radio-buttons-card(class = attributes.class)
+  article.radio-buttons-card
     h3.radio-buttons-card__title Radio Buttons
     -
       const radioProps = [
@@ -22,4 +22,5 @@ mixin radio-buttons-card
     ul.radio-buttons-card__list
       each obj in radioProps
         li.radio-buttons-card__item
-          +radio-button(obj).radio-buttons-card__radio-button
+          .radio-buttons-card__radio-button
+            +radio-button(obj)

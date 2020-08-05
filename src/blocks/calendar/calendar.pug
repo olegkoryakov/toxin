@@ -2,13 +2,15 @@ include ../button/button
 include ../arrow/arrow
 
 mixin calendar
-  article.calendar(class = attributes.class)
+  article.calendar
     .calendar__content
       span.calendar__month Август 2019
       button(type = 'button').calendar__button.calendar__button_next
-        +arrow().calendar__button-svg
+        .calendar__button-svg
+          +arrow({ type: 'month' })
       button(type = 'button').calendar__button.calendar__button_prev
-        +arrow().calendar__button-svg
+        .calendar__button-svg
+          +arrow({ type: 'month' })
       table.calendar__table
         tr.calendar__tr.calendar__tr_heading
           th.calendar__th Пн

@@ -103,137 +103,146 @@ block content
           ];
         each roomProps in roomsProps
           li.search-room__search-room-item
-            +room(roomProps).search-room__room
-      +pagination({ title: '' }).search-room__search-room-pagination
+            .search-room__room
+              +room(roomProps)
+      .search-room__search-room-pagination
+        +pagination({ title: '' })
     section.search-room__filter
-      +dropdown({
-          placeholder: 'ДД.ММ.ГГ - ДД.ММ.ГГ',
-          title: 'Даты пребывания в отеле',
-          type: 'date-filter'
-        }
-      ).search-room__filter-dropdown
-      +dropdown(
-        {
-          placeholder: 'Сколько гостей',
-          title: 'Гости',
-          type: 'guests',
-        }
-      ).search-room__filter-dropdown
-      +range-slider(
-        {
-          title: 'Диапазон цены',
-          subtitle: 'Стоимость за сутки пребывания в номере'
-        }
-      ).search-room__filter-range-slider
-      - 
-        const checkboxesProps = [
-          {
-            name: 'smoke',
-            id: 'smoke',
-            label: 'Можно курить',
-            checked: false,
-          },
-          {
-            name: 'pets',
-            id: 'pets',
-            label: 'Можно с питомцами',
-            checked: true,
-          },
-          {
-            name: 'guests',
-            id: 'guests',
-            label: 'Можно пригласить гостей (до 10 человек)',
-            checked: true,
+      .search-room__filter-dropdown
+        +dropdown({
+            placeholder: 'ДД.ММ.ГГ - ДД.ММ.ГГ',
+            title: 'Даты пребывания в отеле',
+            type: 'date-filter'
           }
-        ];
-      +checkboxes(
-        {
-          title: 'Checkbox Buttons',
-          list: checkboxesProps,
-        }
-      ).search-room__filter-checkboxes.search-room__filter-checkboxes_default
-      - 
-        const richCheckboxesProps = [
+        )
+      .search-room__filter-dropdown
+        +dropdown(
           {
-            label: 'Широкий коридор',
-            name: 'wide-corridor',
-            id: 'wide-corridor',
-            about: 'Ширина коридоров в номере не менее 91 см.',
-          },
-          {
-            label: 'Помощник для инвалидов',
-            name: 'disabled-assistant',
-            id: 'disabled-assistant',
-            about: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+            placeholder: 'Сколько гостей',
+            title: 'Гости',
+            type: 'guests',
           }
-        ];
-      +checkboxes(
-        {
-          title: 'Доступность',
-          list: richCheckboxesProps,
-        }
-      ).search-room__filter-checkboxes
-      +dropdown({
-          placeholder: 'Удобства номера',
-          title: 'Удобства номера',
-          type: 'goods',
-        }).search-room__filter-dropdown
-      -
-        const expandableCheckboxesProps = [
+        )
+      .search-room__filter-range-slider
+        +range-slider(
           {
-            label: 'Завтрак',
-            name: 'breakfast',
-            id: 'breakfast',
-            checked: false,
-          },
-          {
-            label: 'Письменный стол',
-            name: 'desk',
-            id: 'desk',
-            checked: true,
-          },
-          {
-            label: 'Стул для кормления',
-            name: 'feeding-chair',
-            id: 'feeding-chair',
-            checked: true,
-          },
-          {
-            label: 'Кроватка',
-            name: 'cot',
-            id: 'cot',
-            checked: true,
-          },
-          {
-            label: 'Телевизор',
-            name: 'tv1',
-            id: 'tv1',
-            checked: false,
-          },
-          {
-            label: 'Шампунь',
-            name: 'shampoo1',
-            id: 'shampoo1',
-            checked: false,
-          },
-          {
-            label: 'Телевизор',
-            name: 'tv2',
-            id: 'tv2',
-            checked: false,
-          },
-          {
-            label: 'Шампунь',
-            name: 'shampoo2',
-            id: 'shampoo2',
-            checked: false,
+            title: 'Диапазон цены',
+            subtitle: 'Стоимость за сутки пребывания в номере'
           }
-        ];
-      +checkboxes(
-        {
-          title: 'Дополнительные удобства',
-          expandable: true,
-          opened: false,
-          list: expandableCheckboxesProps,
-        }
-      ).search-room__filter-checkboxes
+        )
+      .search-room__filter-checkboxes.search-room__filter-checkboxes_default
+        - 
+          const checkboxesProps = [
+            {
+              name: 'smoke',
+              id: 'smoke',
+              label: 'Можно курить',
+              checked: false,
+            },
+            {
+              name: 'pets',
+              id: 'pets',
+              label: 'Можно с питомцами',
+              checked: true,
+            },
+            {
+              name: 'guests',
+              id: 'guests',
+              label: 'Можно пригласить гостей (до 10 человек)',
+              checked: true,
+            }
+          ];
+        +checkboxes(
+          {
+            title: 'Checkbox Buttons',
+            list: checkboxesProps,
+          }
+        )
+      .search-room__filter-checkboxes
+        - 
+          const richCheckboxesProps = [
+            {
+              label: 'Широкий коридор',
+              name: 'wide-corridor',
+              id: 'wide-corridor',
+              about: 'Ширина коридоров в номере не менее 91 см.',
+            },
+            {
+              label: 'Помощник для инвалидов',
+              name: 'disabled-assistant',
+              id: 'disabled-assistant',
+              about: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+            }
+          ];
+        +checkboxes(
+          {
+            title: 'Доступность',
+            list: richCheckboxesProps,
+          }
+        )
+      .search-room__filter-dropdown
+        +dropdown({
+            placeholder: 'Удобства номера',
+            title: 'Удобства номера',
+            type: 'goods',
+          })
+      .search-room__filter-checkboxes
+        -
+          const expandableCheckboxesProps = [
+            {
+              label: 'Завтрак',
+              name: 'breakfast',
+              id: 'breakfast',
+              checked: false,
+            },
+            {
+              label: 'Письменный стол',
+              name: 'desk',
+              id: 'desk',
+              checked: true,
+            },
+            {
+              label: 'Стул для кормления',
+              name: 'feeding-chair',
+              id: 'feeding-chair',
+              checked: true,
+            },
+            {
+              label: 'Кроватка',
+              name: 'cot',
+              id: 'cot',
+              checked: true,
+            },
+            {
+              label: 'Телевизор',
+              name: 'tv1',
+              id: 'tv1',
+              checked: false,
+            },
+            {
+              label: 'Шампунь',
+              name: 'shampoo1',
+              id: 'shampoo1',
+              checked: false,
+            },
+            {
+              label: 'Телевизор',
+              name: 'tv2',
+              id: 'tv2',
+              checked: false,
+            },
+            {
+              label: 'Шампунь',
+              name: 'shampoo2',
+              id: 'shampoo2',
+              checked: false,
+            }
+          ];
+        +checkboxes(
+          {
+            title: 'Дополнительные удобства',
+            expandable: true,
+            opened: false,
+            list: expandableCheckboxesProps,
+          }
+        )
