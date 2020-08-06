@@ -2,7 +2,7 @@
   background-color: #E5E5E5;
   padding-top: 150px;
   padding-bottom: 140px;
-  
+
   &__room {
     max-width: 270px;
   }
@@ -13,6 +13,10 @@
     justify-content: space-between;
   }
 
+  &__number-search, &__about-room, &__sign-in, &__calendar, &__registration, &__room {
+    margin-bottom: 40px;
+  }
+
   &__column {
     max-width: 380px;
     flex-grow: 2;
@@ -21,19 +25,10 @@
       max-width: 320px;
       flex-grow: 1;
     }
-    
-    & > article {
-      &:not(:last-of-type) {
-        margin-bottom: 40px;
-      }
-    }
   
     @media screen and (max-width: 1080px) {
       margin-left: auto;
       margin-right: auto;
-      &:not(:last-of-type) {
-        margin-bottom: 40px;
-      }
     }
   }
 }
