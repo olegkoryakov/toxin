@@ -11,14 +11,14 @@ mixin about-room()
         .about-room__price-details
           span.about-room__price 9 990₽
           span.about-room__price-postfix В сутки
-      form.about-room__form(id = 'about-room' action="mock")
+      form.about-room__form(id = "about-room" action="mock")
         .about-room__dropdown
           +dropdown(
             {
-              placeholder: 'ДД.ММ.ГГ',
-              title: 'Прибытие',
-              secondTitle: 'Выезд',
-              type: 'dates',
+              placeholder: "ДД.ММ.ГГ",
+              title: "Прибытие",
+              secondTitle: "Выезд",
+              type: "dates",
               opened: false,
               applyButton: true,
               resetButton: true,
@@ -27,9 +27,9 @@ mixin about-room()
         .about-room__dropdown
           +dropdown(
             {
-              placeholder: 'Сколько гостей',
-              title: 'Гости',
-              type: 'guests',
+              placeholder: "Сколько гостей",
+              title: "Гости",
+              type: "guests",
               applyButton: true,
               resetButton: true,
             }
@@ -43,12 +43,12 @@ mixin about-room()
           tr.about-room__tr
             td.about-room__td Сбор за услуги: скидка 2 179₽
             td.about-room__td
-              button(type = 'button').about-room__info i
+              button(type = "button").about-room__info i
             td.about-room__td 0₽
           tr.about-room__tr
             td.about-room__td Сбор за дополнительные услуги
             td.about-room__td
-              button(type = 'button').about-room__info i
+              button(type = "button").about-room__info i
             td.about-room__td 300₽
           tr.about-room__tr
             th.about-room__th Итого
@@ -56,9 +56,9 @@ mixin about-room()
       .about-room__submit-button
         +button(
           {
-            type: 'submit',
-            text: 'Забронировать',
-            formId: 'about-room',
+            type: "submit",
+            text: "Забронировать",
+            formId: "about-room",
           }
         )
 

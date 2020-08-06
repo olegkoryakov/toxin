@@ -1,5 +1,5 @@
 mixin toggle-button(options)
   - const { name, id, label, checked } = options;
   div.toggle-button
-    input.toggle-button__input.visually-hidden(type = 'checkbox', name = name, id = id, checked = checked)
+    input.toggle-button__input.visually-hidden(type = "checkbox", name = name, id = id, checked = checked)
     label.toggle-button__label(for = id)= label

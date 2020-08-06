@@ -8,10 +8,10 @@ mixin number-search()
       .number-search__dropdown  
         +dropdown(
           {
-            placeholder: 'ДД.ММ.ГГ',
-            title: 'Прибытие',
-            secondTitle: 'Выезд',
-            type: 'dates',
+            placeholder: "ДД.ММ.ГГ",
+            title: "Прибытие",
+            secondTitle: "Выезд",
+            type: "dates",
             opened: false,
             applyButton: true,
             resetButton: true,
@@ -20,12 +20,12 @@ mixin number-search()
       .number-search__dropdown
         +dropdown(
           {
-            placeholder: 'Сколько гостей',
-            title: 'Гости',
-            type: 'guests',
+            placeholder: "Сколько гостей",
+            title: "Гости",
+            type: "guests",
             applyButton: true,
             resetButton: true,
           }
         )
       .number-search__submit-button
-        +button({ text: 'Подобрать номер', type: 'submit'})
+        +button({ text: "Подобрать номер", type: "submit"})

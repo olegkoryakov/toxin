@@ -17,30 +17,30 @@ mixin dropdown(options)
       opened,
       type,
     } = options;
-    const jsClassMod = opened === true ? 'js-dropdown_open' : 'js-dropdown_close';
+    const jsClassMod = opened === true ? "js-dropdown_open" : "js-dropdown_close";
     let propsList;
     let classMod;
     switch(type) {
-      case 'guests':
-        propsList = ['Взрослые','Дети','Младенцы'];
-        classMod = 'dropdown_guests';
+      case "guests":
+        propsList = ["Взрослые","Дети","Младенцы"];
+        classMod = "dropdown_guests";
         break;
-      case 'goods':
-        propsList = ['Спальни', 'Кровати', 'Ванные комнаты'];
-        classMod = 'dropdown_goods';
+      case "goods":
+        propsList = ["Спальни", "Кровати", "Ванные комнаты"];
+        classMod = "dropdown_goods";
         break;
-      case 'dates': 
-        classMod = 'dropdown_dates';
+      case "dates": 
+        classMod = "dropdown_dates";
         break;
-      case 'date-filter':
-        classMod = 'dropdown_date-filter'
+      case "date-filter":
+        classMod = "dropdown_date-filter"
         break;
       default:
         break;
     }
 
   .dropdown.js-dropdown(class= `${classMod} ${jsClassMod}`)
-    if type !== 'dates' && type !== 'date-filter'
+    if type !== "dates" && type !== "date-filter"
       .dropdown__content
         .dropdown__input-box
           +input-box(
@@ -51,7 +51,7 @@ mixin dropdown(options)
               status: status,
             }
           )
-    else if type === 'dates'
+    else if type === "dates"
       .dropdown__content
         .dropdown__input-box.dropdown__input-box_date-from
           +input-box(
@@ -71,7 +71,7 @@ mixin dropdown(options)
               status: status,
             }
           )
-    else if type === 'date-filter'
+    else if type === "date-filter"
       .dropdown__content
         .dropdown__input-box.dropdown__input-box_date
           +input-box(
@@ -82,11 +82,11 @@ mixin dropdown(options)
               status: status,
             }
           )
-    if type === 'guests' || type === 'goods'
+    if type === "guests" || type === "goods"
       .dropdown__popup.js-dropdown__popup
         .dropdown__goods
           +goods({ type: type, applyButton: applyButton, resetButton: resetButton})
-    else if type === 'dates' || type === 'date-filter'
+    else if type === "dates" || type === "date-filter"
       .dropdown__popup.js-dropdown__popup
         .dropdown__calendar
           +calendar()

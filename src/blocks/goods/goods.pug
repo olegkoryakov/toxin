@@ -1,57 +1,57 @@
 include ../button/button
 //- 
-  options.type - 'guests', 'goods';
+  options.type - "guests", "goods";
   options.applyButton - true, false
   options.resetButton - true, false
 
 mixin goods(options)
   -
     const { type, applyButton, resetButton } = options;
-    const goodsList = ['Спальни', 'Кровати', 'Ванные комнаты'];
-    const guestsList = ['Взрослые', 'Дети', 'Младенцы'];
+    const goodsList = ["Спальни", "Кровати", "Ванные комнаты"];
+    const guestsList = ["Взрослые", "Дети", "Младенцы"];
     const classMod = `goods_${type}`;
     let currentList;
-    if (type === 'guests') currentList = [...guestsList];
-    else if (type === 'goods') currentList = [...goodsList];
+    if (type === "guests") currentList = [...guestsList];
+    else if (type === "goods") currentList = [...goodsList];
   .goods(class = attributes.class, class = classMod)
     ul.goods__list
       each item in currentList
         li.goods__good
           span.goods__good-name= item
-          button(type = 'button').goods__good-button.goods__good-button_minus -
+          button(type = "button").goods__good-button.goods__good-button_minus -
           span.goods__good-count 0
-          button(type = 'button').goods__good-button.goods__good-button_plus +
+          button(type = "button").goods__good-button.goods__good-button_plus +
     if applyButton || resetButton
       .goods__controls
         if applyButton && resetButton
           .goods__controls-button.goods__controls-button_reset
             +button(
               {
-                text: 'Отчистить',
-                type : 'reset',
+                text: "Отчистить",
+                type : "reset",
               }
             )
           .goods__controls-button.goods__controls-button_apply
             +button(
               {
-                text: 'Применить',
-                type: 'apply',
+                text: "Применить",
+                type: "apply",
               }
             )
         else if resetButton
           .goods__controls-button.goods__controls-button_reset
             +button(
               {
-                text: 'Отчистить',
-                type : 'reset',
+                text: "Отчистить",
+                type : "reset",
               }
             )
         else if applyButton
           .goods__controls-button.goods__controls-button_apply
             +button(
               {
-                text: 'Применить',
-                type : 'apply',
+                text: "Применить",
+                type : "apply",
               }
             )
           

@@ -7,15 +7,15 @@ include ../toxin-logo/toxin-logo
 mixin social()
   ul.footer__social-list
     li.footer__social-item
-      a.footer__social-link(href = 'mock')
+      a.footer__social-link(href = "mock")
         .footer__social-img
           +twitter-logo()
     li.footer__social-item
-      a.footer__social-link(href = 'mock')
+      a.footer__social-link(href = "mock")
         .footer__social-img
           +facebook-logo()
     li.footer__social-item
-      a.footer__social-link(href = 'mock')
+      a.footer__social-link(href = "mock")
         .footer__social-img
           +instagram-logo()
 
@@ -23,7 +23,7 @@ mixin social()
 
 mixin copyright(lang)
   - 
-    const text = lang === 'en' ? 'Copyright © 2018 Toxin UI Kit. All rights reserved.' : 'Copyright © 2018 Toxin отель. Все права зачищены.';
+    const text = lang === "en" ? "Copyright © 2018 Toxin UI Kit. All rights reserved." : "Copyright © 2018 Toxin отель. Все права зачищены.";
   .footer__copyright
     .footer__copyright-content
       p.footer__copyright-text= text
@@ -33,39 +33,39 @@ mixin copyright(lang)
 mixin navigation(lang)
   -
     const linksHrefs = [
-      ['mock', 'mock', 'mock', 'mock'],
-      ['mock', 'mock', 'mock', 'mock'],
-      ['mock', 'mock', 'mock']
+      ["mock", "mock", "mock", "mock"],
+      ["mock", "mock", "mock", "mock"],
+      ["mock", "mock", "mock"]
     ];
     let lists;
-    if (lang === 'ru') {
+    if (lang === "ru") {
       lists = [
         {
-          title: 'Навигация',
-          linkList: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'],
+          title: "Навигация",
+          linkList: ["О нас", "Новости", "Служба поддержки", "Услуги"],
         },
         {
-          title: 'О нас',
-          linkList: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'],
+          title: "О нас",
+          linkList: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
         },
         {
-          title: 'Служба поддержки',
-          linkList: ['Соглащения', 'Сообщества', 'Связь с нами'],
+          title: "Служба поддержки",
+          linkList: ["Соглащения", "Сообщества", "Связь с нами"],
         }
       ];
-    } else if (lang === 'en') {
+    } else if (lang === "en") {
        lists = [
         {
-          title: 'Navigation',
-          linkList: ['About us', 'News', 'Support', 'Products'],
+          title: "Navigation",
+          linkList: ["About us", "News", "Support", "Products"],
         },
         {
-          title: 'About us',
-          linkList: ['Who we are', 'Our team', 'Careers', 'Investors'],
+          title: "About us",
+          linkList: ["Who we are", "Our team", "Careers", "Investors"],
         },
         {
-          title: 'Support',
-          linkList: ['Documentation', 'Community', 'Get in touch'],
+          title: "Support",
+          linkList: ["Documentation", "Community", "Get in touch"],
         }
       ];
     };
@@ -83,10 +83,10 @@ mixin navigation(lang)
 mixin about(lang)
   -
     let text;
-    if (lang === 'en') {
-      text = 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.';
-    } else if (lang === 'ru') {
-      text = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»';
+    if (lang === "en") {
+      text = "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.";
+    } else if (lang === "ru") {
+      text = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»";
     }
   .footer__about
     .footer__logo
@@ -98,14 +98,14 @@ mixin subscription(lang)
     let title;
     let text;
     let placeholder;
-      if (lang === 'en') {
-        text = 'Receive our latest news and promotions in your inbox!';
-        placeholder = 'Your email address';
-        title = 'Subscribe to our newsletter';
-      } else if (lang === 'ru') {
-        text = 'Получайте специальные предложения и новости сервиса';
-        placeholder = 'Email';
-        title = 'Подписка';
+      if (lang === "en") {
+        text = "Receive our latest news and promotions in your inbox!";
+        placeholder = "Your email address";
+        title = "Subscribe to our newsletter";
+      } else if (lang === "ru") {
+        text = "Получайте специальные предложения и новости сервиса";
+        placeholder = "Email";
+        title = "Подписка";
       }
   .footer__subscription
     h3.footer__subscription-title= title
@@ -115,13 +115,13 @@ mixin subscription(lang)
 
 mixin footer(options)
   footer.footer(class = attributes.class)
-    if options.type === 'maxi'
+    if options.type === "maxi"
       .footer__content
         +about(options.lang)
         +navigation(options.lang)
         +subscription(options.lang)
       +copyright(options.lang)
-    else if options.type === 'mini'
+    else if options.type === "mini"
       .footer__content.footer__content_mini
         +about(options.lang)
         +social()

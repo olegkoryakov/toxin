@@ -6,56 +6,56 @@ include ../toggle-button/toggle-button
 
 
 mixin registration()
-  article.registration(class = attributes.class)
+  article.registration
     .registration__content
       h1.registration__title Регистрация аккаунта
       form.registration__form(action="mock")
-        fieldset(name = 'user-data').registration__fieldset
+        fieldset(name = "user-data").registration__fieldset
           legend.registration__fieldset-legend.visually-hidden Данные пользователя 
           .registration__input
-            +input({ placeholder: 'Имя'})
+            +input({ placeholder: "Имя" })
           .registration__input
-            +input({ placeholder: 'Фамилия'})
+            +input({ placeholder: "Фамилия" })
           ul.registration__rario-button-list
             li.registration__rario-button-item
               .registration__rario-button
                 +radio-button({
-                  name: 'gender',
-                  value: 'male',
-                  id: 'male',
-                  label: 'Мужчина',
+                  name: "gender",
+                  value: "male",
+                  id: "male",
+                  label: "Мужчина",
                   checked: true
                 })
             li.registration__rario-button-item
               .registration__rario-button
                 +radio-button({
-                  name: 'gender',
-                  value: 'female',
-                  id: 'female',
-                  label: 'Женщина',
+                  name: "gender",
+                  value: "female",
+                  id: "female",
+                  label: "Женщина",
                   checked: false,
                 })
           .registration__input-box
             +input-box({
-              title: 'Дата рождения',
-              placeholder: 'ДД.ММ.ГГ',
+              title: "Дата рождения",
+              placeholder: "ДД.ММ.ГГ",
             })
-        fieldset(name = 'login-data').registration__fieldset
+        fieldset(name = "login-data").registration__fieldset
           legend.registration__fieldset-legend Данные для входа в сервис
           .registration__input
-            +input({ placeholder: 'Email' })
+            +input({ placeholder: "Email" })
           .registration__input
-            +input({ placeholder: 'Пароль'})
+            +input({ placeholder: "Пароль"})
           .registration__toggle-button
             +toggle-button({
-              name: 'special',
-              id: 'special',
-              label: 'Получать спецпредложения',
+              name: "special",
+              id: "special",
+              label: "Получать спецпредложения",
               checked: false,
             })
         .registration__submit-button
-          +button({ type: 'filled-wide', text: 'перейти к оплате'})
+          +button({ type: "submit", text: "перейти к оплате"})
         .registration__sign-in
           span.registration__sign-in-text Уже есть аккаунт на Toxin?
           .registration__sign-in-button
-            +button({ type: 'stroked', text: 'Войти'})
+            +button({ type: "stroked", text: "Войти"})

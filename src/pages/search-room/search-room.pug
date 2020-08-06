@@ -9,104 +9,6 @@ block variables
   - const title = 'Search room/filter';
 block content
   .search-room.content-wrapper
-    section.search-room__search-room
-      h1.search-room__search-room-title Номера, которые мы для вас подобрали
-      ul.search-room__search-room-list
-        - 
-          const roomsProps = [
-            {
-              number: 888,
-              rating: 5,
-              price: '9 990',
-              url: require('../../img/room888.png').default,
-              luxe: true,
-              reviewsCount: 145,
-            },
-            {
-              number: 840,
-              rating: 4,
-              price: '9 900',
-              url: require('../../img/room840.png').default,
-              reviewsCount: 65,
-            },
-            {
-              number: 980,
-              rating: 3,
-              price: '8 500',
-              url: require('../../img/room980.png').default,
-              luxe: true,
-              reviewsCount: 35,
-            },
-            {
-              number: 856,
-              rating: 5,
-              price: '7 300',
-              url: require('../../img/room856.png').default,
-              reviewsCount: 19,
-            },
-            {
-              number: 740,
-              rating: 4,
-              price: '6 000',
-              url: require('../../img/room740.png').default,
-              reviewsCount: 44,
-            },
-            {
-              number: 982,
-              rating: 3,
-              price: '5 800',
-              url: require('../../img/room982.png').default,
-              reviewsCount: 56,
-            },
-            {
-              number: 678,
-              rating: 5,
-              price: '5 500',
-              url: require('../../img/room678.png').default,
-              reviewsCount: 45,
-            },
-            {
-              number: 450,
-              rating: 4,
-              price: '5 500',
-              url: require('../../img/room450.png').default,
-              reviewsCount: 39,
-            },
-            {
-              number: 350,
-              rating: 3,
-              price: '5 500',
-              url: require('../../img/room350.png').default,
-              reviewsCount: 77,
-            },
-            {
-              number: 666,
-              rating: 5,
-              price: '5 000',
-              url: require('../../img/room666.png').default,
-              reviewsCount: 25,
-            },
-            {
-              number: 444,
-              rating: 3,
-              price: '5 000',
-              url: require('../../img/room444.png').default,
-              reviewsCount: 15,
-            },
-            {
-              number: 352,
-              rating: 3,
-              price: '5 000',
-              url: require('../../img/room450.png').default,
-              reviewsCount: 55,
-            },
-          ];
-        each roomProps in roomsProps
-          li.search-room__search-room-item
-            .search-room__room
-              +room(roomProps)
-      .search-room__search-room-pagination
-        +pagination({ title: '' })
     section.search-room__filter
       .search-room__filter-dropdown
         +dropdown({
@@ -246,3 +148,101 @@ block content
             list: expandableCheckboxesProps,
           }
         )
+    section.search-room__search-room
+      h1.search-room__search-room-title Номера, которые мы для вас подобрали
+      ul.search-room__search-room-list
+        - 
+          const roomsProps = [
+            {
+              number: 888,
+              rating: 5,
+              price: '9 990',
+              url: require('../../img/room888.png').default,
+              luxe: true,
+              reviewsCount: 145,
+            },
+            {
+              number: 840,
+              rating: 4,
+              price: '9 900',
+              url: require('../../img/room840.png').default,
+              reviewsCount: 65,
+            },
+            {
+              number: 980,
+              rating: 3,
+              price: '8 500',
+              url: require('../../img/room980.png').default,
+              luxe: true,
+              reviewsCount: 35,
+            },
+            {
+              number: 856,
+              rating: 5,
+              price: '7 300',
+              url: require('../../img/room856.png').default,
+              reviewsCount: 19,
+            },
+            {
+              number: 740,
+              rating: 4,
+              price: '6 000',
+              url: require('../../img/room740.png').default,
+              reviewsCount: 44,
+            },
+            {
+              number: 982,
+              rating: 3,
+              price: '5 800',
+              url: require('../../img/room982.png').default,
+              reviewsCount: 56,
+            },
+            {
+              number: 678,
+              rating: 5,
+              price: '5 500',
+              url: require('../../img/room678.png').default,
+              reviewsCount: 45,
+            },
+            {
+              number: 450,
+              rating: 4,
+              price: '5 500',
+              url: require('../../img/room450.png').default,
+              reviewsCount: 39,
+            },
+            {
+              number: 350,
+              rating: 3,
+              price: '5 500',
+              url: require('../../img/room350.png').default,
+              reviewsCount: 77,
+            },
+            {
+              number: 666,
+              rating: 5,
+              price: '5 000',
+              url: require('../../img/room666.png').default,
+              reviewsCount: 25,
+            },
+            {
+              number: 444,
+              rating: 3,
+              price: '5 000',
+              url: require('../../img/room444.png').default,
+              reviewsCount: 15,
+            },
+            {
+              number: 352,
+              rating: 3,
+              price: '5 000',
+              url: require('../../img/room450.png').default,
+              reviewsCount: 55,
+            },
+          ];
+        each roomProps in roomsProps
+          li.search-room__search-room-item
+            .search-room__room
+              +room(roomProps)
+      .search-room__search-room-pagination
+        +pagination({ title: '' })

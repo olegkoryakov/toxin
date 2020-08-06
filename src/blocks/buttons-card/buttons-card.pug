@@ -4,32 +4,32 @@ mixin buttons-card
   article.buttons-card
     h3.buttons-card__title Buttons
     - 
-      const text = 'click me'
+      const text = "click me"
       const buttonsProps = [
         {
-          type: 'filled',
+          type: "filled",
           text: text,
         },
         {
-          type: 'filled',
+          type: "filled",
           text: text,
         },
         {
-          type: 'stroked',
+          type: "stroked",
           text: text,
         },
         {
-          type: 'stroked',
+          type: "stroked",
           text: text,
         }
       ];
       const controlButtonsProps = [
           {
-            type: 'apply',
+            type: "apply",
             text: text,
           },
           {
-            type: 'reset',
+            type: "reset",
             text: text,
           }
       ];
@@ -46,11 +46,11 @@ mixin buttons-card
     .buttons-card__button
       +button(
         {
-          type: 'submit',
-          text: 'перейти к оплате',
+          type: "submit",
+          text: "перейти к оплате",
         }
       )
     script.
-      const buttonsCard = document.querySelector('.buttons-card');
-      buttonsCard.querySelectorAll('.button_filled')[1].classList.add('hover');
-      buttonsCard.querySelectorAll('.button_stroked')[1].classList.add('hover');
+      const buttonsCard = document.querySelector(".buttons-card");
+      buttonsCard.querySelectorAll(".button_filled")[1].classList.add("hover");
+      buttonsCard.querySelectorAll(".button_stroked")[1].classList.add("hover");

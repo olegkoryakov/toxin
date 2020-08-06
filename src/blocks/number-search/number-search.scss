@@ -18,11 +18,11 @@
 
   &__dropdown {
     position: relative;
-    margin-bottom: 22px;
-    z-index: 2;
-    &:last-of-type {
-      z-index: 1;
-      margin-bottom: 30px;
+    z-index: 1;
+    margin-bottom: 31px;
+    &:first-of-type {
+      margin-bottom: 20px;
+      z-index: 2;
     }
   }
 }

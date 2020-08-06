@@ -11,7 +11,7 @@
     transform: translateY(-50%);
   }
 
-  &_filled {
+  &_filled, &_registr {
     color: #fff;
     background-image: $purpleGradient;
     border-radius: 22px;
@@ -27,7 +27,7 @@
     padding: 14px 35px 15px;
   }
 
-  &_stroked {
+  &_stroked, &_sign-in {
     position: relative;
     transform-style: preserve-3d;
     color: $purpleColor;
@@ -48,6 +48,14 @@
     }
   }
 
+  &_registr {
+    padding: 10px 20px;
+  }
+
+  &_sign-in {
+    padding: 8px 18px;
+  }
+
   &_apply {
     color: $purpleColor;
   }
@@ -56,13 +64,13 @@
     color: rgba($mainColor, 0.5);
   }
 
-  &_filled {
+  &_filled, &_registr {
     &:focus, &:hover, &.hover {
       opacity: 0.5;
     }
   }
 
-  &_stroked{
+  &_stroked, &_sign-in {
     &:focus, &:hover, &.hover {
       &:before {
         opacity: 0.5;

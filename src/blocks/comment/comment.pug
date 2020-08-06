@@ -9,5 +9,6 @@ mixin comment(options)
         cite.comment__author= name
         span.comment__date= date
     .comment__content
-      +like-button(like).comment__like-button
+      .comment__like-button
+        +like-button(like)
       blockquote.comment__comment= text

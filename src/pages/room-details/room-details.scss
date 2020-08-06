@@ -1,5 +1,5 @@
 .room-details {
-  padding-bottom: 36px;
+  padding-bottom: 34px;
   border-bottom: 1px solid rgba($mainColor, 0.25);
 
   &__preview {
@@ -66,6 +66,10 @@
     max-width: 341px;
   }
   
+  &__rules, &__reset {
+    padding-top: 5px;
+  }
+  
   @media screen and (max-width: 1033px) {
     &__content-column {
       margin: 0 auto;
@@ -78,15 +82,7 @@
       align-items: center;
     }
     
-    &__advantages {
-      margin-bottom: 20px;
-    }
-  
-    &__impressions {
-      margin-bottom: 20px;
-    }
-  
-    &__rules {
+    &__advantages, &__impressions, &__rules {
       margin-bottom: 20px;
     }
   }

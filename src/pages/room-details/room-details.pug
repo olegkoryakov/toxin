@@ -7,15 +7,15 @@ include ../../blocks/rules/rules
 include ../../blocks/reset/reset
 
 block variables
-  - const title = 'Room details';
+  - const title = "Room details";
 block content
   .room-details
     section.room-details__preview
       .room-details__preview-column.room-details__preview-gallery_main
-        img(src = require('../../img/preview-room888-1.jpg').default).room-details__preview-img
+        img(src = require("../../img/preview-room888-1.jpg").default).room-details__preview-img
       .room-details__preview-column.room-details__preview-gallery_other
-        img(src = require('../../img/preview-room888-2.jpg').default).room-details__preview-img
-        img(src = require('../../img/preview-room888-3.jpg').default).room-details__preview-img
+        img(src = require("../../img/preview-room888-2.jpg").default).room-details__preview-img
+        img(src = require("../../img/preview-room888-3.jpg").default).room-details__preview-img
     .room-details__content.content-wrapper
       .room-details__content-column.room-details__content-column_main
         .room-details__content-row
@@ -23,27 +23,27 @@ block content
             - 
               const advantagesProps = [
                 {
-                  title: 'Комфорт',
-                  url: require('../../img/comfort.svg').default,
-                  alt: 'Комфорт',
-                  text: 'Шумопоглощающие стены',
+                  title: "Комфорт",
+                  url: require("../../img/comfort.svg").default,
+                  alt: "Комфорт",
+                  text: "Шумопоглощающие стены",
                 },
                 {
-                  title: 'Удобство',
-                  url: require('../../img/good.svg').default,
-                  alt: 'Удобство',
-                  text: 'Окно в каждой из спален',
+                  title: "Удобство",
+                  url: require("../../img/good.svg").default,
+                  alt: "Удобство",
+                  text: "Окно в каждой из спален",
                 },
                 {
-                  title: 'Уют',
-                  url: require('../../img/cosiness.svg').default,
-                  alt: 'Уют',
-                  text: 'Номер оснащён камином',
+                  title: "Уют",
+                  url: require("../../img/cosiness.svg").default,
+                  alt: "Уют",
+                  text: "Номер оснащён камином",
                 }
               ];
             +advantages(
               {
-                title: 'Сведения о номере',
+                title: "Сведения о номере",
                 list: advantagesProps
               }
             )

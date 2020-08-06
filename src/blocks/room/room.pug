@@ -10,7 +10,7 @@ mixin room(options)
       url,
       luxe
     } = options;
-    const luxeClassMod = luxe ? 'room_luxe' : '';  
+    const luxeClassMod = luxe === true ? "room_luxe" : "";  
   article.room(class = luxeClassMod)
     .room__preview
       img(src = url).room__preview-img

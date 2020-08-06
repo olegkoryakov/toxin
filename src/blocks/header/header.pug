@@ -5,15 +5,15 @@ include ../toxin-logo/toxin-logo
 mixin header(options)
   -
     const { lang, currentPage, userName } = options; 
-    const enLinksText = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation'];
-    const ruLinksText = ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'];
+    const enLinksText = ["Home", "About Us", "Services", "Careers", "News", "Documentation"];
+    const ruLinksText = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
 
     let linksText;
-    if (lang === 'ru') linksText = [...ruLinksText];
-    else if (lang === 'en') linksText = [...enLinksText];
+    if (lang === "ru") linksText = [...ruLinksText];
+    else if (lang === "en") linksText = [...enLinksText];
 
     const isExpandableItem = (linkText) => {
-      return linkText === 'Services' || linkText === 'Услуги' || linkText === 'Соглашения';
+      return linkText === "Services" || linkText === "Услуги" || linkText === "Соглашения";
     };
 
     const isCurrentPage = (index) => index + 1 === currentPage;
@@ -25,8 +25,8 @@ mixin header(options)
         ul.header__nav-list
           each linkText, index in linksText
             - 
-              const itemClassModifier = isExpandableItem(linkText) ? 'header__nav-item_expandable' : '';
-              const currentPageClassModifier = isCurrentPage(index) ? 'header__nav-link_current' : '';
+              const itemClassModifier = isExpandableItem(linkText) ? "header__nav-item_expandable" : "";
+              const currentPageClassModifier = isCurrentPage(index) ? "header__nav-link_current" : "";
             li.header__nav-item(class = itemClassModifier)
               if itemClassModifier
                 .header__nav-expand-button
@@ -39,11 +39,11 @@ mixin header(options)
           ul.header__nav-list
             -
               let buttonsText;
-              if (lang === 'ru') buttonsText = ['Войти', 'Зарегистрироваться'];
-              else if (lang === 'en') buttonsText = ['Login', 'Registr'];
+              if (lang === "ru") buttonsText = ["Войти", "Зарегистрироваться"];
+              else if (lang === "en") buttonsText = ["Login", "Registr"];
             li.header__nav-item
               .header__nav-button.header__nav-button_login
-                +button({ type: 'stroked', text: buttonsText[0] })
+                +button({ type: "sign-in", text: buttonsText[0] })
             li.header__nav-item  
               .header__nav-button.header__nav-button_registr
-                +button({ type: 'filled', text: buttonsText[1] })
+                +button({ type: "registr", text: buttonsText[1] })

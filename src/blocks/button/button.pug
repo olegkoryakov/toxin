@@ -4,7 +4,7 @@ mixin button(options)
   - 
     const { type, focused, text, formId } = options;
     const classMod = `button_${type}`;
-  button.button(type = 'button', class = classMod, form = formId)= text
-    if type === 'submit'
+  button.button(type = "button", class = classMod, form = formId)= text
+    if type === "submit"
       .button__arrow
-        +arrow({ type: 'send' })
+        +arrow({ type: "send" })
