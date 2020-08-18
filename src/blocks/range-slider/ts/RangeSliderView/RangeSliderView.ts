@@ -3,10 +3,12 @@ import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
 export default class RangeSliderView extends EventEmitter {
   constructor(rangeSliderElement: HTMLElement) {
     super();
-
-    this.initFields(rangeSliderElement);
+    this.rangeSliderElement = rangeSliderElement;
+    this.initFields();
     this.addHandlers();
   }
+
+  private rangeSliderElement: HTMLElement;
 
   private priceElement!: HTMLElement;
 
@@ -18,9 +20,9 @@ export default class RangeSliderView extends EventEmitter {
 
   private thumbTo!: HTMLElement;
 
-  private initFields(rangeSliderElement: HTMLElement) {
-    this.priceElement = (rangeSliderElement.querySelector('.range-slider__price') as HTMLElement);
-    this.line = (rangeSliderElement.querySelector('.range-slider__line') as HTMLElement);
+  private initFields() {
+    this.priceElement = (this.rangeSliderElement.querySelector('.range-slider__price') as HTMLElement);
+    this.line = (this.rangeSliderElement.querySelector('.range-slider__line') as HTMLElement);
     this.rangeLine = (this.line.querySelector('.range-slider__range-line') as HTMLElement);
     this.thumbFrom = (this.line.querySelector('.range-slider__thumb_from') as HTMLElement);
     this.thumbTo = (this.line.querySelector('.range-slider__thumb_to') as HTMLElement);
@@ -53,16 +55,20 @@ export default class RangeSliderView extends EventEmitter {
     let startCoord = downE.clientX;
 
     const onMouseMove = (moveE: MouseEvent) => {
-      const shift = startCoord - moveE.clientX;
-      let newCoord = thumb.offsetLeft - shift;
-      startCoord = moveE.clientX;
+      const isRangeSliderElementContainsTarget = this.rangeSliderElement
+        .contains(moveE.target as HTMLElement);
+      if (isRangeSliderElementContainsTarget) {
+        const shift = startCoord - moveE.clientX;
+        let newCoord = thumb.offsetLeft - shift;
+        startCoord = moveE.clientX;
 
-      if (newCoord > width) newCoord = width;
-      else if (newCoord < 0) newCoord = 0;
+        if (newCoord > width) newCoord = width;
+        else if (newCoord < 0) newCoord = 0;
 
-      thumb.style.left = `${newCoord}px`;
-      this.resizeRangeLine();
-      this.emit('change-current-value', { coord: newCoord, modifier });
+        thumb.style.left = `${newCoord}px`;
+        this.resizeRangeLine();
+        this.emit('change-current-value', { coord: newCoord, modifier });
+      }
     };
 
     const bindedOnMouseMove = onMouseMove.bind(this);
