@@ -35,8 +35,7 @@ export default class RangeSliderView extends EventEmitter {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  private getThumbModifier(thumb: HTMLElement) {
+  private getThumbModifier = (thumb: HTMLElement) => {
     const classArray = Array.from(thumb.classList);
     const classModIndex = classArray
       .findIndex((className) => className.startsWith('range-slider__thumb_'));
@@ -48,27 +47,28 @@ export default class RangeSliderView extends EventEmitter {
     const thumb = (downE.currentTarget as HTMLElement);
     const modifier = this.getThumbModifier(thumb);
     const zIndex = parseInt(getComputedStyle(thumb).getPropertyValue('z-index'), 10);
-
-    const width = this.getSliderLineWidth();
+    const { left, width } = this.rangeSliderElement.getBoundingClientRect();
+    const maxStartCoord = left + width;
+    const minStartCoord = left;
+    const sliderWidth = this.getSliderLineWidth();
 
     thumb.style.zIndex = (zIndex + 1).toString();
     let startCoord = downE.clientX;
 
     const onMouseMove = (moveE: MouseEvent) => {
-      const isRangeSliderElementContainsTarget = this.rangeSliderElement
-        .contains(moveE.target as HTMLElement);
-      if (isRangeSliderElementContainsTarget) {
-        const shift = startCoord - moveE.clientX;
-        let newCoord = thumb.offsetLeft - shift;
-        startCoord = moveE.clientX;
+      const shift = startCoord - moveE.clientX;
+      let newCoord = thumb.offsetLeft - shift;
 
-        if (newCoord > width) newCoord = width;
-        else if (newCoord < 0) newCoord = 0;
+      startCoord = moveE.clientX;
+      if (startCoord > maxStartCoord) startCoord = maxStartCoord;
+      else if (startCoord < minStartCoord) startCoord = minStartCoord;
 
-        thumb.style.left = `${newCoord}px`;
-        this.resizeRangeLine();
-        this.emit('change-current-value', { coord: newCoord, modifier });
-      }
+      if (newCoord > sliderWidth) newCoord = sliderWidth;
+      else if (newCoord < 0) newCoord = 0;
+
+      thumb.style.left = `${newCoord}px`;
+      this.resizeRangeLine();
+      this.emit('change-current-value', { coord: newCoord, modifier });
     };
 
     const bindedOnMouseMove = onMouseMove.bind(this);
@@ -85,7 +85,12 @@ export default class RangeSliderView extends EventEmitter {
   }
 
   setPriceElementValues(currentValue: ICurrentValue, prefix: string) {
-    this.priceElement.textContent = `${currentValue.from}${prefix} - ${currentValue.to}${prefix}`;
+    const regExp = /\d{1,3}(?=(\d{3})+(?!\d))/g;
+    const charToReplace = '$& ';
+    const { to, from } = currentValue;
+    const toString = to.toString().replace(regExp, charToReplace);
+    const fromString = from.toString().replace(regExp, charToReplace);
+    this.priceElement.textContent = `${fromString}${prefix} - ${toString}${prefix}`;
   }
 
   setThumbCoord(modifier: string, coord: number) {

@@ -75,12 +75,8 @@
     margin-bottom: 20px;
   }
 
-  &__dropdown {
-    z-index: 1;
-    &:not(:last-of-type) {
-      z-index: 2;
-      margin-bottom: 20px;
-    }
+  &__dropdown-calendar {
+    margin-bottom: 20px;
   }
 
   &__table-wrapper {

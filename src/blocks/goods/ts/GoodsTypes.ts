@@ -23,18 +23,17 @@ interface IGoodsModel {
   wordDeclension(goodForms: TSimpleGoodsNamesForms, count: number): string,
   increaseGood(index: number): void,
   decreaseGood(index: number): void,
-  getGoodByIndex(index: number): IGood;
-  getGoods(): TGoodsArray;
+  getGoodByIndex(index: number): IGood,
+  getGoods(): TGoodsArray,
+  resetGoodsCount(): void,
 }
 
 interface IGoodsView extends IEventEmitter {
   setGoodProps(index: number, name: string, count: number): void,
   setInputValue(value: string): void,
+  disableMinusButton(index: number): void,
+  enableMinusButton(index: number): void,
 }
 
 interface IGoodsPresenter {
-}
-
-interface IGoods {
-  getValue(): TGoodsArray,
 }

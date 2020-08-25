@@ -1,14 +1,17 @@
 .search-room {
   padding-top: 30px;
   padding-bottom: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  @media screen and (max-width: 805px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25);
 
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media screen and (max-width: 805px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   &__search-room {
     max-width: 834px;
   }
@@ -45,7 +48,7 @@
   &__search-room-pagination {
     margin: 0 auto;
     width: 241px;
-    margin-top: 20px;
+    margin-top: 26px;
   }
 
   &__filter {
@@ -53,26 +56,29 @@
     padding-right: 10px;
   }
 
-  &__filter-dropdown {
+  &__filter-dropdown-calendar {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 22px;
+  }
+
+  &__filter-dropdown-goods {
     position: relative;
     z-index: 2;
     margin-bottom: 30px;
-    &:first-of-type {
-      z-index: 3;
-      margin-bottom: 20px;
-    }
   }
 
   &__filter-range-slider {
     position: relative;
     z-index: 1;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   &__filter-checkboxes {
+    margin-bottom: 30px;
     &_default {
+      margin-bottom: 28px;
       width: 222px;
     }
-    margin-bottom: 30px;
   }
 }

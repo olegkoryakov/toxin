@@ -1,7 +1,8 @@
 .expand-button {
   @include button-reset;
-  width: 44px;
-  height: 44px;
+  position: relative;
+  width: 100%;
+  height: 100%;
   background-color: transparent;
   &::before {
     position: absolute;
@@ -16,5 +17,14 @@
     top: 50%;
     transform-origin: center;
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+
+
+  &_opened {
+    &:before {
+      border: 2px solid rgba($mainColor, 0.75); 
+      border-top: none;
+      border-left: none;
+    }
   }
 }

@@ -4,11 +4,9 @@ include ../arrow/arrow
 mixin subscription-form(options)
   - const { placeholder, title } = options;
   form.subscription-form
-    .subscription-form__input-box
-      +input-box({
-        placeholder: placeholder,
-        title: title,
-      })
+    if title
+      h3.subscription-form__title= title
     button(type="submit").subscription-form__submit-button
       .subscription-form__submit-button-img
         +arrow({ type: "subscription" })
+    input.subscription-form__input(type="email", placeholder = placeholder)

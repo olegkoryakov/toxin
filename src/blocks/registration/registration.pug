@@ -38,14 +38,15 @@ mixin registration()
           .registration__input-box
             +input-box({
               title: "Дата рождения",
-              placeholder: "ДД.ММ.ГГ",
+              placeholder: "ДД.ММ.ГГГГ",
+              masked: true,
             })
         fieldset(name = "login-data").registration__fieldset
           legend.registration__fieldset-legend Данные для входа в сервис
           .registration__input
-            +input({ placeholder: "Email" })
+            +input({ placeholder: "Email", type: "email" })
           .registration__input
-            +input({ placeholder: "Пароль"})
+            +input({ placeholder: "Пароль", type: "password" })
           .registration__toggle-button
             +toggle-button({
               name: "special",
@@ -56,6 +57,6 @@ mixin registration()
         .registration__submit-button
           +button({ type: "submit", text: "перейти к оплате"})
         .registration__sign-in
-          span.registration__sign-in-text Уже есть аккаунт на Toxin?
+          span.registration__sign-in-text Уже есть аккаунт на Toxin
           .registration__sign-in-button
             +button({ type: "stroked", text: "Войти"})

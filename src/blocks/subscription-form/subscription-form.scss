@@ -1,5 +1,24 @@
 .subscription-form {
   position: relative;
+  
+  &__title {
+    @include h3Like;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 44px 8px 14px;
+    border-radius: 4px;
+    border:1px solid rgba($mainColor, 0.25);
+    font: inherit;
+    &::placeholder {
+      font: inherit;
+      line-height: 18px;
+      color: rgba($mainColor, 0.25);
+    }
+  }
 
   &__submit-button {
     @include button-reset;
@@ -11,5 +30,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &__submit-button:hover + &__input,
+  &__submit-button:focus + &__input,
+  &__input:hover,
+  &__input:focus {
+    border: 1px solid rgba($mainColor, 0.5);
+    outline: none;
   }
 }

@@ -31,6 +31,11 @@ export default class GoodsModel implements IGoodsModel {
     });
   }
 
+  resetGoodsCount() {
+    this.goodsProps.forEach((goodProps) => { goodProps.count = 0; });
+    this.setGoods(this.goodsProps);
+  }
+
   getType(): string {
     return this.type;
   }

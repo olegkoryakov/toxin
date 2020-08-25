@@ -3,6 +3,7 @@
 
   &__input + &__label {
     position: relative;
+    cursor: pointer;
     display: block;
     padding-left: 50px;
     color: rgba($mainColor, 0.75);

@@ -16,13 +16,11 @@
     margin-bottom: 20px;
   }
 
-  &__dropdown {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 31px;
-    &:first-of-type {
-      margin-bottom: 20px;
-      z-index: 2;
-    }
+  &__dropdown-calendar {
+    margin-bottom: 21px;
+  }
+
+  &__dropdown-goods {
+    margin-bottom: 30px;
   }
 }

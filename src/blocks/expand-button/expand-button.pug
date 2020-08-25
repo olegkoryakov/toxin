@@ -1,2 +1,5 @@
-mixin expand-button
-  button.expand-button.js-dropdown__button(type = "button")
+mixin expand-button(options)
+  - 
+    const { opened } = options;
+    const openedClass = opened ? "expand-button_opened" : "";
+  button.expand-button(type = "button" class = openedClass)

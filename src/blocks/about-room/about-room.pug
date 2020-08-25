@@ -1,4 +1,5 @@
-include ../dropdown/dropdown
+include ../dropdown-calendar/dropdown-calendar
+include ../dropdown-goods/dropdown-goods
 include ../button/button
 
 mixin about-room()
@@ -12,26 +13,31 @@ mixin about-room()
           span.about-room__price 9 990₽
           span.about-room__price-postfix В сутки
       form.about-room__form(id = "about-room" action="mock")
-        .about-room__dropdown
-          +dropdown(
+        .about-room__dropdown-calendar
+          +dropdown-calendar(
             {
-              placeholder: "ДД.ММ.ГГ",
-              title: "Прибытие",
-              secondTitle: "Выезд",
-              type: "dates",
-              opened: false,
-              applyButton: true,
-              resetButton: true,
+              inputsOptions: [
+                {
+                  placeholder: 'ДД.ММ.ГГГГ',
+                  title: 'Прибытие',
+                },
+                {
+                  placeholder: 'ДД.ММ.ГГГГ',
+                  title: 'Выезд',
+                }
+              ]
             }
           )
-        .about-room__dropdown
-          +dropdown(
+        .about-room__dropdown-goods
+          +dropdown-goods(
             {
-              placeholder: "Сколько гостей",
-              title: "Гости",
               type: "guests",
               applyButton: true,
               resetButton: true,
+              inputOptions: {
+                placeholder: "Сколько гостей",
+                title: "Гости",
+              }
             }
           )
       .about-room__table-wrapper

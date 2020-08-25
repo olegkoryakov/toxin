@@ -10,7 +10,7 @@
     line-height: 18px;
     color: rgba($mainColor, 0.25);
   }
-  &:focus, &:hover, &--hover{
+  &:focus, &:hover, &_hover{
     border: 1px solid rgba($mainColor, 0.5);
     outline: none;
   }

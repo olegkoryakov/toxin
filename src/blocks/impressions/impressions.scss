@@ -1,8 +1,7 @@
 .impressions {
-  
   &__title {
     @include h2Like;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
   }
 
   &__content {
@@ -11,29 +10,10 @@
     justify-content: space-between;
   }
 
-  &__count {
-    box-sizing: border-box;
-    text-align: center;
-    background-image: url('../../img/pie.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__count-number {
-    @include h1Like;
-    color: $purpleColor;
-  }
-
-  &__count-text {
-    @include h3Like;
-    color: $purpleColor;
+  &__doughnut {
+    padding-left: 20px;
+    width: 125px;
+    height: 125px;
   }
 
   &__list {

@@ -7,9 +7,9 @@ mixin sign-in()
       h1.sign-in__title Войти
       form(action="mock").sign-in__form
         .sign-in__input
-          +input({ placeholder: "Email" })
+          +input({ placeholder: "Email", type: "email" })
         .sign-in__input
-          +input({ placeholder: "Пароль" })
+          +input({ placeholder: "Пароль", type: "password" })
         .sign-in__submit-button
           +button({ text: "Войти", type: "submit" })
       .sign-in__registration

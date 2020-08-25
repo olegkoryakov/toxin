@@ -101,6 +101,12 @@ export default class CalendarPresenter implements ICalendarPresenter {
     this.renderSelectedDatesAndInterval(selectedDates);
   }
 
+  resetSelectedDates() {
+    this.calendarView.removeSelectedDates();
+    this.calendarView.removeInterval();
+    this.calendarModel.resetSelectedDates();
+  }
+
   init() {
     const { year, month } = this.calendarModel.getUserDateState();
     this.calendarView.renderMonth(year, month);

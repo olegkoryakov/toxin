@@ -28,9 +28,10 @@
     margin-bottom: 5px;
   }
 
-  &__input {
-    &:not(:last-of-type) {
-      margin-bottom: 10px;
+  &__fieldset &__input {
+    margin-bottom: 10px;
+    &:nth-of-type(2n) {
+      margin-bottom: 0px;
     }
   }
 
@@ -40,12 +41,13 @@
     justify-content: space-between;
     display: flex;  
     flex-direction: row;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 8px;
+    margin-bottom: 22px;
   }
 
   &__toggle-button {
     margin-top: 8px;
+    margin-bottom: 2px;
   }
 
   &__submit-button {

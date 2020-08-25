@@ -29,4 +29,8 @@ export default class Calendar implements ICalendar {
   getSelectedDates() {
     return this.calendarModel.getSelectedDates();
   }
+
+  resetSelectedDates() {
+    this.calendarPresenter.resetSelectedDates();
+  }
 }

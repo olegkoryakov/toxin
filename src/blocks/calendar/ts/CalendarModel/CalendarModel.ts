@@ -57,6 +57,13 @@ export default class CalendarModel implements ICalendarModel {
     }
   }
 
+  resetSelectedDates() {
+    this.selectedDates = {
+      from: undefined,
+      to: undefined,
+    };
+  }
+
   // eslint-disable-next-line class-methods-use-this
   setTdData(tdData: ITdData) {
     const { element, date } = tdData;

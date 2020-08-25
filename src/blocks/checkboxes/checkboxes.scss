@@ -7,6 +7,7 @@
   }
 
   &__expand-button {
+    transform-origin: center;
     position: absolute;
     width: 44px;
     height: 44px;
@@ -24,5 +25,17 @@
     &:last-of-type {
       margin-bottom: 0;
     }
+  }
+
+  &_opened &__list {
+    display: block;
+  }
+
+  &_opened &__expand-button {
+    transform: rotate(-180deg);
+  }
+  
+  &_closed &__list {
+    display: none;
   }
 }

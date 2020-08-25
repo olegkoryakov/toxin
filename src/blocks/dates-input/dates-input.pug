@@ -1,0 +1,10 @@
+mixin dates-input(options)
+  - const { title, placeholder, value, status, opened } = options;
+  .dates-input
+    h3.dates-input__title= title
+    if (status)
+      span.dates-input__status= status
+    .dates-input__expand-button
+      +expand-button({ opened })
+    input.dates-input__input(type="text", placeholder = placeholder, value = value, readonly = true)
+  

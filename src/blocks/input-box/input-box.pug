@@ -1,5 +1,4 @@
 include ../input/input
-include ../expand-button/expand-button
 
 mixin input-box(options)
   - 
@@ -8,9 +7,9 @@ mixin input-box(options)
       placeholder,
       status,
       value,
+      type,
       autofocus,
-      masked,
-      expandButton
+      masked
     } = options;
   .input-box(class = attributes.class)
     if title
@@ -18,7 +17,4 @@ mixin input-box(options)
     if options.status
       span.input-box__status= status
     .input-box__input
-      +input({ placeholder, masked, autofocus, value })
-    if expandButton
-      .input-box__expand-button
-        +expand-button()
+      +input({ placeholder, masked, autofocus, value, type })

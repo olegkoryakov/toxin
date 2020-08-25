@@ -4,6 +4,7 @@
   }
 
   &__input + &__label {
+    cursor: pointer;
     display: block;
     color: rgba($mainColor, 0.5);
     padding-left: 30px;

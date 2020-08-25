@@ -2,6 +2,7 @@
   user-select: none;
 
   &__input + &__label {
+    cursor: pointer;
     display: block;
     position: relative;
     line-height: 18px;
@@ -38,11 +39,14 @@
     }
   }
   
-  &_rich > &__label {
+  &_rich {
+  }
+
+  &_rich &__label {
     @include h4Like;
   }
 
-  &_rich > &__about {
+  &_rich &__about {
     display: block;
     padding-left: 30px;
     font-size: 12px;

@@ -1,14 +1,20 @@
 import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
 
 export default class GoodsView extends EventEmitter implements IGoodsView {
-  constructor(goodsWidget: HTMLElement, inputElement: HTMLInputElement) {
+  constructor(
+    goodsWidget: HTMLElement,
+    inputElement: HTMLInputElement,
+    toggleOpenedCallback: Function,
+  ) {
     super();
     this.goodsWidget = goodsWidget;
     this.inputElement = inputElement;
-
+    this.toggleOpenedCallback = toggleOpenedCallback;
     this.initControlButtons();
     this.addHandlers();
   }
+
+  private toggleOpenedCallback: Function;
 
   private inputElement: HTMLInputElement;
 
@@ -63,9 +69,11 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
 
   private onResetButtonClick() {
     this.inputElement.value = '';
+    this.emit('reset-goods-count', null);
   }
 
   private onApplyButtonClick() {
+    this.toggleOpenedCallback();
     this.emit('set-input-value', null);
   }
 
@@ -86,5 +94,17 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
       goodsItemNameElement.textContent = name;
       goodsItemCountElement.textContent = count.toString();
     }
+  }
+
+  disableMinusButton(index: number) {
+    const goodsItems = this.goodsWidget.querySelectorAll('.goods__good');
+    const goodsItemMinusButton = goodsItems[index].querySelector('.goods__good-button_minus') as HTMLButtonElement;
+    goodsItemMinusButton.disabled = true;
+  }
+
+  enableMinusButton(index: number) {
+    const goodsItems = this.goodsWidget.querySelectorAll('.goods__good');
+    const goodsItemMinusButton = goodsItems[index].querySelector('.goods__good-button_minus') as HTMLButtonElement;
+    goodsItemMinusButton.disabled = false;
   }
 }

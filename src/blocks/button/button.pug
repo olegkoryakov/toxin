@@ -2,9 +2,10 @@ include ../arrow/arrow
 
 mixin button(options)
   - 
-    const { type, focused, text, formId } = options;
+    const { type, focused, text, formId, hover } = options;
     const classMod = `button_${type}`;
-  button.button(type = "button", class = classMod, form = formId)= text
+    const hoverClass = hover ? "button_hover" : "";
+  button.button(type = "button", class = `${classMod} ${hoverClass}`, form = formId)= text
     if type === "submit"
       .button__arrow
         +arrow({ type: "send" })

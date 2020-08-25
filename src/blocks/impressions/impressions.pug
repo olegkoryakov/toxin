@@ -1,12 +1,12 @@
 include ../bullet-list/bullet-list
+include ../doughnut/doughnut
 
 mixin impressions()
   section.impressions
     h2.impressions__title Впечатления от номера
     .impressions__content
-      .impressions__count
-        span.impressions__count-number 260
-        span.impressions__count-text голосов
+      .impressions__doughnut
+        +doughnut()
       ul.impressions__list
         li.impressions__item.impressions__item_super Великолепно
         li.impressions__item.impressions__item_good Хорошо

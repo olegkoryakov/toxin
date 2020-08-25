@@ -13,6 +13,7 @@ mixin buttons-card
         {
           type: "filled",
           text: text,
+          hover: true,
         },
         {
           type: "stroked",
@@ -21,6 +22,7 @@ mixin buttons-card
         {
           type: "stroked",
           text: text,
+          hover: true,
         }
       ];
       const controlButtonsProps = [
@@ -50,7 +52,3 @@ mixin buttons-card
           text: "перейти к оплате",
         }
       )
-    script.
-      const buttonsCard = document.querySelector(".buttons-card");
-      buttonsCard.querySelectorAll(".button_filled")[1].classList.add("hover");
-      buttonsCard.querySelectorAll(".button_stroked")[1].classList.add("hover");

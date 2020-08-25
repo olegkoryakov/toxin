@@ -30,7 +30,7 @@ mixin header(options)
             li.header__nav-item(class = itemClassModifier)
               if itemClassModifier
                 .header__nav-expand-button
-                  +expand-button()
+                  +expand-button({ opened: false })
               a.header__nav-link(href="mock" class = currentPageClassModifier)= linkText
       nav.header__user-nav
         if userName

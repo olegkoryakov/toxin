@@ -40,6 +40,7 @@ interface ICalendarModel {
   selectDate(data: TDate): void,
   isCurrentDay(td: HTMLTableDataCellElement): boolean,
   getSelectedDates(): ISelectedDates,
+  resetSelectedDates(): void,
 }
 
 interface ICalendarView extends IEventEmitter {
@@ -58,8 +59,10 @@ interface ICalendarView extends IEventEmitter {
 
 interface ICalendarPresenter {
   init(): void,
+  resetSelectedDates(): void,
 }
 
 interface ICalendar {
-  getSelectedDates(): ISelectedDates;
+  resetSelectedDates(): void,
+  getSelectedDates(): ISelectedDates,
 }

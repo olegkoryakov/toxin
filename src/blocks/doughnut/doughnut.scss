@@ -1,0 +1,56 @@
+.doughnut {
+  position: relative;
+
+  &__svg {
+    display: inline-block;
+    transform: rotate(-4deg);
+  }
+
+  &__about {
+    transition: all 0.5s ease;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    &_green {
+      color: $greenColor; 
+    }
+
+    &_yellow {
+      color: $yellowColor;
+    }
+
+    &_black {
+      color: $mainColor;
+    }
+
+    &_purple {
+      color: $purpleColor;
+    }
+  }
+
+  &__about-count {
+    display: block;
+    font-family: $likeHeadingFont;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__about-text {
+    display: block;
+    text-transform: uppercase;
+    font-family: $decorativeFont;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__circle {
+    transition: all 0.5s ease;
+    stroke-width: 4px;
+    &_hovered {
+      stroke-width: 10px;
+    }
+  }
+}

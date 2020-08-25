@@ -64,18 +64,31 @@
     color: rgba($mainColor, 0.5);
   }
 
-  &_filled, &_registr {
+  &_registr,
+  &_filled {
     &:focus, &:hover, &.hover {
       opacity: 0.5;
     }
   }
 
-  &_stroked, &_sign-in {
+  &_stroked,
+  &_sign-in {
     &:focus, &:hover, &.hover {
       &:before {
         opacity: 0.5;
       }
     }
+  }
+
+  
+  &_stroked.button_hover {
+    &:before {
+      opacity: 0.5;
+    }
+  }
+
+  &_filled.button_hover {
+    opacity: 0.5;
   }
 
 }

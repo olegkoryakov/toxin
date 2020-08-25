@@ -1,8 +1,6 @@
 mixin input(options)
   - 
-    const { placeholder, value, autofocus, masked } = options
-    let mask = "";
-    if (masked) {
-      mask = "\\d{2}\\.\\d{2}\\.\\d{4}";
-    }
-  input(type="text", placeholder = placeholder, autofocus = autofocus, value = value, pattern= mask).input
+    const { placeholder, value, autofocus, type, masked } = options;
+    const inputType = [email, password].includes(type) ? type : 'text';
+    const maskedClass = masked ? 'input_date-mask' : '';
+  input(type = type, class = maskedClass, placeholder = placeholder, autofocus = autofocus, value = value ).input

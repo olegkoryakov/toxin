@@ -1,0 +1,13 @@
+include ../goods-input/goods-input
+include ../goods/goods
+
+mixin dropdown-goods(options)
+  - 
+    const { opened, type, applyButton, resetButton, inputOptions } = options;
+    const openedClass = opened ? "dropdown-goods_opened" : "dropdown-goods_closed";
+    const hightlight = opened;
+  .dropdown-goods(class = openedClass)
+    .dropdown-goods__goods-input
+      +goods-input({ ...inputOptions, hightlight, opened })
+    .dropdown-goods__goods
+      +goods({ type, applyButton, resetButton })
