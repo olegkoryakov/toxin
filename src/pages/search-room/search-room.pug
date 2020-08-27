@@ -7,7 +7,7 @@ include ../../blocks/range-slider/range-slider
 include ../../blocks/checkboxes/checkboxes
 
 block variables
-  - const title = 'Search room/filter';
+  - const title = "Search room/filter";
 block content
   .search-room
     .search-room__content.content-wrapper
@@ -17,8 +17,8 @@ block content
             {
               inputsOptions: [
                 {
-                  placeholder: 'ДД мес - ДД мес',
-                  title: 'Даты пребывания в отеле',
+                  placeholder: "ДД мес - ДД мес",
+                  title: "Даты пребывания в отеле",
                 },
               ]
             }
@@ -26,45 +26,45 @@ block content
         .search-room__filter-dropdown-goods.search-room__filter-dropdown-goods_guests
           +dropdown-goods(
             {
-              type: 'guests',
+              type: "guests",
               inputOptions: {
-                placeholder: 'Сколько гостей',
-                title: 'Гости',
+                placeholder: "Сколько гостей",
+                title: "Гости",
               }
             }
           )
         .search-room__filter-range-slider
           +range-slider(
             {
-              title: 'Диапазон цены',
-              subtitle: 'Стоимость за сутки пребывания в номере'
+              title: "Диапазон цены",
+              subtitle: "Стоимость за сутки пребывания в номере"
             }
           )
         .search-room__filter-checkboxes.search-room__filter-checkboxes_default
           - 
             const checkboxesProps = [
               {
-                name: 'smoke',
-                id: 'smoke',
-                label: 'Можно курить',
+                name: "smoke",
+                id: "smoke",
+                label: "Можно курить",
                 checked: false,
               },
               {
-                name: 'pets',
-                id: 'pets',
-                label: 'Можно с питомцами',
+                name: "pets",
+                id: "pets",
+                label: "Можно с питомцами",
                 checked: true,
               },
               {
-                name: 'guests',
-                id: 'guests',
-                label: 'Можно пригласить гостей (до 10 человек)',
+                name: "guests",
+                id: "guests",
+                label: "Можно пригласить гостей (до 10 человек)",
                 checked: true,
               }
             ];
           +checkboxes(
             {
-              title: 'Checkbox Buttons',
+              title: "Checkbox Buttons",
               list: checkboxesProps,
             }
           )
@@ -72,31 +72,31 @@ block content
           - 
             const richCheckboxesProps = [
               {
-                label: 'Широкий коридор',
-                name: 'wide-corridor',
-                id: 'wide-corridor',
-                about: 'Ширина коридоров в номере не менее 91 см.',
+                label: "Широкий коридор",
+                name: "wide-corridor",
+                id: "wide-corridor",
+                about: "Ширина коридоров в номере не менее 91 см.",
               },
               {
-                label: 'Помощник для инвалидов',
-                name: 'disabled-assistant',
-                id: 'disabled-assistant',
-                about: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                label: "Помощник для инвалидов",
+                name: "disabled-assistant",
+                id: "disabled-assistant",
+                about: "На 1 этаже вас встретит специалист  и проводит до номера.",
               }
             ];
           +checkboxes(
             {
-              title: 'Доступность',
+              title: "Доступность",
               list: richCheckboxesProps,
             }
           )
         .search-room__filter-dropdown-goods.search-room__filter-dropdown-goods_goods
           +dropdown-goods(
             {
-              type: 'goods',
+              type: "goods",
               inputOptions: {
-                placeholder: 'Удобства номера',
-                title: 'Удобства номера',
+                placeholder: "Удобства номера",
+                title: "Удобства номера",
               }
             }
           )
@@ -104,45 +104,45 @@ block content
           -
             const expandableCheckboxesProps = [
               {
-                label: 'Завтрак',
-                name: 'breakfast',
-                id: 'breakfast',
+                label: "Завтрак",
+                name: "breakfast",
+                id: "breakfast",
                 checked: false,
               },
               {
-                label: 'Письменный стол',
-                name: 'desk',
-                id: 'desk',
+                label: "Письменный стол",
+                name: "desk",
+                id: "desk",
                 checked: true,
               },
               {
-                label: 'Стул для кормления',
-                name: 'feeding-chair',
-                id: 'feeding-chair',
+                label: "Стул для кормления",
+                name: "feeding-chair",
+                id: "feeding-chair",
                 checked: true,
               },
               {
-                label: 'Кроватка',
-                name: 'cot',
-                id: 'cot',
+                label: "Кроватка",
+                name: "cot",
+                id: "cot",
                 checked: true,
               },
               {
-                label: 'Телевизор',
-                name: 'tv',
-                id: 'tv',
+                label: "Телевизор",
+                name: "tv",
+                id: "tv",
                 checked: false,
               },
               {
-                label: 'Шампунь',
-                name: 'shampoo',
-                id: 'shampoo',
+                label: "Шампунь",
+                name: "shampoo",
+                id: "shampoo",
                 checked: false,
               },
             ];
           +checkboxes(
             {
-              title: 'Дополнительные удобства',
+              title: "Дополнительные удобства",
               expandable: true,
               opened: false,
               list: expandableCheckboxesProps,
@@ -156,87 +156,87 @@ block content
               {
                 number: 888,
                 rating: 5,
-                price: '9 990',
-                url: require('../../img/room888.png').default,
+                price: "9 990",
+                url: require("../../img/room888.png").default,
                 luxe: true,
                 reviewsCount: 145,
               },
               {
                 number: 840,
                 rating: 4,
-                price: '9 900',
-                url: require('../../img/room840.png').default,
+                price: "9 900",
+                url: require("../../img/room840.png").default,
                 reviewsCount: 65,
               },
               {
                 number: 980,
                 rating: 3,
-                price: '8 500',
-                url: require('../../img/room980.png').default,
+                price: "8 500",
+                url: require("../../img/room980.png").default,
                 luxe: true,
                 reviewsCount: 35,
               },
               {
                 number: 856,
                 rating: 5,
-                price: '7 300',
-                url: require('../../img/room856.png').default,
+                price: "7 300",
+                url: require("../../img/room856.png").default,
                 reviewsCount: 19,
               },
               {
                 number: 740,
                 rating: 4,
-                price: '6 000',
-                url: require('../../img/room740.png').default,
+                price: "6 000",
+                url: require("../../img/room740.png").default,
                 reviewsCount: 44,
               },
               {
                 number: 982,
                 rating: 3,
-                price: '5 800',
-                url: require('../../img/room982.png').default,
+                price: "5 800",
+                url: require("../../img/room982.png").default,
                 reviewsCount: 56,
               },
               {
                 number: 678,
                 rating: 5,
-                price: '5 500',
-                url: require('../../img/room678.png').default,
+                price: "5 500",
+                url: require("../../img/room678.png").default,
                 reviewsCount: 45,
               },
               {
                 number: 450,
                 rating: 4,
-                price: '5 500',
-                url: require('../../img/room450.png').default,
+                price: "5 500",
+                url: require("../../img/room450.png").default,
                 reviewsCount: 39,
               },
               {
                 number: 350,
                 rating: 3,
-                price: '5 500',
-                url: require('../../img/room350.png').default,
+                price: "5 500",
+                url: require("../../img/room350.png").default,
                 reviewsCount: 77,
               },
               {
                 number: 666,
                 rating: 5,
-                price: '5 000',
-                url: require('../../img/room666.png').default,
+                price: "5 000",
+                url: require("../../img/room666.png").default,
                 reviewsCount: 25,
               },
               {
                 number: 444,
                 rating: 3,
-                price: '5 000',
-                url: require('../../img/room444.png').default,
+                price: "5 000",
+                url: require("../../img/room444.png").default,
                 reviewsCount: 15,
               },
               {
                 number: 352,
                 rating: 3,
-                price: '5 000',
-                url: require('../../img/room352.png').default,
+                price: "5 000",
+                url: require("../../img/room352.png").default,
                 reviewsCount: 55,
               },
             ];
@@ -245,4 +245,4 @@ block content
               .search-room__room
                 +room(roomProps)
         .search-room__search-room-pagination
-          +pagination({ title: '' })
+          +pagination({ title: "" })
