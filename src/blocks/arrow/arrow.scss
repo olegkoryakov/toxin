@@ -1,9 +1,8 @@
 .arrow {
-  &_pagination, &_send {
-    fill: white;
-  }
-
-  &_subscription, &_month {
+  &_primary {
     fill: $purpleColor;
+  }
+  &_secondary {
+    fill: white;
   }
 }

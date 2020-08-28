@@ -8,4 +8,4 @@ mixin button(options)
   button.button(type = "button", class = `${classMod} ${hoverClass}`, form = formId)= text
     if type === "submit"
       .button__arrow
-        +arrow({ type: "send" })
+        +arrow({})
