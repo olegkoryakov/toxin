@@ -1,23 +1,16 @@
 include ../subscription-form/subscription-form
-include ../twitter-logo/twitter-logo
-include ../instagram-logo/instagram-logo
-include ../facebook-logo/facebook-logo
-include ../toxin-logo/toxin-logo
 
 mixin social()
   ul.footer__social-list
     li.footer__social-item
       a.footer__social-link(href = "mock")
-        .footer__social-img
-          +twitter-logo()
+        img.footer__social-img(src = require("../../img/twitter-logo.svg").default, alt = "Twitter")
     li.footer__social-item
       a.footer__social-link(href = "mock")
-        .footer__social-img
-          +facebook-logo()
+        img.footer__social-img(src = require("../../img/facebook-logo.svg").default, alt = "Facebook")
     li.footer__social-item
       a.footer__social-link(href = "mock")
-        .footer__social-img
-          +instagram-logo()
+        img.footer__social-img(src = require("../../img/instagram-logo.svg").default, alt = "Instagram")
 
 
 
@@ -90,7 +83,7 @@ mixin about(lang)
     }
   .footer__about
     .footer__logo
-        +toxin-logo
+      img.footer__logo-img(src = require('../../img/toxin-logo.svg').default, alt = "Toxin")
     .footer__about-text= text
 
 mixin subscription(lang)
