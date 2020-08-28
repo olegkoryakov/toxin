@@ -21,6 +21,7 @@ mixin header(options)
     .header__content
       .header__logo
         +toxin-logo().header__logo-svg
+        button(type = 'button').header__burger-button
       nav.header__site-nav
         ul.header__nav-list
           each linkText, index in linksText

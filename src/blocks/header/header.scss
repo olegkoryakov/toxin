@@ -3,6 +3,7 @@
   background-color: #fff;
 
   &__content {
+    position: relative;
     max-width: 1160px;
     padding: 15px 0;
     margin: 0 auto;
@@ -11,6 +12,33 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &__burger-button {
+    display: none;
+    position: relative;
+    @include button-reset;
+    width: 30px;
+    height: 26px;
+    &:before,&:after {
+      transform-origin: center;
+      transition: all 0.5s ease;
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 4px;
+      border-radius: 4px;
+      background-color: rgba($mainColor, 0.75);
+      left: 0;
+    }
+
+    &:before {
+      top: 0;
+      box-shadow: 0 11px 0 rgba($mainColor, 0.75);
+    }
+    &:after {
+      bottom: 0;
+    }
   }
 
   &__site-nav {
@@ -30,9 +58,6 @@
   }
 
   &__nav-item {
-    &:not(:last-of-type) {
-      margin-right: 20px;
-    }
     &_expandable {
       position: relative;
       padding-right: 25px;
@@ -48,9 +73,10 @@
     transform: translateY(-50%);
   }
 
-  &__user-nav {
-    & > &__nav-item:not(:last-of-type) {
-      margin-right: 20px;
+  &__nav-item {
+    margin-right: 20px;
+    &:last-of-type {
+      margin-right: 0;
     }
   }
 
@@ -87,9 +113,38 @@
     &__content {
       flex-direction: column;
     }
+
+    &__logo {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &__burger-button {
+      display: block;
+    }
+
+    &__site-nav {
+      display: none;
+    }
+    &__user-nav {
+      display: none;
+    }
+
+    &__nav-list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__nav-item {
+      margin-right: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
   
     &__logo {
-      margin-bottom: 20px;
+      margin-right: auto;
     }
   
     &__site-nav {
@@ -99,6 +154,24 @@
   
     &__user-nav {
       margin-left: 0;
+    }
+
+    &_opened &__site-nav,
+    &_opened &__user-nav {
+      display: block;
+    }
+    &_opened &__burger-button {
+      
+      &:before,&:after {
+        box-shadow: none;
+        top: 50%;
+      }
+      &:before {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+      &:after {
+        transform: translateY(-50%) rotate(45deg);
+      }
     }
   }
 }
