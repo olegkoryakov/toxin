@@ -1,15 +1,13 @@
 include ../dates-input/dates-input
 include ../calendar/calendar
 
-mixin dropdown-calendar(options)
-  - 
-    const { opened, inputsOptions } = options;
-    const openedClass = opened ? "dropdown-calendar_opened" : "dropdown-calendar_closed";
+mixin dropdown-calendar({ isOpened, inputsOptions = [] })
+  - const openedClass = isOpened ? "dropdown-calendar_opened" : "dropdown-calendar_closed";
   .dropdown-calendar(class = openedClass)
     .dropdown-calendar__header
       each inputOptions in inputsOptions
         .dropdown-calendar__input-box
-          +dates-input({ ...inputOptions, opened })
+          +dates-input({ ...inputOptions, isOpened })
     .dropdown-calendar__calendar
       +calendar()
 

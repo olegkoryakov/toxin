@@ -1,7 +1,5 @@
 include ../like-button/like-button
-
-mixin comment(options)
-  - const { url, text, name, date, like } = options;
+mixin comment({ url = "", text = "", name = "", date = "", likeButtonProps = {} })
   .comment
     .comment__content
       img.comment__img(src = url, alt = name)
@@ -10,5 +8,5 @@ mixin comment(options)
         span.comment__date= date
     .comment__content
       .comment__like-button
-        +like-button(like)
+        +like-button(likeButtonProps)
       blockquote.comment__comment= text

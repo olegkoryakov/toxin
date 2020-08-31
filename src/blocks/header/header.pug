@@ -1,9 +1,8 @@
 include ../expand-button/expand-button
 include ../button/button
 
-mixin header(options)
-  -
-    const { lang, currentPage, userName } = options; 
+mixin header({ lang = "ru", currentPage = 0, userName = "" })
+  - 
     const enLinksText = ["Home", "About Us", "Services", "Careers", "News", "Documentation"];
     const ruLinksText = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
 
@@ -33,7 +32,7 @@ mixin header(options)
                   +expand-button({ opened: false })
               a.header__nav-link(href="mock" class = currentPageClassModifier)= linkText
       nav.header__user-nav
-        if userName
+        if userName !== ""
           span.header__user-name= userName
         else
           ul.header__nav-list

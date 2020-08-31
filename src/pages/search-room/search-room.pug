@@ -47,19 +47,19 @@ block content
                 name: "smoke",
                 id: "smoke",
                 label: "Можно курить",
-                checked: false,
+                isChecked: false,
               },
               {
                 name: "pets",
                 id: "pets",
                 label: "Можно с питомцами",
-                checked: true,
+                isChecked: true,
               },
               {
                 name: "guests",
                 id: "guests",
                 label: "Можно пригласить гостей (до 10 человек)",
-                checked: true,
+                isChecked: true,
               }
             ];
           +checkboxes(
@@ -107,44 +107,44 @@ block content
                 label: "Завтрак",
                 name: "breakfast",
                 id: "breakfast",
-                checked: false,
+                isChecked: false,
               },
               {
                 label: "Письменный стол",
                 name: "desk",
                 id: "desk",
-                checked: true,
+                isChecked: true,
               },
               {
                 label: "Стул для кормления",
                 name: "feeding-chair",
                 id: "feeding-chair",
-                checked: true,
+                isChecked: true,
               },
               {
                 label: "Кроватка",
                 name: "cot",
                 id: "cot",
-                checked: true,
+                isChecked: true,
               },
               {
                 label: "Телевизор",
                 name: "tv",
                 id: "tv",
-                checked: false,
+                isChecked: false,
               },
               {
                 label: "Шампунь",
                 name: "shampoo",
                 id: "shampoo",
-                checked: false,
+                isChecked: false,
               },
             ];
           +checkboxes(
             {
               title: "Дополнительные удобства",
-              expandable: true,
-              opened: false,
+              isExpandable: true,
+              isOpened: false,
               list: expandableCheckboxesProps,
             }
           )

@@ -34,7 +34,7 @@ block content
             status: 'Hover/Focus',
             placeholder: 'text field',
             type: 'text',
-            autofocus: true,
+            isAutofocused: true,
             value: 'This is pretty awesome'
           })
         .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
@@ -47,7 +47,7 @@ block content
           })
         .form-elements__input-box
           +input-box({
-            masked: true,
+            isMasked: true,
             placeholder: "ДД.ММ.ГГГГ",
             status: 'Default',
             title: 'Masked Text Field',
@@ -87,19 +87,19 @@ block content
                 name: "smoke",
                 id: "smoke",
                 label: "Можно курить",
-                checked: false,
+                isChecked: false,
               },
               {
                 name: "pets",
                 id: "pets",
                 label: "Можно с питомцами",
-                checked: true,
+                isChecked: true,
               },
               {
                 name: "guests",
                 id: "guests",
                 label: "Можно пригласить гостей (до 10 человек)",
-                checked: true,
+                isChecked: true,
               }
             ];
           +checkboxes({
@@ -135,7 +135,7 @@ block content
         .form-elements__dropdown-goods.form-elements__dropdown-goods_goods
           +dropdown-goods({
             type: 'goods',
-            opened: true,
+            isOpened: true,
             inputOptions: {
               title: 'Dropdown',
               status: 'Expanded',
@@ -146,8 +146,8 @@ block content
         .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
           +dropdown-goods({
             type: 'guests',
-            applyButton: true,
-            opened: true,
+            hasApplyButton: true,
+            isOpened: true,
             inputOptions: {
               title: 'Dropdown',
               placeholder: 'Сколько гостей'
@@ -157,9 +157,9 @@ block content
         .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
           +dropdown-goods({
             type: 'guests',
-            applyButton: true,
-            resetButton: true,
-            opened: true,
+            hasApplyButton: true,
+            hasResetButton: true,
+            isOpened: true,
             inputOptions: {
               title: 'Dropdown',
               placehlder: 'Сколько гостей'
@@ -170,8 +170,8 @@ block content
         .form-elements__checkboxes
           +checkboxes({
             title: 'Expandable checkbox list',
-            opened: false,
-            expandable: true,
+            isOpened: false,
+            isExpandable: true,
             list: [],
           })
         .form-elements__checkboxes
@@ -181,43 +181,43 @@ block content
                 label: "Завтрак",
                 name: "breakfast",
                 id: "breakfast",
-                checked: false,
+                isChecked: false,
               },
               {
                 label: "Письменный стол",
                 name: "desk",
                 id: "desk",
-                checked: true,
+                isChecked: true,
               },
               {
                 label: "Стул для кормления",
                 name: "feeding-chair",
                 id: "feeding-chair",
-                checked: true,
+                isChecked: true,
               },
               {
                 label: "Кроватка",
                 name: "cot",
                 id: "cot",
-                checked: true,
+                isChecked: true,
               },
               {
                 label: "Телевизор",
                 name: "tv",
                 id: "tv",
-                checked: false,
+                isChecked: false,
               },
               {
                 label: "Шампунь",
                 name: "shampoo",
                 id: "shampoo",
-                checked: false,
+                isChecked: false,
               }
             ];
           +checkboxes({
             title: 'Expandable checkbox list',
-            expandable: true,
-            opened: true,
+            isExpandable: true,
+            isOpened: true,
             list: expandableCheckboxesProps,
           })
       .form-elements__column
@@ -271,9 +271,9 @@ block content
              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
              name: 'Мурад Сарафанов',
              date: '5 дней назад',
-             like: {
+             likeButtonProps: {
                count: 12,
-               liked: true,
+               isLiked: true,
              }
           })
 

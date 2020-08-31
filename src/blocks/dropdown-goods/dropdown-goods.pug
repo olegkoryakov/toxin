@@ -1,13 +1,12 @@
 include ../goods-input/goods-input
 include ../goods/goods
 
-mixin dropdown-goods(options)
+mixin dropdown-goods({ isOpened = false, type = "goods", hasApplyButton = false, hasResetButton = false, inputOptions = {} })
   - 
-    const { opened, type, applyButton, resetButton, inputOptions } = options;
-    const openedClass = opened ? "dropdown-goods_opened" : "dropdown-goods_closed";
-    const hightlight = opened;
+    const openedClass = isOpened ? "dropdown-goods_opened" : "dropdown-goods_closed";
+    const isHightlighted = isOpened;
   .dropdown-goods(class = openedClass)
     .dropdown-goods__goods-input
-      +goods-input({ ...inputOptions, hightlight, opened })
+      +goods-input({ ...inputOptions, isHightlighted, isOpened })
     .dropdown-goods__goods
-      +goods({ type, applyButton, resetButton })
+      +goods({ type, hasApplyButton, hasResetButton })

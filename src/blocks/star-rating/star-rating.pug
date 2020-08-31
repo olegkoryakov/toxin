@@ -1,10 +1,9 @@
-mixin star-rating(options) 
-  - const { stars } = options;
+mixin star-rating({ stars = 0 })
   ul.star-rating
     - 
       const starsCount = 5;
       let counter = 0;
-    
+
     while counter < starsCount
       - const starClassMod = counter < stars ? "star-rating__star_active" : "";
       li.star-rating__star(class= starClassMod)

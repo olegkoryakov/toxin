@@ -1,6 +1,5 @@
-mixin input(options)
+mixin input({ placeholder = "", value = "", isAutofocused = false, type = "text", isMasked = false})
   - 
-    const { placeholder, value, autofocus, type, masked } = options;
-    const inputType = [email, password].includes(type) ? type : "text";
-    const maskedClass = masked ? "input_date-mask" : "";
-  input(type = type, class = maskedClass, placeholder = placeholder, autofocus = autofocus, value = value ).input
+    const inputType = ["email", "password", "text"].includes(type) ? type : "text";
+    const maskedClass = isMasked ? "input_date-mask" : "";
+  input(type = type, class = maskedClass, placeholder = placeholder, autofocus = isAutofocused, value = value ).input

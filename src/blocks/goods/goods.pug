@@ -1,15 +1,19 @@
 include ../button/button
 
-mixin goods(options)
+mixin goods({ type = "guests", hasApplyButton = false, hasResetButton = false })
   -
-    const { type, applyButton, resetButton } = options;
     const goodsList = ["Спальни", "Кровати", "Ванные комнаты"];
     const guestsList = ["Взрослые", "Дети", "Младенцы"];
-    const classMod = `goods_${type}`;
-    let currentList;
-    if (type === "guests") currentList = [...guestsList];
-    else if (type === "goods") currentList = [...goodsList];
-  .goods(class = attributes.class, class = classMod)
+    let classMod = "";
+    let currentList = [];
+    if (type === "guests") {
+      currentList = [...guestsList];
+      classMod = `goods_${type}`;
+    } else if (type === "goods") {
+      currentList = [...goodsList];
+      classMod = `goods_${type}`;
+    }
+  .goods(class = classMod)
     ul.goods__list
       each item in currentList
         li.goods__good
@@ -17,9 +21,9 @@ mixin goods(options)
           button(type = "button").goods__good-button.goods__good-button_minus -
           span.goods__good-count 0
           button(type = "button").goods__good-button.goods__good-button_plus +
-    if applyButton || resetButton
+    if hasApplyButton || hasResetButton
       .goods__controls
-        if applyButton && resetButton
+        if hasApplyButton && hasResetButton
           .goods__controls-button.goods__controls-button_reset
             +button(
               {
@@ -34,7 +38,7 @@ mixin goods(options)
                 type: "apply",
               }
             )
-        else if resetButton
+        else if hasResetButton
           .goods__controls-button.goods__controls-button_reset
             +button(
               {
@@ -42,7 +46,7 @@ mixin goods(options)
                 type : "reset",
               }
             )
-        else if applyButton
+        else if hasApplyButton
           .goods__controls-button.goods__controls-button_apply
             +button(
               {

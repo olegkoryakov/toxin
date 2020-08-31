@@ -1,8 +1,7 @@
-mixin bullet-list(options)
-  - const { names, title } = options;
+mixin bullet-list({ title = "", names = [] })
   article.bullet-list
     if title
-      h2.bullet-list__title= options.title
+      h2.bullet-list__title= title
     ul.bullet-list__list
       each name in names
         li.bullet-list__item= name

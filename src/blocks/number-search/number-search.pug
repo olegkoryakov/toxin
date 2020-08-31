@@ -13,12 +13,10 @@ mixin number-search()
               {
                 placeholder: "ДД.ММ.ГГГГ",
                 title: "Прибытие",
-                expandButton: true,
               },
               {
                 placeholder: "ДД.ММ.ГГГГ",
                 title: "Выезд",
-                expandButton: true,
               }
             ]
           }
@@ -27,8 +25,8 @@ mixin number-search()
         +dropdown-goods(
           {
             type: "guests",
-            applyButton: true,
-            resetButton: true,
+            hasApplyButton: true,
+            hasResetButton: true,
             inputOptions: {
               placeholder: "Сколько гостей",
               title: "Гости",

@@ -24,7 +24,7 @@ mixin registration()
                   value: "male",
                   id: "male",
                   label: "Мужчина",
-                  checked: true
+                  isChecked: true
                 })
             li.registration__rario-button-item
               .registration__rario-button
@@ -33,13 +33,13 @@ mixin registration()
                   value: "female",
                   id: "female",
                   label: "Женщина",
-                  checked: false,
+                  isChecked: false,
                 })
           .registration__input-box
             +input-box({
               title: "Дата рождения",
               placeholder: "ДД.ММ.ГГГГ",
-              masked: true,
+              isMasked: true,
             })
         fieldset(name = "login-data").registration__fieldset
           legend.registration__fieldset-legend Данные для входа в сервис
@@ -52,7 +52,7 @@ mixin registration()
               name: "special",
               id: "special",
               label: "Получать спецпредложения",
-              checked: false,
+              isChecked: false,
             })
         .registration__submit-button
           +button({ type: "submit", text: "перейти к оплате"})

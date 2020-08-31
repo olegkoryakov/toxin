@@ -1,11 +1,11 @@
 include ../arrow/arrow
 
-mixin button(options)
+mixin button({ type = "submit", text = "", formId = "", isHovered = false })
   - 
-    const { type, focused, text, formId, hover } = options;
-    const classMod = `button_${type}`;
-    const hoverClass = hover ? "button_hover" : "";
+    const isCorrectButtonType = ["submit", "sign-in", "registr", "filled", "stroked", "apply", "reset"].includes(type);
+    const classMod = isCorrectButtonType ? `button_${type}` : "button_submit";
+    const hoverClass = isHovered ? "button_hover" : "";
   button.button(type = "button", class = `${classMod} ${hoverClass}`, form = formId)= text
-    if type === "submit"
+    if type === "submit" && isCorrectButtonType
       .button__arrow
-        +arrow({})
+        +arrow({ colorTheme: "secondary" })

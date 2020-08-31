@@ -90,7 +90,7 @@ mixin subscription(lang)
   - 
     let title;
     let text;
-    let placeholder;
+    let placeholder = "";
       if (lang === "en") {
         text = "Receive our latest news and promotions in your inbox!";
         placeholder = "Your email address";
@@ -104,17 +104,17 @@ mixin subscription(lang)
     h3.footer__subscription-title= title
     p.footer__subscription-text= text
     .footer__subscription-form
-      +subscription-form({ placeholder: placeholder })
+      +subscription-form({ placeholder })
 
-mixin footer(options)
-  footer.footer(class = attributes.class)
-    if options.type === "maxi"
+mixin footer({ lang = "ru", type = "maxi" })
+  footer.footer
+    if type === "maxi"
       .footer__content
-        +about(options.lang)
-        +navigation(options.lang)
-        +subscription(options.lang)
-      +copyright(options.lang)
-    else if options.type === "mini"
+        +about(lang)
+        +navigation(lang)
+        +subscription(lang)
+      +copyright(lang)
+    else if type === "mini"
       .footer__content.footer__content_mini
-        +about(options.lang)
+        +about(lang)
         +social()

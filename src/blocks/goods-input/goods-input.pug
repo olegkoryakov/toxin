@@ -1,13 +1,11 @@
 include ../expand-button/expand-button
 
-mixin goods-input(options)
-  - 
-    const { title, placeholder, hightlight, value, status, opened } = options;
-    const hightlightClass = hightlight ? "goods-input__input_hightlight" : "";
+mixin goods-input({ title = "", placeholder = "", isHightlighted = false, value = "", status = "", isOened = false })
+  - const hightlightClass = isHightlighted ? "goods-input__input_hightlight" : "";
   .goods-input
     h3.goods-input__title= title
-    if (status)
+    if (status !== "")
       span.goods-input__status= status
     .goods-input__expand-button
-      +expand-button({ opened })
+      +expand-button({ isOpened })
     input.goods-input__input(type="text", value = value, class = hightlightClass, placeholder = placeholder, readonly = true)

@@ -1,5 +1,4 @@
-mixin range-slider(options)
-  - const { title, subtitle } = options;
+mixin range-slider({ title = "", subtitle = "" })
   article.range-slider
     .range-slider__header
       h3.range-slider__title= title
@@ -8,5 +7,5 @@ mixin range-slider(options)
       .range-slider__range-line
       .range-slider__thumb.range-slider__thumb_from
       .range-slider__thumb.range-slider__thumb_to
-    if options.subtitle
+    if subtitle !== ""
       span.range-slider__subtitle= subtitle

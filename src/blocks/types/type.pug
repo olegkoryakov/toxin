@@ -1,7 +1,7 @@
-mixin type(options)
+mixin type({ text = "", marker = "body"})
   - 
-    const { text, marker } = options;
-    const modifierClass = `types__type_${marker}`;
+    const isCorrectMarker = ["h1", "h2", "h3", "body"].includes(marker);
+    const modifierClass = isCorrectMarker ? `types__type_${marker}` : "types__type_body";
   li.types__type(class = modifierClass)
     span.types__type-marker= marker
     span.types__type-text= text

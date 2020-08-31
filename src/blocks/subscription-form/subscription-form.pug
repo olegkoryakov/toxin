@@ -1,10 +1,9 @@
 include ../input-box/input-box
 include ../arrow/arrow
 
-mixin subscription-form(options)
-  - const { placeholder, title } = options;
+mixin subscription-form({ placeholder = "", title = ""})
   form.subscription-form
-    if title
+    if title !== ""
       h3.subscription-form__title= title
     button(type="submit").subscription-form__submit-button
       .subscription-form__submit-button-img

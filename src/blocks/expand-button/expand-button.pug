@@ -1,5 +1,4 @@
-mixin expand-button(options)
+mixin expand-button({ isOpened = false })
   - 
-    const { opened } = options;
-    const openedClass = opened ? "expand-button_opened" : "";
+    const openedClass = isOpened ? "expand-button_opened" : "";
   button.expand-button(type = "button" class = openedClass)
