@@ -1,4 +1,6 @@
 .search-room {
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 30px;
   padding-bottom: 70px;
   border-bottom: 1px solid rgba(31, 32, 65, 0.25);
@@ -30,8 +32,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     
-    @media screen and (max-width: 805px) {
-      justify-content: space-around;
+    @media screen and (max-width: 865px) {
+      flex-direction: column;
+      align-items: center;
     }
     
     @media screen and (max-width: 540px) {
@@ -53,8 +56,9 @@
   }
 
   &__filter {
-    max-width: 320px;
-    padding-right: 10px;
+    width: 266px;
+    flex-shrink: 0;
+    padding-right: 20px;
   }
 
   &__filter-dropdown-calendar {

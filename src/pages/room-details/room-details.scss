@@ -1,5 +1,5 @@
 .room-details {
-  padding-bottom: 34px;
+  padding-bottom: 35px;
   border-bottom: 1px solid rgba($primaryColor, 0.25);
 
   &__preview {
@@ -28,13 +28,15 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   &__content-row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
 
   &__content-column {
@@ -44,6 +46,7 @@
     flex-grow: 1;
     &_main {
       max-width: 711px;
+      margin-right: 20px;
     }
     &_side {
       max-width: 380px;
@@ -64,19 +67,16 @@
 
   &__reset {
     max-width: 341px;
+    padding-right: 10px;
   }
-  
-  &__rules, &__reset {
-    padding-top: 5px;
-  }
-  
-  @media screen and (max-width: 1033px) {
+    
+  @media screen and (max-width: 1089px) {
     &__content-column {
       margin: 0 auto;
     }
   }
 
-  @media screen and (max-width: 602px) {
+  @media screen and (max-width: 630px) {
     &__content-row {
       flex-direction: column;
       align-items: center;

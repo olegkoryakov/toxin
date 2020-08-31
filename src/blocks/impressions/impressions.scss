@@ -5,13 +5,14 @@
   }
 
   &__content {
+    width: 310px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
   }
 
   &__doughnut {
-    padding-left: 20px;
+    padding-right: 20px;
     width: 125px;
     height: 125px;
   }

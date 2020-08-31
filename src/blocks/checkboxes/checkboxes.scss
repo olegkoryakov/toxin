@@ -27,8 +27,11 @@
     }
   }
 
-  &_rich &__title {
-    margin-bottom: 11px;
+  &_rich &__list-item {
+    margin-bottom: 10px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &_opened &__list {
