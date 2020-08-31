@@ -1,11 +1,12 @@
 include ../checkbox/checkbox
 include ../expand-button/expand-button
 
-mixin checkboxes({ title = "", list = [], isExpandable = false, isOpened = false })
+mixin checkboxes({ title = "", list = [], isExpandable = false, isOpened = false, isCheckboxesRich = false })
   - 
+    const richCheckboxesClassModifier = isCheckboxesRich ? "checkboxes_rich": "";
     const openedClass = isExpandable 
     ? (isOpened ? "checkboxes_opened" : "checkboxes_closed") : "";    
-  article.checkboxes(class = openedClass)
+  article.checkboxes(class = [openedClass, richCheckboxesClassModifier])
     if title
       h3.checkboxes__title= title
     if isExpandable

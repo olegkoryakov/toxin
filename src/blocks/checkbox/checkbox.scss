@@ -39,8 +39,16 @@
     }
   }
   
-  &_rich {
+  &_rich &__input + &__label:before{
+    top: 50%;
+    transform: translateY(-50%);
   }
+
+  &_rich &__input + &__label:after{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
 
   &_rich &__label {
     @include h4Like;

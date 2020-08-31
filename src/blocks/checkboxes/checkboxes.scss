@@ -27,6 +27,10 @@
     }
   }
 
+  &_rich &__title {
+    margin-bottom: 11px;
+  }
+
   &_opened &__list {
     display: block;
   }
