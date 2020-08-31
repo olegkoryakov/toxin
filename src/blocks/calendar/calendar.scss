@@ -14,7 +14,7 @@
   &__month {
     display: block;
     font-family: $likeHeadingFont;
-    color: $mainColor;
+    color: $primaryColor;
     text-align: center;
     font-size: 19px;
     margin-bottom: 30px;
@@ -39,7 +39,7 @@
   }
 
   &__button-svg {
-    fill: $purpleColor;
+    fill: $tertiaryColor;
   }
 
   &__table {
@@ -53,7 +53,7 @@
 
   &__th {
     font-family: $decorativeFont;
-    color: $purpleColor;
+    color: $tertiaryColor;
     width: 40px;
     height: 40px;
   }
@@ -64,18 +64,18 @@
     padding: 0;
     width: 40px;
     height: 40px;
-    color: rgba($mainColor, 0.5);
+    color: rgba($primaryColor, 0.5);
     &_current-day {
       font-family: $decorativeFont;
-      background-image: $greenGradient;
+      background-image: $secondaryGradient;
       border-radius: 50%;
       color: #fff;
     }
     &_other-month {
-      color: rgba($mainColor, 0.25);
+      color: rgba($primaryColor, 0.25);
     }
     &_selected {
-      background-image: $purpleGradient;
+      background-image: $tertiaryGradient;
       color: #fff;
       font-family: $decorativeFont;
       border-radius: 50%;
@@ -90,7 +90,7 @@
         content: '';
         width: 50%;
         height: 100%;
-        background-color: rgba($purpleColor, 0.5);
+        background-color: rgba($tertiaryColor, 0.5);
         top: 0;
       }
     }
@@ -117,7 +117,7 @@
         right: 0;
         bottom: 0;
         transform: translateZ(-1px);
-        background-color: rgba($purpleColor, 0.5);
+        background-color: rgba($tertiaryColor, 0.5);
       }
     }
   }

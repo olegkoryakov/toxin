@@ -8,7 +8,7 @@
     position: absolute;
     content: '';
     box-sizing: border-box;
-    border: 2px solid rgba($mainColor, 0.5);
+    border: 2px solid rgba($primaryColor, 0.5);
     width: 9px;
     height: 9px;
     border-top: none;
@@ -22,7 +22,7 @@
 
   &_opened {
     &:before {
-      border: 2px solid rgba($mainColor, 0.75); 
+      border: 2px solid rgba($primaryColor, 0.75); 
       border-top: none;
       border-left: none;
     }

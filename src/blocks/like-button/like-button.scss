@@ -2,7 +2,7 @@
   @include button-reset;
   width: 40px;
   height: 20px;
-  border: 1px solid rgba($mainColor, 0.25);
+  border: 1px solid rgba($primaryColor, 0.25);
   border-radius: 10px;
   font-size: 10px;
   line-height: 12px;
@@ -13,25 +13,25 @@
     width: 20px;
     & > svg {
       margin: 0 auto;
-      stroke: rgba($mainColor, 0.25);
+      stroke: rgba($primaryColor, 0.25);
       fill: none;
     }
   }
 
   &__count {
-    color: rgba($mainColor, 0.25);
+    color: rgba($primaryColor, 0.25);
   }
 
   &_liked {
-    border-color: $purpleColor;
+    border-color: $tertiaryColor;
   }
 
   &_liked > &__img > svg path{
-    stroke: $purpleColor;
-    fill: $purpleColor ;
+    stroke: $tertiaryColor;
+    fill: $tertiaryColor ;
   }
 
   &_liked > &__count {
-    color: $purpleColor;
+    color: $tertiaryColor;
   }
 }

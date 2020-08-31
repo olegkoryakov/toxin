@@ -28,13 +28,13 @@
       width: 30px;
       height: 4px;
       border-radius: 4px;
-      background-color: rgba($mainColor, 0.75);
+      background-color: rgba($primaryColor, 0.75);
       left: 0;
     }
 
     &:before {
       top: 0;
-      box-shadow: 0 11px 0 rgba($mainColor, 0.75);
+      box-shadow: 0 11px 0 rgba($primaryColor, 0.75);
     }
     &:after {
       bottom: 0;
@@ -82,11 +82,11 @@
 
   &__nav-link {
     text-decoration: none;
-    color: rgba($mainColor, 0.5);
+    color: rgba($primaryColor, 0.5);
     line-height: 17px;
     &_current {
       font-family: $decorativeFont;
-      color: rgba($mainColor, 0.75);
+      color: rgba($primaryColor, 0.75);
     }
   }
 
@@ -96,8 +96,8 @@
     display: block;
     padding-left: 30px;
     line-height: 17px;
-    color: rgba($mainColor, 0.5);
-    border-left: 1px solid rgba($mainColor, 0.1);
+    color: rgba($primaryColor, 0.5);
+    border-left: 1px solid rgba($primaryColor, 0.1);
     &:before {
       position: absolute;
       content: '';

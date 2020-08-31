@@ -70,7 +70,7 @@
     text-decoration: none;
     font-size: 14px;
     line-height: 17px;
-    color: rgba($mainColor, 0.5);
+    color: rgba($primaryColor, 0.5);
   }
 
   &__subscription {
@@ -89,7 +89,7 @@
   }
 
   &__copyright {
-    border-top: 1px solid rgba($mainColor, 0.05);
+    border-top: 1px solid rgba($primaryColor, 0.05);
   }
 
   &__copyright-content {

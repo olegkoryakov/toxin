@@ -36,25 +36,25 @@
     }
     &_super {
       &:before {
-        background-image: $yellowGradient;
+        background-image: $quaternaryGradient;
       }
     }
   
     &_good {
       &:before {
-        background-image: $greenGradient;
+        background-image: $secondaryGradient;
       }
     }
   
     &_soso {
       &:before {
-        background-image: $purpleGradient;      
+        background-image: $tertiaryGradient;      
       }
     }
   
     &_bad {
       &:before {
-        background-image: $blackGradient;
+        background-image: $primaryGradient;
       }
     }
   }

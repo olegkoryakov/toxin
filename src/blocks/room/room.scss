@@ -15,7 +15,7 @@
     transform: translateX(100%);
     text-transform: uppercase;
     font-family: $decorativeFont;
-    color: $purpleColor;
+    color: $tertiaryColor;
     font-size: 12px;
     line-height: 15px;
    }
@@ -101,7 +101,7 @@
       content: '';
       position: absolute;
       height: 1px;
-      background-color: rgba($mainColor, 0.1);
+      background-color: rgba($primaryColor, 0.1);
       bottom: 0;
       left: 1.5px;
       right: 1.5px;
@@ -114,7 +114,7 @@
     justify-content: space-between;
     align-items: center;
     font-family: $likeHeadingFont;
-    color: $mainColor;
+    color: $primaryColor;
   }
 
   &__number {
@@ -141,7 +141,7 @@
 
   &__price, &__reviews {
     line-height: 18px;
-    color: rgba($mainColor, 0.5);
+    color: rgba($primaryColor, 0.5);
     display: flex;
   }
 

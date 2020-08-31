@@ -13,7 +13,7 @@
 
   &_filled, &_registr {
     color: #fff;
-    background-image: $purpleGradient;
+    background-image: $tertiaryGradient;
     border-radius: 22px;
     padding: 14px 20px 15px;
   }
@@ -22,7 +22,7 @@
     position: relative;
     width: 100%;
     color: #fff;
-    background-image: $purpleGradient;
+    background-image: $tertiaryGradient;
     border-radius: 22px;
     padding: 14px 35px 15px;
   }
@@ -30,7 +30,7 @@
   &_stroked, &_sign-in {
     position: relative;
     transform-style: preserve-3d;
-    color: $purpleColor;
+    color: $tertiaryColor;
     background-color: #fff;
     border-radius: 20px;
     margin: 2px;
@@ -44,7 +44,7 @@
       bottom: -2px;
       left: -2px;
       right: -2px;
-      background-image: $purpleGradient;
+      background-image: $tertiaryGradient;
     }
   }
 
@@ -57,11 +57,11 @@
   }
 
   &_apply {
-    color: $purpleColor;
+    color: $tertiaryColor;
   }
 
   &_reset {
-    color: rgba($mainColor, 0.5);
+    color: rgba($primaryColor, 0.5);
   }
 
   &_registr,

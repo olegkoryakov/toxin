@@ -24,15 +24,15 @@
     box-sizing: border-box;
     width: 30px;
     height: 30px;
-    border: 1px solid rgba($mainColor, 0.5);
-    color: rgba($mainColor, 0.5);
+    border: 1px solid rgba($primaryColor, 0.5);
+    color: rgba($primaryColor, 0.5);
     text-align: center;
     border-radius: 50%;
     font-size: 18px;
     line-height: 22px;
     &:disabled {
-      border: 1px solid rgba($mainColor, 0.25);
-      color: rgba($mainColor, 0.25);
+      border: 1px solid rgba($primaryColor, 0.25);
+      color: rgba($primaryColor, 0.25);
     }
   }
 

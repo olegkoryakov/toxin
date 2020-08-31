@@ -13,7 +13,7 @@
 }
 @mixin h1Like {
   font-family: $firstLvlHeadingFont;
-  color: $mainColor;
+  color: $primaryColor;
   font-size: 24px;
   line-height: 30px;
   margin: 0;
@@ -21,7 +21,7 @@
 
 @mixin h2Like {
   font-family: $secondLvlHeadingFont;
-  color: $mainColor;
+  color: $primaryColor;
   font-size: 19px;
   line-height: 24px;
   margin: 0;
@@ -30,7 +30,7 @@
 @mixin h3Like {
   font-family: $thirdLvlHeadingFont;
   text-transform: uppercase;
-  color: $mainColor;
+  color: $primaryColor;
   font-size: 12px;
   line-height: 15px;
   margin: 0;
@@ -38,7 +38,7 @@
 
 @mixin h4Like {
   font-family: $fourthLvlHeadingFont;
-  color: rgba($mainColor, 0.75);
+  color: rgba($primaryColor, 0.75);
   margin: 0;
   font-size: 14px;
   line-height: 24px;

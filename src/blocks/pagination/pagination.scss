@@ -21,14 +21,14 @@
     font-size: 12px;
     line-height: 15px;
     text-decoration: none;
-    color: rgba($mainColor, 0.5);
+    color: rgba($primaryColor, 0.5);
     &_current {
       color: #fff;
       font-family: $decorativeFont;
-      background-image: $purpleGradient;
+      background-image: $tertiaryGradient;
     }
     &_next {
-      background-image: $greenGradient;
+      background-image: $secondaryGradient;
     }
   }
 

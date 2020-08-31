@@ -1,22 +1,23 @@
 // colors
-  $mainColor: #1F2041;
-  $greenColor: #6FCF97;
-  $purpleColor: #BC9CFF;
-  $yellowColor: #FFE39C;
-  $yellowGradient: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-  $purpleGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  $greenGradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  $blackGradient: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+// primary secondary tertiary quaternary
+  $primaryColor: #1F2041;
+  $secondaryColor: #6FCF97;
+  $tertiaryColor: #BC9CFF;
+  $quaternaryColor: #FFE39C;
+  $primaryGradient: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+  $secondaryGradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  $tertiaryGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  $quaternaryGradient: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
   $shadowGradient: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 //fonts
   //heading fonts
-  $firstLvlHeadingFont: "open-sans-bold";
-  $secondLvlHeadingFont: "open-sans-bold";
-  $thirdLvlHeadingFont: "montserrat-bold";
-  $fourthLvlHeadingFont: "montserrat-bold";
-//main font
-  $bodyFont: "montserrat-regular";
-// other fonts
-  $decorativeFont: "montserrat-bold";
-  $likeHeadingFont: "open-sans-bold";
-  $colorHashFont: "open-sans-regular";
+    $firstLvlHeadingFont: "open-sans-bold";
+    $secondLvlHeadingFont: "open-sans-bold";
+    $thirdLvlHeadingFont: "montserrat-bold";
+    $fourthLvlHeadingFont: "montserrat-bold";
+  //main font
+    $bodyFont: "montserrat-regular";
+  // other fonts
+    $decorativeFont: "montserrat-bold";
+    $likeHeadingFont: "open-sans-bold";
+    $colorHashFont: "open-sans-regular";

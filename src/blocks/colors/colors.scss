@@ -26,37 +26,37 @@
     }
   
     &_100::before{
-      background-color: rgba($mainColor, 1.0);
+      background-color: rgba($primaryColor, 1.0);
     }
   
     &_75::before {
-      background-color: rgba($mainColor, 0.75);
+      background-color: rgba($primaryColor, 0.75);
     }
   
     &_50::before {
-      background-color: rgba($mainColor, 0.5);
+      background-color: rgba($primaryColor, 0.5);
     }
   
     &_25::before {
-      background-color: rgba($mainColor, 0.25);
+      background-color: rgba($primaryColor, 0.25);
     }
   
     &_5::before {
-      background-color: rgba($mainColor, 0.05);
+      background-color: rgba($primaryColor, 0.05);
     }
   
     &_purple::before {
-      background-color: #BC9CFF;
+      background-color: $tertiaryColor;
     }
     
     &_green::before {
-      background-color: #6FCF97;
+      background-color: $secondaryColor;
     }
   }
 
   &__color-name {
     font-family: $likeHeadingFont;
-    color: $mainColor;
+    color: $primaryColor;
   }
 
   &__color-hash {
