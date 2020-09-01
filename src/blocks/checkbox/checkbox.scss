@@ -1,5 +1,6 @@
 .checkbox {
   user-select: none;
+  white-space: pre-wrap;
 
   &__input + &__label {
     cursor: pointer;
@@ -56,6 +57,7 @@
 
   &_rich &__about {
     display: block;
+    width: 230px;
     padding-left: 30px;
     font-size: 12px;
     line-height: 14px;

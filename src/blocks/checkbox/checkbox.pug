@@ -4,4 +4,4 @@ mixin checkbox({ name = "", label = "", id = "", about = "", isChecked = false }
     input.visually-hidden.checkbox__input(type="checkbox", name = name, id = id, checked = isChecked)
     label.checkbox__label(for = id).checkbox__label= label
     if about != ""
-      span.checkbox__about= about
+      span.checkbox__about !{about} 
