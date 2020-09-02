@@ -15,6 +15,7 @@ export default class RoomPresenter implements IRoomPresenter {
   private addRoomViewHandlers() {
     this.roomView.on('render-next-photo', this.renderNextPhoto.bind(this));
     this.roomView.on('render-prev-photo', this.renderPrevPhoto.bind(this));
+    this.roomView.on('render-photo-by-index', this.renderPhotoByIndex.bind(this));
   }
 
   private renderNextPhoto() {
@@ -25,5 +26,10 @@ export default class RoomPresenter implements IRoomPresenter {
   private renderPrevPhoto() {
     const prevPhotoProps = this.roomModel.getPrevPhotoProps();
     this.roomView.setPhotoProps(prevPhotoProps);
+  }
+
+  private renderPhotoByIndex(index: number) {
+    const url = this.roomModel.getPhotoUrlByIndex(index);
+    this.roomView.setPhotoProps({ index, url });
   }
 }

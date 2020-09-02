@@ -30,4 +30,9 @@ export default class RoomModel implements IRoomModel {
     this.setCurrentPhotoProps(index - 1);
     return this.currentPhotoProps;
   }
+
+  getPhotoUrlByIndex(index: number) {
+    const url = this.photoUrls[index];
+    return url;
+  }
 }

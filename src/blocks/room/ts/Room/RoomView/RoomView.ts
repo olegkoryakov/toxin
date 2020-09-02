@@ -32,6 +32,7 @@ export default class RoomView extends EventEmitter implements IRoomView {
 
   private initRoomPreviewDots() {
     this.roomPreviewDots = this.roomElement.querySelectorAll('.room__preview-item') as NodeListOf<HTMLLIElement>;
+    this.roomPreviewDots.forEach((dot) => { dot.addEventListener('click', this.onDotClick.bind(this)); });
   }
 
   private onButtonClick = ({ target }: MouseEvent) => {
@@ -41,6 +42,12 @@ export default class RoomView extends EventEmitter implements IRoomView {
     } else if (button.classList.contains('room__preview-button_next')) {
       this.emit('render-next-photo', null);
     }
+  }
+
+  private onDotClick({ target }: MouseEvent) {
+    const dot = target as HTMLLIElement;
+    const dotIndex = Array.from(this.roomPreviewDots).findIndex((d) => dot === d);
+    this.emit('render-photo-by-index', dotIndex);
   }
 
   private hightlightPreviewDot(photoIndex:number) {

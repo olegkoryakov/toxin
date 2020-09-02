@@ -6,6 +6,7 @@ interface IPhotoProps {
 interface IRoomModel {
   getNextPhotoProps(): IPhotoProps,
   getPrevPhotoProps(): IPhotoProps,
+  getPhotoUrlByIndex(index: number): string,
 }
 
 interface IRoomView extends IEventEmitter {
