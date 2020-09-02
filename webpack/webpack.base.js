@@ -122,7 +122,6 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: `${PATHS.src}/img/`, to: 'img/' },
         { from: `${PATHS.src}/fonts/`, to: 'fonts/' },
       ],
     }),

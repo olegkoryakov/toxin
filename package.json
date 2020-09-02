@@ -8,12 +8,13 @@
     "prod": "webpack --config ./webpack/webpack.prod.js",
     "lint": "eslint ./src/*.ts",
     "lintFix": "eslint --fix ./src/*.ts",
-    "deploy" : "gh-pages -d ./dist"
+    "deploy": "gh-pages -d ./dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/inputmask": "^4.0.1",
+    "@types/webpack-env": "^1.15.2",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@typescript-eslint/parser": "^3.0.2",
     "autoprefixer": "^9.8.0",
