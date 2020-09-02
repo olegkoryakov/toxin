@@ -7,6 +7,6 @@ mixin star-rating({ stars = 0 })
     while counter < starsCount
       - const starClassMod = counter < stars ? "star-rating__star_active" : "";
       li.star-rating__star(class= starClassMod)
-        img( src = require("../../img/star-filled.svg").default).star-rating__star-svg.star-rating__star-svg_filled
-        img( src = require("../../img/star-stroked.svg").default).star-rating__star-svg.star-rating__star-svg_stroked
+        img( src = require("../../blocks/star-rating/img/star-filled.svg").default).star-rating__star-svg.star-rating__star-svg_filled
+        img( src = require("../../blocks/star-rating/img/star-stroked.svg").default).star-rating__star-svg.star-rating__star-svg_stroked
       - counter++
