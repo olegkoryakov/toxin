@@ -48,6 +48,10 @@
     }
   }
 
+  &_stroked, &_filled {
+    width: 100%;
+  }
+
   &_registr {
     padding: 10px 20px;
   }
