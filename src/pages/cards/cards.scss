@@ -10,7 +10,8 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
   }
 
   &__number-search, &__about-room, &__sign-in, &__calendar, &__registration, &__room {
@@ -24,11 +25,6 @@
     &:last-of-type {
       max-width: 320px;
       flex-grow: 1;
-    }
-  
-    @media screen and (max-width: 1080px) {
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 }
