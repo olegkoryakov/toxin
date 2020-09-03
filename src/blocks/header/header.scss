@@ -140,38 +140,6 @@
       display: none;
     }
 
-  }
-  @media screen and (max-width: 844px) {
-    // &__content {
-    //   flex-direction: column;
-    // }
-
-
-
-    // &__nav-list {
-    //   flex-direction: column;
-    //   align-items: center;
-    // }
-
-    // &__nav-item {
-    //   margin-right: 0;
-    //   padding-top: 10px;
-    //   padding-bottom: 10px;
-    // }
-  
-    // &__logo {
-    //   margin-right: auto;
-    // }
-  
-    // &__site-nav {
-    //   margin: 0;
-    //   margin-bottom: 20px;
-    // }
-  
-    // &__user-nav {
-    //   margin-left: 0;
-    // }
-
     &_opened &__site-nav,
     &_opened &__user-nav {
       display: block;
@@ -189,6 +157,7 @@
         transform: translateY(-50%) rotate(45deg);
       }
     }
+
   }
 }
 
