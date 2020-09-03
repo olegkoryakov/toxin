@@ -1,5 +1,9 @@
 .toggle-button {
   user-select: none;
+  
+  &__input {
+    display: none;
+  }
 
   &__input + &__label {
     position: relative;

@@ -1,4 +1,4 @@
 mixin radio-button({ name = "", id = "", value = "", label = "", isChecked = false } = {})
   .radio-button
-    input.radio-button__input.visually-hidden(type = "radio", checked = isChecked, value = value, name = name, id = id)
+    input.radio-button__input(type = "radio", checked = isChecked, value = value, name = name, id = id)
     label.radio-button__label(for = id)= label

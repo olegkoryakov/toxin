@@ -2,6 +2,10 @@
   user-select: none;
   white-space: pre-wrap;
 
+  &__input {
+    display: none;
+  }
+
   &__input + &__label {
     cursor: pointer;
     display: block;

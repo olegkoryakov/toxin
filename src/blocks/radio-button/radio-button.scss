@@ -1,4 +1,9 @@
 .radio-button {
+
+  &__input {
+    display: none;
+  }
+
   &__label {
     position: relative;
   }
