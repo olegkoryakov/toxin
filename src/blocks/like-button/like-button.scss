@@ -4,21 +4,21 @@
   height: 20px;
   border: 1px solid rgba($primaryColor, 0.25);
   border-radius: 10px;
+  font-family:  inherit;
   font-size: 10px;
   line-height: 12px;
   display: flex;
   align-items: center;
 
-  &__img {
-    width: 20px;
-    & > svg {
-      margin: 0 auto;
-      stroke: rgba($primaryColor, 0.25);
-      fill: none;
-    }
+  &__svg {
+    margin-left: 5px;
+    stroke: rgba($primaryColor, 0.25);
+    fill: none;
   }
 
   &__count {
+    margin-right: 3px;
+    flex-grow: 2;
     color: rgba($primaryColor, 0.25);
   }
 
@@ -26,7 +26,7 @@
     border-color: $tertiaryColor;
   }
 
-  &_liked > &__img > svg path{
+  &_liked > &__svg {
     stroke: $tertiaryColor;
     fill: $tertiaryColor ;
   }
