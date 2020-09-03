@@ -1,5 +1,5 @@
 include ../like-button/like-button
-mixin comment({ url = "", text = "", name = "", date = "", likeButtonProps = {} })
+mixin comment({ url = "", text = "", name = "", date = "", likeButtonProps = {} } = {})
   .comment
     .comment__content
       img.comment__img(src = url, alt = name)

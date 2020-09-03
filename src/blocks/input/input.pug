@@ -1,4 +1,4 @@
-mixin input({ placeholder = "", value = "", isAutofocused = false, type = "text", isMasked = false})
+mixin input({ placeholder = "", value = "", isAutofocused = false, type = "text", isMasked = false} = {})
   - 
     const inputType = ["email", "password", "text"].includes(type) ? type : "text";
     const maskedClass = isMasked ? "input_date-mask" : "";

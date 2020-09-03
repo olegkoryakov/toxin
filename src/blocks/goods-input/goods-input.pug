@@ -1,6 +1,6 @@
 include ../expand-button/expand-button
 
-mixin goods-input({ title = "", placeholder = "", isHightlighted = false, value = "", status = "", isOened = false })
+mixin goods-input({ title = "", placeholder = "", isHightlighted = false, value = "", status = "", isOened = false } = {})
   - const hightlightClass = isHightlighted ? "goods-input__input_hightlight" : "";
   .goods-input
     h3.goods-input__title= title

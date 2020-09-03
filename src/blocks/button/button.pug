@@ -1,6 +1,6 @@
 include ../arrow/arrow
 
-mixin button({ type = "submit", text = "", formId = "", isHovered = false })
+mixin button({ type = "submit", text = "", formId = "", isHovered = false } = {})
   - 
     const isCorrectButtonType = ["submit", "sign-in", "registr", "filled", "stroked", "apply", "reset"].includes(type);
     const classMod = isCorrectButtonType ? `button_${type}` : "button_submit";

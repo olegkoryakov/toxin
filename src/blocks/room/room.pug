@@ -1,6 +1,6 @@
 include ../star-rating/star-rating
 
-mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLuxe = false })
+mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLuxe = false } = {})
   - const luxeClassMod = isLuxe ? "room_luxe" : "";
   article.room(class = luxeClassMod)
     .room__preview

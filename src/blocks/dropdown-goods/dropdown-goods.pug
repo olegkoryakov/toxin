@@ -1,7 +1,7 @@
 include ../goods-input/goods-input
 include ../goods/goods
 
-mixin dropdown-goods({ isOpened = false, type = "goods", hasApplyButton = false, hasResetButton = false, inputOptions = {} })
+mixin dropdown-goods({ isOpened = false, type = "goods", hasApplyButton = false, hasResetButton = false, inputOptions = {} } = {})
   - 
     const openedClass = isOpened ? "dropdown-goods_opened" : "dropdown-goods_closed";
     const isHightlighted = isOpened;

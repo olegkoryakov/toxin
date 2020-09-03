@@ -1,4 +1,4 @@
-mixin color({ text = "", hash = "", modifier = "" })
+mixin color({ text = "", hash = "", modifier = "" } = {})
   - 
     const isCorrectModifier = ["100", "75", "50", "25", "5", "purple", "green"].includes(modifier);
     const classModifier = isCorrectModifier ? `colors__color_${modifier}` : "colors__color_100";

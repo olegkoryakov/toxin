@@ -1,4 +1,4 @@
-mixin checkbox({ name = "", label = "", id = "", about = "", isChecked = false })
+mixin checkbox({ name = "", label = "", id = "", about = "", isChecked = false } = {})
   - const classMod = about != "" ? "checkbox_rich" : "";
   .checkbox(class = classMod)
     input.visually-hidden.checkbox__input(type="checkbox", name = name, id = id, checked = isChecked)

@@ -1,7 +1,7 @@
 include ../expand-button/expand-button
 include ../button/button
 
-mixin header({ lang = "ru", currentPage = 0, userName = "" })
+mixin header({ lang = "ru", currentPage = 0, userName = "" } = {})
   - 
     const enLinksText = ["Home", "About Us", "Services", "Careers", "News", "Documentation"];
     const ruLinksText = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];

@@ -1,4 +1,4 @@
-mixin type({ text = "", marker = "body"})
+mixin type({ text = "", marker = "body"} = {})
   - 
     const isCorrectMarker = ["h1", "h2", "h3", "body"].includes(marker);
     const modifierClass = isCorrectMarker ? `types__type_${marker}` : "types__type_body";

@@ -106,7 +106,7 @@ mixin subscription(lang)
     .footer__subscription-form
       +subscription-form({ placeholder })
 
-mixin footer({ lang = "ru", type = "maxi" })
+mixin footer({ lang = "ru", type = "maxi" } = {})
   footer.footer
     if type === "maxi"
       .footer__content

@@ -1,6 +1,6 @@
 include ../arrow/arrow
  
-mixin pagination({ title = "" })
+mixin pagination({ title = "" } = {})
   article.pagination
     if title !== ""
       h3.pagination__title= title

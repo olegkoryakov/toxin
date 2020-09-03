@@ -1,4 +1,4 @@
-mixin arrow({ colorTheme = "primary"})
+mixin arrow({ colorTheme = "primary"} = {})
   - 
     const isCorrectColorTheme = ["primary", "secondary"].includes(colorTheme);
     const colorThemeClass = isCorrectColorTheme ? `arrow_${colorTheme}` : "arrow_primary";
