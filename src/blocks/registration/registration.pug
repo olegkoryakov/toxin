@@ -13,9 +13,9 @@ mixin registration()
         fieldset(name = "user-data").registration__fieldset
           legend.registration__fieldset-legend.visually-hidden Данные пользователя 
           .registration__input
-            +input({ placeholder: "Имя" })
+            +input({ placeholder: "Имя", maskType: "firstName" })
           .registration__input
-            +input({ placeholder: "Фамилия" })
+            +input({ placeholder: "Фамилия", maskType: "secondName" })
           ul.registration__rario-button-list
             li.registration__rario-button-item
               .registration__rario-button
@@ -39,14 +39,14 @@ mixin registration()
             +input-box({
               title: "Дата рождения",
               placeholder: "ДД.ММ.ГГГГ",
-              isMasked: true,
+              maskType: "date"
             })
         fieldset(name = "login-data").registration__fieldset
           legend.registration__fieldset-legend Данные для входа в сервис
           .registration__input
-            +input({ placeholder: "Email", type: "email" })
+            +input({ placeholder: "Email", type: "email", maskType: "email" })
           .registration__input
-            +input({ placeholder: "Пароль", type: "password" })
+            +input({ placeholder: "Пароль", type: "password", maskType: "password" })
           .registration__toggle-button
             +toggle-button({
               name: "special",

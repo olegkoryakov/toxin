@@ -26,14 +26,13 @@ block content
             title: 'Text field',
             status: 'Default',
             placeholder: 'Email',
-            type: 'email',
+            maskType: "email"
           })
         .form-elements__input-box
           +input-box({
             title: 'Text field',
             status: 'Hover/Focus',
             placeholder: 'text field',
-            type: 'text',
             isAutofocused: true,
             value: 'This is pretty awesome'
           })
@@ -47,7 +46,7 @@ block content
           })
         .form-elements__input-box
           +input-box({
-            isMasked: true,
+            maskType: "date",
             placeholder: "ДД.ММ.ГГГГ",
             status: 'Default',
             title: 'Masked Text Field',

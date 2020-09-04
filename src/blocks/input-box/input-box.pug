@@ -1,10 +1,10 @@
 include ../input/input
 
-mixin input-box({ title = "", placeholder = "", status = "", value = "", type = "", isAutofocused = false, isMasked = false } = {})
+mixin input-box({ title = "", placeholder = "", status = "", value = "", isAutofocused = false, maskType = "" } = {})
   .input-box
     if title
       h3.input-box__title= title
     if status
       span.input-box__status= status
     .input-box__input
-      +input({ placeholder, isMasked, isAutofocused, value, type })
+      +input({ placeholder, maskType, isAutofocused, value })

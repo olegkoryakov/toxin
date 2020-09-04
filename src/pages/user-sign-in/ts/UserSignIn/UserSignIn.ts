@@ -3,6 +3,7 @@ import SignIn from '../../../../blocks/sign-in/ts/SignIn/SignIn';
 class UserSignIn implements IUserSignIn {
   constructor(userSignIn: HTMLElement) {
     this.userSignIn = userSignIn;
+    this.initFields();
   }
 
   private userSignIn: HTMLElement;
@@ -10,8 +11,8 @@ class UserSignIn implements IUserSignIn {
   private signIn!: ISignIn;
 
   private initFields() {
-    const registrationElement = document.querySelector('.registration');
-    this.signIn = new SignIn(registrationElement as HTMLElement);
+    const signInElement = document.querySelector('.sign-in');
+    this.signIn = new SignIn(signInElement as HTMLElement);
   }
 }
 

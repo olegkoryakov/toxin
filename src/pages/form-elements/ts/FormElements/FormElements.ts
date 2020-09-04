@@ -4,6 +4,7 @@ import Checkboxes from '../../../../blocks/checkboxes/ts/Checkboxes/Checkboxes';
 import LikeButton from '../../../../blocks/like-button/ts/LikeButton';
 import DropdownCalendar from '../../../../blocks/dropdown-calendar/ts/DropdownCalendar/DropdownCalendar';
 import RangeSlider from '../../../../blocks/range-slider/ts/RangeSlider';
+import SubscriptionForm from '../../../../blocks/subscription-form/ts/SubscriptionForm/SubscriptionForm';
 
 class FormElements implements IFormElements {
   constructor(formElementsElement: HTMLElement) {
@@ -20,6 +21,8 @@ class FormElements implements IFormElements {
   private dropdownsGuests!: IDropdownGoods[];
 
   private dropdownsCalendar!: IDropdownCalendar[];
+
+  private subscriptionForm!: ISubscriptionForm;
 
   private checkboxes!: ICheckboxes[];
 
@@ -44,6 +47,9 @@ class FormElements implements IFormElements {
     const checkboxesElements = this.formElementsElement.querySelectorAll('.checkboxes');
     const likeButtonsElements = this.formElementsElement.querySelectorAll('.like-button');
     const rangeSliderElement = this.formElementsElement.querySelector('.range-slider');
+    const subscriptionFormElement = this.formElementsElement.querySelector('.subscription-form');
+
+    this.subscriptionForm = new SubscriptionForm(subscriptionFormElement as HTMLElement);
 
     inputElements.forEach((inputElement) => {
       this.inputs.push(new Input(inputElement as HTMLInputElement));

@@ -1,5 +1,11 @@
 import InputMask from 'inputmask';
 
+InputMask.extendDefinitions({
+  c: {
+    validator: '[А-Яа-яЁё]',
+  },
+});
+
 export default class Input implements IInput {
   constructor(inputElement: HTMLInputElement) {
     this.inputElement = inputElement;
@@ -9,16 +15,16 @@ export default class Input implements IInput {
   private inputElement: HTMLInputElement;
 
   maskInput() {
-    const mask = new InputMask({
-      mask: '99.99.9999',
-      placeholder: 'ДД.ММ.ГГГГ',
-    });
-    mask.mask(this.inputElement);
+    const isInputHasInputMaskAttributes = Object.keys(this.inputElement.dataset).some((key) => key.startsWith('inputmask'));
+    if (isInputHasInputMaskAttributes) {
+      const mask = new InputMask({
+        showMaskOnHover: false,
+      });
+      mask.mask(this.inputElement);
+    }
   }
 
   init() {
-    if (this.inputElement.classList.contains('input_date-mask')) {
-      this.maskInput();
-    }
+    this.maskInput();
   }
 }
