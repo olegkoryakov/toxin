@@ -12,7 +12,9 @@ export default class Footer implements IFooter {
 
   private initSubscriptionForm() {
     const subscriptionFormElement = this.footerElement.querySelector('.subscription-form');
-    this.subsctiptionForm = new SubscriptionForm(subscriptionFormElement as HTMLElement);
+    if (subscriptionFormElement instanceof HTMLElement) {
+      this.subsctiptionForm = new SubscriptionForm(subscriptionFormElement);
+    }
   }
 
   private init() {
