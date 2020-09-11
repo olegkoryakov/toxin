@@ -35,9 +35,7 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
     if (goodItem === null) return;
     const goodIndex = this.getGoodIndex(goodItem);
     this.emit('increase-good', goodIndex);
-    if (!this.applyButton) {
-      this.emit('set-input-value', null);
-    }
+    this.emit('set-input-value', null);
   }
 
   private onMinusButtonClick(clickE: MouseEvent) {
@@ -45,9 +43,7 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
     if (goodItem === null) return;
     const goodIndex = this.getGoodIndex(goodItem);
     this.emit('decrease-good', goodIndex);
-    if (!this.applyButton) {
-      this.emit('set-input-value', null);
-    }
+    this.emit('set-input-value', null);
   }
 
   private addHandlers() {
@@ -73,8 +69,8 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
   }
 
   private onApplyButtonClick() {
-    this.toggleOpenedCallback();
-    this.emit('set-input-value', null);
+    const { value } = this.inputElement;
+    if (value !== '') this.toggleOpenedCallback();
   }
 
   private initControlButtons() {
