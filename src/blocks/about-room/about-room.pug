@@ -2,15 +2,32 @@ include ../dropdown-calendar/dropdown-calendar
 include ../dropdown-goods/dropdown-goods
 include ../button/button
 
-mixin about-room()
+mixin about-room({ isLuxe = false, roomNumber = 0, price = 0, daysCount = 0, discount = 0, additionalServicesPrice = 0 } = {})
+  - 
+    const luxeClass = isLuxe ? 'about-room__number-details_luxe' : '';
+    const regExp = /\d{1,3}(?=(\d{3})+(?!\d))/g;
+    const charToReplace = '$& ';
+    const [ priceString, discountString, additionalServicesPriceString ] = [price, discount, additionalServicesPrice]
+      .map((price) => `${price.toString().replace(regExp, charToReplace)}₽`);
+    const totalPrice = (price * daysCount);
+    const totalPriceWithDiscountAndServices = totalPrice - discount + additionalServicesPrice;
+
+    const totalPriceWithDiscountAndServicesString = totalPriceWithDiscountAndServices
+      .toString()
+      .replace(regExp, charToReplace)
+      + '₽';
+    const totalPriceString = totalPrice
+      .toString()
+      .replace(regExp, charToReplace)
+      + '₽';
   article.about-room
     .about-room__content
       .about-room__header
-        span.about-room__number-details.about-room__number-details_luxe
+        span.about-room__number-details(class = luxeClass)
           span.about-room__number-prefix  №
-          span.about-room__number 888
+          span.about-room__number= roomNumber
         .about-room__price-details
-          span.about-room__price 9 990₽
+          span.about-room__price= priceString
           span.about-room__price-postfix В сутки
       form.about-room__form(id = "about-room" action="mock")
         .about-room__dropdown-calendar
@@ -43,11 +60,11 @@ mixin about-room()
       .about-room__table-wrapper
         table.about-room__table
           tr.about-room__tr
-            td.about-room__td 9 990₽ х 4 суток
+            td.about-room__td= `${priceString} х ${daysCount} суток`
             td.about-room__td
-            td.about-room__td 39 960₽
+            td.about-room__td= totalPriceString
           tr.about-room__tr
-            td.about-room__td Сбор за услуги: скидка 2 179₽
+            td.about-room__td= `Сбор за услуги: скидка ${discountString}`
             td.about-room__td
               button(type = "button").about-room__info i
             td.about-room__td 0₽
@@ -55,10 +72,10 @@ mixin about-room()
             td.about-room__td Сбор за дополнительные услуги
             td.about-room__td
               button(type = "button").about-room__info i
-            td.about-room__td 300₽
+            td.about-room__td= additionalServicesPriceString
           tr.about-room__tr
             th.about-room__th Итого
-            th.about-room__th(colspan = 2) 38 081₽
+            th.about-room__th(colspan = 2)= totalPriceWithDiscountAndServicesString
       .about-room__submit-button
         +button(
           {
