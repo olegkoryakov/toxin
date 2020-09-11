@@ -1,88 +1,39 @@
-import { GRADIENTS, GRADIENT_NAMES } from '../GRADIENTS';
+import EventEmitter from '../../../../../ts/EventEmitter/EventEmitter';
 
-export default class DoughnutView implements IDoughnutView {
+export default class DoughnutView extends EventEmitter implements IDoughnutView {
   constructor(doughnutElement: HTMLElement) {
+    super();
     this.doughnutElement = doughnutElement;
+    this.initFields();
   }
 
   private circles!: SVGCircleElement[];
 
+  private doughnutAboutElement!: HTMLElement;
+
+  private doughnutAboutCountElement!: HTMLElement;
+
+  private doughnutContentElement!:HTMLElement;
+
   private doughnutElement: HTMLElement;
 
-  private getDoughnutPiece = (
-    radius: number,
-    cx: number,
-    cy: number,
-    color: string,
-    strokeDasharray: string,
-    strokeDashoffset: string,
-    value: number,
-  ) => {
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-
-    circle.classList.add('doughnut__circle');
-    circle.style.fill = 'none';
-    circle.setAttribute('r', `${radius}`);
-    circle.setAttribute('cx', `${cx}`);
-    circle.setAttribute('cy', `${cy}`);
-    circle.dataset.value = value.toString();
-    circle.dataset.color = color;
-    circle.style.stroke = `url(#${color})`;
-    circle.style.strokeDasharray = strokeDasharray;
-    circle.style.strokeDashoffset = strokeDashoffset;
-
-    return circle;
+  private initFields() {
+    this.initDoughnutContentElement();
+    this.initDoughnutAboutElements();
   }
 
-  renderDoughnut(
-    doughnutOptions: IDoughnutOptions,
-    circlesProps: ICircleProp[],
-  ) {
-    this.circles = [];
-    const {
-      CX,
-      CY,
-      RADIUS,
-      SIZE,
-    } = doughnutOptions;
-
-    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg') as SVGElement;
-    svgElement.classList.add('doughnut__svg');
-    svgElement.innerHTML = GRADIENTS;
-    svgElement.setAttribute('viewBox', `0 0 ${SIZE + 4} ${SIZE + 4}`);
-    svgElement.style.width = `${SIZE + 4}px`;
-    svgElement.style.height = `${SIZE + 4}px`;
-
-    const fragment = document.createDocumentFragment();
-    circlesProps.forEach(({ strokeDasharray, strokeDashoffset, value }, index) => {
-      const circle = this.getDoughnutPiece(
-        RADIUS,
-        CX,
-        CY,
-        GRADIENT_NAMES[index],
-        strokeDasharray,
-        strokeDashoffset,
-        value,
-      );
-
-      this.circles.push(circle);
-      fragment.append(circle);
-    });
-
-    this.addCirclesEvents();
-    svgElement.append(fragment);
-
-    const aboutElement = this.getDoughnutAboutElement();
-
-    this.doughnutElement.append(svgElement, aboutElement);
-
-    const { color } = this.circles[2].dataset;
-    const { value } = this.circles[2].dataset;
-    this.circles[2].classList.add('doughnut__circle_hovered');
-    this.setDoughnutAbout(`${value}`, `${color}`);
+  private addHandlers() {
+    this.addCirclesHandlers();
   }
 
-  private getDoughnutAboutElement = () => {
+  private initDoughnutContentElement() {
+    this.doughnutContentElement = document.createElement('div');
+    this.doughnutContentElement.classList.add('doughnut__content');
+
+    this.doughnutElement.append(this.doughnutContentElement);
+  }
+
+  private initDoughnutAboutElements() {
     const aboutElement = document.createElement('div');
     const aboutCountElement = document.createElement('span');
     const aboutTextElement = document.createElement('span');
@@ -91,55 +42,136 @@ export default class DoughnutView implements IDoughnutView {
     aboutCountElement.classList.add('doughnut__about-count');
     aboutTextElement.classList.add('doughnut__about-text');
 
+    aboutCountElement.textContent = '0';
     aboutTextElement.textContent = 'Голосов';
 
     aboutElement.append(aboutCountElement, aboutTextElement);
-
-    return aboutElement;
+    this.doughnutAboutElement = aboutElement;
+    this.doughnutAboutCountElement = aboutCountElement;
   }
 
-  private setDoughnutAbout(count: string, color: string) {
-    const doughnutAbout = this.doughnutElement.querySelector('.doughnut__about') as HTMLElement;
-    const doughnutAboutCount = doughnutAbout.querySelector('.doughnut__about-count') as HTMLSpanElement;
-    doughnutAboutCount.textContent = count.toString();
-    this.setDoughnutAboutColor(color);
+  private getDoughnutPiece = (
+    radius: number,
+    cx: number,
+    cy: number,
+    gradientId: string,
+    strokeDasharray: string,
+    strokeDashoffset: string,
+  ) => {
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+
+    circle.classList.add('doughnut__circle');
+    circle.style.fill = 'none';
+    circle.setAttribute('r', `${radius}`);
+    circle.setAttribute('cx', `${cx}`);
+    circle.setAttribute('cy', `${cy}`);
+    circle.style.stroke = `url(#${gradientId})`;
+    circle.style.strokeDasharray = strokeDasharray;
+    circle.style.strokeDashoffset = strokeDashoffset;
+
+    return circle;
   }
 
-  private setDoughnutAboutColor(color: string) {
-    const doughnutAbout = this.doughnutElement.querySelector('.doughnut__about') as HTMLElement;
-    const classArray = Array.from(doughnutAbout.classList);
-    const classModIndex = classArray
-      .findIndex((className) => className.startsWith('doughnut__about_'));
-    if (classModIndex !== -1) {
-      const classModifier = classArray[classModIndex];
-      doughnutAbout.classList.remove(classModifier);
+  private onCircleMouseEnter({ target }: MouseEvent) {
+    const circle = target as SVGCircleElement;
+    const circleIndex = this.circles.findIndex((c) => c === circle);
+    if (circleIndex !== -1) {
+      this.highlightCircleByIndex(circleIndex);
+      this.emit('set-about-props-by-index', circleIndex);
     }
-
-    doughnutAbout.classList.add(`doughnut__about_${color}`);
   }
 
-  private removeHoveredClassFromCircles() {
+  private addCirclesHandlers() {
     this.circles.forEach((circle) => {
-      if (circle.classList.contains('doughnut__circle_hovered')) {
-        circle.classList.remove('doughnut__circle_hovered');
-      }
+      circle.addEventListener('mouseenter', this.onCircleMouseEnter.bind(this));
     });
   }
 
-  private addHoveredClassToCircle(circle: SVGCircleElement) {
-    this.removeHoveredClassFromCircles();
-    circle.classList.add('doughnut__circle_hovered');
+  private highlightCircleByIndex(index: number) {
+    const HOVER_CLASS = 'doughnut__circle_hovered';
+    this.circles.forEach((circle) => circle.classList.remove(HOVER_CLASS));
+    this.circles[index].classList.add(HOVER_CLASS);
   }
 
-  private addCirclesEvents() {
-    this.circles.forEach((circle) => {
-      circle.addEventListener('mouseenter', () => {
-        this.setDoughnutAbout(`${circle.dataset.value}`, `${circle.dataset.color}`);
-        this.addHoveredClassToCircle(circle);
-      });
+  setAboutProps(color: string, value: string) {
+    this.doughnutAboutElement.style.color = color;
+    this.doughnutAboutCountElement.textContent = value;
+  }
 
-      circle.addEventListener('mouseleave', () => {
-      });
+  renderList(names: Array<string>, cssGradients: Array<string>) {
+    const fragment = document.createDocumentFragment();
+    const uList = document.createElement('ul');
+
+    uList.classList.add('doughnut__legend-list');
+    names.forEach((name, index) => {
+      const lItem = document.createElement('li');
+      const lItemFeature = document.createElement('div');
+      const lItemText = document.createElement('span');
+
+      lItem.classList.add('doughnut__legend-item');
+      lItemFeature.classList.add('doughnut__legend-feature');
+      lItemText.classList.add('doughnut__legend-text');
+
+      lItemText.textContent = name;
+      lItemFeature.style.backgroundImage = cssGradients[index];
+
+      lItem.append(lItemFeature, lItemText);
+      uList.append(lItem);
     });
+    fragment.append(uList);
+    this.doughnutContentElement.append(fragment);
+  }
+
+  private highlightDefaultCircle() {
+    const DEFAULT_CIRCLE_INDEX = 2;
+    this.highlightCircleByIndex(DEFAULT_CIRCLE_INDEX);
+    this.emit('set-about-props-by-index', DEFAULT_CIRCLE_INDEX);
+  }
+
+  renderDoughnut(
+    doughnutDefaults: IDoughnutDefaults,
+    circlesProps: Array<ICircleProps>,
+    svgGradients: string,
+    svgGradientsIds: Array<string>,
+  ) {
+    this.circles = [];
+    const {
+      CX,
+      CY,
+      RADIUS,
+      SIZE,
+    } = doughnutDefaults;
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg') as SVGElement;
+    svgElement.classList.add('doughnut__svg');
+    svgElement.innerHTML = svgGradients;
+    svgElement.setAttribute('viewBox', `0 0 ${SIZE + 4} ${SIZE + 4}`);
+    svgElement.style.width = `${SIZE + 4}px`;
+    svgElement.style.height = `${SIZE + 4}px`;
+
+    const fragment = document.createDocumentFragment();
+    circlesProps.forEach(({ strokeDasharray, strokeDashoffset }, index) => {
+      const circle = this.getDoughnutPiece(
+        RADIUS,
+        CX,
+        CY,
+        svgGradientsIds[index],
+        strokeDasharray,
+        strokeDashoffset,
+      );
+
+      this.circles.push(circle);
+      fragment.append(circle);
+    });
+    svgElement.append(fragment);
+
+
+    const doughnutDiagramWrapper = document.createElement('div');
+    doughnutDiagramWrapper.classList.add('doughnut__diagram-wrapper');
+
+    doughnutDiagramWrapper.append(svgElement, this.doughnutAboutElement);
+    this.doughnutContentElement.append(doughnutDiagramWrapper);
+
+    this.addHandlers();
+    this.highlightDefaultCircle();
   }
 }

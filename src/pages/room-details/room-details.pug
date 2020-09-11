@@ -1,7 +1,7 @@
 extends ../../layouts/page/page
 include ../../blocks/about-room/about-room
 include ../../blocks/advantages/advantages
-include ../../blocks/impressions/impressions
+include ../../blocks/doughnut/doughnut
 include ../../blocks/room-comments/room-comments
 include ../../blocks/rules/rules
 include ../../blocks/reset/reset
@@ -47,8 +47,8 @@ block content
                 list: advantagesProps
               }
             )
-          .room-details__impressions
-            +impressions()
+          .room-details__doughnut
+            +doughnut({ title: "Впечатления от номера" })
         .room-details__content-row
           .room-details__room-comments
             +room-comments()

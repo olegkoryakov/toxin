@@ -1,6 +1,6 @@
 import AboutRoom from '../../../../blocks/about-room/ts/AboutRoom/AboutRoom';
 import LikeButton from '../../../../blocks/like-button/ts/LikeButton';
-import Impressions from '../../../../blocks/impressions/ts/Implressions/Impressions';
+import Doughnut from '../../../../blocks/doughnut/ts/Doughnut/Doughnut';
 
 class RoomDetails implements IRoomDetails {
   constructor(roomDetailsElement: HTMLElement) {
@@ -15,15 +15,25 @@ class RoomDetails implements IRoomDetails {
 
   private aboutRoom!: IAboutRoom;
 
-  private impressions!: IImpressions;
+  private doughnut!: IDoughnut;
 
   private initFields() {
     const likeButtonElements = this.roomDetailsElement.querySelectorAll('.like-button');
-    const impressionsElement = this.roomDetailsElement.querySelector('.impressions');
+    const doughnutElement = this.roomDetailsElement.querySelector('.doughnut');
     const aboutRoomElement = this.roomDetailsElement.querySelector('.about-room');
 
     this.aboutRoom = new AboutRoom(aboutRoomElement as HTMLElement);
-    this.impressions = new Impressions(impressionsElement as HTMLElement);
+    this.doughnut = new Doughnut(
+      doughnutElement as HTMLElement,
+      [
+        { name: 'Великолепно', value: 230 },
+        { name: 'Хорошо', value: 230 },
+        { name: 'Удовлетворительно', value: 460 },
+        { name: 'Разочарован', value: 130 },
+        { name: 'Не великолепно', value: 255 },
+        { name: 'Бан', value: 100 },
+      ],
+    );
     likeButtonElements.forEach((likeButtonElement) => {
       this.likeButtons.push(new LikeButton(likeButtonElement as HTMLElement));
     });

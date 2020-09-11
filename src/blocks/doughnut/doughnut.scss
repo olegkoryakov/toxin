@@ -1,5 +1,21 @@
 .doughnut {
-  position: relative;
+
+  &__title {
+    @include h2Like;
+    margin-bottom: 18px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__diagram-wrapper {
+    width: 125px;
+    height: 125px;
+    position: relative;
+    margin-right: 20px;
+  }
 
   &__svg {
     display: inline-block;
@@ -13,22 +29,6 @@
     top: 45%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-
-    &_green {
-      color: $secondaryColor; 
-    }
-
-    &_yellow {
-      color: $quaternaryColor;
-    }
-
-    &_black {
-      color: $primaryColor;
-    }
-
-    &_purple {
-      color: $tertiaryColor;
-    }
   }
 
   &__about-count {
@@ -52,5 +52,22 @@
     &_hovered {
       stroke-width: 10px;
     }
+  }
+
+  &__legend-list {
+    @include reset-list;
+    width: 161px;
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__legend-feature {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
   }
 }
