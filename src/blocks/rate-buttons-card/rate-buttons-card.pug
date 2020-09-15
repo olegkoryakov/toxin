@@ -1,7 +1,7 @@
 include ../star-rating/star-rating
 
 mixin rate-buttons-card({ title = "", rateButtonsOptions = [] } = {})
-  article.rate-buttons-card
+  section.rate-buttons-card
     h3.rate-buttons-card__title= title
     ul.rate-buttons-card__list
       each rateButtonOptions in rateButtonsOptions

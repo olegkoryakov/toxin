@@ -2,7 +2,7 @@ include ../star-rating/star-rating
 
 mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLuxe = false, perDayText = "", reviewsText = "" } = {})
   - const luxeClassMod = isLuxe ? "room_luxe" : "";
-  article.room(class = luxeClassMod)
+  .room(class = luxeClassMod)
     .room__preview
       img(src = url).room__preview-img
       button.room__preview-button.room__preview-button_next

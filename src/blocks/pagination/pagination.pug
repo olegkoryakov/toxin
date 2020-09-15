@@ -1,7 +1,7 @@
 include ../arrow/arrow
  
 mixin pagination({ title = "", links = [], subtitle = "" } = {})
-  article.pagination
+  .pagination
     if title !== ""
       h3.pagination__title= title
     ul.pagination__pages

@@ -6,7 +6,7 @@ mixin checkboxes({ title = "", list = [], isExpandable = false, isOpened = false
     const richCheckboxesClassModifier = areCheckboxesRich ? "checkboxes_rich": "";
     const openedClass = isExpandable 
     ? (isOpened ? "checkboxes_opened" : "checkboxes_closed") : "";    
-  article.checkboxes(class = [openedClass, richCheckboxesClassModifier])
+  section.checkboxes(class = [openedClass, richCheckboxesClassModifier])
     if title
       h3.checkboxes__title= title
     if isExpandable
