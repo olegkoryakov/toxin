@@ -1,7 +1,7 @@
 include ../button/button
 include ../arrow/arrow
 
-mixin calendar
+mixin calendar({ applyButtonText = "Применить", resetButtonText = "Очистить" } = {})
   article.calendar
     .calendar__content
       span.calendar__month Август 2019
@@ -65,13 +65,13 @@ mixin calendar
           +button(
             {
               type: "reset",
-              text: "Очистить",
+              text: resetButtonText,
             }
           )
         .calendar__controls-apply-button
           +button(
             {
               type: "apply",
-              text: "Применить"
+              text: applyButtonText
             }
           )

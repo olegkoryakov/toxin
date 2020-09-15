@@ -5,33 +5,11 @@ include ../../blocks/footer/footer
 block title
   title Headers &amp Footers
 block content
+  - const { defaultHeaderOptions, registeredUserHeaderOptions, defaultFooterOptions } = require('./headers-and-footers.json');
   section.headers-and-footers
     .headers-and-footers__header
-      +header(
-        {
-          lang: "en",
-          currentPage: 1
-        }
-      )
+      +header(defaultHeaderOptions)
     .headers-and-footers__header
-      +header(
-        {
-          lang: "en",
-          currentPage: 1,
-          userName: "Cosmin Negoita"
-        }
-      )
+      +header(registeredUserHeaderOptions)
     .headers-and-footers__footer
-      +footer(
-        {
-          lang: "en",
-          type: "maxi"
-        }
-      )
-    .headers-and-footers__footer
-      +footer(
-        {
-          lang: "en",
-          type: "mini"
-        }
-      )
+      +footer(defaultFooterOptions)

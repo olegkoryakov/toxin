@@ -5,7 +5,6 @@ import MONTH_NAMES from '../MONTH_NAMES';
 export default class DropdownCalendar extends Dropdown implements IDropdownCalendar {
   constructor(
     dropdownCalendarElement: HTMLElement,
-    selectedDates?: ISelectedDates,
   ) {
     super({
       dropdownElement: dropdownCalendarElement,
@@ -13,8 +12,7 @@ export default class DropdownCalendar extends Dropdown implements IDropdownCalen
       closeClass: 'dropdown-calendar_closed',
     });
     this.dropdownCalendarElement = dropdownCalendarElement;
-
-    this.initFields(selectedDates);
+    this.initFields();
     this.addHandlers();
   }
 
@@ -28,7 +26,7 @@ export default class DropdownCalendar extends Dropdown implements IDropdownCalen
 
   private calendar!: ICalendar;
 
-  private initFields = (selectedDates?: ISelectedDates) => {
+  private initFields = () => {
     const inputsElements = this.dropdownCalendarElement.querySelectorAll('.dates-input__input');
     const inputs = Array
       .from(inputsElements)
@@ -37,12 +35,18 @@ export default class DropdownCalendar extends Dropdown implements IDropdownCalen
     const applyButton = calendarContainer.querySelector('.button_apply') as HTMLElement;
     const resetButton = calendarContainer.querySelector('.button_reset') as HTMLElement;
 
+    let selectedDates: ISelectedDates | undefined;
+
+    const dataSelectedDates = this.dropdownCalendarElement.dataset.selectedDates;
+    if (dataSelectedDates) {
+      selectedDates = JSON.parse(dataSelectedDates) as ISelectedDates;
+    }
+
 
     this.inputs = inputs;
     this.calendar = new Calendar(calendarContainer, selectedDates);
     this.applyButton = applyButton;
     this.resetButton = resetButton;
-
 
     if (selectedDates) {
       const { from, to } = selectedDates;

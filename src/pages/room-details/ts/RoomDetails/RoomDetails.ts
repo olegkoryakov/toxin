@@ -23,17 +23,7 @@ class RoomDetails implements IRoomDetails {
     const aboutRoomElement = this.roomDetailsElement.querySelector('.about-room');
 
     this.aboutRoom = new AboutRoom(aboutRoomElement as HTMLElement);
-    this.doughnut = new Doughnut(
-      doughnutElement as HTMLElement,
-      [
-        { name: 'Великолепно', value: 230 },
-        { name: 'Хорошо', value: 230 },
-        { name: 'Удовлетворительно', value: 460 },
-        { name: 'Разочарован', value: 130 },
-        { name: 'Не великолепно', value: 255 },
-        { name: 'Бан', value: 100 },
-      ],
-    );
+    this.doughnut = new Doughnut(doughnutElement as HTMLElement);
     likeButtonElements.forEach((likeButtonElement) => {
       this.likeButtons.push(new LikeButton(likeButtonElement as HTMLElement));
     });

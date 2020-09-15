@@ -11,7 +11,7 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
     this.inputElement = inputElement;
     this.toggleOpenedCallback = toggleOpenedCallback;
     this.initControlButtons();
-    this.addHandlers();
+    this.addControlsHandlers();
   }
 
   private toggleOpenedCallback: Function;
@@ -46,17 +46,7 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
     this.emit('set-input-value', null);
   }
 
-  private addHandlers() {
-    const plusButtons = this.goodsWidget.querySelectorAll('.goods__good-button_plus');
-    const minusButtons = this.goodsWidget.querySelectorAll('.goods__good-button_minus');
-
-    plusButtons.forEach((plusButton) => {
-      (plusButton as HTMLElement).addEventListener('click', this.onPlusButtonClick.bind(this));
-    });
-    minusButtons.forEach((minusButton) => {
-      (minusButton as HTMLElement).addEventListener('click', this.onMinusButtonClick.bind(this));
-    });
-
+  private addControlsHandlers() {
     if (this.applyButton || this.resetButton) {
       if (this.applyButton) this.applyButton.addEventListener('click', this.onApplyButtonClick.bind(this));
       if (this.resetButton) this.resetButton.addEventListener('click', this.onResetButtonClick.bind(this));
@@ -102,5 +92,40 @@ export default class GoodsView extends EventEmitter implements IGoodsView {
     const goodsItems = this.goodsWidget.querySelectorAll('.goods__good');
     const goodsItemMinusButton = goodsItems[index].querySelector('.goods__good-button_minus') as HTMLButtonElement;
     goodsItemMinusButton.disabled = false;
+  }
+
+  render(goodsArray: TGoodsArray) {
+    const fragment = document.createDocumentFragment();
+    goodsArray.forEach(({ name, count }) => {
+      const li = document.createElement('li');
+      const plusButton = document.createElement('button');
+      const minusButton = document.createElement('button');
+      const nameElement = document.createElement('span');
+      const countElement = document.createElement('span');
+
+      li.classList.add('goods__good');
+      plusButton.classList.add('goods__good-button', 'goods__good-button_plus');
+      minusButton.classList.add('goods__good-button', 'goods__good-button_minus');
+      nameElement.classList.add('goods__good-name');
+      countElement.classList.add('goods__good-count');
+
+      plusButton.type = 'button';
+      minusButton.type = 'button';
+
+      plusButton.addEventListener('click', this.onPlusButtonClick.bind(this));
+      minusButton.addEventListener('click', this.onMinusButtonClick.bind(this));
+
+      plusButton.textContent = '+';
+      minusButton.textContent = '-';
+      nameElement.textContent = name;
+      countElement.textContent = count.toString();
+
+      li.append(nameElement, minusButton, countElement, plusButton);
+      fragment.append(li);
+    });
+
+    const goodsList = this.goodsWidget.querySelector('.goods__list') as HTMLElement;
+    goodsList.innerHTML = '';
+    goodsList.append(fragment);
   }
 }

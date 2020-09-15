@@ -1,15 +1,7 @@
 include ../bullet-list/bullet-list
 
-mixin rules()
+mixin rules({ title = "", bulletListOptions = {} } = {})
   section.rules
-    h2.rules__title Правила
+    h2.rules__title= title
     .rules__bullet-list
-      +bullet-list(
-        {
-          names: [
-            "Нельзя с питомцами",
-            "Без вечеринок и мероприятий",
-            "Время прибытия — после 13:00, а выезд до 12:00"
-          ],
-        }
-      )
+      +bullet-list(bulletListOptions)

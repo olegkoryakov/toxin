@@ -1,0 +1,161 @@
+{
+  "numberSearchOptions": {
+    "title": "Найдем номера под ваши пожелания",
+    "dropdownCalendarOptions": {
+      "inputsOptions": [
+        {
+          "placeholder": "ДД.ММ.ГГГГ",
+          "title": "Прибытие"
+        },
+        {
+          "placeholder": "ДД.ММ.ГГГГ",
+          "title": "Выезд"
+        }
+      ]
+    },
+    "dropdownGoodsOptions": {
+      "type": "guests",
+      "hasApplyButton": true,
+      "hasResetButton": true,
+      "inputOptions": {
+        "placeholder": "Сколько гостей",
+        "title": "Гости"
+      }
+    },
+    "buttonOptions": {
+      "type": "submit",
+      "text": "Подобрать номер"
+    }
+  },
+  "aboutRoomOptions": {
+    "isLuxe": true,
+    "roomNumber": 888,
+    "roomPrefix": "№",
+    "roomPostfix": "В сутки",
+    "roomPrice": "9 990₽",
+    "tableData": {
+      "heading": {
+        "totalText": "Итого",
+        "totalPrice": "39 960₽"
+      },
+      "rows": [
+        { "text": "9 990₽ х 4 суток", "price": "39 960₽" },
+        { "text": "Сбор за услуги: скидка 2 179₽", "hasInfoButton": true, "price": "0₽" },
+        { "text": "Сбор за дополнительные услуги", "hasInfoButton": true ,"price": "300₽" }
+      ]
+    },
+    "daysCount": 4,
+    "discount": 2179,
+    "additionalServicesPrice": 300,
+    "dropdownCalendarOptions": {
+      "selectedDates": {
+        "from": "19.9.2020",
+        "to": "22.9.2020"
+      },
+      "inputsOptions": [
+        {
+          "placeholder": "ДД.ММ.ГГГГ",
+          "title": "Прибытие"
+        },
+        {
+          "placeholder": "ДД.ММ.ГГГГ",
+          "title": "Выезд"
+        }
+      ]
+    },
+    "dropdownGoodsOptions": {
+      "goodsCount": [2, 1, 0],
+      "type": "guests",
+      "hasApplyButton": true,
+      "hasResetButton": true,
+      "inputOptions": {
+        "placeholder": "Сколько гостей",
+        "title": "Гости"
+      }
+    },
+    "buttonOptions": {
+      "type": "submit",
+      "text": "Забронировать",
+      "formId": "about-room"
+    }
+  },
+  "registrationOptions": {
+    "title": "Регистрация аккаунта",
+    "userDataFieldsetOptions": {
+      "userLegend": "Данные пользователя",
+      "userNameInputsOptions": [
+        { "placeholder": "Имя", "maskType": "firstName" },
+        { "placeholder": "Фамилия", "maskType": "secondName" }
+      ],
+      "userGenderRadiosOptions": [
+        {
+          "name": "gender",
+          "value": "male",
+          "id": "male",
+          "label": "Мужчина",
+          "isChecked": true
+        },
+        {
+          "name": "gender",
+          "value": "female",
+          "id": "female",
+          "label": "Женщина",
+          "isChecked": false
+        }
+      ],
+      "userBirthDateInputBoxOptions": {
+        "title": "Дата рождения",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "maskType": "date"
+      }
+    },
+    "loginDataFieldsetOptions": {
+      "loginLegend": "Данные для входа в сервис",
+      "loginInputsOptions": [
+        { "placeholder": "Email", "maskType": "email" },
+        { "placeholder": "Пароль", "maskType": "Password" }
+      ],
+      "addsToggleButtonOptions": {
+        "name": "special",
+        "id": "special",
+        "label": "Получать спецпредложения",
+        "isChecked": false   
+      }
+    },
+    "submitButtonProps": { "type": "submit", "text": "Перейти к оплате" },
+    "signInText": "Уже есть аккаунт на Toxin",
+    "signInButtonProps": { "type": "stroked", "text": "Войти" }
+  },
+  "signInOptions": {
+    "title": "Войти",
+    "inputsOptions": [
+      { "placeholder": "Email", "maskType": "email" },
+      { "placeholder": "Пароль", "maskType": "password" }
+    ],
+    "signInButtonOptions": { "text": "Войти", "type": "submit" },
+    "registrationText": "Нет аккаунта на Toxin?",
+    "registrationButtonOptions": { "text": "Создать", "type": "stroked" }
+  },
+  "roomsProps": [
+    {
+      "url": "./img/room888.png",
+      "number": 888,
+      "isLuxe": true,
+      "reviewsCount": 145,
+      "rating": 5,
+      "price": "9 990",
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    { 
+      "url": "./img/room840.png",
+      "number": 840,
+      "isLuxe": false,
+      "reviewsCount": 65,
+      "rating": 4,
+      "price": "9 900",
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    }
+  ]
+}

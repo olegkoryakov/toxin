@@ -10,38 +10,22 @@ include ../../blocks/goods/goods
 block title
   title Cards
 block content
+  - const { numberSearchOptions, registrationOptions, signInOptions, aboutRoomOptions, roomsProps } = require('./cards.json');
   section.cards
     .cards__content.content-wrapper
       .cards__column
         .cards__number-search
-          +number-search()
+          +number-search(numberSearchOptions)
         .cards__registration  
-          +registration()
+          +registration(registrationOptions)
       .cards__column
         .cards__about-room
-          +about-room({ isLuxe: true, roomNumber: 888, price: 9990, additionalServicesPrice: 300, discount: 2179, daysCount: 4 })
+          +about-room(aboutRoomOptions)
         .cards__sign-in  
-          +sign-in()
+          +sign-in(signInOptions)
       .cards__column
         .cards__calendar
           +calendar()
-        .cards__room
-          +room(
-            {
-              url: require("./img/room888.png").default,
-              number: 888,
-              isLuxe: true,
-              reviewsCount: 145,
-              rating: 5,
-              price: "9 990"
-            })
-        .cards__room    
-          +room(
-            {
-              url: require("./img/room840.png").default,
-              number: 840,
-              isLuxe: false,
-              reviewsCount: 65,
-              rating: 4,
-              price: "9 900"
-            })
+        each roomProps in roomsProps
+          .cards__room
+            +room(roomProps)

@@ -75,12 +75,12 @@ export default class GoodsPresenter implements IGoodsPresenter {
 
   private init() {
     const goods = this.goodsModel.getGoods();
-    const { length } = goods;
-    for (let i = 0; i < length; i += 1) {
-      const { name, count } = goods[i];
-      if (count === 0) this.goodsView.disableMinusButton(i);
-      this.goodsView.setGoodProps(i, name, count);
-    }
+    this.goodsView.render(goods);
+
+    goods.forEach(({ count }, index) => {
+      if (count === 0) this.goodsView.disableMinusButton(index);
+    });
+
     this.setInputValue();
   }
 }

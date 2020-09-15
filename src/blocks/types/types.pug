@@ -1,9 +1,10 @@
-include ./type
-
-mixin types()
+mixin types({ typeList = [] } = {})
   ul.types
-    +type({ text: "This one is the sub-section or widget title", marker: "h1" })
-    +type({ text: "Next one is the item title inside widgets", marker: "h2" })
-    +type({ text: "This is a label or CTA text", marker: "h3" })
-    +type({ text: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", marker: "body" })
-      
+    each typeItem in typeList
+      - 
+        const { text, marker } = typeItem;
+        const isCorrectMarker = ["h1", "h2", "h3", "body"].includes(marker);
+        const modifierClass = isCorrectMarker ? `types__type_${marker}` : "types__type_body";
+      li.types__type(class = modifierClass)
+        span.types__type-marker= marker
+        span.types__type-text= text

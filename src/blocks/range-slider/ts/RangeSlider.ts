@@ -11,15 +11,21 @@ export default class RangeSlider implements IRangeSlider {
   private rangeSliderElement: HTMLElement;
 
   private init() {
-    const valuesRange = {
+    let valuesRange = {
       min: 0,
       max: 15000,
     };
-
-    const currentValue = {
+    let currentValue = {
       from: 5000,
       to: 10000,
     };
+    const dataValuesRange = this.rangeSliderElement.dataset.valuesRange;
+    const dataCurrentValue = this.rangeSliderElement.dataset.currentValue;
+
+    if (dataValuesRange && dataCurrentValue) {
+      valuesRange = JSON.parse(dataValuesRange) as IValuesRange;
+      currentValue = JSON.parse(dataCurrentValue) as ICurrentValue;
+    }
 
     const rangeSliderModel = new RangeSliderModel(currentValue, valuesRange);
     const rangeSliderView = new RangeSliderView(this.rangeSliderElement);

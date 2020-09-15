@@ -1,20 +1,9 @@
 include ../like-button/like-button
 
-mixin like-buttons-card
+mixin like-buttons-card({ title = "", likeButtonsOptions = [] } = {})
   article.like-buttons-card
-    h3.like-buttons-card__title Like button
-    - 
-      const likeButtonsProps = [
-        {
-          isLiked: false,
-          count: 2 
-        },
-        {
-          isLiked: true,
-          count: 12,
-        }
-      ];
+    h3.like-buttons-card__title= title
     ul.like-buttons-card__list
-      each obj in likeButtonsProps
+      each likeButtonOptions in likeButtonsOptions
         li.like-buttons-card__item
-          +like-button(obj)
+          +like-button(likeButtonOptions)

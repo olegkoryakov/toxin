@@ -1,10 +1,11 @@
-include ./color
-mixin colors()
+mixin colors({ colorList = [] } = {})
+  - console.log(colorList);
   ul.colors
-    +color({ text: "Dark Shade 100%", hash: "#1F2041", modifier: "100" })
-    +color({ text: "Dark Shade 75%", hash: "#1F2041", modifier: "75" })
-    +color({ text: "Dark Shade 50%", hash: "#1F2041", modifier: "50" })
-    +color({ text: "Dark Shade 25%", hash: "#1F2041", modifier: "25" })
-    +color({ text: "Dark Shade 5%", hash: "#1F2041", modifier: "5" })
-    +color({ text: "Purple", hash: "#BC9CFF", modifier: "purple" })
-    +color({ text: "Green", hash: "#6FCF97", modifier: "green" })
+    each colorItem in colorList
+      - 
+        const { text, hash, modifier } = colorItem;
+        const isCorrectModifier = ["100", "75", "50", "25", "5", "purple", "green"].includes(modifier);
+        const classModifier = isCorrectModifier ? `colors__color_${modifier}` : "colors__color_100";
+      li.colors__color(class = classModifier)
+        span.colors__color-name= text
+        span.colors__color-hash= hash

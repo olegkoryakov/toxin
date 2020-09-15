@@ -1,5 +1,10 @@
-mixin range-slider({ title = "", subtitle = "" } = {})
-  article.range-slider
+mixin range-slider({ title = "", subtitle = "", currentValue = { from: 5000, to: 10000 }, valuesRange = { min: 0, max: 15000 }} = {})
+  - 
+    const rangeSliderAttributes = {
+      "data-current-value": currentValue,
+      "data-values-range": valuesRange,
+    }
+  article.range-slider&attributes(rangeSliderAttributes)
     .range-slider__header
       h3.range-slider__title= title
       span.range-slider__price 5 000₽ - 10 000₽

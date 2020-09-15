@@ -1,48 +1,32 @@
 include ../expand-button/expand-button
 include ../button/button
 
-mixin header({ lang = "ru", currentPage = 0, userName = "" } = {})
-  - 
-    const enLinksText = ["Home", "About Us", "Services", "Careers", "News", "Documentation"];
-    const ruLinksText = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
-
-    let linksText;
-    if (lang === "ru") linksText = [...ruLinksText];
-    else if (lang === "en") linksText = [...enLinksText];
-
-    const isExpandableItem = (linkText) => {
-      return linkText === "Services" || linkText === "Услуги" || linkText === "Соглашения";
-    };
-
-    const isCurrentPage = (index) => index + 1 === currentPage;
+mixin header({ logoUrl = "", userName = "", links = [], buttonsOptions = [], isUserRegistered = false } = {})
   header.header
     .header__content
       .header__logo
-        img.header__logo-svg(src = require("../../blocks/header/img/toxin-logo.svg").default)
+        img.header__logo-svg(src = logoUrl, alt = "Toxin")
         button(type = 'button').header__burger-button
       nav.header__site-nav
         ul.header__nav-list
-          each linkText, index in linksText
+          each link in links
             - 
-              const itemClassModifier = isExpandableItem(linkText) ? "header__nav-item_expandable" : "";
-              const currentPageClassModifier = isCurrentPage(index) ? "header__nav-link_current" : "";
-            li.header__nav-item(class = itemClassModifier)
-              if itemClassModifier
+              const { text, url, isCurrent, isExpandable } = link;
+              const linkText = text ? text : "";
+              const currentClass = isCurrent ? "header__nav-link_current" : "";
+              const expandableClass = isExpandable ? "header__nav-item_expandable" : "";
+              const href = url ? url : "";
+            li.header__nav-item(class = expandableClass)
+              if isExpandable
                 .header__nav-expand-button
-                  +expand-button({ opened: false })
-              a.header__nav-link(href="mock" class = currentPageClassModifier)= linkText
+                  +expand-button()
+              a.header__nav-link(class = currentClass, href = href)= linkText
       nav.header__user-nav
-        if userName !== ""
+        if userName !== "" && isUserRegistered
           span.header__user-name= userName
         else
           ul.header__nav-list
-            -
-              let buttonsText;
-              if (lang === "ru") buttonsText = ["Войти", "Зарегистрироваться"];
-              else if (lang === "en") buttonsText = ["Login", "Registr"];
-            li.header__nav-item
-              .header__nav-button.header__nav-button_login
-                +button({ type: "sign-in", text: buttonsText[0] })
-            li.header__nav-item  
-              .header__nav-button.header__nav-button_registr
-                +button({ type: "registr", text: buttonsText[1] })
+            each buttonOptions in buttonsOptions
+              li.header__nav-item
+                .header__nav-button.header__nav-button_login
+                  +button(buttonOptions)

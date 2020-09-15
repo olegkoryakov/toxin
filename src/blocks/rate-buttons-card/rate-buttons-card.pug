@@ -1,19 +1,10 @@
 include ../star-rating/star-rating
 
-mixin rate-buttons-card
+mixin rate-buttons-card({ title = "", rateButtonsOptions = [] } = {})
   article.rate-buttons-card
-    h3.rate-buttons-card__title Rate button
-    -
-      const starRatingProps = [
-        {
-          stars: 4,
-        },
-        {
-          stars: 5,
-        }
-      ];
+    h3.rate-buttons-card__title= title
     ul.rate-buttons-card__list
-      each obj in starRatingProps
+      each rateButtonOptions in rateButtonsOptions
         li.rate-buttons-card__item
           .rate-buttons-card__star-rating
-            +star-rating(obj)
+            +star-rating(rateButtonOptions)

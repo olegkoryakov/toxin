@@ -1,59 +1,45 @@
 include ../button/button
 
-mixin goods({ type = "guests", hasApplyButton = false, hasResetButton = false } = {})
+mixin goods({ type = "guests", hasApplyButton = false, hasResetButton = false, applyButtonText = "Применить", resetButtonText = "Очистить" } = {})
   -
-    const goodsList = ["Спальни", "Кровати", "Ванные комнаты"];
-    const guestsList = ["Взрослые", "Дети", "Младенцы"];
     let classMod = "";
-    let currentList = [];
     if (type === "guests") {
-      currentList = [...guestsList];
       classMod = `goods_${type}`;
     } else if (type === "goods") {
-      currentList = [...goodsList];
       classMod = `goods_${type}`;
     }
   .goods(class = classMod)
     ul.goods__list
-      each item in currentList
-        li.goods__good
-          span.goods__good-name= item
-          button(type = "button").goods__good-button.goods__good-button_minus -
-          span.goods__good-count 0
-          button(type = "button").goods__good-button.goods__good-button_plus +
-    if hasApplyButton || hasResetButton
-      .goods__controls
-        if hasApplyButton && hasResetButton
-          .goods__controls-button.goods__controls-button_reset
-            +button(
-              {
-                text: "Очистить",
-                type : "reset",
-              }
-            )
-          .goods__controls-button.goods__controls-button_apply
-            +button(
-              {
-                text: "Применить",
-                type: "apply",
-              }
-            )
-        else if hasResetButton
-          .goods__controls-button.goods__controls-button_reset
-            +button(
-              {
-                text: "Очистить",
-                type : "reset",
-              }
-            )
-        else if hasApplyButton
-          .goods__controls-button.goods__controls-button_apply
-            +button(
-              {
-                text: "Применить",
-                type : "apply",
-              }
-            )
-          
-
-   
+  if hasApplyButton || hasResetButton
+    .goods__controls
+      if hasApplyButton && hasResetButton
+        .goods__controls-button.goods__controls-button_reset
+          +button(
+            {
+              text: resetButtonText,
+              type : "reset",
+            }
+          )
+        .goods__controls-button.goods__controls-button_apply
+          +button(
+            {
+              text: applyButtonText,
+              type: "apply",
+            }
+          )
+      else if hasResetButton
+        .goods__controls-button.goods__controls-button_reset
+          +button(
+            {
+              text: resetButtonText,
+              type : "reset",
+            }
+          )
+      else if hasApplyButton
+        .goods__controls-button.goods__controls-button_apply
+          +button(
+            {
+              text: applyButtonText,
+              type : "apply",
+            }
+          )

@@ -7,56 +7,33 @@ include ../../blocks/rules/rules
 include ../../blocks/reset/reset
 
 block variables
-  - const title = "Room details";
+  - const data = require('./room-details.json')
+  - const { title, headerOptions, footerOptions } = data;
 block content
+  - const { roomPreviewOptions, aboutRoomOptions, doughnutOptions, advantagesOptions, rulesOptions, resetOptions, roomCommentsOptions } = data;
   .room-details
     section.room-details__preview
+      - const { mainImgUrl, restImgUrls } = roomPreviewOptions;
       .room-details__preview-gallery.room-details__preview-gallery_main
-        img(src = require("./img/preview-room888-1.jpg").default).room-details__preview-img
+        img(src = mainImgUrl ).room-details__preview-img
       .room-details__preview-gallery.room-details__preview-gallery_other
-        img(src = require("./img/preview-room888-2.jpg").default).room-details__preview-img
-        img(src = require("./img/preview-room888-3.jpg").default).room-details__preview-img
+        each restImgUrl in restImgUrls
+          img(src= restImgUrl).room-details__preview-img
     .room-details__content.content-wrapper
       .room-details__content-column.room-details__content-column_main
         .room-details__content-row
           .room-details__advantages
-            - 
-              const advantagesProps = [
-                {
-                  title: "Комфорт",
-                  url: require("./img/comfort.svg").default,
-                  alt: "Комфорт",
-                  text: "Шумопоглощающие стены",
-                },
-                {
-                  title: "Удобство",
-                  url: require("./img/good.svg").default,
-                  alt: "Удобство",
-                  text: "Окно в каждой из спален",
-                },
-                {
-                  title: "Уют",
-                  url: require("./img/cosiness.svg").default,
-                  alt: "Уют",
-                  text: "Номер оснащён камином",
-                }
-              ];
-            +advantages(
-              {
-                title: "Сведения о номере",
-                list: advantagesProps
-              }
-            )
+            +advantages(advantagesOptions)
           .room-details__doughnut
-            +doughnut({ title: "Впечатления от номера" })
+            +doughnut(doughnutOptions)
         .room-details__content-row
           .room-details__room-comments
-            +room-comments()
+            +room-comments(roomCommentsOptions)
         .room-details__content-row
           .room-details__rules
-            +rules()
+            +rules(rulesOptions)
           .room-details__reset
-            +reset()
+            +reset(resetOptions)
       .room-details__content-column.room-details__content-column_side
         .room-details__about-room
-          +about-room({ isLuxe: true, roomNumber: 888, price: 9990, additionalServicesPrice: 300, discount: 2179, daysCount: 4 })
+          +about-room(aboutRoomOptions)

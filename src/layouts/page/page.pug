@@ -10,11 +10,6 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title #{title}
   body
-    +header({
-      lang: "ru",
-    })
+    +header(headerOptions)
     block content
-    +footer({
-      type: "maxi",
-      lang: "ru",
-    })
+    +footer(footerOptions)

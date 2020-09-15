@@ -1,0 +1,270 @@
+{
+  "title": "Room Details",
+  "headerOptions": {
+  "logoUrl": "./img/toxin-logo.svg",
+  "links": [
+    {
+      "text": "О нас",
+      "url": "mock",
+      "isCurrent": true
+    },
+    {
+      "text": "Услуги",
+      "url": "mock",
+      "isExpandable": true
+    },
+    {
+      "text": "Вакансии",
+      "url": "mock"
+    },
+    {
+      "text": "Новости",
+      "url": "mock"
+    },
+    {
+      "text": "Соглашения",
+      "url": "mock",
+      "isExpandable": true
+    }
+  ],
+  "buttonsOptions": [
+    {
+      "type": "sign-in",
+      "text": "Войти"
+    },
+    {
+      "type": "registr",
+      "text": "Зарегистрироваться"
+    }
+  ],
+  "isUserRegistered": false,
+  "userName": ""
+},
+  "roomPreviewOptions": {
+    "mainImgUrl": "./img/preview-room888-1.jpg",
+    "restImgUrls": [
+      "./img/preview-room888-2.jpg",
+      "./img/preview-room888-3.jpg"
+    ]
+  },
+  "advantagesOptions": {
+    "title": "Сведения о номере",
+    "list": [
+      {
+        "title": "Комфорт",
+        "url": "./img/comfort.svg",
+        "alt": "Комфорт",
+        "text": "Шумопоглощающие стены"
+      },
+      {
+        "title": "Удобство",
+        "url": "./img/good.svg",
+        "alt": "Удобство",
+        "text": "Окно в каждой из спален"
+      },
+      {
+        "title": "Уют",
+        "url": "./img/cosiness.svg",
+        "alt": "Уют",
+        "text": "Номер оснащён камином"
+      }
+    ]
+  },
+  "doughnutOptions": {
+    "title": "Впечатления от номера",
+    "doughnutProps": [
+      { "name": "Великолепно", "value": 230 },
+      { "name": "Хорошо", "value": 230 },
+      { "name": "Удовлетворительно", "value": 460 },
+      { "name": "Разочарован", "value": 130 },
+      { "name": "Не великолепно", "value": 255 },
+      { "name": "Не хорошо", "value": 100 }
+    ]
+  },
+  "rulesOptions": {
+    "title": "Правила",
+    "bulletListOptions": {
+      "names": [
+        "Нельзя с питомцами",
+        "Без вечеринок и мероприятий",
+        "Время прибытия — после 13:00, а выезд до 12:00"
+      ]
+    }
+  },
+  "resetOptions": {
+    "title": "Отмена",
+    "text": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
+  },
+  "roomCommentsOptions": {
+    "title": "Отзывы посетителей номера",
+    "commentsCountText": "Отзывов",
+    "commentsOptions": [
+      {
+        "url": "./img/murad-saraphanov.png",
+        "name": "Мурад Сарафанов",
+        "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+        "date": "5 дней назад",
+        "likeButtonOptions": {
+          "isLiked": true,
+          "count": 12
+        }
+      },
+      {
+        "url": "./img/patrisiya-steklishkova.png",
+        "name": "Патрисия Стёклышкова",
+        "text": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+        "date": "неделю назад",
+        "likeButtonOptions": {
+          "isLiked": false,
+          "count": 2
+        }
+      }
+    ]
+  },
+  "aboutRoomOptions": {
+    "isLuxe": true,
+    "roomNumber": 888,
+    "roomPrefix": "№",
+    "roomPostfix": "В сутки",
+    "roomPrice": "9 990₽",
+    "tableData": {
+      "heading": {
+        "totalText": "Итого",
+        "totalPrice": "39 960₽"
+      },
+      "rows": [
+        { "text": "9 990₽ х 4 суток", "price": "39 960₽" },
+        { "text": "Сбор за услуги: скидка 2 179₽", "hasInfoButton": true, "price": "0₽" },
+        { "text": "Сбор за дополнительные услуги", "hasInfoButton": true ,"price": "300₽" }
+      ]
+    },
+    "daysCount": 4,
+    "discount": 2179,
+    "additionalServicesPrice": 300,
+    "dropdownCalendarOptions": {
+      "selectedDates": {
+        "from": "19.9.2020",
+        "to": "22.9.2020"
+      },
+      "inputsOptions": [
+        {
+          "placeholder": "ДД.ММ.ГГГГ",
+          "title": "Прибытие"
+        },
+        {
+          "placeholder": "ДД.ММ.ГГГГ",
+          "title": "Выезд"
+        }
+      ]
+    },
+    "dropdownGoodsOptions": {
+      "goodsCount": [2, 1, 0],
+      "type": "guests",
+      "hasApplyButton": true,
+      "hasResetButton": true,
+      "inputOptions": {
+        "placeholder": "Сколько гостей",
+        "title": "Гости"
+      }
+    },
+    "buttonOptions": {
+      "type": "submit",
+      "text": "Забронировать",
+      "formId": "about-room"
+    }
+  },
+  "footerOptions": {
+    "logoUrl": "./img/toxin-logo.svg",
+    "navigationLists": [
+      {
+        "title": "Навигация",
+        "links": [
+          {
+            "name": "О нас",
+            "url": "mock"
+          },
+          {
+            "name": "Новости",
+            "url": "mock"
+          },
+          {
+            "name": "Служба поддержки",
+            "url": "mock"
+          },
+          {
+            "name": "Услуги",
+            "url": "mock"
+          }
+        ]
+      },
+      {
+        "title": "О нас",
+        "links": [
+          {
+            "name": "О сервисе",
+            "url": "mock"
+          },
+          {
+            "name": "Наша команда",
+            "url": "mock"
+          },
+          {
+            "name": "Вакансии",
+            "url": "mock"
+          },
+          {
+            "name": "Инвесторы",
+            "url": "mock"
+          }
+        ]
+      },
+      {
+        "title": "Служба поддержки",
+        "links": [
+          {
+            "name": "Соглашения",
+            "url": "mock"
+          },
+          {
+            "name": "Сообщества",
+            "url": "mock"
+          },
+          {
+            "name": "Связь с нами",
+            "url": "mock"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "text": "Copyright © 2018 Toxin отель. Все права зачищены."
+    },
+    "subscription": {
+      "title": "Подписка",
+      "text": "Получайте специальные предложения и новости сервиса",
+      "subscriptionFormOptions": {
+        "placeholder": "Email"
+      }
+    },
+    "about": {
+      "text": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    },
+    "socialLinks": [
+      {
+        "url": "mock",
+        "imgUrl": "./img/twitter-logo.svg",
+        "alt": "Twitter"
+      },
+      {
+        "url": "mock",
+        "imgUrl": "./img/facebook-logo.svg",
+        "alt": "Facebook"
+      },
+      {
+        "url": "mock",
+        "imgUrl": "./img/instagram-logo.svg",
+        "alt": "Instagram"
+      }
+    ]
+  }
+}

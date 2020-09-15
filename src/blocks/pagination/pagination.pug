@@ -1,22 +1,19 @@
 include ../arrow/arrow
  
-mixin pagination({ title = "" } = {})
+mixin pagination({ title = "", links = [], subtitle = "" } = {})
   article.pagination
     if title !== ""
       h3.pagination__title= title
     ul.pagination__pages
-      li.pagination__page 
-        a.pagination__page-link.pagination__page-link_current 1
-      li.pagination__page  
-        a.pagination__page-link(href="mock") 2
-      li.pagination__page  
-        a.pagination__page-link(href="mock") 3
-      li.pagination__page  
-        a.pagination__page-link(href="mock") ...
-      li.pagination__page 
-        a.pagination__page-link(href="mock") 15
+      each link in links
+        - 
+          const { url, isCurrent, text } = link;
+          const currentClass = isCurrent ? "pagination__page-link_current" : "";
+          const href = url ? url : "";
+        li.pagination__page 
+          a.pagination__page-link(class = currentClass, href = href)= text
       li.pagination__page 
         a.pagination__page-link.pagination__page-link_next(href="mock")
           .pagination__page-link-svg
             +arrow({ colorTheme: "secondary" })
-    span.pagination__subtitle 1 – 12 из 100+ вариантов аренды
+    span.pagination__subtitle= subtitle

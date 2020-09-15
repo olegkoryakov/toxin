@@ -2,8 +2,11 @@ extends ../../layouts/page/page
 include ../../blocks/registration/registration
 
 block variables
-  - const title = "Registration";
+  - 
+    const data = require('./user-registration.json');
+    const { title, headerOptions, footerOptions } = data;
 block content
+  - const { registrationOptions } = data;
   .user-registration
     .user-registration__registration
-      +registration()
+      +registration(registrationOptions)

@@ -1,0 +1,338 @@
+{
+  "rowFirst": {
+    "columnFirst": {
+      "defaultInputBoxOptions": {
+        "title": "Text field",
+        "status": "Default",
+        "placeholder": "Default",
+        "maskType": "email"
+      },
+      "hoveredInputBoxOptions": {
+        "title": "Text field",
+        "status": "Hover/Focus",
+        "placeholder": "text field",
+        "isAutofocused": true,
+        "value": "This is pretty awesome"
+      },
+      "dropdownGoodsGuestsOptions": {
+        "type": "guests",
+        "inputOptions": {
+          "placeholder": "Сколько гостей",
+          "title": "Dropdown"
+        }
+      },
+      "maskedInputBoxOptions": {
+        "maskType": "date",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "status": "Default",
+        "title": "Masked Text Field"
+      },
+      "dropdownCalendarDatesOptions": {
+        "selectedDates": {
+          "from": "19.9.2020",
+          "to": "22.9.2020"
+        },
+        "inputsOptions": [
+          {
+            "title": "Date Dropdown",
+            "placeholder": "ДД.ММ.ГГГГ"
+          },
+          {
+            "title": "Date Dropdown",
+            "placeholder": "ДД.ММ.ГГГГ"
+          }
+        ]
+      },
+      "dropdownCalendarFilterDatesOptions": {
+        "selectedDates": {
+          "from": "19.9.2020",
+          "to": "22.9.2020"
+        },
+        "inputsOptions": [
+          {
+            "title": "Filter Date Dropdown",
+            "value": "19 авг - 23 авг"
+          }
+        ]
+      },
+      "subscriptionFormOptions": {
+        "placeholder": "Email",
+        "title": "Subscription text field"
+      }
+    },
+    "columnSecond": {
+      "checkboxesOptions": {
+        "title": "Checkbox Buttons",
+        "list": [
+          {
+            "name": "smoke",
+            "id": "smoke",
+            "label": "Можно курить",
+            "isChecked": false
+          },
+          {
+            "name": "pets",
+            "id": "pets",
+            "label": "Можно с питомцами",
+            "isChecked": true
+          },
+          {
+            "name": "guests",
+            "id": "guests",
+            "label": "Можно пригласить гостей (до 10 человек)",
+            "isChecked": true
+          }
+        ]
+      },
+      "toggleButtonsCardOptions": {
+        "title": "Toggle",
+        "toggleButtonsOptions": [
+          {
+            "name": "subscribe",
+            "id": "subscribe",
+            "label": "Получать спецпредложения",
+            "isChecked": true
+          },
+          {
+            "name": "subscribe1",
+            "id": "subscribe1",
+            "label": "Получать спецпредложения",
+            "isChecked": false
+          }
+        ]
+      },
+      "rateButtonsCardOptions": {
+        "title": "Rate button",
+        "rateButtonsOptions": [
+          { "stars": 4 },
+          { "starts": 5 }
+        ]
+      },
+      "likeButtonsCardOptions": {
+        "title": "Rate button",
+        "likeButtonsOptions": [
+          { "count": 2 },
+          { "isLiked": true, "count": 12 }
+        ]
+      },
+      "radioButtonsCardOptions": {
+        "title": "Radio buttons",
+        "radioButtonsOptions": [
+          {
+            "name": "gender",
+            "value": "male",
+            "id": "male",
+            "label": "Мужчина",
+            "isChecked": true
+          },
+          {
+            "name": "gender",
+            "value": "female",
+            "id": "female",
+            "label": "Женщина"
+          }
+        ]
+      }
+    },
+    "columnThird": {
+      "rangeSliderOptions": {
+        "title": "Rabnge slider",
+        "valuesRange": {
+          "min": 0,
+          "max": 15000
+        },
+        "currentValue": {
+          "from": 5000,
+          "to": 10000
+        }
+      },
+      "paginationOptions": { 
+        "title": "",
+        "links": [
+          {
+            "text": "1",
+            "isCurrent": true
+          },
+          {
+            "text": "2",
+            "url": "mock"
+          },
+          {
+            "text": "3",
+            "url": "mock"
+          },
+          {
+            "text": "..."
+          },
+          {
+            "text": "15",
+            "url": "mock"
+          }
+        ],
+        "subtitle": "1 – 12 из 100+ вариантов аренды"
+      }
+    }
+  },
+  "rowSecond": {
+    "columnFirst": {
+      "dropdownGoodsGoodsDefaultOptions": {
+        "goodsCount": [2, 2, 0],
+        "type": "goods",
+        "inputOptions": {
+          "title": "Dropdown",
+          "status": "Default",
+          "placeholder": "Сколько удобств"
+        }
+      },
+      "dropdownGoodsGoodsExpandedOptions": {
+        "goodsCount": [2, 2, 0],
+        "type": "goods",
+        "isOpened": true,
+        "inputOptions": {
+          "title": "Dropdown",
+          "status": "Expanded",
+          "placeholder": "Сколько удобств"
+        }
+      }
+    },
+    "columnSecond": {
+      "dropdowGoodsGuestsWithApplyButtonOptions": {
+        "type": "guests",
+        "hasApplyButton": true,
+        "isOpened": true,
+        "inputOptions": {
+          "title": "Dropdown",
+          "placeholder": "Сколько гостей"
+        }
+      }
+    },
+    "columnThird": {
+      "dropdownGoodsGuestsWithApplyAndResetButtonsOptions": {
+        "goodsCount": [2, 1, 0],
+        "type": "guests",
+        "hasApplyButton": true,
+        "hasResetButton": true,
+        "isOpened": true,
+        "inputOptions": {
+          "title": "Dropdown",
+          "placeholder": "Сколько гостей"
+        }
+      }
+    }
+  },
+  "rowThird": {
+    "columnFirst": {
+      "emptyExpandableCheckboxesOptions": {
+        "title": "Expandable checkbox list",
+        "isOpened": false,
+        "isExpandable": true,
+        "list": []
+      },
+      "expandableCheckboxesOptions": {
+        "title": "Expandable checkbox list",
+        "isExpandable": true,
+        "isOpened": true,
+        "list": [
+          {
+            "label": "Завтрак",
+            "name": "breakfast",
+            "id": "breakfast",
+            "isChecked": false
+          },
+          {
+            "label": "Письменный стол",
+            "name": "desk",
+            "id": "desk",
+            "isChecked": true
+          },
+          {
+            "label": "Стул для кормления",
+            "name": "feeding-chair",
+            "id": "feeding-chair",
+            "isChecked": true
+          },
+          {
+            "label": "Кроватка",
+            "name": "cot",
+            "id": "cot",
+            "isChecked": true
+          },
+          {
+            "label": "Телевизор",
+            "name": "tv",
+            "id": "tv",
+            "isChecked": false
+          },
+          {
+            "label": "Шампунь",
+            "name": "shampoo",
+            "id": "shampoo",
+            "isChecked": false
+          }
+        ]
+      }
+    },
+    "columnSecond": {
+      "richCheckboxesOptions": {
+        "title": "Rich checkbox buttons",
+        "areCheckboxesRich": true,
+        "list": [
+          {
+            "label": "Широкий коридор",
+            "name": "wide-corridor",
+            "id": "wide-corridor",
+            "about": "Ширина коридоров в номере &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; не менее 91 см."
+          },
+          {
+            "label": "Помощник для инвалидов",
+            "name": "disabled-assistantce",
+            "id": "disabled-assistantce",
+            "about": "На 1 этаже вас встретит специалист и проводит до номера."
+          }
+        ]
+      }
+    },
+    "columnThird": {
+      "bulletListOptions": {
+        "title": "Bullet list",
+        "names": [
+          "Нельзя с питомцами",
+          "Без вечеринок и мероприятий", 
+          "Время прибытия — после 13:00, а выезд до 12:00"
+        ]
+      }
+    }
+  },
+  "rowFourth": {
+    "columnFirst": {
+      "advantagesOptions": {
+        "list": [
+          {
+            "url": "./img/comfort.svg",
+            "alt": "Комфорт номера",
+            "title": "Комфорт",
+            "text": "Шумопоглощающие стены"
+          },
+          {
+            "url": "./img/good.svg",
+            "alt": "Удобство номера",
+            "title": "Удобство",
+            "text": "Окно в каждой из спален"
+          }
+        ]
+      }
+    },
+    "columnSecond": {
+      "commentOptions": {
+        "url": "./img/murad-saraphanov.png",
+        "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+        "name": "Мурад Сарафанов",
+        "date": "5 дней назад",
+        "likeButtonOptions": {
+          "count": 12,
+          "isLiked": true
+        }
+      }
+    }
+  }
+}

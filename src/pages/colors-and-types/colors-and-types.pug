@@ -5,8 +5,10 @@ include ../../blocks/types/types
 block title
   title Colors &amp Types
 block content
+  - 
+    const { colorsOptions, typesOptions } = require('./colors-and-types.json');
   section.colors-and-types.content-wrapper
     .colors-and-types__colors
-      +colors()
+      +colors(colorsOptions)
     .colors-and-types__types  
-      +types()
+      +types(typesOptions)

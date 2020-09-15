@@ -1,0 +1,21 @@
+{
+  "colorsOptions": {
+    "colorList" : [
+      { "text": "Dark Shade 100%", "hash": "#1F2041", "modifier": "100" },
+      { "text": "Dark Shade 75%", "hash": "#1F2041", "modifier": "75" },
+      { "text": "Dark Shade 50%", "hash": "#1F2041", "modifier": "50" },
+      { "text": "Dark Shade 25%", "hash": "#1F2041", "modifier": "25" },
+      { "text": "Dark Shade 5%", "hash": "#1F2041", "modifier": "5" },
+      { "text": "Purple", "hash": "#BC9CFF", "modifier": "purple" },
+      { "text": "Green", "hash": "#6FCF97", "modifier": "green" }  
+    ]
+  },
+  "typesOptions": {
+    "typeList": [
+      { "text": "This one is the sub-section or widget title", "marker": "h1" },
+      { "text": "Next one is the item title inside widgets", "marker": "h2" },
+      { "text": "This is a label or CTA text", "marker": "h3" },
+      { "text": "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "marker": "body" }
+    ]
+  }
+}

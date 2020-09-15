@@ -1,0 +1,395 @@
+{
+  "title": "Search room/filter",
+  "headerOptions": {
+    "logoUrl": "./img/toxin-logo.svg",
+    "links": [
+      {
+        "text": "О нас",
+        "url": "mock",
+        "isCurrent": true
+      },
+      {
+        "text": "Услуги",
+        "url": "mock",
+        "isExpandable": true
+      },
+      {
+        "text": "Вакансии",
+        "url": "mock"
+      },
+      {
+        "text": "Новости",
+        "url": "mock"
+      },
+      {
+        "text": "Соглашения",
+        "url": "mock",
+        "isExpandable": true
+      }
+    ],
+    "buttonsOptions": [
+      {
+        "type": "sign-in",
+        "text": "Войти"
+      },
+      {
+        "type": "registr",
+        "text": "Зарегистрироваться"
+      }
+    ],
+    "isUserRegistered": false,
+    "userName": ""
+  },
+  "calendarDropdownOptions": {
+    "selectedDates": {
+      "from": "19.9.2020",
+      "to": "22.9.2020"
+    },
+    "inputsOptions": [
+      { "placeholder": "ДД мес - ДД мес", "title": "Даты пребывания в отеле" }
+    ]
+  },
+  "dropdownGoodsGuestsOptions": {
+    "goodsCount": [2, 1, 0],
+    "type": "guests",
+    "inputOptions": {
+      "placeholder": "Сколько гостей",
+      "title": "Гости"
+    }
+  },
+  "rangeSliderOptions": {
+    "valuesRange": {
+      "min": 0,
+      "max": 15000
+    },
+    "currentValue": {
+      "from": 5000,
+      "to": 10000
+    },
+    "title": "Диапазон цены",
+    "subtitle": "Стоимость за сутки пребывания в номере"
+  },
+  "defaultCheckboxesOptions": {
+    "title": "Checkbox buttons",
+    "list": [
+      {
+        "name": "smoke",
+        "id": "smoke",
+        "label": "Можно курить",
+        "isChecked": false
+      },
+      {
+        "name": "pets",
+        "id": "pets",
+        "label": "Можно с питомцами",
+        "isChecked": true
+      },
+      {
+        "name": "guests",
+        "id": "guests",
+        "label": "Можно пригласить гостей (до 10 человек)",
+        "isChecked": true
+      }
+    ]
+  },
+  "richCheckboxesOptions": {
+    "title": "Доступность",
+    "areCheckboxesRich": true,
+    "list": [
+      {
+        "label": "Широкий коридор",
+        "name": "wide-corridor",
+        "id": "wide-corridor",
+        "about": "Ширина коридоров в номере &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; не менее 91 см."
+      },
+      {
+        "label": "Помощник для инвалидов",
+        "name": "disabled-assistantce",
+        "id": "disabled-assistantce",
+        "about": "На 1 этаже вас встретит специалист и проводит до номера."
+      }
+    ]
+  },
+  "dropdownGoodsGoodsOptions": {
+    "goodsCount": [2, 2, 0],
+    "type": "goods",
+    "inputOptions": {
+      "placeholder": "Удобства номера",
+      "title": "Удобства номера"
+    }
+  },
+  "expandableCheckboxesOptions": {
+    "title": "Дополнительные удобства",
+    "isExpandable": true,
+    "isOpened": false,
+    "list": [
+      {
+        "label": "Завтрак",
+        "name": "breakfast",
+        "id": "breakfast",
+        "isChecked": false
+      },
+      {
+        "label": "Письменный стол",
+        "name": "desk",
+        "id": "desk",
+        "isChecked": true
+      },
+      {
+        "label": "Стул для кормления",
+        "name": "feeding-chair",
+        "id": "feeding-chair",
+        "isChecked": true
+      },
+      {
+        "label": "Кроватка",
+        "name": "cot",
+        "id": "cot",
+        "isChecked": true
+      },
+      {
+        "label": "Телевизор",
+        "name": "tv",
+        "id": "tv",
+        "isChecked": false
+      },
+      {
+        "label": "Шампунь",
+        "name": "shampoo",
+        "id": "shampoo",
+        "isChecked": false
+      }
+    ]
+  },
+  "roomsOptions": [
+    {
+      "number": 888,
+      "rating": 5,
+      "price": "9 990",
+      "url": "./img/room888.png",
+      "isLuxe": true,
+      "reviewsCount": 145,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 840,
+      "rating": 4,
+      "price": "9 900",
+      "url": "./img/room840.png",
+      "reviewsCount": 65,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 980,
+      "rating": 3,
+      "price": "8 500",
+      "url": "./img/room980.png",
+      "isLuxe": true,
+      "reviewsCount": 35,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 856,
+      "rating": 5,
+      "price": "7 300",
+      "url": "./img/room856.png",
+      "reviewsCount": 19,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 740,
+      "rating": 4,
+      "price": "6 000",
+      "url": "./img/room740.png",
+      "reviewsCount": 44,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 982,
+      "rating": 3,
+      "price": "5 800",
+      "url": "./img/room982.png",
+      "reviewsCount": 56,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 678,
+      "rating": 5,
+      "price": "5 500",
+      "url": "./img/room678.png",
+      "reviewsCount": 45,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 450,
+      "rating": 4,
+      "price": "5 500",
+      "url": "./img/room450.png",
+      "reviewsCount": 39,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 350,
+      "rating": 3,
+      "price": "5 500",
+      "url": "./img/room350.png",
+      "reviewsCount": 77,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 666,
+      "rating": 5,
+      "price": "5 000",
+      "url": "./img/room666.png",
+      "reviewsCount": 25,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 444,
+      "rating": 3,
+      "price": "5 000",
+      "url": "./img/room444.png",
+      "reviewsCount": 15,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    },
+    {
+      "number": 352,
+      "rating": 3,
+      "price": "5 000",
+      "url": "./img/room352.png",
+      "reviewsCount": 55,
+      "perDayText": "В сутки",
+      "reviewsText": "Отзывов"
+    }
+  ],
+  "paginationOptions": { 
+    "title": "",
+    "links": [
+      {
+        "text": "1",
+        "isCurrent": true
+      },
+      {
+        "text": "2",
+        "url": "mock"
+      },
+      {
+        "text": "3",
+        "url": "mock"
+      },
+      {
+        "text": "..."
+      },
+      {
+        "text": "15",
+        "url": "mock"
+      }
+    ],
+    "subtitle": "1 – 12 из 100+ вариантов аренды"
+  },
+  "footerOptions": {
+    "logoUrl": "./img/toxin-logo.svg",
+    "navigationLists": [
+      {
+        "title": "Навигация",
+        "links": [
+          {
+            "name": "О нас",
+            "url": "mock"
+          },
+          {
+            "name": "Новости",
+            "url": "mock"
+          },
+          {
+            "name": "Служба поддержки",
+            "url": "mock"
+          },
+          {
+            "name": "Услуги",
+            "url": "mock"
+          }
+        ]
+      },
+      {
+        "title": "О нас",
+        "links": [
+          {
+            "name": "О сервисе",
+            "url": "mock"
+          },
+          {
+            "name": "Наша команда",
+            "url": "mock"
+          },
+          {
+            "name": "Вакансии",
+            "url": "mock"
+          },
+          {
+            "name": "Инвесторы",
+            "url": "mock"
+          }
+        ]
+      },
+      {
+        "title": "Служба поддержки",
+        "links": [
+          {
+            "name": "Соглашения",
+            "url": "mock"
+          },
+          {
+            "name": "Сообщества",
+            "url": "mock"
+          },
+          {
+            "name": "Связь с нами",
+            "url": "mock"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "text": "Copyright © 2018 Toxin отель. Все права зачищены."
+    },
+    "subscription": {
+      "title": "Подписка",
+      "text": "Получайте специальные предложения и новости сервиса",
+      "subscriptionFormOptions": {
+        "placeholder": "Email"
+      }
+    },
+    "about": {
+      "text": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    },
+    "socialLinks": [
+      {
+        "url": "mock",
+        "imgUrl": "./img/twitter-logo.svg",
+        "alt": "Twitter"
+      },
+      {
+        "url": "mock",
+        "imgUrl": "./img/facebook-logo.svg",
+        "alt": "Facebook"
+      },
+      {
+        "url": "mock",
+        "imgUrl": "./img/instagram-logo.svg",
+        "alt": "Instagram"
+      }
+    ]
+  }
+}

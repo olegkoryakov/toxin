@@ -1,19 +1,18 @@
 include ../button/button
 include ../input/input
 
-mixin sign-in()
+mixin sign-in({ title = "", inputsOptions = [], signInButtonOptions = {}, registrationButtonOptions = {}, registrationText = "" } = {})
   article.sign-in
     .sign-in__content
       h1.sign-in__title Войти
       form(action="mock").sign-in__form
-        .sign-in__input
-          +input({ placeholder: "Email", maskType: 'email' })
-        .sign-in__input
-          +input({ placeholder: "Пароль", maskType: 'password' })
+        each inputOptions in inputsOptions
+          .sign-in__input
+            +input(inputOptions)
         .sign-in__submit-button
-          +button({ text: "Войти", type: "submit" })
+          +button(signInButtonOptions)
       .sign-in__registration
-        span.sign-in__registration-text Нет аккаунта на Toxin?
+        span.sign-in__registration-text= registrationText
         .sign-in__registration-button
-          +button({ text: "Создать", type: "stroked" })
+          +button(registrationButtonOptions)
       

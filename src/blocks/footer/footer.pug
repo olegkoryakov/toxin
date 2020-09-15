@@ -1,120 +1,41 @@
 include ../subscription-form/subscription-form
 
-mixin social()
-  ul.footer__social-list
-    li.footer__social-item
-      a.footer__social-link(href = "mock")
-        img.footer__social-img(src = require("../../blocks/footer/img/twitter-logo.svg").default, alt = "Twitter")
-    li.footer__social-item
-      a.footer__social-link(href = "mock")
-        img.footer__social-img(src = require("../../blocks/footer/img/facebook-logo.svg").default, alt = "Facebook")
-    li.footer__social-item
-      a.footer__social-link(href = "mock")
-        img.footer__social-img(src = require("../../blocks/footer/img/instagram-logo.svg").default, alt = "Instagram")
-
-
-
-mixin copyright(lang)
-  - 
-    const text = lang === "en" ? "Copyright © 2018 Toxin UI Kit. All rights reserved." : "Copyright © 2018 Toxin отель. Все права зачищены.";
-  .footer__copyright
-    .footer__copyright-content
-      p.footer__copyright-text= text
-      +social()
-
-
-mixin navigation(lang)
-  -
-    const linksHrefs = [
-      ["mock", "mock", "mock", "mock"],
-      ["mock", "mock", "mock", "mock"],
-      ["mock", "mock", "mock"]
-    ];
-    let lists;
-    if (lang === "ru") {
-      lists = [
-        {
-          title: "Навигация",
-          linkList: ["О нас", "Новости", "Служба поддержки", "Услуги"],
-        },
-        {
-          title: "О нас",
-          linkList: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
-        },
-        {
-          title: "Служба поддержки",
-          linkList: ["Соглащения", "Сообщества", "Связь с нами"],
-        }
-      ];
-    } else if (lang === "en") {
-       lists = [
-        {
-          title: "Navigation",
-          linkList: ["About us", "News", "Support", "Products"],
-        },
-        {
-          title: "About us",
-          linkList: ["Who we are", "Our team", "Careers", "Investors"],
-        },
-        {
-          title: "Support",
-          linkList: ["Documentation", "Community", "Get in touch"],
-        }
-      ];
-    };
-    lists.forEach((list, index) => list.hrefs = [...linksHrefs[index]]);
-  ul.footer__navigation-lists
-    each obj in lists
-      li.footer__navigation-lists-item
-        nav.footer__navigation
-          h3.footer__navigation-title= obj.title
-          ul.footer__navigation-list
-            each item, index in obj.linkList
-              li.footer__navigation-item
-                a(href= obj.hrefs[index]).footer__navigation-link= item
-
-mixin about(lang)
-  -
-    let text;
-    if (lang === "en") {
-      text = "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.";
-    } else if (lang === "ru") {
-      text = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»";
-    }
-  .footer__about
-    .footer__logo
-      img.footer__logo-img(src = require("../../blocks/footer/img/toxin-logo.svg").default, alt = "Toxin")
-    .footer__about-text= text
-
-mixin subscription(lang)
-  - 
-    let title;
-    let text;
-    let placeholder = "";
-      if (lang === "en") {
-        text = "Receive our latest news and promotions in your inbox!";
-        placeholder = "Your email address";
-        title = "Subscribe to our newsletter";
-      } else if (lang === "ru") {
-        text = "Получайте специальные предложения и новости сервиса";
-        placeholder = "Email";
-        title = "Подписка";
-      }
-  .footer__subscription
-    h3.footer__subscription-title= title
-    p.footer__subscription-text= text
-    .footer__subscription-form
-      +subscription-form({ placeholder })
-
-mixin footer({ lang = "ru", type = "maxi" } = {})
+mixin footer({ logoUrl = "", navigationLists = [], about = {}, subscription = {}, copyright = {}, socialLinks = [] } = {})
   footer.footer
-    if type === "maxi"
-      .footer__content
-        +about(lang)
-        +navigation(lang)
-        +subscription(lang)
-      +copyright(lang)
-    else if type === "mini"
-      .footer__content.footer__content_mini
-        +about(lang)
-        +social()
+    .footer__content
+      .footer__about
+        .footer__logo
+          img.footer__logo-img(src = logoUrl, alt = "Toxin")
+        .footer__about-text= about.text
+      ul.footer__navigation-lists
+        each navigationList in navigationLists
+          - const { title, links } = navigationList;
+          li.footer__navigation-lists-item
+            nav.footer__navigation
+              h3.footer__navigation-title= title
+              ul.footer__navigation-list
+                each link in links
+                  - const { name, url } = link;
+                  li.footer__navigation-item
+                    a.footer__navigation-link(href = url)= name
+      .footer__subscription
+        - 
+          const subscriptionTitle = subscription.title;
+          const subscriptionText = subscription.text;
+          const { subscriptionFormOptions } = subscription; 
+        h3.footer__subscription-title= subscriptionTitle
+        p.footer__subscription-text= subscriptionText
+        .footer__subscription-form
+          +subscription-form(subscriptionFormOptions)
+    .footer__copyright
+      - const copyrightText = copyright.text;
+      .footer__copyright-content
+        p.footer__copyright-text= copyrightText
+        ul.footer__social-list
+          each socialLink in socialLinks
+            - 
+              const { imgUrl, alt } = socialLink;
+              const socialLinkUrl = socialLink.url;
+            li.footer__social-item
+              a.footer__social-link(href = "mock")
+                img.footer__social-img(src = imgUrl, alt = alt)

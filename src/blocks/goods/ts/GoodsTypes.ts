@@ -33,6 +33,7 @@ interface IGoodsView extends IEventEmitter {
   setInputValue(value: string): void,
   disableMinusButton(index: number): void,
   enableMinusButton(index: number): void,
+  render(goodsArray: TGoodsArray): void,
 }
 
 interface IGoodsPresenter {

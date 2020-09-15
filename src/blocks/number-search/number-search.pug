@@ -2,36 +2,13 @@ include ../button/button
 include ../dropdown-goods/dropdown-goods
 include ../dropdown-calendar/dropdown-calendar
 
-mixin number-search()
+mixin number-search({ title = "", dropdownCalendarOptions = {}, dropdownGoodsOptions = {}, buttonOptions = {} } = {})
   article.number-search
     .number-search__content
-      h1.number-search__title Найдем номера под ваши пожелания
+      h1.number-search__title= title
       .number-search__dropdown-calendar
-        +dropdown-calendar(
-          {
-            inputsOptions: [
-              {
-                placeholder: "ДД.ММ.ГГГГ",
-                title: "Прибытие",
-              },
-              {
-                placeholder: "ДД.ММ.ГГГГ",
-                title: "Выезд",
-              }
-            ]
-          }
-        )
+        +dropdown-calendar(dropdownCalendarOptions)
       .number-search__dropdown-goods
-        +dropdown-goods(
-          {
-            type: "guests",
-            hasApplyButton: true,
-            hasResetButton: true,
-            inputOptions: {
-              placeholder: "Сколько гостей",
-              title: "Гости",
-            }
-          }
-        )
+        +dropdown-goods(dropdownGoodsOptions)
       .number-search__submit-button
-        +button({ text: "Подобрать номер", type: "submit"})
+        +button(buttonOptions)

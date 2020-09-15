@@ -1,0 +1,12 @@
+{
+  "signInOptions": {
+    "title": "Войти",
+    "inputsOptions": [
+      { "placeholder": "Email", "maskType": "email" },
+      { "placeholder": "Пароль", "maskType": "password" }
+    ],
+    "signInButtonOptions": { "text": "Войти", "type": "submit" },
+    "registrationText": "Нет аккаунта на Toxin?",
+    "registrationButtonOptions": { "text": "Создать", "type": "stroked" }
+  }
+}

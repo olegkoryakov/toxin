@@ -18,262 +18,86 @@ include ../../blocks/comment/comment
 block title
   title Form elements
 block content
+  - const data = require('./form-elements.json');
   section.form-elements.content-wrapper
     .form-elements__row
+      - const { rowFirst } = data;
       .form-elements__column
+        - const { defaultInputBoxOptions, hoveredInputBoxOptions, dropdownGoodsGuestsOptions, maskedInputBoxOptions, dropdownCalendarDatesOptions, dropdownCalendarFilterDatesOptions, subscriptionFormOptions } = rowFirst.columnFirst;
         .form-elements__input-box
-          +input-box({
-            title: 'Text field',
-            status: 'Default',
-            placeholder: 'Email',
-            maskType: "email"
-          })
+          +input-box(defaultInputBoxOptions)
         .form-elements__input-box
-          +input-box({
-            title: 'Text field',
-            status: 'Hover/Focus',
-            placeholder: 'text field',
-            isAutofocused: true,
-            value: 'This is pretty awesome'
-          })
+          +input-box(hoveredInputBoxOptions)
         .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
-          +dropdown-goods({
-              type: "guests",
-              inputOptions: {
-                placeholder: "Сколько гостей",
-                title: "Dropdown",
-              }
-          })
+          +dropdown-goods(dropdownGoodsGuestsOptions)
         .form-elements__input-box
-          +input-box({
-            maskType: "date",
-            placeholder: "ДД.ММ.ГГГГ",
-            status: 'Default',
-            title: 'Masked Text Field',
-          })
+          +input-box(maskedInputBoxOptions)
         .form-elements__dropdown-calendar.form-elements__dropdown-calendar_dates
-          +dropdown-calendar({
-            inputsOptions: [
-              {
-                title: 'Date Dropdown',
-                placeholder: "ДД.ММ.ГГГГ",
-              },
-              {
-                title: 'Date Dropdown',
-                placeholder: "ДД.ММ.ГГГГ",
-              }
-            ]
-          })
+          +dropdown-calendar(dropdownCalendarDatesOptions)
         .form-elements__dropdown-calendar.form-elements__dropdown-calendar_filter-dates
-          +dropdown-calendar({
-            inputsOptions: [
-              {
-                title: 'Filter Date Dropdown',
-                value: "19 авг - 23 авг",
-              },
-            ]
-          })
+          +dropdown-calendar(dropdownCalendarFilterDatesOptions)
         .form-elements__subscription-form
-          +subscription-form({
-            placeholder: 'Email',
-            title: 'Subscription text field'
-          })
+          +subscription-form(subscriptionFormOptions)
       .form-elements__column
+        - const { checkboxesOptions, toggleButtonsCardOptions, rateButtonsCardOptions, likeButtonsCardOptions, radioButtonsCardOptions } = rowFirst.columnSecond;
         .form-elements__checkboxes
-          - 
-            const checkboxesProps = [
-              {
-                name: "smoke",
-                id: "smoke",
-                label: "Можно курить",
-                isChecked: false,
-              },
-              {
-                name: "pets",
-                id: "pets",
-                label: "Можно с питомцами",
-                isChecked: true,
-              },
-              {
-                name: "guests",
-                id: "guests",
-                label: "Можно пригласить гостей (до 10 человек)",
-                isChecked: true,
-              }
-            ];
-          +checkboxes({
-            title: 'Checkbox buttons',
-            list: checkboxesProps,
-          })
+          +checkboxes(checkboxesOptions)
         .form-elements__radio-buttons
-          +radio-buttons-card()
+          +radio-buttons-card(radioButtonsCardOptions)
         .form-elements__toggle-buttons
-          +toggle-buttons-card()
+          +toggle-buttons-card(toggleButtonsCardOptions)
         .form-elements__like-buttons
-          +like-buttons-card()
+          +like-buttons-card(likeButtonsCardOptions)
         .form-elements__rate-buttons
-          +rate-buttons-card()
+          +rate-buttons-card(rateButtonsCardOptions)
       .form-elements__column
+        - const { rangeSliderOptions, paginationOptions } = rowFirst.columnThird;
         .form-elements__range-slider
-          +range-slider({ title: 'Range Slider' })
+          +range-slider(rangeSliderOptions)
         .form-elements__buttons
           +buttons-card()
         .form-elements__pagintaion
-          +pagination({ title: 'Pagination' })
+          +pagination(paginationOptions)
     .form-elements__row
+      - const { rowSecond } = data;
       .form-elements__column
+        - const { dropdownGoodsGoodsDefaultOptions, dropdownGoodsGoodsExpandedOptions } = rowSecond.columnFirst;
         .form-elements__dropdown-goods.form-elements__dropdown-goods_goods
-          +dropdown-goods({
-            type: 'goods',
-            inputOptions: {
-              title: 'Dropdown',
-              status: 'Default',
-              value: '2 спальни, 2 кровати',
-            }
-          })
+          +dropdown-goods(dropdownGoodsGoodsDefaultOptions)
         .form-elements__dropdown-goods.form-elements__dropdown-goods_goods
-          +dropdown-goods({
-            type: 'goods',
-            isOpened: true,
-            inputOptions: {
-              title: 'Dropdown',
-              status: 'Expanded',
-              value: '2 спальни, 2 кровати'
-            }
-          })
+          +dropdown-goods(dropdownGoodsGoodsExpandedOptions)
       .form-elements__column
+        - const { dropdowGoodsGuestsWithApplyButtonOptions } = rowSecond.columnSecond;
         .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
-          +dropdown-goods({
-            type: 'guests',
-            hasApplyButton: true,
-            isOpened: true,
-            inputOptions: {
-              title: 'Dropdown',
-              placeholder: 'Сколько гостей'
-            }
-          })
+          +dropdown-goods(dropdowGoodsGuestsWithApplyButtonOptions)
       .form-elements__column
+        - const { dropdownGoodsGuestsWithApplyAndResetButtonsOptions } = rowSecond.columnThird;
         .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
-          +dropdown-goods({
-            type: 'guests',
-            hasApplyButton: true,
-            hasResetButton: true,
-            isOpened: true,
-            inputOptions: {
-              title: 'Dropdown',
-              placehlder: 'Сколько гостей'
-            }
-          })
+          +dropdown-goods(dropdownGoodsGuestsWithApplyAndResetButtonsOptions)
     .form-elements__row
+      - const { rowThird } = data;
       .form-elements__column
+        - const { emptyExpandableCheckboxesOptions, expandableCheckboxesOptions } = rowThird.columnFirst;
         .form-elements__checkboxes
-          +checkboxes({
-            title: 'Expandable checkbox list',
-            isOpened: false,
-            isExpandable: true,
-            list: [],
-          })
+          +checkboxes(emptyExpandableCheckboxesOptions)
         .form-elements__checkboxes
-          -
-            const expandableCheckboxesProps = [
-              {
-                label: "Завтрак",
-                name: "breakfast",
-                id: "breakfast",
-                isChecked: false,
-              },
-              {
-                label: "Письменный стол",
-                name: "desk",
-                id: "desk",
-                isChecked: true,
-              },
-              {
-                label: "Стул для кормления",
-                name: "feeding-chair",
-                id: "feeding-chair",
-                isChecked: true,
-              },
-              {
-                label: "Кроватка",
-                name: "cot",
-                id: "cot",
-                isChecked: true,
-              },
-              {
-                label: "Телевизор",
-                name: "tv",
-                id: "tv",
-                isChecked: false,
-              },
-              {
-                label: "Шампунь",
-                name: "shampoo",
-                id: "shampoo",
-                isChecked: false,
-              }
-            ];
-          +checkboxes({
-            title: 'Expandable checkbox list',
-            isExpandable: true,
-            isOpened: true,
-            list: expandableCheckboxesProps,
-          })
+          +checkboxes(expandableCheckboxesOptions)
       .form-elements__column
+        - const { richCheckboxesOptions } = rowThird.columnSecond;
         .form-elements__checkboxes
-          - 
-            const richCheckboxesProps = [
-              {
-                label: "Широкий коридор",
-                name: "wide-corridor",
-                id: "wide-corridor",
-                about: "Ширина коридоров в номере &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; не менее 91 см.",
-              },
-              {
-                label: "Помощник для инвалидов",
-                name: "disabled-assistant",
-                id: "disabled-assistant",
-                about: "На 1 этаже вас встретит специалист и проводит до номера.",
-              }
-            ];
-          +checkboxes({
-            title: 'Rich checkbox buttons',
-            areCheckboxesRich: true,
-            list: richCheckboxesProps,
-          })
+          +checkboxes(richCheckboxesOptions)
       .form-elements__column
+        - const { bulletListOptions } = rowThird.columnThird;
         .form-elements__bullet-list
-          - const names = ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"];
-          +bullet-list({ names, title: 'Bullet list' })
+          +bullet-list(bulletListOptions)
     .form-elements__row
-      .form-elements__column        
-        .form-elements__advantages
-          - 
-            const advantagesProps = [
-              {
-                url: require("./img/comfort.svg").default,
-                alt: "Комфорт номера",
-                title: "Комфорт",
-                text: "Шумопоглощающие стены"
-              },
-              {
-                url: require("./img/good.svg").default,
-                alt: "Удобство номера",
-                title: "Удобство",
-                text: "Окно в каждой из спален"
-              }
-            ];
-          +advantages({ list: advantagesProps })
+      - const { rowFourth } = data;
       .form-elements__column
+        - const { advantagesOptions } = rowFourth.columnFirst 
+        .form-elements__advantages
+          +advantages(advantagesOptions)
+      .form-elements__column
+        - const { commentOptions } = rowFourth.columnSecond;
         .form-elements__comment
-          +comment({
-             url: require('./img/murad-saraphanov.png').default,
-             text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-             name: 'Мурад Сарафанов',
-             date: '5 дней назад',
-             likeButtonProps: {
-               count: 12,
-               isLiked: true,
-             }
-          })
+          +comment(commentOptions)
 

@@ -56,22 +56,16 @@ class FormElements implements IFormElements {
     });
 
     dropdownsGoodsElements.forEach((dropdownGoodsElement) => {
-      this.dropdownsGoods.push(new DropdownGoods(dropdownGoodsElement as HTMLElement, [2, 2, 0]));
+      this.dropdownsGoods.push(new DropdownGoods(dropdownGoodsElement as HTMLElement));
     });
 
-    const dropdownsGuestsProps = [
-      [0, 0, 0],
-      [0, 0, 0],
-      [2, 1, 0],
-    ];
-
-    dropdownsGuestsElements.forEach((dropdownGuestsElement, index) => {
+    dropdownsGuestsElements.forEach((dropdownGuestsElement) => {
       this.dropdownsGuests
-        .push(new DropdownGoods(dropdownGuestsElement as HTMLElement, dropdownsGuestsProps[index]));
+        .push(new DropdownGoods(dropdownGuestsElement as HTMLElement));
     });
 
     dropdownsCalendarsElements.forEach((dropdownCalendarElement) => {
-      this.dropdownsCalendar.push(new DropdownCalendar(dropdownCalendarElement as HTMLElement, { from: '19.8.2020', to: '28.8.2020' }));
+      this.dropdownsCalendar.push(new DropdownCalendar(dropdownCalendarElement as HTMLElement));
     });
     checkboxesElements.forEach((checkboxesElement) => {
       this.checkboxes.push(new Checkboxes(checkboxesElement as HTMLElement));

@@ -6,7 +6,7 @@ import Dropdown from '../../../dropdown/ts/Dropdown/Dropdown';
 import GoodsInput from '../../../goods-input/ts/GoodsInput/GoodsInput';
 
 export default class DropdownGoods extends Dropdown implements IDropdownGoods {
-  constructor(dropdownGoodsElement: HTMLElement, goodsCounts?: number[]) {
+  constructor(dropdownGoodsElement: HTMLElement) {
     super(
       {
         dropdownElement: dropdownGoodsElement,
@@ -15,7 +15,7 @@ export default class DropdownGoods extends Dropdown implements IDropdownGoods {
       },
     );
     this.dropdownGoodsElement = dropdownGoodsElement;
-    this.init(goodsCounts);
+    this.init();
   }
 
   private goodsInput!: IGoodsInput;
@@ -35,14 +35,17 @@ export default class DropdownGoods extends Dropdown implements IDropdownGoods {
     this.goodsInput.toggleHightlight();
   }
 
-  private init(goodsCounts?: number[]) {
+  private init() {
     const goodsElement = this.dropdownGoodsElement.querySelector('.goods') as HTMLElement;
     const inputElement = this.dropdownGoodsElement.querySelector('.goods-input__input') as HTMLInputElement;
     const goodsType = this.getGoodsType(goodsElement);
     const goodsProps = JSON.parse(JSON.stringify(GOODS_PROPS[goodsType])) as TGoodsProps;
 
-    if (goodsCounts) {
-      goodsProps.forEach((goodProps, index) => { goodProps.count = goodsCounts[index]; });
+    const dataGoodsCount = this.dropdownGoodsElement.dataset.goodsCount;
+
+    if (dataGoodsCount) {
+      const goodsCount = JSON.parse(dataGoodsCount) as Array<number>;
+      goodsProps.forEach((goodProps, index) => { goodProps.count = goodsCount[index]; });
     }
 
     this.goodsInput = new GoodsInput(inputElement);

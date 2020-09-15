@@ -2,86 +2,36 @@ include ../dropdown-calendar/dropdown-calendar
 include ../dropdown-goods/dropdown-goods
 include ../button/button
 
-mixin about-room({ isLuxe = false, roomNumber = 0, price = 0, daysCount = 0, discount = 0, additionalServicesPrice = 0 } = {})
-  - 
-    const luxeClass = isLuxe ? 'about-room__number-details_luxe' : '';
-    const regExp = /\d{1,3}(?=(\d{3})+(?!\d))/g;
-    const charToReplace = '$& ';
-    const [ priceString, discountString, additionalServicesPriceString ] = [price, discount, additionalServicesPrice]
-      .map((price) => `${price.toString().replace(regExp, charToReplace)}₽`);
-    const totalPrice = (price * daysCount);
-    const totalPriceWithDiscountAndServices = totalPrice - discount + additionalServicesPrice;
-
-    const totalPriceWithDiscountAndServicesString = totalPriceWithDiscountAndServices
-      .toString()
-      .replace(regExp, charToReplace)
-      + '₽';
-    const totalPriceString = totalPrice
-      .toString()
-      .replace(regExp, charToReplace)
-      + '₽';
+mixin about-room({ isLuxe = false, roomNumber = 0, roomPrice = "", roomPrefix = "", roomPostfix = "", tableData = {}, dropdownCalendarOptions = {}, dropdownGoodsOptions = {}, buttonOptions = {} } = {})
+  - const luxeClass = isLuxe ? "about-room__number-details_luxe" : "";
   article.about-room
     .about-room__content
       .about-room__header
         span.about-room__number-details(class = luxeClass)
-          span.about-room__number-prefix  №
+          span.about-room__number-prefix= roomPrefix
           span.about-room__number= roomNumber
         .about-room__price-details
-          span.about-room__price= priceString
-          span.about-room__price-postfix В сутки
+          span.about-room__price= roomPrice
+          span.about-room__price-postfix= roomPostfix
       form.about-room__form(id = "about-room" action="mock")
         .about-room__dropdown-calendar
-          +dropdown-calendar(
-            {
-              inputsOptions: [
-                {
-                  placeholder: "ДД.ММ.ГГГГ",
-                  title: "Прибытие",
-                },
-                {
-                  placeholder: "ДД.ММ.ГГГГ",
-                  title: "Выезд",
-                }
-              ]
-            }
-          )
+          +dropdown-calendar(dropdownCalendarOptions)
         .about-room__dropdown-goods
-          +dropdown-goods(
-            {
-              type: "guests",
-              hasApplyButton: true,
-              hasResetButton: true,
-              inputOptions: {
-                placeholder: "Сколько гостей",
-                title: "Гости",
-              }
-            }
-          )
+          +dropdown-goods(dropdownGoodsOptions)
       .about-room__table-wrapper
         table.about-room__table
+          - const { rows, heading } = tableData;
+          each row in rows
+            - const { text, hasInfoButton, price } = row;
+            tr.about-room__tr
+              td.about-room__td= text
+              td.about-room__td
+                if hasInfoButton
+                  button(type = "button").about-room__info i
+              td.about-room__td= price
+          - const { totalText, totalPrice } = heading;
           tr.about-room__tr
-            td.about-room__td= `${priceString} х ${daysCount} суток`
-            td.about-room__td
-            td.about-room__td= totalPriceString
-          tr.about-room__tr
-            td.about-room__td= `Сбор за услуги: скидка ${discountString}`
-            td.about-room__td
-              button(type = "button").about-room__info i
-            td.about-room__td 0₽
-          tr.about-room__tr
-            td.about-room__td Сбор за дополнительные услуги
-            td.about-room__td
-              button(type = "button").about-room__info i
-            td.about-room__td= additionalServicesPriceString
-          tr.about-room__tr
-            th.about-room__th Итого
-            th.about-room__th(colspan = 2)= totalPriceWithDiscountAndServicesString
+            th.about-room__th= totalText
+            th.about-room__th(colspan = 2)= totalPrice
       .about-room__submit-button
-        +button(
-          {
-            type: "submit",
-            text: "Забронировать",
-            formId: "about-room",
-          }
-        )
-
+        +button(buttonOptions)

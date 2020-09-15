@@ -41,18 +41,9 @@ class SearchRoom implements ISearchRoom {
     const roomElements = this.searchRoomElement.querySelectorAll('.room');
 
     this.rangeSlider = new RangeSlider(rangeSliderElement as HTMLElement);
-    this.dropdownCalendar = new DropdownCalendar(
-      dropdownCalendarElement as HTMLElement,
-      { from: '19.8.2020', to: '23.8.2020' },
-    );
-    this.dropdownGoodsGuests = new DropdownGoods(
-      dropdownGoodsGuestsElement as HTMLElement,
-      [2, 1, 1],
-    );
-    this.dropdownGoodsGoods = new DropdownGoods(
-      dropdownGoodsGoodsElement as HTMLElement,
-      [2, 2, 0],
-    );
+    this.dropdownCalendar = new DropdownCalendar(dropdownCalendarElement as HTMLElement);
+    this.dropdownGoodsGuests = new DropdownGoods(dropdownGoodsGuestsElement as HTMLElement);
+    this.dropdownGoodsGoods = new DropdownGoods(dropdownGoodsGoodsElement as HTMLElement);
     checkboxesElements.forEach((checkboxesElement) => {
       this.checkboxes.push(new Checkboxes(checkboxesElement as HTMLElement));
     });

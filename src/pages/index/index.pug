@@ -2,11 +2,15 @@ extends ../../layouts/page/page
 include ../../blocks/number-search/number-search
 
 block variables
-  - const title = "Landing page";
+  - 
+    const data = require('./index.json');
+    const { headerOptions, footerOptions, title } = data;
 block content
   .index
     .index__content.content-wrapper
       .index__number-search
-        +number-search()
-      p.index__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
+        - const { numberSearchOptions } = data;
+        +number-search(numberSearchOptions)
+      - const { text } = data.slogan;
+      p.index__slogan= text
 

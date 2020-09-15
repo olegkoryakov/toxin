@@ -1,26 +1,10 @@
 include ../radio-button/radio-button
 
-mixin radio-buttons-card
+mixin radio-buttons-card({ title = "", radioButtonsOptions = [] } = {})
   article.radio-buttons-card
-    h3.radio-buttons-card__title Radio Buttons
-    -
-      const radioProps = [
-        {
-          name: "gender",
-          value: "male",
-          id: "male",
-          label: "Мужчина",
-          isChecked: true
-        },
-        {
-          name: "gender",
-          value: "female",
-          id: "female",
-          label: "Женщина",
-        }
-      ];
+    h3.radio-buttons-card__title= title
     ul.radio-buttons-card__list
-      each obj in radioProps
+      each rabioButtonOptions in radioButtonsOptions
         li.radio-buttons-card__item
           .radio-buttons-card__radio-button
-            +radio-button(obj)
+            +radio-button(rabioButtonOptions)

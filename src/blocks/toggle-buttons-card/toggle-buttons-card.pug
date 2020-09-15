@@ -1,25 +1,10 @@
 include ../toggle-button/toggle-button
 
-mixin toggle-buttons-card
+mixin toggle-buttons-card({ title = "", toggleButtonsOptions = [] } = {})
   article.toggle-buttons-card
-    h3.toggle-buttons-card__title Toggle
-    -
-      const toggleProps = [
-        {
-          name: "subscribe",
-          id: "subscribe",
-          label: "Получать спецпредложения",
-          isChecked: true,
-        },
-        {
-          name: "subscribe1",
-          id: "subscribe1",
-          label: "Получать спецпредложения",
-          isChecked: false,
-        }
-      ];
+    h3.toggle-buttons-card__title= title
     ul.toggle-buttons-card__list
-      each obj in toggleProps
+      each toggleButtonOptions in toggleButtonsOptions
         li.toggle-buttons-card__item
           .toggle-buttons-card__toggle-button
-            +toggle-button(obj)
+            +toggle-button(toggleButtonOptions)

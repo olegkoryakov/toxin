@@ -5,58 +5,34 @@ include ../button/button
 include ../toggle-button/toggle-button
 
 
-mixin registration()
+mixin registration({ title = "", userDataFieldsetOptions = { userLegend: "", userNameInputsOptions: [], userGenderRadiosOptions: [], userBirthDateInputBoxOptions: {} }, loginDataFieldsetOptions = { loginLegend: "", loginInputsOptions: [], addsToggleButtonOptions: {} }, submitButtonProps = {}, signInText = "", signInButtonProps = {} } = {})
   article.registration
     .registration__content
-      h1.registration__title Регистрация аккаунта
+      h1.registration__title= title
       form.registration__form(action="mock")
         fieldset(name = "user-data").registration__fieldset
-          legend.registration__fieldset-legend.visually-hidden Данные пользователя 
-          .registration__input
-            +input({ placeholder: "Имя", maskType: "firstName" })
-          .registration__input
-            +input({ placeholder: "Фамилия", maskType: "secondName" })
+          - const { userLegend, userNameInputsOptions, userGenderRadiosOptions, userBirthDateInputBoxOptions } = userDataFieldsetOptions;
+          legend.registration__fieldset-legend.visually-hidden= userLegend
+          each userNameInputOptions in userNameInputsOptions
+            .registration__input
+              +input(userNameInputOptions)
           ul.registration__rario-button-list
-            li.registration__rario-button-item
-              .registration__rario-button
-                +radio-button({
-                  name: "gender",
-                  value: "male",
-                  id: "male",
-                  label: "Мужчина",
-                  isChecked: true
-                })
-            li.registration__rario-button-item
-              .registration__rario-button
-                +radio-button({
-                  name: "gender",
-                  value: "female",
-                  id: "female",
-                  label: "Женщина",
-                  isChecked: false,
-                })
+              each userGenderRadioOptions in userGenderRadiosOptions
+                li.registration__rario-button-item
+                  +radio-button(userGenderRadioOptions)
           .registration__input-box
-            +input-box({
-              title: "Дата рождения",
-              placeholder: "ДД.ММ.ГГГГ",
-              maskType: "date"
-            })
+            +input-box(userBirthDateInputBoxOptions)
         fieldset(name = "login-data").registration__fieldset
-          legend.registration__fieldset-legend Данные для входа в сервис
-          .registration__input
-            +input({ placeholder: "Email", type: "email", maskType: "email" })
-          .registration__input
-            +input({ placeholder: "Пароль", type: "password", maskType: "password" })
+          - const { loginLegend, loginInputsOptions, addsToggleButtonOptions } = loginDataFieldsetOptions;
+          legend.registration__fieldset-legend= loginLegend
+          each loginInputOptions in loginInputsOptions
+            .registration__input
+              +input(loginInputOptions)
           .registration__toggle-button
-            +toggle-button({
-              name: "special",
-              id: "special",
-              label: "Получать спецпредложения",
-              isChecked: false,
-            })
+            +toggle-button(addsToggleButtonOptions)
         .registration__submit-button
-          +button({ type: "submit", text: "перейти к оплате"})
+          +button(submitButtonProps)
         .registration__sign-in
-          span.registration__sign-in-text Уже есть аккаунт на Toxin
+          span.registration__sign-in-text= signInText
           .registration__sign-in-button
-            +button({ type: "stroked", text: "Войти"})
+            +button(signInButtonProps)
