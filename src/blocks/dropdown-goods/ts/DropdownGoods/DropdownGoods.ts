@@ -52,7 +52,7 @@ export default class DropdownGoods extends Dropdown implements IDropdownGoods {
 
     const goodsModel = new GoodsModel(goodsProps, goodsType);
     const goodsView = new GoodsView(
-      goodsElement,
+      this.dropdownGoodsElement,
       inputElement,
       this.toggleOpened.bind(this),
     );
