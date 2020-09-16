@@ -51,7 +51,11 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
-
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   module: {
     rules: [
       {
