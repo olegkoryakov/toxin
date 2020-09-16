@@ -16,6 +16,8 @@
   &__calendar {
     position: absolute;
     top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
     width: 320px;
   }

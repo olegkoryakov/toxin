@@ -1,6 +1,7 @@
 .header {
   @include cardShadow;
   background-color: #fff;
+  padding: 0 20px;
 
   &__content {
     position: relative;
@@ -12,6 +13,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 25px;
   }
 
   &__burger-button {
@@ -43,10 +45,6 @@
 
   &__site-nav {
     margin-left: auto;
-  }
-
-  &__user-nav {
-    margin-left: 25px;
   }
 
   &__nav-list {
@@ -103,7 +101,7 @@
     }
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 768px) {
     &__content {
       flex-direction: column;
       gap: 30px;
@@ -122,10 +120,6 @@
 
     &__site-nav &__nav-list {
       flex-direction: column;
-    }
-
-    &__user-nav {
-      margin-left: 0;
     }
 
     &__burger-button {

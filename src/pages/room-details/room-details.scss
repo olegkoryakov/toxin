@@ -32,6 +32,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   &__content-row {
@@ -67,11 +69,21 @@
   }
 
   &__advantages {
-    width: 291px;
+    max-width: 291px;
   }
 
   &__rules {
-    width: 292px;
+    max-width: 292px;
   }
 
+  @media screen and (max-width: 540px) {
+    &__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__room-comments, &__rules, &__reset {
+      padding: 0 20px;
+    }
+  }
 }

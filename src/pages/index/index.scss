@@ -3,17 +3,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding: 0 20px;
 
   &__content {
-    padding-top: 70px;
-    padding-bottom: 21px;
+    padding: 70px 0 21px 0;
     display: flex;
     flex-direction: column;
   }
 
   &__number-search {
     max-width: 380px;
-    margin-left: 0;
     margin-bottom: 318px;
   }
 
@@ -22,5 +21,15 @@
     max-width: 297px;
     text-align: right;
     margin-left: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+     padding: 0;
+     &__content {
+       align-items: center;
+     }
+     &__slogan {
+       margin-left: 0;
+     }
   }
 }

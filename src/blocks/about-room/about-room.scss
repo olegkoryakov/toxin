@@ -1,15 +1,13 @@
 .about-room {
   @include cardShadow;
   background-color: #fff;
+  box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   padding-top: 40px;
   padding-bottom: 30px;
-
-  &__content {
-    margin: 0 auto;
-    width: 320px;
-  }
+  padding-left: 30px;
+  padding-right: 30px;
 
   &__header {
     display: flex;
