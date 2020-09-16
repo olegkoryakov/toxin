@@ -2,9 +2,11 @@ extends ../../layouts/page/page
 include ../../blocks/sign-in/sign-in
 
 block variables
-  - const title = "Sign in";
+  - 
+    const data = require('./user-sign-in.json');
+    const { title, headerOptions, footerOptions } = data;
 block content
-  - const { signInOptions } = require('./user-sign-in.json');
+  - const { signInOptions } = data;
   .user-sign-in
     .user-sign-in__sign-in
       +sign-in(signInOptions)
