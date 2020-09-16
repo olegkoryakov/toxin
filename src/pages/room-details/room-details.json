@@ -5,8 +5,7 @@
   "links": [
     {
       "text": "О нас",
-      "url": "mock",
-      "isCurrent": true
+      "url": "mock"
     },
     {
       "text": "Услуги",
@@ -97,7 +96,7 @@
   },
   "roomCommentsOptions": {
     "title": "Отзывы посетителей номера",
-    "commentsCountText": "Отзывов",
+    "commentsCountText": "отзыва",
     "commentsOptions": [
       {
         "url": "./img/murad-saraphanov.png",
@@ -130,7 +129,7 @@
     "tableData": {
       "heading": {
         "totalText": "Итого",
-        "totalPrice": "39 960₽"
+        "totalPrice": "38 081₽"
       },
       "rows": [
         { "text": "9 990₽ х 4 суток", "price": "39 960₽" },

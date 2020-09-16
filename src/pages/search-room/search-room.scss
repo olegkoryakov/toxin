@@ -1,6 +1,6 @@
 .search-room {
   padding-top: 30px;
-  padding-bottom: 70px;
+  padding-bottom: 71px;
   padding-left: 20px;
   padding-right: 20px;
   border-bottom: 1px solid rgba(31, 32, 65, 0.25);
@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 21px 12px;
+    gap: 22px 12px;
   }
 
   &__search-room-item {
@@ -39,8 +39,8 @@
   &__search-room-pagination {
     margin: 0 auto;
     width: 241px;
-    margin-top: 43px;
-    padding-right: 10px;
+    margin-top: 41px;
+    padding-right: 13px;
   }
 
   &__filter {
@@ -50,7 +50,7 @@
   &__filter-dropdown-calendar {
     position: relative;
     z-index: 3;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   &__filter-dropdown-goods {
@@ -68,7 +68,6 @@
   &__filter-checkboxes {
     margin-bottom: 30px;
     &_default {
-      margin-bottom: 28px;
       width: 222px;
     }
   }

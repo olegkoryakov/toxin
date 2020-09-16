@@ -41,7 +41,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 70px;
-    @media screen and (max-width: 1099px) {
+    @media screen and (max-width: 1197px) {
       justify-content: space-around;
     }
   }
@@ -61,10 +61,14 @@
 
   &__content-column_main &__content-row {
     &:nth-of-type(1) {
-      margin-bottom: 30px;
+      gap: 107px;
+      margin-bottom: 31px;
     }
     &:nth-of-type(2) {
-      margin-bottom: 35px;
+      margin-bottom: 34px;
+    }
+    &:nth-of-type(3) {
+      gap: 101px;
     }
   }
 
