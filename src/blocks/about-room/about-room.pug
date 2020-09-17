@@ -4,7 +4,7 @@ include ../button/button
 
 mixin about-room({ isLuxe = false, roomNumber = 0, roomPrice = "", roomPrefix = "", roomPostfix = "", tableData = {}, dropdownCalendarOptions = {}, dropdownGoodsOptions = {}, buttonOptions = {} } = {})
   - const luxeClass = isLuxe ? "about-room__number-details_luxe" : "";
-  article.about-room
+  section.about-room
     .about-room__content
       .about-room__header
         span.about-room__number-details(class = luxeClass)
