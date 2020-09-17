@@ -44,4 +44,10 @@
   &__item-text {
     margin: 0;
   }
+
+  @media screen and (max-width: 768px) {
+    &__title {
+      text-align: center;
+    }
+  }
 }

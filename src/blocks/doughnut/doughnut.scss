@@ -70,4 +70,10 @@
     border-radius: 50%;
     margin-right: 5px;
   }
+
+  @media screen and (max-width: 768px) {
+    &__title {
+      text-align: center;
+    }
+  }
 }
