@@ -15,8 +15,8 @@ export default class Input implements IInput {
   private inputElement: HTMLInputElement;
 
   maskInput() {
-    const isInputHasInputMaskAttributes = Object.keys(this.inputElement.dataset).some((key) => key.startsWith('inputmask'));
-    if (isInputHasInputMaskAttributes) {
+    const hasInputMaskData = Object.keys(this.inputElement.dataset).some((key) => key.startsWith('inputmask'));
+    if (hasInputMaskData) {
       const mask = new InputMask({
         showMaskOnHover: false,
       });
