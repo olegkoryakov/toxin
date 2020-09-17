@@ -16,42 +16,39 @@
     margin-bottom: 20px;
   }
 
-  &__number-details {  
-    width: 64px;
+  &__number-details {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     font-family: $likeHeadingFont; 
     color: $primaryColor;
-    &_luxe {
-      position: relative;
-      &:before {
-        content: 'Люкс';
-        position: absolute;
-        text-transform: uppercase;
-        font-family: $decorativeFont;
-        color: $tertiaryColor;
-        font-size: 12px;
-        line-height: 15px;
-        right: -5px;
-        transform: translateX(100%);
-        bottom: 3px;
-      }
-    }
   }
 
   &__number-prefix {
+    margin-right: 5px;
     font-size: 14px;
     line-height: 17px;
   }
 
   &__number {
+    position: relative;
     font-size: 24px;
     line-height: 30px;
   }
 
+  &__luxe-text {
+    position: absolute;
+    text-transform: uppercase;
+    font-family: $decorativeFont;
+    color: $tertiaryColor;
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 5px;
+    left: 5px;
+    top: 55%;
+    transform: translateX(100%) translateY(-50%);
+  }
+
   &__price-details {
-    width: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,6 +59,7 @@
   &__price {
     font-family: $decorativeFont;
     font-size: 14px;
+    margin-right: 3px;
   }
 
   &__price-postfix {

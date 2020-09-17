@@ -1,8 +1,7 @@
 include ../star-rating/star-rating
 
-mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLuxe = false, perDayText = "", reviewsText = "" } = {})
-  - const luxeClassMod = isLuxe ? "room_luxe" : "";
-  .room(class = luxeClassMod)
+mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLuxe = false, luxeText = "", perDayText = "", reviewsText = "" } = {})
+  .room
     .room__preview
       img(src = url).room__preview-img
       button.room__preview-button.room__preview-button_next
@@ -15,8 +14,10 @@ mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLu
     .room__content
       .room__about
         span.room__number-details
-          span.room__number-prefix №
+          .room__number-prefix №
           span.room__number= number
+            if isLuxe
+              span.room__luxe-text= luxeText
         span.room__price
           span.room__price-current= `${price}₽`
           span.room__price-text= perDayText

@@ -168,6 +168,7 @@
       "price": "9 990",
       "url": "./img/room888.png",
       "isLuxe": true,
+      "luxeText": "Люкс",
       "reviewsCount": 145,
       "perDayText": "В сутки",
       "reviewsText": "Отзывов"
@@ -187,6 +188,7 @@
       "price": "8 500",
       "url": "./img/room980.png",
       "isLuxe": true,
+      "luxeText": "Люкс",
       "reviewsCount": 35,
       "perDayText": "В сутки",
       "reviewsText": "Отзывов"

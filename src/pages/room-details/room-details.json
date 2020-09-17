@@ -120,6 +120,7 @@
   },
   "aboutRoomOptions": {
     "isLuxe": true,
+    "luxeText": "Люкс",
     "roomNumber": 888,
     "roomPrefix": "№",
     "roomPostfix": "В сутки",

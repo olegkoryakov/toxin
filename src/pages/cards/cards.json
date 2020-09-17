@@ -141,6 +141,7 @@
       "url": "./img/room888.png",
       "number": 888,
       "isLuxe": true,
+      "luxeText": "Люкс",
       "reviewsCount": 145,
       "rating": 5,
       "price": "9 990",

@@ -4,21 +4,22 @@
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 4px;
-  
-  &_luxe  &__number-details {
+
+  &__number {
     position: relative;
-   &::after {
+  }
+
+  &__luxe-text {
     position: absolute;
-    content: 'Люкс';
-    right: -5px;
-    bottom: 3px;
-    transform: translateX(100%);
     text-transform: uppercase;
     font-family: $decorativeFont;
     color: $tertiaryColor;
     font-size: 12px;
     line-height: 15px;
-   }
+
+    left: 0;
+    top: 50%;
+    transform: translateX(100%) translateY(-50%);
   }
 
   &__content {

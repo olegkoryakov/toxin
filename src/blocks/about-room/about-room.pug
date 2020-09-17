@@ -2,14 +2,15 @@ include ../dropdown-calendar/dropdown-calendar
 include ../dropdown-goods/dropdown-goods
 include ../button/button
 
-mixin about-room({ isLuxe = false, roomNumber = 0, roomPrice = "", roomPrefix = "", roomPostfix = "", tableData = {}, dropdownCalendarOptions = {}, dropdownGoodsOptions = {}, buttonOptions = {} } = {})
-  - const luxeClass = isLuxe ? "about-room__number-details_luxe" : "";
+mixin about-room({ isLuxe = false, luxeText = "", roomNumber = 0, roomPrice = "", roomPrefix = "", roomPostfix = "", tableData = {}, dropdownCalendarOptions = {}, dropdownGoodsOptions = {}, buttonOptions = {} } = {})
   section.about-room
     .about-room__content
       .about-room__header
-        span.about-room__number-details(class = luxeClass)
+        .about-room__number-details(class = luxeClass)
           span.about-room__number-prefix= roomPrefix
           span.about-room__number= roomNumber
+            if isLuxe
+              span.about-room__luxe-text= luxeText
         .about-room__price-details
           span.about-room__price= roomPrice
           span.about-room__price-postfix= roomPostfix
