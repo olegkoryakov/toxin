@@ -117,6 +117,13 @@ module.exports = {
           limit: false,
         },
       },
+      {
+        test: /\.ico$/,
+        loader: 'url-loader',
+        options: {
+          name: 'static/[name].[ext]',
+        },
+      },
     ],
   },
 
@@ -127,6 +134,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: `${PATHS.src}/fonts/`, to: 'fonts/' },
+        { from: `${PATHS.src}/static/`, to: 'static/' },
       ],
     }),
     ...PAGES.map((page) => new HTMLWebpackPlugin({
