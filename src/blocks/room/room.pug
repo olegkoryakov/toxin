@@ -1,6 +1,6 @@
 include ../star-rating/star-rating
 
-mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLuxe = false, luxeText = "", perDayText = "", reviewsText = "" } = {})
+mixin room({ number = 0, rating = 0, numberPrefix = "№", price = "", reviewsCount = 0, url = "", isLuxe = false, luxeText = "", perDayText = "", reviewsText = "" } = {})
   .room
     .room__preview
       img(src = url).room__preview-img
@@ -14,12 +14,12 @@ mixin room({ number = 0, rating = 0, price = 0, reviewsCount = 0, url = "", isLu
     .room__content
       .room__about
         span.room__number-details
-          .room__number-prefix №
+          .room__number-prefix= numberPrefix
           span.room__number= number
             if isLuxe
               span.room__luxe-text= luxeText
         span.room__price
-          span.room__price-current= `${price}₽`
+          span.room__price-current= price
           span.room__price-text= perDayText
       .room__rating
         .room__star-rating

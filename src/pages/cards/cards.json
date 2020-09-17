@@ -144,7 +144,7 @@
       "luxeText": "Люкс",
       "reviewsCount": 145,
       "rating": 5,
-      "price": "9 990",
+      "price": "9 990₽",
       "perDayText": "В сутки",
       "reviewsText": "Отзывов"
     },
@@ -154,7 +154,7 @@
       "isLuxe": false,
       "reviewsCount": 65,
       "rating": 4,
-      "price": "9 900",
+      "price": "9 900₽",
       "perDayText": "В сутки",
       "reviewsText": "Отзывов"
     }

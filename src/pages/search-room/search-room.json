@@ -165,7 +165,7 @@
     {
       "number": 888,
       "rating": 5,
-      "price": "9 990",
+      "price": "9 990₽",
       "url": "./img/room888.png",
       "isLuxe": true,
       "luxeText": "Люкс",
@@ -176,7 +176,7 @@
     {
       "number": 840,
       "rating": 4,
-      "price": "9 900",
+      "price": "9 900₽",
       "url": "./img/room840.png",
       "reviewsCount": 65,
       "perDayText": "В сутки",
@@ -185,7 +185,7 @@
     {
       "number": 980,
       "rating": 3,
-      "price": "8 500",
+      "price": "8 500₽",
       "url": "./img/room980.png",
       "isLuxe": true,
       "luxeText": "Люкс",
@@ -196,7 +196,7 @@
     {
       "number": 856,
       "rating": 5,
-      "price": "7 300",
+      "price": "7 300₽",
       "url": "./img/room856.png",
       "reviewsCount": 19,
       "perDayText": "В сутки",
@@ -205,7 +205,7 @@
     {
       "number": 740,
       "rating": 4,
-      "price": "6 000",
+      "price": "6 000₽",
       "url": "./img/room740.png",
       "reviewsCount": 44,
       "perDayText": "В сутки",
@@ -214,7 +214,7 @@
     {
       "number": 982,
       "rating": 3,
-      "price": "5 800",
+      "price": "5 800₽",
       "url": "./img/room982.png",
       "reviewsCount": 56,
       "perDayText": "В сутки",
@@ -223,7 +223,7 @@
     {
       "number": 678,
       "rating": 5,
-      "price": "5 500",
+      "price": "5 500₽",
       "url": "./img/room678.png",
       "reviewsCount": 45,
       "perDayText": "В сутки",
@@ -232,7 +232,7 @@
     {
       "number": 450,
       "rating": 4,
-      "price": "5 500",
+      "price": "5 500₽",
       "url": "./img/room450.png",
       "reviewsCount": 39,
       "perDayText": "В сутки",
@@ -241,7 +241,7 @@
     {
       "number": 350,
       "rating": 3,
-      "price": "5 500",
+      "price": "5 500₽",
       "url": "./img/room350.png",
       "reviewsCount": 77,
       "perDayText": "В сутки",
@@ -250,7 +250,7 @@
     {
       "number": 666,
       "rating": 5,
-      "price": "5 000",
+      "price": "5 000₽",
       "url": "./img/room666.png",
       "reviewsCount": 25,
       "perDayText": "В сутки",
@@ -259,7 +259,7 @@
     {
       "number": 444,
       "rating": 3,
-      "price": "5 000",
+      "price": "5 000₽",
       "url": "./img/room444.png",
       "reviewsCount": 15,
       "perDayText": "В сутки",
@@ -268,7 +268,7 @@
     {
       "number": 352,
       "rating": 3,
-      "price": "5 000",
+      "price": "5 000₽",
       "url": "./img/room352.png",
       "reviewsCount": 55,
       "perDayText": "В сутки",
