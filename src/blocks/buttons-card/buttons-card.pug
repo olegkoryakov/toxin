@@ -1,38 +1,37 @@
 include ../button/button
 
-mixin buttons-card
+mixin buttons-card({ buttonText = "click me", submitButtonText = "перейти к оплате" } = {})
   section.buttons-card
     h3.buttons-card__title Buttons
     - 
-      const text = "click me"
       const buttonsProps = [
         {
           type: "filled",
-          text: text,
+          text: buttonText,
         },
         {
           type: "filled",
-          text: text,
+          text: buttonText,
           isHovered: true,
         },
         {
           type: "stroked",
-          text: text,
+          text: buttonText,
         },
         {
           type: "stroked",
-          text: text,
+          text: buttonText,
           isHovered: true,
         }
       ];
       const controlButtonsProps = [
           {
             type: "apply",
-            text: text,
+            text: buttonText,
           },
           {
             type: "reset",
-            text: text,
+            text: buttonText,
           }
       ];
     ul.buttons-card__list.buttons-card__list_main
@@ -49,6 +48,6 @@ mixin buttons-card
       +button(
         {
           type: "submit",
-          text: "перейти к оплате",
+          text: submitButtonText,
         }
       )
