@@ -5,8 +5,7 @@
     "links": [
       {
         "text": "О нас",
-        "url": "mock",
-        "isCurrent": true
+        "url": "mock"
       },
       {
         "text": "Услуги",
@@ -42,15 +41,15 @@
   },
   "calendarDropdownOptions": {
     "selectedDates": {
-      "from": "19.9.2020",
-      "to": "22.9.2020"
+      "from": "19.8.2019",
+      "to": "23.8.2019"
     },
     "inputsOptions": [
       { "placeholder": "ДД мес - ДД мес", "title": "Даты пребывания в отеле" }
     ]
   },
   "dropdownGoodsGuestsOptions": {
-    "goodsCount": [2, 1, 0],
+    "goodsCount": [2, 1, 1],
     "type": "guests",
     "inputOptions": {
       "placeholder": "Сколько гостей",

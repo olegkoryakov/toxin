@@ -4,8 +4,7 @@
   "links": [
     {
       "text": "О нас",
-      "url": "mock",
-      "isCurrent": true
+      "url": "mock"
     },
     {
       "text": "Услуги",

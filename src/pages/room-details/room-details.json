@@ -136,13 +136,10 @@
         { "text": "Сбор за дополнительные услуги", "hasInfoButton": true ,"price": "300₽" }
       ]
     },
-    "daysCount": 4,
-    "discount": 2179,
-    "additionalServicesPrice": 300,
     "dropdownCalendarOptions": {
       "selectedDates": {
-        "from": "19.9.2020",
-        "to": "22.9.2020"
+        "from": "19.8.2019",
+        "to": "23.8.2019"
       },
       "inputsOptions": [
         {
