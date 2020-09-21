@@ -48,7 +48,6 @@
 
   &__content-column {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     flex-grow: 1;
     &_main {
@@ -78,6 +77,24 @@
 
   &__rules {
     max-width: 292px;
+  }
+
+
+  @media screen and (max-width: $mediumBreakpoint) {
+    &__content {
+      gap: 50px;
+    }
+
+    &__content-column_main {
+      gap: 50px;
+    }
+
+    &__content-column_main &__content-row {
+      &:nth-of-type(1n) {
+        margin-bottom: 0;
+        gap: 50px;
+      }
+    }
   }
 
   @media screen and (max-width: 540px) {
