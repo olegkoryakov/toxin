@@ -39,6 +39,7 @@
     "isUserRegistered": false,
     "userName": ""
   },
+  "searchRoomTitle": "Номера, которые мы для вас подобрали",
   "calendarDropdownOptions": {
     "selectedDates": {
       "from": "19.8.2019",

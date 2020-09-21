@@ -10,7 +10,7 @@ block variables
   - const data = require('./search-room.json')
   - const { title, headerOptions, footerOptions } = data;
 block content
-  - const { calendarDropdownOptions, dropdownGoodsGuestsOptions, rangeSliderOptions, defaultCheckboxesOptions, richCheckboxesOptions, dropdownGoodsGoodsOptions, expandableCheckboxesOptions, roomsOptions, paginationOptions } = data;
+  - const { calendarDropdownOptions, searchRoomTitle, dropdownGoodsGuestsOptions, rangeSliderOptions, defaultCheckboxesOptions, richCheckboxesOptions, dropdownGoodsGoodsOptions, expandableCheckboxesOptions, roomsOptions, paginationOptions } = data;
   main.search-room
     .search-room__content.content-wrapper
       section.search-room__filter
@@ -29,7 +29,7 @@ block content
         .search-room__filter-checkboxes
           +checkboxes(expandableCheckboxesOptions)
       section.search-room__search-room
-        h1.search-room__search-room-title Номера, которые мы для вас подобрали
+        h1.search-room__search-room-title= searchRoomTitle
         ul.search-room__search-room-list
           each roomOptions in roomsOptions
             li.search-room__search-room-item
