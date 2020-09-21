@@ -1,7 +1,7 @@
 include ../like-button/like-button
 
 mixin like-buttons-card({ title = "", likeButtonsOptions = [] } = {})
-  .like-buttons-card
+  section.like-buttons-card
     h3.like-buttons-card__title= title
     ul.like-buttons-card__list
       each likeButtonOptions in likeButtonsOptions

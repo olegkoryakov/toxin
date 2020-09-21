@@ -13,7 +13,7 @@ block content
   - const { calendarDropdownOptions, dropdownGoodsGuestsOptions, rangeSliderOptions, defaultCheckboxesOptions, richCheckboxesOptions, dropdownGoodsGoodsOptions, expandableCheckboxesOptions, roomsOptions, paginationOptions } = data;
   main.search-room
     .search-room__content.content-wrapper
-      .search-room__filter
+      section.search-room__filter
         .search-room__filter-dropdown-calendar
           +dropdown-calendar(calendarDropdownOptions)
         .search-room__filter-dropdown-goods.search-room__filter-dropdown-goods_guests
@@ -28,7 +28,7 @@ block content
           +dropdown-goods(dropdownGoodsGoodsOptions)
         .search-room__filter-checkboxes
           +checkboxes(expandableCheckboxesOptions)
-      .search-room__search-room
+      section.search-room__search-room
         h1.search-room__search-room-title Номера, которые мы для вас подобрали
         ul.search-room__search-room-list
           each roomOptions in roomsOptions

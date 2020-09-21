@@ -1,7 +1,7 @@
 include ../radio-button/radio-button
 
 mixin radio-buttons-card({ title = "", radioButtonsOptions = [] } = {})
-  .radio-buttons-card
+  section.radio-buttons-card
     h3.radio-buttons-card__title= title
     ul.radio-buttons-card__list
       each rabioButtonOptions in radioButtonsOptions
