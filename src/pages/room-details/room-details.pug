@@ -12,7 +12,7 @@ block variables
 block content
   - const { roomPreviewOptions, aboutRoomOptions, doughnutOptions, advantagesOptions, rulesOptions, resetOptions, roomCommentsOptions } = data;
   main.room-details
-    section.room-details__preview
+    .room-details__preview
       - const { mainImgUrl, restImgUrls } = roomPreviewOptions;
       .room-details__preview-gallery.room-details__preview-gallery_main
         img(src = mainImgUrl ).room-details__preview-img

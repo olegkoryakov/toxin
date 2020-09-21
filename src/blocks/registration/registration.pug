@@ -6,7 +6,7 @@ include ../toggle-button/toggle-button
 
 
 mixin registration({ title = "", userDataFieldsetOptions = { userLegend: "", userNameInputsOptions: [], userGenderRadiosOptions: [], userBirthDateInputBoxOptions: {} }, loginDataFieldsetOptions = { loginLegend: "", loginInputsOptions: [], addsToggleButtonOptions: {} }, submitButtonProps = {}, signInText = "", signInButtonProps = {} } = {})
-  section.registration
+  .registration
     .registration__content
       h1.registration__title= title
       form.registration__form(action="mock")

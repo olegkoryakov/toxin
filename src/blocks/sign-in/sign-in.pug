@@ -2,7 +2,7 @@ include ../button/button
 include ../input/input
 
 mixin sign-in({ title = "", inputsOptions = [], signInButtonOptions = {}, registrationButtonOptions = {}, registrationText = "" } = {})
-  section.sign-in
+  .sign-in
     .sign-in__content
       h1.sign-in__title= title
       form(action="mock").sign-in__form

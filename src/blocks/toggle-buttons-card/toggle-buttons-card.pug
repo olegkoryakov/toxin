@@ -1,7 +1,7 @@
 include ../toggle-button/toggle-button
 
 mixin toggle-buttons-card({ title = "", toggleButtonsOptions = [] } = {})
-  section.toggle-buttons-card
+  .toggle-buttons-card
     h3.toggle-buttons-card__title= title
     ul.toggle-buttons-card__list
       each toggleButtonOptions in toggleButtonsOptions

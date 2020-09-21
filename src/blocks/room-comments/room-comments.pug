@@ -2,7 +2,7 @@ include ../comment/comment
 
 mixin room-comments({ title = "",commentsCountText = "", commentsOptions = [] } = {})
   - const commentsCount = commentsOptions.length;
-  section.room-comments
+  .room-comments
     .room-comments__header
       h2.room-comments__title= title
       span.room-comments__count= `${commentsCount} ${commentsCountText}`

@@ -1,7 +1,7 @@
 include ../bullet-list/bullet-list
 
 mixin rules({ title = "", bulletListOptions = {} } = {})
-  section.rules
+  .rules
     h2.rules__title= title
     .rules__bullet-list
       +bullet-list(bulletListOptions)

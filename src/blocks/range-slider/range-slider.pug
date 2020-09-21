@@ -4,7 +4,7 @@ mixin range-slider({ title = "", subtitle = "", currentValue = { from: 5000, to:
       "data-current-value": currentValue,
       "data-values-range": valuesRange,
     }
-  section.range-slider&attributes(rangeSliderAttributes)
+  .range-slider&attributes(rangeSliderAttributes)
     .range-slider__header
       h3.range-slider__title= title
       span.range-slider__price
