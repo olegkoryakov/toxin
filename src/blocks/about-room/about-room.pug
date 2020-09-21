@@ -25,14 +25,14 @@ mixin about-room({ isLuxe = false, luxeText = "", roomNumber = 0, roomPrice = ""
           each row in rows
             - const { text, hasInfoButton, price } = row;
             tr.about-room__tr
-              td.about-room__td= text
+              td.about-room__td !{text}
               td.about-room__td
                 if hasInfoButton
                   button(type = "button").about-room__info i
-              td.about-room__td= price
+              td.about-room__td !{price}
           - const { totalText, totalPrice } = heading;
           tr.about-room__tr
             th.about-room__th= totalText
-            th.about-room__th(colspan = 2)= totalPrice
+            th.about-room__th(colspan = 2) !{totalPrice}
       .about-room__submit-button
         +button(buttonOptions)
