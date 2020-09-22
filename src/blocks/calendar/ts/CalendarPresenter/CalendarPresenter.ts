@@ -4,6 +4,7 @@ export default class CalendarPresenter implements ICalendarPresenter {
     this.calendarView = calendarView;
 
     this.addViewHandlers();
+    this.init();
   }
 
   private calendarModel: ICalendarModel;

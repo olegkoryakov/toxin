@@ -23,7 +23,6 @@ export default class Calendar implements ICalendar {
     this.calendarModel = new CalendarModel(selectedDates);
     this.calendarView = new CalendarView(calendarWidget);
     this.calendarPresenter = new CalendarPresenter(this.calendarModel, this.calendarView);
-    this.calendarPresenter.init();
   }
 
   getSelectedDates() {

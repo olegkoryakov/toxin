@@ -4,7 +4,7 @@ include ../arrow/arrow
 mixin calendar({ applyButtonText = "Применить", resetButtonText = "Очистить" } = {})
   .calendar
     .calendar__content
-      span.calendar__month Август 2019
+      span.calendar__month
       button(type = "button").calendar__button.calendar__button_next
         .calendar__button-svg
           +arrow()
@@ -12,54 +12,6 @@ mixin calendar({ applyButtonText = "Применить", resetButtonText = "Оч
         .calendar__button-svg
           +arrow()
       table.calendar__table
-        tr.calendar__tr.calendar__tr_heading
-          th.calendar__th Пн
-          th.calendar__th Вт
-          th.calendar__th Ср
-          th.calendar__th Чт
-          th.calendar__th Пт
-          th.calendar__th Сб
-          th.calendar__th Вс
-        tr.calendar__tr
-          td.calendar__td.calendar__td_other-month 29
-          td.calendar__td.calendar__td_other-month 30
-          td.calendar__td.calendar__td_other-month 31
-          td.calendar__td 1
-          td.calendar__td 2
-          td.calendar__td 3
-          td.calendar__td 4
-        tr.calendar__tr
-          td.calendar__td 5
-          td.calendar__td 6
-          td.calendar__td 7
-          td.calendar__td.calendar__td_current-day 8
-          td.calendar__td 9
-          td.calendar__td 10
-          td.calendar__td 11
-        tr.calendar__tr
-          td.calendar__td 12
-          td.calendar__td 13
-          td.calendar__td 14
-          td.calendar__td 15
-          td.calendar__td 16
-          td.calendar__td 17
-          td.calendar__td 18
-        tr.calendar__tr
-          td.calendar__td.calendar__td_selected.calendar__td_selected-first 19
-          td.calendar__td.calendar__td_interval 20
-          td.calendar__td.calendar__td_interval 21
-          td.calendar__td.calendar__td_interval 22
-          td.calendar__td.calendar__td_selected.calendar__td_selected-last 23
-          td.calendar__td 24
-          td.calendar__td 25
-        tr.calendar__tr
-          td.calendar__td 26
-          td.calendar__td 27
-          td.calendar__td 28
-          td.calendar__td 29
-          td.calendar__td 30
-          td.calendar__td 31
-          td.calendar__td.calendar__td_other-month 1
       .calendar__controls
         .calendar__controls-reset-button
           +button(

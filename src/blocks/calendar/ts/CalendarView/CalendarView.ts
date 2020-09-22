@@ -67,13 +67,11 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
     };
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  setCurrentDayClass(td: HTMLTableDataCellElement) {
+  setCurrentDayClass = (td: HTMLTableDataCellElement) => {
     td.classList.add('calendar__td_current-day');
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  setSelectedClass(td: HTMLTableDataCellElement, modifierPostfix: TModifierPostfix) {
+  setSelectedClass = (td: HTMLTableDataCellElement, modifierPostfix: TModifierPostfix) => {
     td.classList.add('calendar__td', 'calendar__td_selected', `calendar__td_selected-${modifierPostfix}`);
   }
 
