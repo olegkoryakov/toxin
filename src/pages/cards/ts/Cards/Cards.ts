@@ -4,6 +4,7 @@ import Registration from '../../../../blocks/registration/ts/Registration/Regist
 import SignIn from '../../../../blocks/sign-in/ts/SignIn/SignIn';
 import IMG_URLS from './IMG_URLS';
 import Room from '../../../../blocks/room/ts/Room/Room';
+import Calendar from '../../../../blocks/calendar/ts/Calendar';
 
 
 class Cards implements ICards {
@@ -23,6 +24,8 @@ class Cards implements ICards {
 
   private aboutRoom!: IAboutRoom;
 
+  private calendar!: ICalendar;
+
   private rooms: IRoom[];
 
   private initFields() {
@@ -31,6 +34,7 @@ class Cards implements ICards {
     const numberSearchElement = this.cardsElement.querySelector('.number-search');
     const registrationElement = this.cardsElement.querySelector('.registration');
     const roomElements = this.cardsElement.querySelectorAll('.room');
+    const calendarElement = this.cardsElement.querySelector('.cards__calendar .calendar');
 
     roomElements.forEach((roomElement, index) => {
       this.rooms.push(new Room(roomElement as HTMLElement, ...IMG_URLS[index]));
@@ -39,6 +43,8 @@ class Cards implements ICards {
     this.aboutRoom = new AboutRoom(aboutRoomElement as HTMLElement);
     this.registration = new Registration(registrationElement as HTMLElement);
     this.signIn = new SignIn(signInElement as HTMLElement);
+
+    this.calendar = new Calendar(calendarElement as HTMLElement);
   }
 }
 
