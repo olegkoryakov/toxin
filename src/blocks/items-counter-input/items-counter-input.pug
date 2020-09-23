@@ -1,0 +1,11 @@
+include ../expand-button/expand-button
+
+mixin items-counter-input({ title = "", placeholder = "", isHightlighted = false, value = "", status = "", isOened = false } = {})
+  - const hightlightClass = isHightlighted ? "items-counter-input__input_hightlight" : "";
+  .items-counter-input
+    h3.items-counter-input__title= title
+    if (status !== "")
+      span.items-counter-input__status= status
+    .items-counter-input__expand-button
+      +expand-button({ isOpened })
+    input.items-counter-input__input(type="text", value = value, class = hightlightClass, placeholder = placeholder, readonly = true)

@@ -1,10 +1,9 @@
-.goods {
-
+.items-counter {
   &__list {
     @include reset-list;
   }
   
-  &__good {
+  &__item {
     display: flex;
     align-items: center;
     margin-bottom: 6px;
@@ -14,12 +13,12 @@
     }
   }
 
-  &__good-name {
+  &__item-name {
     @include h3Like;
     margin-right: auto;
   }
 
-  &__good-button {
+  &__item-button {
     @include button-reset;
     box-sizing: border-box;
     width: 30px;
@@ -36,7 +35,7 @@
     }
   }
 
-  &__good-count {
+  &__item-count {
     @include h3Like;
     text-align: center;
     width: 32px;

@@ -1,14 +1,14 @@
 include ../button/button
-include ../dropdown-goods/dropdown-goods
+include ../dropdown-items-counter/dropdown-items-counter
 include ../dropdown-calendar/dropdown-calendar
 
-mixin number-search({ title = "", dropdownCalendarOptions = {}, dropdownGoodsOptions = {}, buttonOptions = {} } = {})
+mixin number-search({ title = "", dropdownItemsCounterOptions = {}, dropdownCalendarOptions = {}, buttonOptions = {} } = {})
   section.number-search
     .number-search__content
       h1.number-search__title= title
       .number-search__dropdown-calendar
         +dropdown-calendar(dropdownCalendarOptions)
-      .number-search__dropdown-goods
-        +dropdown-goods(dropdownGoodsOptions)
+      .number-search__dropdown-items-counter
+        +dropdown-items-counter(dropdownItemsCounterOptions)
       .number-search__submit-button
         +button(buttonOptions)

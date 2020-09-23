@@ -49,9 +49,27 @@
       { "placeholder": "ДД мес - ДД мес", "title": "Даты пребывания в отеле" }
     ]
   },
-  "dropdownGoodsGuestsOptions": {
-    "goodsCount": [2, 1, 1],
-    "type": "guests",
+  "dropdownItemsCounterGuestsOptions": {
+    "itemsCounterOptions": {
+      "itemsProps": [
+        {
+          "nameForms": [["взрослый", "взрослых", "взрослых"]],
+          "count": 2
+        },
+        {
+          "nameForms": [["ребенок", "ребенка", "детей"]],
+          "count": 1
+        },
+        {
+          "nameForms": [["младенец", "младенца", "младенцев"]],
+          "count": 1
+        }
+      ],
+      "messageOptions": {
+        "groupLastIndex": 1,
+        "groupNameForms": ["гость", "гостя", "гостей"]
+      }
+    },
     "inputOptions": {
       "placeholder": "Сколько гостей",
       "title": "Гости"
@@ -110,9 +128,26 @@
       }
     ]
   },
-  "dropdownGoodsGoodsOptions": {
-    "goodsCount": [2, 2, 0],
-    "type": "goods",
+  "dropdownItemsCounterGoodsOptions": {
+    "itemsCounterOptions": {
+      "itemsProps": [
+        {
+          "nameForms": [["спальня", "спальни", "спален"]],
+          "count": 2
+        },
+        {
+          "nameForms": [["кровать", "кровати", "кроватей"]],
+          "count": 2
+        },
+        {
+          "nameForms": [
+            ["ванная", "ванные", "ванных"],
+            ["комната", "комнаты", "комнат"]
+          ],
+          "count": 0
+        }
+      ]
+    },
     "inputOptions": {
       "placeholder": "Удобства номера",
       "title": "Удобства номера"

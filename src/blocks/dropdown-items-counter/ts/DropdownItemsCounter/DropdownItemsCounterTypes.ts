@@ -1,0 +1,3 @@
+interface IDropdownItemsCounter extends IDropdown {
+
+}

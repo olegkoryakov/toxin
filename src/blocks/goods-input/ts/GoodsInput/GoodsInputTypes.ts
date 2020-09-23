@@ -1,3 +1,0 @@
-interface IGoodsInput {
-  toggleHightlight(): void;
-}

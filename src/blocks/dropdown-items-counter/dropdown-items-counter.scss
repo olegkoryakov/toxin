@@ -1,8 +1,8 @@
-.dropdown-goods {
+.dropdown-items-counter {
   margin: 0 auto;
   position: relative;
 
-  &__goods {
+  &__items-counter {
     background-color: #fff;
     box-sizing: border-box;
     width: 100%;
@@ -19,11 +19,11 @@
     padding-top: 6px;
   }
 
-  &_opened > &__goods {
+  &_opened > &__items-counter {
     display: block;
   }
 
-  &_closed > &__goods {
+  &_closed > &__items-counter {
     display: none;
   }
 }

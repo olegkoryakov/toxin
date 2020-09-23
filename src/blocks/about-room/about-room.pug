@@ -1,8 +1,8 @@
 include ../dropdown-calendar/dropdown-calendar
-include ../dropdown-goods/dropdown-goods
+include ../dropdown-items-counter/dropdown-items-counter
 include ../button/button
 
-mixin about-room({ isLuxe = false, luxeText = "", roomNumber = 0, roomPrice = "", roomPrefix = "", roomPostfix = "", tableData = {}, dropdownCalendarOptions = {}, dropdownGoodsOptions = {}, buttonOptions = {} } = {})
+mixin about-room({ isLuxe = false, luxeText = "", roomNumber = 0, roomPrice = "", roomPrefix = "", roomPostfix = "", tableData = {}, dropdownCalendarOptions = {}, dropdownItemsCounterOptions = {}, buttonOptions = {} } = {})
   section.about-room
     .about-room__content
       .about-room__header
@@ -17,8 +17,8 @@ mixin about-room({ isLuxe = false, luxeText = "", roomNumber = 0, roomPrice = ""
       form.about-room__form(id = "about-room" action="mock")
         .about-room__dropdown-calendar
           +dropdown-calendar(dropdownCalendarOptions)
-        .about-room__dropdown-goods
-          +dropdown-goods(dropdownGoodsOptions)
+        .about-room__dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterOptions)
       .about-room__table-wrapper
         table.about-room__table
           - const { rows, heading } = tableData;

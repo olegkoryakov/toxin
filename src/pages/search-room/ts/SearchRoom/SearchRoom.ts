@@ -1,9 +1,9 @@
 import RangeSlider from '../../../../blocks/range-slider/ts/RangeSlider';
-import DropdownGoods from '../../../../blocks/dropdown-goods/ts/DropdownGoods/DropdownGoods';
 import DropdownCalendar from '../../../../blocks/dropdown-calendar/ts/DropdownCalendar/DropdownCalendar';
 import Checkboxes from '../../../../blocks/checkboxes/ts/Checkboxes/Checkboxes';
 import Room from '../../../../blocks/room/ts/Room/Room';
 import IMG_URLS from './IMG_URLS';
+import DropdownItemsCounter from '../../../../blocks/dropdown-items-counter/ts/DropdownItemsCounter/DropdownItemsCounter';
 
 class SearchRoom implements ISearchRoom {
   constructor(searchRoomElement: HTMLElement) {
@@ -19,31 +19,31 @@ class SearchRoom implements ISearchRoom {
 
   private rooms!: IRoom[];
 
-  private dropdownGoodsGuests!: IDropdownGoods;
-
-  private dropdownGoodsGoods!: IDropdownGoods;
+  private dropdownItemsCounters!: IDropdownItemsCounter[];
 
   private rangeSlider!: IRangeSlider;
 
   private checkboxes: ICheckboxes[];
 
   private initFields() {
-    const dropdownGoodsGoodsElement = this.searchRoomElement
-      .querySelector('.search-room__filter-dropdown-goods_goods .dropdown-goods');
-    const dropdownGoodsGuestsElement = this.searchRoomElement
-      .querySelector('.search-room__filter-dropdown-goods_guests .dropdown-goods');
+    this.dropdownItemsCounters = [];
+
     const dropdownCalendarElement = this.searchRoomElement
       .querySelector('.dropdown-calendar');
     const rangeSliderElement = this.searchRoomElement
       .querySelector('.range-slider');
+    const dropdownItemsCounterElements = this.searchRoomElement
+      .querySelectorAll('.dropdown-items-counter');
     const checkboxesElements = this.searchRoomElement
       .querySelectorAll('.checkboxes');
     const roomElements = this.searchRoomElement.querySelectorAll('.room');
 
     this.rangeSlider = new RangeSlider(rangeSliderElement as HTMLElement);
     this.dropdownCalendar = new DropdownCalendar(dropdownCalendarElement as HTMLElement);
-    this.dropdownGoodsGuests = new DropdownGoods(dropdownGoodsGuestsElement as HTMLElement);
-    this.dropdownGoodsGoods = new DropdownGoods(dropdownGoodsGoodsElement as HTMLElement);
+    dropdownItemsCounterElements.forEach((dropdownItemsCounterElement) => {
+      this.dropdownItemsCounters
+        .push(new DropdownItemsCounter(dropdownItemsCounterElement as HTMLElement));
+    });
     checkboxesElements.forEach((checkboxesElement) => {
       this.checkboxes.push(new Checkboxes(checkboxesElement as HTMLElement));
     });

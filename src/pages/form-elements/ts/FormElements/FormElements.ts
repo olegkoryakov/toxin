@@ -1,10 +1,10 @@
 import Input from '../../../../blocks/input/ts/Input/Input';
-import DropdownGoods from '../../../../blocks/dropdown-goods/ts/DropdownGoods/DropdownGoods';
 import Checkboxes from '../../../../blocks/checkboxes/ts/Checkboxes/Checkboxes';
 import LikeButton from '../../../../blocks/like-button/ts/LikeButton';
 import DropdownCalendar from '../../../../blocks/dropdown-calendar/ts/DropdownCalendar/DropdownCalendar';
 import RangeSlider from '../../../../blocks/range-slider/ts/RangeSlider';
 import SubscriptionForm from '../../../../blocks/subscription-form/ts/SubscriptionForm/SubscriptionForm';
+import DropdownItemsCounter from '../../../../blocks/dropdown-items-counter/ts/DropdownItemsCounter/DropdownItemsCounter';
 
 class FormElements implements IFormElements {
   constructor(formElementsElement: HTMLElement) {
@@ -16,9 +16,7 @@ class FormElements implements IFormElements {
 
   private inputs!: IInput[];
 
-  private dropdownsGoods!: IDropdownGoods[];
-
-  private dropdownsGuests!: IDropdownGoods[];
+  private dropdownItemsCounters!: IDropdownItemsCounter[];
 
   private dropdownsCalendar!: IDropdownCalendar[];
 
@@ -32,17 +30,13 @@ class FormElements implements IFormElements {
 
   private initFields() {
     this.inputs = [];
-    this.dropdownsGoods = [];
-    this.dropdownsGuests = [];
+    this.dropdownItemsCounters = [];
     this.dropdownsCalendar = [];
     this.likeButtons = [];
     this.checkboxes = [];
 
     const inputElements = this.formElementsElement.querySelectorAll('.input');
-    const dropdownsGoodsElements = this.formElementsElement
-      .querySelectorAll('.form-elements__dropdown-goods_goods > .dropdown-goods');
-    const dropdownsGuestsElements = this.formElementsElement
-      .querySelectorAll('.form-elements__dropdown-goods_guests > .dropdown-goods');
+    const dropdownItemsCounterElements = this.formElementsElement.querySelectorAll('.dropdown-items-counter');
     const dropdownsCalendarsElements = this.formElementsElement.querySelectorAll('.dropdown-calendar');
     const checkboxesElements = this.formElementsElement.querySelectorAll('.checkboxes');
     const likeButtonsElements = this.formElementsElement.querySelectorAll('.like-button');
@@ -55,13 +49,9 @@ class FormElements implements IFormElements {
       this.inputs.push(new Input(inputElement as HTMLInputElement));
     });
 
-    dropdownsGoodsElements.forEach((dropdownGoodsElement) => {
-      this.dropdownsGoods.push(new DropdownGoods(dropdownGoodsElement as HTMLElement));
-    });
-
-    dropdownsGuestsElements.forEach((dropdownGuestsElement) => {
-      this.dropdownsGuests
-        .push(new DropdownGoods(dropdownGuestsElement as HTMLElement));
+    dropdownItemsCounterElements.forEach((dropdownItemsCounterElement) => {
+      this.dropdownItemsCounters
+        .push(new DropdownItemsCounter(dropdownItemsCounterElement as HTMLElement));
     });
 
     dropdownsCalendarsElements.forEach((dropdownCalendarElement) => {

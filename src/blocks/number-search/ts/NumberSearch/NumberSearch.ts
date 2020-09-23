@@ -1,5 +1,5 @@
 import DropdownCalendar from '../../../dropdown-calendar/ts/DropdownCalendar/DropdownCalendar';
-import DropdownGoods from '../../../dropdown-goods/ts/DropdownGoods/DropdownGoods';
+import DropdownItemsCounter from '../../../dropdown-items-counter/ts/DropdownItemsCounter/DropdownItemsCounter';
 
 export default class NumberSearch implements NumberSearch {
   constructor(numberSearchElement: HTMLElement) {
@@ -9,15 +9,15 @@ export default class NumberSearch implements NumberSearch {
 
   private numberSearchElement: HTMLElement;
 
-  private dropdownGoods!: IDropdownGoods;
+  private dropdownItemsCounter!: IDropdownItemsCounter;
 
   private dropdownCalendar!: IDropdownCalendar;
 
   private initFields() {
     const dropdownCalendarElement = this.numberSearchElement.querySelector('.dropdown-calendar') as HTMLElement;
-    const dropdownGoodsElement = this.numberSearchElement.querySelector('.dropdown-goods') as HTMLElement;
+    const dropdownItemsCounterElement = this.numberSearchElement.querySelector('.dropdown-items-counter') as HTMLElement;
 
     this.dropdownCalendar = new DropdownCalendar(dropdownCalendarElement);
-    this.dropdownGoods = new DropdownGoods(dropdownGoodsElement);
+    this.dropdownItemsCounter = new DropdownItemsCounter(dropdownItemsCounterElement);
   }
 }

@@ -152,11 +152,29 @@
         }
       ]
     },
-    "dropdownGoodsOptions": {
-      "goodsCount": [2, 1, 0],
-      "type": "guests",
-      "hasApplyButton": true,
-      "hasResetButton": true,
+    "dropdownItemsCounterOptions": {
+      "itemsCounterOptions": {
+        "hasApplyButton": true,
+        "hasResetButton": true,
+        "itemsProps": [
+          {
+            "nameForms": [["взрослый", "взрослых", "взрослых"]],
+            "count": 2
+          },
+          {
+            "nameForms": [["ребенок", "ребенка", "детей"]],
+            "count": 1
+          },
+          {
+            "nameForms": [["младенец", "младенца", "младенцев"]],
+            "count": 0
+          }
+        ],
+        "messageOptions": {
+          "groupLastIndex": 1,
+          "groupNameForms": ["гость", "гостя", "гостей"]
+        }
+      },
       "inputOptions": {
         "placeholder": "Сколько гостей",
         "title": "Гости"

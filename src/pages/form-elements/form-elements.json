@@ -14,8 +14,27 @@
         "isAutofocused": true,
         "value": "This is pretty awesome"
       },
-      "dropdownGoodsGuestsOptions": {
-        "type": "guests",
+      "dropdownItemsCounterGuestsOptions": {
+        "itemsCounterOptions": {
+          "itemsProps": [
+            {
+              "nameForms": [["взрослый", "взрослых", "взрослых"]],
+              "count": 0
+            },
+            {
+              "nameForms": [["ребенок", "ребенка", "детей"]],
+              "count": 0
+            },
+            {
+              "nameForms": [["младенец", "младенца", "младенцев"]],
+              "count": 0
+            }
+          ],
+          "messageOptions": {
+            "groupLastIndex": 1,
+            "groupNameForms": ["гость", "гостя", "гостей"]
+          }
+        },
         "inputOptions": {
           "placeholder": "Сколько гостей",
           "title": "Dropdown"
@@ -175,18 +194,52 @@
   },
   "rowSecond": {
     "columnFirst": {
-      "dropdownGoodsGoodsDefaultOptions": {
-        "goodsCount": [2, 2, 0],
-        "type": "goods",
+      "dropdownItemsCounterDefaultOptions": {
+        "itemsCounterOptions": {
+          "itemsProps": [
+            {
+              "nameForms": [["спальня", "спальни", "спален"]],
+              "count": 2
+            },
+            {
+              "nameForms": [["кровать", "кровати", "кроватей"]],
+              "count": 2
+            },
+            {
+              "nameForms": [
+                ["ванная", "ванные", "ванных"],
+                ["комната", "комнаты", "комнат"]
+              ],
+              "count": 0
+            }
+          ]
+        },
         "inputOptions": {
           "title": "Dropdown",
           "status": "Default",
           "placeholder": "Сколько удобств"
         }
       },
-      "dropdownGoodsGoodsExpandedOptions": {
-        "goodsCount": [2, 2, 0],
-        "type": "goods",
+      "dropdownItemsCounterExpandedOptions": {
+        "itemsCounterOptions": {
+          "itemsProps": [
+            {
+              "nameForms": [["спальня", "спальни", "спален"]],
+              "count": 2
+            },
+            {
+              "nameForms": [["кровать", "кровати", "кроватей"]],
+              "count": 2
+            },
+            {
+              "nameForms": [
+                ["ванная", "ванные", "ванных"],
+                ["комната", "комнаты", "комнат"]
+              ],
+              "count": 0
+            }
+          ]
+        },
         "isOpened": true,
         "inputOptions": {
           "title": "Dropdown",
@@ -196,9 +249,28 @@
       }
     },
     "columnSecond": {
-      "dropdowGoodsGuestsWithApplyButtonOptions": {
-        "type": "guests",
-        "hasApplyButton": true,
+      "dropdownItemsCounterWithApplyButtonOptions": {
+        "itemsCounterOptions": {
+          "itemsProps": [
+            {
+              "nameForms": [["взрослый", "взрослых", "взрослых"]],
+              "count": 0
+            },
+            {
+              "nameForms": [["ребенок", "ребенка", "детей"]],
+              "count": 0
+            },
+            {
+              "nameForms": [["младенец", "младенца", "младенцев"]],
+              "count": 0
+            }
+          ],
+          "messageOptions": {
+            "groupLastIndex": 1,
+            "groupNameForms": ["гость", "гостя", "гостей"]
+          },
+          "hasApplyButton": true          
+        },
         "isOpened": true,
         "inputOptions": {
           "title": "Dropdown",
@@ -207,11 +279,29 @@
       }
     },
     "columnThird": {
-      "dropdownGoodsGuestsWithApplyAndResetButtonsOptions": {
-        "goodsCount": [2, 1, 0],
-        "type": "guests",
-        "hasApplyButton": true,
-        "hasResetButton": true,
+      "dropdownItemsCounterWithApplyAndResetButtonsOptions": {
+        "itemsCounterOptions": {
+          "hasApplyButton": true,
+          "hasResetButton": true,
+          "itemsProps": [
+            {
+              "nameForms": [["взрослый", "взрослых", "взрослых"]],
+              "count": 2
+            },
+            {
+              "nameForms": [["ребенок", "ребенка", "детей"]],
+              "count": 1
+            },
+            {
+              "nameForms": [["младенец", "младенца", "младенцев"]],
+              "count": 0
+            }
+          ],
+          "messageOptions": {
+            "groupLastIndex": 1,
+            "groupNameForms": ["гость", "гостя", "гостей"]
+          }
+        },
         "isOpened": true,
         "inputOptions": {
           "title": "Dropdown",

@@ -1,0 +1,12 @@
+include ../items-counter-input/items-counter-input
+include ../items-counter/items-counter
+
+mixin dropdown-items-counter({ isOpened = false, itemsCounterOptions = {}, inputOptions = {} } = {})
+  - 
+    const openedClass = isOpened ? "dropdown-items-counter_opened" : "dropdown-items-counter_closed";
+    const isHightlighted = isOpened;
+  .dropdown-items-counter(class = openedClass)
+    .dropdown-items-counter__input
+      +items-counter-input({ ...inputOptions, isHightlighted, isOpened })
+    .dropdown-items-counter__items-counter
+      +items-counter(itemsCounterOptions)

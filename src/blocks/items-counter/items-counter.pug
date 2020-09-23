@@ -1,0 +1,26 @@
+include ../button/button
+
+mixin items-counter({ hasApplyButton = false, itemsProps = [], messageOptions, hasResetButton = false, applyButtonText = "Применить", resetButtonText = "Очистить" } = {})
+  -
+    const itemsCounterDataAttributes = { 'data-items-counter-props': itemsProps };
+    if (messageOptions) itemsCounterDataAttributes['data-message-options'] = messageOptions;
+  .items-counter&attributes(itemsCounterDataAttributes)
+    ul.items-counter__list
+    if hasApplyButton || hasResetButton
+      .items-counter__controls
+        if hasResetButton
+          .items-counter__controls-button.items-counter__controls-button_reset
+            +button(
+              {
+                text: resetButtonText,
+                type : "reset",
+              }
+            )
+        if hasApplyButton
+          .items-counter__controls-button.items-counter__controls-button_apply
+            +button(
+              {
+                text: applyButtonText,
+                type : "apply",
+              }
+            )

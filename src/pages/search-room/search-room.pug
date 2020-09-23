@@ -2,7 +2,7 @@ extends ../../layouts/page/page
 include ../../blocks/room/room
 include ../../blocks/pagination/pagination
 include ../../blocks/dropdown-calendar/dropdown-calendar
-include ../../blocks/dropdown-goods/dropdown-goods
+include ../../blocks/dropdown-items-counter/dropdown-items-counter
 include ../../blocks/range-slider/range-slider
 include ../../blocks/checkboxes/checkboxes
 
@@ -10,22 +10,22 @@ block variables
   - const data = require('./search-room.json')
   - const { title, headerOptions, footerOptions } = data;
 block content
-  - const { calendarDropdownOptions, searchRoomTitle, dropdownGoodsGuestsOptions, rangeSliderOptions, defaultCheckboxesOptions, richCheckboxesOptions, dropdownGoodsGoodsOptions, expandableCheckboxesOptions, roomsOptions, paginationOptions } = data;
+  - const { calendarDropdownOptions, searchRoomTitle, dropdownItemsCounterGuestsOptions, rangeSliderOptions, defaultCheckboxesOptions, richCheckboxesOptions, dropdownItemsCounterGoodsOptions, expandableCheckboxesOptions, roomsOptions, paginationOptions } = data;
   main.search-room
     .search-room__content.content-wrapper
       section.search-room__filter
         .search-room__filter-dropdown-calendar
           +dropdown-calendar(calendarDropdownOptions)
-        .search-room__filter-dropdown-goods.search-room__filter-dropdown-goods_guests
-          +dropdown-goods(dropdownGoodsGuestsOptions)
+        .search-room__filter-dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterGuestsOptions)
         .search-room__filter-range-slider
           +range-slider(rangeSliderOptions)
         .search-room__filter-checkboxes.search-room__filter-checkboxes_default
           +checkboxes(defaultCheckboxesOptions)
         .search-room__filter-checkboxes
           +checkboxes(richCheckboxesOptions)
-        .search-room__filter-dropdown-goods.search-room__filter-dropdown-goods_goods
-          +dropdown-goods(dropdownGoodsGoodsOptions)
+        .search-room__filter-dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterGoodsOptions)
         .search-room__filter-checkboxes
           +checkboxes(expandableCheckboxesOptions)
       section.search-room__search-room

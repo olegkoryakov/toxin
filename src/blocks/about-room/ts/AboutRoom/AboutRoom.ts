@@ -1,4 +1,4 @@
-import DropdownGoods from '../../../dropdown-goods/ts/DropdownGoods/DropdownGoods';
+import DropdownItemsCounter from '../../../dropdown-items-counter/ts/DropdownItemsCounter/DropdownItemsCounter';
 import DropdownCalendar from '../../../dropdown-calendar/ts/DropdownCalendar/DropdownCalendar';
 
 export default class AboutRoom implements IAboutRoom {
@@ -11,13 +11,15 @@ export default class AboutRoom implements IAboutRoom {
 
   private dropdownCalendar!: IDropdownCalendar;
 
-  private dropdownGoods!: IDropdownGoods;
+  private dropdownItemsCounter!: IDropdownItemsCounter;
 
   private initFields() {
     const dropdownCalendarElement = this.aboutRoomElement.querySelector('.dropdown-calendar');
-    const dropdownGoodsElement = this.aboutRoomElement.querySelector('.dropdown-goods');
+    const dropdownItemsCounterElement = this.aboutRoomElement.querySelector('.dropdown-items-counter');
 
-    this.dropdownGoods = new DropdownGoods(dropdownGoodsElement as HTMLElement);
+    this.dropdownItemsCounter = new DropdownItemsCounter(
+      dropdownItemsCounterElement as HTMLElement,
+    );
     this.dropdownCalendar = new DropdownCalendar(dropdownCalendarElement as HTMLElement);
   }
 }

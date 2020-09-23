@@ -1,6 +1,6 @@
 extends ../../layouts/ui-kit/ui-kit
 include ../../blocks/input-box/input-box
-include ../../blocks/dropdown-goods/dropdown-goods
+include ../../blocks/dropdown-items-counter/dropdown-items-counter
 include ../../blocks/dropdown-calendar/dropdown-calendar
 include ../../blocks/subscription-form/subscription-form
 include ../../blocks/checkboxes/checkboxes
@@ -23,13 +23,13 @@ block content
     .form-elements__row
       - const { rowFirst } = data;
       .form-elements__column
-        - const { defaultInputBoxOptions, hoveredInputBoxOptions, dropdownGoodsGuestsOptions, maskedInputBoxOptions, dropdownCalendarDatesOptions, dropdownCalendarFilterDatesOptions, subscriptionFormOptions } = rowFirst.columnFirst;
+        - const { defaultInputBoxOptions, hoveredInputBoxOptions, dropdownItemsCounterGuestsOptions, maskedInputBoxOptions, dropdownCalendarDatesOptions, dropdownCalendarFilterDatesOptions, subscriptionFormOptions } = rowFirst.columnFirst;
         .form-elements__input-box
           +input-box(defaultInputBoxOptions)
         .form-elements__input-box
           +input-box(hoveredInputBoxOptions)
-        .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
-          +dropdown-goods(dropdownGoodsGuestsOptions)
+        .form-elements__dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterGuestsOptions)
         .form-elements__input-box
           +input-box(maskedInputBoxOptions)
         .form-elements__dropdown-calendar.form-elements__dropdown-calendar_dates
@@ -61,19 +61,19 @@ block content
     .form-elements__row
       - const { rowSecond } = data;
       .form-elements__column
-        - const { dropdownGoodsGoodsDefaultOptions, dropdownGoodsGoodsExpandedOptions } = rowSecond.columnFirst;
-        .form-elements__dropdown-goods.form-elements__dropdown-goods_goods
-          +dropdown-goods(dropdownGoodsGoodsDefaultOptions)
-        .form-elements__dropdown-goods.form-elements__dropdown-goods_goods
-          +dropdown-goods(dropdownGoodsGoodsExpandedOptions)
+        - const { dropdownItemsCounterDefaultOptions, dropdownItemsCounterExpandedOptions } = rowSecond.columnFirst;
+        .form-elements__dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterDefaultOptions)
+        .form-elements__dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterExpandedOptions)
       .form-elements__column
-        - const { dropdowGoodsGuestsWithApplyButtonOptions } = rowSecond.columnSecond;
-        .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
-          +dropdown-goods(dropdowGoodsGuestsWithApplyButtonOptions)
+        - const { dropdownItemsCounterWithApplyButtonOptions } = rowSecond.columnSecond;
+        .form-elements__dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterWithApplyButtonOptions)
       .form-elements__column
-        - const { dropdownGoodsGuestsWithApplyAndResetButtonsOptions } = rowSecond.columnThird;
-        .form-elements__dropdown-goods.form-elements__dropdown-goods_guests
-          +dropdown-goods(dropdownGoodsGuestsWithApplyAndResetButtonsOptions)
+        - const { dropdownItemsCounterWithApplyAndResetButtonsOptions } = rowSecond.columnThird;
+        .form-elements__dropdown-items-counter
+          +dropdown-items-counter(dropdownItemsCounterWithApplyAndResetButtonsOptions)
     .form-elements__row
       - const { rowThird } = data;
       .form-elements__column
