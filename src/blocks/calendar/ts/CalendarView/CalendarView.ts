@@ -141,12 +141,12 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
       const monthFlag = date.getMonth();
       while (date.getMonth() === monthFlag) {
         const currentMonthDayNum = date.getDate();
-        // if ponedel`nik, create new tr
+        // if monday, create new tr
         if (helpers.getWeekDayNumber(date.getDay()) === 0) {
           tr = helpers.createTr();
           calendarTable.append(tr);
         }
-        // Zapolnyau table
+        // Fill table
         td = helpers.createTd(currentMonthDayNum);
         const tdData: ITdData = {
           element: td,
