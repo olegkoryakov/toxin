@@ -70,7 +70,7 @@ export default class DropdownCalendar extends Dropdown implements IDropdownCalen
       day: correctDate[0],
       month: {
         number: correctDate[1],
-        name: MONTH_NAMES[+correctDate[1] - 1],
+        name: MONTH_NAMES[parseInt(correctDate[1], 10) - 1],
       },
       year: correctDate[2],
     };
