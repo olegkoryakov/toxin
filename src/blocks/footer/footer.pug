@@ -1,7 +1,8 @@
 include ../subscription-form/subscription-form
 
-mixin footer({ logoUrl = "", navigationLists = [], about = {}, subscription = {}, copyright = {}, socialLinks = [] } = {})
-  footer.footer
+mixin footer({ logoUrl = "", navigationLists = [], about = {}, subscription = {}, copyright = {}, socialLinks = [], isMini = false } = {})
+  - const miniClass = isMini ? "footer_mini": "";
+  footer.footer(class = miniClass)
     .footer__content
       .footer__about
         .footer__logo

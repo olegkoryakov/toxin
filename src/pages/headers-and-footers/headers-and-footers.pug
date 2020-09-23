@@ -5,7 +5,7 @@ include ../../blocks/footer/footer
 block title
   title Headers &amp Footers
 block content
-  - const { defaultHeaderOptions, registeredUserHeaderOptions, defaultFooterOptions } = require('./headers-and-footers.json');
+  - const { defaultHeaderOptions, registeredUserHeaderOptions, defaultFooterOptions, miniFooterOptions } = require('./headers-and-footers.json');
   main.headers-and-footers
     .headers-and-footers__header
       +header(defaultHeaderOptions)
@@ -13,3 +13,5 @@ block content
       +header(registeredUserHeaderOptions)
     .headers-and-footers__footer
       +footer(defaultFooterOptions)
+    .headers-and-footers__footer.headers-and-footers__footer_mini
+      +footer(miniFooterOptions)

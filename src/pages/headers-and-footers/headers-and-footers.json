@@ -172,5 +172,100 @@
         "alt": "Instagram"
       }
     ]
+  },
+  "miniFooterOptions": {
+    "isMini": true,
+    "logoUrl": "./img/toxin-logo.svg",
+    "navigationLists": [
+      {
+        "title": "Навигация",
+        "links": [
+          {
+            "name": "О нас",
+            "url": "mock"
+          },
+          {
+            "name": "Новости",
+            "url": "mock"
+          },
+          {
+            "name": "Служба поддержки",
+            "url": "mock"
+          },
+          {
+            "name": "Услуги",
+            "url": "mock"
+          }
+        ]
+      },
+      {
+        "title": "О нас",
+        "links": [
+          {
+            "name": "О сервисе",
+            "url": "mock"
+          },
+          {
+            "name": "Наша команда",
+            "url": "mock"
+          },
+          {
+            "name": "Вакансии",
+            "url": "mock"
+          },
+          {
+            "name": "Инвесторы",
+            "url": "mock"
+          }
+        ]
+      },
+      {
+        "title": "Служба поддержки",
+        "links": [
+          {
+            "name": "Соглашения",
+            "url": "mock"
+          },
+          {
+            "name": "Сообщества",
+            "url": "mock"
+          },
+          {
+            "name": "Связь с нами",
+            "url": "mock"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "text": "Copyright © 2018 Toxin отель. Все права зачищены."
+    },
+    "subscription": {
+      "title": "Подписка",
+      "text": "Получайте специальные предложения и новости сервиса",
+      "subscriptionFormOptions": {
+        "placeholder": "Email"
+      }
+    },
+    "about": {
+      "text": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    },
+    "socialLinks": [
+      {
+        "url": "mock",
+        "imgUrl": "./img/twitter-logo.svg",
+        "alt": "Twitter"
+      },
+      {
+        "url": "mock",
+        "imgUrl": "./img/facebook-logo.svg",
+        "alt": "Facebook"
+      },
+      {
+        "url": "mock",
+        "imgUrl": "./img/instagram-logo.svg",
+        "alt": "Instagram"
+      }
+    ]
   }
 }
