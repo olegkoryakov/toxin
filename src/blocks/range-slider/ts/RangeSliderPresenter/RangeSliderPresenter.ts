@@ -28,8 +28,8 @@ export default class RangeSliderPresenter {
 
   private parseValueToCoord(value: number) {
     const width = this.rangeSliderView.getSliderLineWidth();
-    const valuesRange = this.rangeSliderModel.getValuesRange();
-    const coord = width * (value / (valuesRange.max - valuesRange.min));
+    const { max, min } = this.rangeSliderModel.getValuesRange();
+    const coord = ((value - min) * width) / (max - min);
 
     return coord;
   }
