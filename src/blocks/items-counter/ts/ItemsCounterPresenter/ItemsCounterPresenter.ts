@@ -1,3 +1,5 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
+
 export default class IItemsCounterPresenter implements IItemsCounterPresenter {
   constructor(itemsCounterModel: IItemsCounterModel, itemsCounterView: IItemsCounterView) {
     this.itemsCounterModel = itemsCounterModel;
@@ -11,6 +13,7 @@ export default class IItemsCounterPresenter implements IItemsCounterPresenter {
 
   private itemsCounterView: IItemsCounterView;
 
+  @bind
   private decreaseItemCount(index: number) {
     this.itemsCounterModel.decreaseItemCount(index);
     const { name, count } = this.itemsCounterModel.getItemByIndex(index);
@@ -18,6 +21,7 @@ export default class IItemsCounterPresenter implements IItemsCounterPresenter {
     this.itemsCounterView.setItemProps(index, name, count);
   }
 
+  @bind
   private increaseItemCount(index: number) {
     this.itemsCounterModel.increaseItemCount(index);
     const { name, count } = this.itemsCounterModel.getItemByIndex(index);
@@ -55,21 +59,23 @@ export default class IItemsCounterPresenter implements IItemsCounterPresenter {
     return message;
   }
 
+  @bind
   private setInputValue() {
     const message = this.getMessage();
     this.itemsCounterView.setInputValue(message);
   }
 
+  @bind
   private resetItemsCount() {
     this.itemsCounterModel.resetItemsCount();
     this.init();
   }
 
   private addViewHandlers() {
-    this.itemsCounterView.on('decrease-item-count', this.decreaseItemCount.bind(this));
-    this.itemsCounterView.on('increase-item-count', this.increaseItemCount.bind(this));
-    this.itemsCounterView.on('set-input-value', this.setInputValue.bind(this));
-    this.itemsCounterView.on('reset-items-count', this.resetItemsCount.bind(this));
+    this.itemsCounterView.on('decrease-item-count', this.decreaseItemCount);
+    this.itemsCounterView.on('increase-item-count', this.increaseItemCount);
+    this.itemsCounterView.on('set-input-value', this.setInputValue);
+    this.itemsCounterView.on('reset-items-count', this.resetItemsCount);
   }
 
   private init() {

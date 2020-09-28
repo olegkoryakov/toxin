@@ -1,6 +1,7 @@
 import Dropdown from '../../../dropdown/ts/Dropdown/Dropdown';
 import Calendar from '../../../calendar/ts/Calendar';
 import MONTH_NAMES from '../MONTH_NAMES';
+import bind from '../../../../../node_modules/bind-decorator/index';
 
 export default class DropdownCalendar extends Dropdown implements IDropdownCalendar {
   constructor(
@@ -57,8 +58,8 @@ export default class DropdownCalendar extends Dropdown implements IDropdownCalen
   }
 
   private addHandlers() {
-    this.applyButton.addEventListener('click', this.onApplyButtonClick.bind(this));
-    this.resetButton.addEventListener('click', this.onResetButtonClick.bind(this));
+    this.applyButton.addEventListener('click', this.onApplyButtonClick);
+    this.resetButton.addEventListener('click', this.onResetButtonClick);
   }
 
   private parseDate = (date: string) => {
@@ -89,7 +90,12 @@ export default class DropdownCalendar extends Dropdown implements IDropdownCalen
     }
   }
 
-  private onApplyButtonClick() {
+  @bind
+  toggleOpened() {
+    super.toggleOpened();
+  }
+
+  private onApplyButtonClick = () => {
     const selectedDates = this.calendar.getSelectedDates();
     if (selectedDates.from && selectedDates.to) {
       this.toggleOpened();
@@ -97,7 +103,7 @@ export default class DropdownCalendar extends Dropdown implements IDropdownCalen
     }
   }
 
-  private onResetButtonClick() {
+  private onResetButtonClick = () => {
     this.inputs.forEach((input) => { input.value = ''; });
     this.calendar.resetSelectedDates();
   }

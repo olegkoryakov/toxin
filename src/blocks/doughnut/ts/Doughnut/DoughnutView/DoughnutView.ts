@@ -1,3 +1,4 @@
+import bind from '../../../../../../node_modules/bind-decorator/index';
 import EventEmitter from '../../../../../ts/EventEmitter/EventEmitter';
 
 export default class DoughnutView extends EventEmitter implements IDoughnutView {
@@ -72,6 +73,7 @@ export default class DoughnutView extends EventEmitter implements IDoughnutView 
     return circle;
   }
 
+  @bind
   private onCircleMouseEnter({ target }: MouseEvent) {
     const circle = target as SVGCircleElement;
     const circleIndex = this.circles.findIndex((c) => c === circle);
@@ -83,7 +85,7 @@ export default class DoughnutView extends EventEmitter implements IDoughnutView 
 
   private addCirclesHandlers() {
     this.circles.forEach((circle) => {
-      circle.addEventListener('mouseenter', this.onCircleMouseEnter.bind(this));
+      circle.addEventListener('mouseenter', this.onCircleMouseEnter);
     });
   }
 

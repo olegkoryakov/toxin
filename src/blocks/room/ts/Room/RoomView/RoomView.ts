@@ -1,3 +1,4 @@
+import bind from '../../../../../../node_modules/bind-decorator/index';
 import EventEmitter from '../../../../../ts/EventEmitter/EventEmitter';
 
 export default class RoomView extends EventEmitter implements IRoomView {
@@ -23,7 +24,7 @@ export default class RoomView extends EventEmitter implements IRoomView {
     this.prevButton = this.roomElement.querySelector('.room__preview-button_prev') as HTMLButtonElement;
     this.nextButton = this.roomElement.querySelector('.room__preview-button_next') as HTMLButtonElement;
 
-    [this.prevButton, this.nextButton].forEach((button) => { button.addEventListener('click', this.onButtonClick.bind(this)); });
+    [this.prevButton, this.nextButton].forEach((button) => { button.addEventListener('click', this.onButtonClick); });
   }
 
   private initRoomImgElement() {
@@ -32,10 +33,11 @@ export default class RoomView extends EventEmitter implements IRoomView {
 
   private initRoomPreviewDots() {
     this.roomPreviewDots = this.roomElement.querySelectorAll('.room__preview-item') as NodeListOf<HTMLLIElement>;
-    this.roomPreviewDots.forEach((dot) => { dot.addEventListener('click', this.onDotClick.bind(this)); });
+    this.roomPreviewDots.forEach((dot) => { dot.addEventListener('click', this.onDotClick); });
   }
 
-  private onButtonClick = ({ target }: MouseEvent) => {
+  @bind
+  private onButtonClick({ target }: MouseEvent) {
     const button = target as HTMLButtonElement;
     if (button.classList.contains('room__preview-button_prev')) {
       this.emit('render-prev-photo', null);
@@ -44,6 +46,7 @@ export default class RoomView extends EventEmitter implements IRoomView {
     }
   }
 
+  @bind
   private onDotClick({ target }: MouseEvent) {
     const dot = target as HTMLLIElement;
     const dotIndex = Array.from(this.roomPreviewDots).findIndex((d) => dot === d);

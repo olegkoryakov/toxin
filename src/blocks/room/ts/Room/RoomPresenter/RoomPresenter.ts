@@ -1,3 +1,5 @@
+import bind from '../../../../../../node_modules/bind-decorator/index';
+
 export default class RoomPresenter implements IRoomPresenter {
   constructor(
     roomModel: IRoomModel,
@@ -13,21 +15,24 @@ export default class RoomPresenter implements IRoomPresenter {
   private roomView: IRoomView;
 
   private addRoomViewHandlers() {
-    this.roomView.on('render-next-photo', this.renderNextPhoto.bind(this));
-    this.roomView.on('render-prev-photo', this.renderPrevPhoto.bind(this));
-    this.roomView.on('render-photo-by-index', this.renderPhotoByIndex.bind(this));
+    this.roomView.on('render-next-photo', this.renderNextPhoto);
+    this.roomView.on('render-prev-photo', this.renderPrevPhoto);
+    this.roomView.on('render-photo-by-index', this.renderPhotoByIndex);
   }
 
+  @bind
   private renderNextPhoto() {
     const nextPhotoProps = this.roomModel.getNextPhotoProps();
     this.roomView.setPhotoProps(nextPhotoProps);
   }
 
+  @bind
   private renderPrevPhoto() {
     const prevPhotoProps = this.roomModel.getPrevPhotoProps();
     this.roomView.setPhotoProps(prevPhotoProps);
   }
 
+  @bind
   private renderPhotoByIndex(index: number) {
     const url = this.roomModel.getPhotoUrlByIndex(index);
     this.roomView.setPhotoProps({ index, url });

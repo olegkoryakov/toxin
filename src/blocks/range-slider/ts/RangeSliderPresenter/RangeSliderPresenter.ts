@@ -1,3 +1,5 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
+
 export default class RangeSliderPresenter {
   constructor(
     rangeSliderView: IRangeSliderView,
@@ -14,7 +16,7 @@ export default class RangeSliderPresenter {
   private rangeSliderModel: IRangeSliderModel;
 
   private addViewHandler() {
-    this.rangeSliderView.on('change-current-value', this.changeCurrentValue.bind(this));
+    this.rangeSliderView.on('change-current-value', this.changeCurrentValue);
   }
 
   private parseCoordToValue(coord: number) {
@@ -40,6 +42,7 @@ export default class RangeSliderPresenter {
     this.rangeSliderView.setPriceElementValues(currentValue, postfix);
   }
 
+  @bind
   private changeCurrentValue(thumbOptions: IThumbOptions) {
     const { modifier, coord } = thumbOptions;
     const currentValue = this.rangeSliderModel.getCurrentValue();

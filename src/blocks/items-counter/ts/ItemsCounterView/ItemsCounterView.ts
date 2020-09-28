@@ -1,3 +1,4 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
 import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
 
 export default class ItemsCounterView extends EventEmitter implements IItemsCounterView {
@@ -30,6 +31,7 @@ export default class ItemsCounterView extends EventEmitter implements IItemsCoun
     return index;
   }
 
+  @bind
   private onPlusButtonClick(clickE: MouseEvent) {
     const itemElement = (clickE.target as HTMLElement).parentElement;
     if (itemElement === null) return;
@@ -38,6 +40,7 @@ export default class ItemsCounterView extends EventEmitter implements IItemsCoun
     this.emit('set-input-value', null);
   }
 
+  @bind
   private onMinusButtonClick(clickE: MouseEvent) {
     const item = (clickE.target as HTMLElement).parentElement;
     if (item === null) return;
@@ -48,16 +51,18 @@ export default class ItemsCounterView extends EventEmitter implements IItemsCoun
 
   private addControlsHandlers() {
     if (this.applyButton || this.resetButton) {
-      if (this.applyButton) this.applyButton.addEventListener('click', this.onApplyButtonClick.bind(this));
-      if (this.resetButton) this.resetButton.addEventListener('click', this.onResetButtonClick.bind(this));
+      if (this.applyButton) this.applyButton.addEventListener('click', this.onApplyButtonClick);
+      if (this.resetButton) this.resetButton.addEventListener('click', this.onResetButtonClick);
     }
   }
 
+  @bind
   private onResetButtonClick() {
     this.itemsCounterInput.setValue('');
     this.emit('reset-items-count', null);
   }
 
+  @bind
   private onApplyButtonClick() {
     const value = this.itemsCounterInput.getValue();
     if (value !== '') this.toggleOpenedCallback();
@@ -112,8 +117,8 @@ export default class ItemsCounterView extends EventEmitter implements IItemsCoun
       plusButton.type = 'button';
       minusButton.type = 'button';
 
-      plusButton.addEventListener('click', this.onPlusButtonClick.bind(this));
-      minusButton.addEventListener('click', this.onMinusButtonClick.bind(this));
+      plusButton.addEventListener('click', this.onPlusButtonClick);
+      minusButton.addEventListener('click', this.onMinusButtonClick);
 
       plusButton.textContent = '+';
       minusButton.textContent = '-';

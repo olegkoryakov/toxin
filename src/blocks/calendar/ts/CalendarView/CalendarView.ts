@@ -1,5 +1,6 @@
 import * as helpers from '../helpers/helpers';
 import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
+import bind from '../../../../../node_modules/bind-decorator/index';
 
 export default class CalendarView extends EventEmitter implements ICalendarView {
   constructor(calendarWidget: HTMLElement) {
@@ -21,14 +22,17 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
     this.prevMonthButton = this.calendarWidget.querySelector('.calendar__button.calendar__button_prev');
   }
 
+  @bind
   private onNextMonthButtonClick() {
     this.emit('render-next-month', null);
   }
 
+  @bind
   private onPrevMonthButtonClick() {
     this.emit('render-prev-month', null);
   }
 
+  @bind
   private onCalendarTableClick(clickE: MouseEvent) {
     const td = clickE.target;
     if (td instanceof HTMLElement && td.classList.contains('calendar__td')) {
@@ -40,11 +44,11 @@ export default class CalendarView extends EventEmitter implements ICalendarView 
     const calendarTable = this.calendarWidget.querySelector('.calendar__table');
 
     if (calendarTable) {
-      (calendarTable as HTMLElement).addEventListener('click', this.onCalendarTableClick.bind(this));
+      (calendarTable as HTMLElement).addEventListener('click', this.onCalendarTableClick);
     }
     if (this.nextMonthButton && this.prevMonthButton) {
-      this.nextMonthButton.addEventListener('click', this.onNextMonthButtonClick.bind(this));
-      this.prevMonthButton.addEventListener('click', this.onPrevMonthButtonClick.bind(this));
+      this.nextMonthButton.addEventListener('click', this.onNextMonthButtonClick);
+      this.prevMonthButton.addEventListener('click', this.onPrevMonthButtonClick);
     }
   }
 

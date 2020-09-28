@@ -1,3 +1,4 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
 import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
 
 export default class RangeSliderView extends EventEmitter {
@@ -31,7 +32,7 @@ export default class RangeSliderView extends EventEmitter {
   private addHandlers() {
     const thumbs = [this.thumbFrom, this.thumbTo];
     thumbs.forEach((thumb) => {
-      thumb.addEventListener('mousedown', this.onThumbMouseDown.bind(this));
+      thumb.addEventListener('mousedown', this.onThumbMouseDown);
     });
   }
 
@@ -43,6 +44,7 @@ export default class RangeSliderView extends EventEmitter {
     return modifier;
   }
 
+  @bind
   private onThumbMouseDown(downE: MouseEvent) {
     const thumb = (downE.currentTarget as HTMLElement);
     const modifier = this.getThumbModifier(thumb);
@@ -71,16 +73,14 @@ export default class RangeSliderView extends EventEmitter {
       this.emit('change-current-value', { coord: newCoord, modifier });
     };
 
-    const bindedOnMouseMove = onMouseMove.bind(this);
-
     const onMouseUp = () => {
       thumb.style.zIndex = zIndex.toString();
 
-      document.removeEventListener('mousemove', bindedOnMouseMove);
+      document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
     };
 
-    document.addEventListener('mousemove', bindedOnMouseMove);
+    document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   }
 

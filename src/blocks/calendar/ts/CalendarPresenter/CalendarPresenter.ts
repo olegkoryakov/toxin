@@ -1,3 +1,5 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
+
 export default class CalendarPresenter implements ICalendarPresenter {
   constructor(calendarModel: ICalendarModel, calendarView: ICalendarView) {
     this.calendarModel = calendarModel;
@@ -11,15 +13,18 @@ export default class CalendarPresenter implements ICalendarPresenter {
 
   private calendarView: ICalendarView;
 
+  @bind
   private setData(tdData: ITdData) {
     this.calendarModel.setTdData(tdData);
   }
 
+  @bind
   private checkCurrentDay(td: HTMLTableDataCellElement) {
     const isDayCurrentDay = this.calendarModel.isCurrentDay(td);
     if (isDayCurrentDay) this.calendarView.setCurrentDayClass(td);
   }
 
+  @bind
   private selectDate(td: HTMLTableDataCellElement) {
     this.calendarView.removeInterval();
     this.calendarView.removeSelectedDates();
@@ -31,11 +36,11 @@ export default class CalendarPresenter implements ICalendarPresenter {
   }
 
   private addViewHandlers() {
-    this.calendarView.on('set-data', this.setData.bind(this));
-    this.calendarView.on('check-current-day', this.checkCurrentDay.bind(this));
-    this.calendarView.on('select-date', this.selectDate.bind(this));
-    this.calendarView.on('render-next-month', this.renderNextMonth.bind(this));
-    this.calendarView.on('render-prev-month', this.renderPrevMonth.bind(this));
+    this.calendarView.on('set-data', this.setData);
+    this.calendarView.on('check-current-day', this.checkCurrentDay);
+    this.calendarView.on('select-date', this.selectDate);
+    this.calendarView.on('render-next-month', this.renderNextMonth);
+    this.calendarView.on('render-prev-month', this.renderPrevMonth);
   }
 
   renderSelectedDatesAndInterval(selectedDates: ISelectedDates) {
@@ -84,6 +89,7 @@ export default class CalendarPresenter implements ICalendarPresenter {
     }
   }
 
+  @bind
   private renderNextMonth() {
     this.calendarModel.incrementUserDateState();
     const { year, month } = this.calendarModel.getUserDateState();
@@ -93,6 +99,7 @@ export default class CalendarPresenter implements ICalendarPresenter {
     this.renderSelectedDatesAndInterval(selectedDates);
   }
 
+  @bind
   private renderPrevMonth() {
     this.calendarModel.decrementUserDateState();
     const { year, month } = this.calendarModel.getUserDateState();

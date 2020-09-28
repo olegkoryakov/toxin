@@ -28,12 +28,12 @@ export default class Dropdown implements IDropdown {
 
   private addDropdownHandlers() {
     this.dropdownExpandButtons.forEach((expandButton) => {
-      expandButton.addEventListener('click', this.toggleOpened.bind(this));
+      expandButton.addEventListener('click', this.toggleOpened);
     });
-    document.addEventListener('click', this.onDocumentClick.bind(this));
+    document.addEventListener('click', this.onDocumentClick);
   }
 
-  private onDocumentClick({ target }: MouseEvent) {
+  private onDocumentClick = ({ target }: MouseEvent) => {
     const isDropdownElementContainsTarget = this.dropdownElement
       .contains(target as Node);
 

@@ -1,3 +1,5 @@
+import bind from '../../../../../../node_modules/bind-decorator/index';
+
 export default class DoughnutPresenter implements IDoughnutPresenter {
   constructor(
     doughnutModel: IDoughnutModel,
@@ -18,9 +20,10 @@ export default class DoughnutPresenter implements IDoughnutPresenter {
   }
 
   private addViewHandlers() {
-    this.doughnutView.on('set-about-props-by-index', this.setAboutPropsByIndex.bind(this));
+    this.doughnutView.on('set-about-props-by-index', this.setAboutPropsByIndex);
   }
 
+  @bind
   private setAboutPropsByIndex(index: number) {
     const { color } = this.doughnutModel.getColorThemes()[index];
     const value = this.doughnutModel.getValues()[index].toString();

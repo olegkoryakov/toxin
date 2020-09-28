@@ -1,3 +1,5 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
+
 export default class LikeButtonPresenter implements ILikeButtonPresenter {
   constructor(likeButtonModel: ILikeButtonModel, likeButtonView: ILikeButtonView) {
     this.likeButtonModel = likeButtonModel;
@@ -11,9 +13,10 @@ export default class LikeButtonPresenter implements ILikeButtonPresenter {
   likeButtonView: ILikeButtonView;
 
   private addViewHandler() {
-    this.likeButtonView.on('change-like-state', this.changeLikeState.bind(this));
+    this.likeButtonView.on('change-like-state', this.changeLikeState);
   }
 
+  @bind
   private changeLikeState() {
     let likeCount = this.likeButtonModel.getLikesCount();
     const isLiked = this.likeButtonModel.getIsLikedState();

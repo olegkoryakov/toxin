@@ -1,3 +1,5 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
+
 class Header implements IHeader {
   constructor(headerElement: HTMLElement) {
     this.headerElement = headerElement;
@@ -14,12 +16,13 @@ class Header implements IHeader {
     this.burgerButton = burgerButton;
   }
 
+  @bind
   private onBurgerButtonClick() {
     this.headerElement.classList.toggle('header_opened');
   }
 
   private addHandlers() {
-    this.burgerButton.addEventListener('click', this.onBurgerButtonClick.bind(this));
+    this.burgerButton.addEventListener('click', this.onBurgerButtonClick);
   }
 }
 

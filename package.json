@@ -47,6 +47,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "bind-decorator": "^1.0.11",
     "inputmask": "^5.0.5"
   }
 }

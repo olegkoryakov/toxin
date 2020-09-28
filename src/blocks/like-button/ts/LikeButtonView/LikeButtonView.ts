@@ -1,3 +1,4 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
 import EventEmitter from '../../../../ts/EventEmitter/EventEmitter';
 
 export default class LikeButtonView extends EventEmitter implements ILikeButtonView {
@@ -11,9 +12,10 @@ export default class LikeButtonView extends EventEmitter implements ILikeButtonV
   private likeButtonElement: HTMLElement;
 
   private addLikeButtonHandler() {
-    this.likeButtonElement.addEventListener('click', this.onLikeButtonClick.bind(this));
+    this.likeButtonElement.addEventListener('click', this.onLikeButtonClick);
   }
 
+  @bind
   private onLikeButtonClick() {
     this.emit('change-like-state', undefined);
   }

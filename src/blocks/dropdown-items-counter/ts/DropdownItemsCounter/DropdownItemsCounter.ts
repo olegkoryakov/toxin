@@ -1,3 +1,4 @@
+import bind from '../../../../../node_modules/bind-decorator/index';
 import Dropdown from '../../../dropdown/ts/Dropdown/Dropdown';
 import GoodsInput from '../../../items-counter-input/ts/GoodsInput/ItemsCounterInput';
 import ItemsCounter from '../../../items-counter/ts/ItemsCounter';
@@ -19,6 +20,7 @@ export default class DropdownItemsCounter extends Dropdown implements IDropdownI
 
   private dropdownItemsCounterElement: HTMLElement;
 
+  @bind
   toggleOpened() {
     super.toggleOpened();
     this.itemsCounterInput.toggleHightlight();
@@ -31,10 +33,10 @@ export default class DropdownItemsCounter extends Dropdown implements IDropdownI
     this.itemsCounterInput = new GoodsInput(itemsCounterInputElement);
 
     // eslint-disable-next-line no-unused-vars
-    const goods = new ItemsCounter(
+    const itemsCounter = new ItemsCounter(
       itemsCounterElement,
       this.itemsCounterInput,
-      this.toggleOpened.bind(this),
+      this.toggleOpened,
     );
   }
 }
